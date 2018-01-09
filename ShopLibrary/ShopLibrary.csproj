@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>78f6cdc3-7345-43d5-89fe-559f7cee910b</ProjectGuid>
+    <ProjectGuid>{78F6CDC3-7345-43D5-89FE-559F7CEE910B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShopLibrary</RootNamespace>
@@ -30,24 +30,97 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.5.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.5.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataAccess\BackUpDatabase.cs" />
+    <Compile Include="DataAccess\IDataConnection.cs" />
+    <Compile Include="DataAccess\JsonConnector.cs" />
+    <Compile Include="DataAccess\MongoConnector.cs" />
+    <Compile Include="DataAccess\SqlConnector.cs" />
+    <Compile Include="GlobalConfig.cs" />
+    <Compile Include="Interfaces\IBankAccountReport.cs" />
+    <Compile Include="Interfaces\ICashFlow.cs" />
+    <Compile Include="Interfaces\ICustomerReport.cs" />
+    <Compile Include="Interfaces\ICustomerReportable.cs" />
+    <Compile Include="Interfaces\IDebtCollectionReport.cs" />
+    <Compile Include="Interfaces\IEmployeeReport.cs" />
+    <Compile Include="Interfaces\IExpenseReport.cs" />
+    <Compile Include="Interfaces\IPaymentReport.cs" />
+    <Compile Include="Interfaces\IPurchaseReport.cs" />
+    <Compile Include="Interfaces\IPurchaseReturnReport.cs" />
+    <Compile Include="Interfaces\IRefundReport.cs" />
+    <Compile Include="Interfaces\IRepaymentReport.cs" />
+    <Compile Include="Interfaces\IReportable.cs" />
+    <Compile Include="Interfaces\ISaleReport.cs" />
+    <Compile Include="Interfaces\ISupplierReport.cs" />
+    <Compile Include="Interfaces\ISupplierReportable.cs" />
+    <Compile Include="Interfaces\ITransactionReport.cs" />
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="Models\AES.cs" />
+    <Compile Include="Models\BankAccount.cs" />
+    <Compile Include="Models\Cash.cs" />
+    <Compile Include="Models\CashModification.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\DebtCollection.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="Models\Metadata.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\PurchaseReturn.cs" />
+    <Compile Include="Models\Refund.cs" />
+    <Compile Include="Models\Repayment.cs" />
+    <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Shop.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\Unit.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

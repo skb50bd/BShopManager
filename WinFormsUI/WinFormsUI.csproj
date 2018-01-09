@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE26BA87-C7A1-4D1B-B2F6-01BA36E545C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinFormsUI</RootNamespace>
+    <AssemblyName>WinFormsUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>lib\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\BankAccountInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BankAccountInformationForm.Designer.cs">
+      <DependentUpon>BankAccountInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BankAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BankAccountsForm.designer.cs">
+      <DependentUpon>BankAccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CashForm.Designer.cs">
+      <DependentUpon>CashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerInformationForm.designer.cs">
+      <DependentUpon>CustomerInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm.designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeInformationForm.Designer.cs">
+      <DependentUpon>EmployeeInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpenseForm.designer.cs">
+      <DependentUpon>ExpenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductInformationForm.Designer.cs">
+      <DependentUpon>ProductInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PurchaseForm.Designer.cs">
+      <DependentUpon>PurchaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReturnForm.designer.cs">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaleForm.designer.cs">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShopForm.designer.cs">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupplierInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierInformationForm.Designer.cs">
+      <DependentUpon>SupplierInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransactionForm.Designer.cs">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserInformationForm.Designer.cs">
+      <DependentUpon>UserInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UsersForm.designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BankAccountInformationForm.resx">
+      <DependentUpon>BankAccountInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BankAccountsForm.resx">
+      <DependentUpon>BankAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashForm.resx">
+      <DependentUpon>CashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerInformationForm.resx">
+      <DependentUpon>CustomerInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeInformationForm.resx">
+      <DependentUpon>EmployeeInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpenseForm.resx">
+      <DependentUpon>ExpenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductInformationForm.resx">
+      <DependentUpon>ProductInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseForm.resx">
+      <DependentUpon>PurchaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReturnForm.resx">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaleForm.resx">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierInformationForm.resx">
+      <DependentUpon>SupplierInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransactionForm.resx">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserInformationForm.resx">
+      <DependentUpon>UserInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelReader\ExcelReader.csproj">
+      <Project>{6b53fbab-9bbc-4436-bfda-e62d98d7e6a9}</Project>
+      <Name>ExcelReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopLibrary\ShopLibrary.csproj">
+      <Project>{78f6cdc3-7345-43d5-89fe-559f7cee910b}</Project>
+      <Name>ShopLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Delete_48px_1.png" />
+    <Content Include="Resources\icons8_Activity_History_512px.png" />
+    <Content Include="Resources\icons8_Add_96px.png" />
+    <Content Include="Resources\icons8_Add_File_96px.png" />
+    <Content Include="Resources\icons8_Bank_512px.png" />
+    <Content Include="Resources\icons8_Bank_Building_500px.png" />
+    <Content Include="Resources\icons8_Bill_512px.png" />
+    <Content Include="Resources\icons8_Bill_528px.png" />
+    <Content Include="Resources\icons8_Bulleted_List_528px.png" />
+    <Content Include="Resources\icons8_Buy_500px.png" />
+    <None Include="Resources\icons8_Cash_Register_528px.png" />
+    <Content Include="Resources\icons8_Close_Window_512px.png" />
+    <Content Include="Resources\icons8_Close_Window_96px.png" />
+    <Content Include="Resources\icons8_Contact_528px.png" />
+    <Content Include="Resources\icons8_Customer_500px_1.png" />
+    <Content Include="Resources\icons8_Customer_512px.png" />
+    <Content Include="Resources\icons8_Customer_528px.png" />
+    <Content Include="Resources\icons8_Delete_96px.png" />
+    <Content Include="Resources\icons8_Delete_File_25px.png" />
+    <Content Include="Resources\icons8_Delete_File_96px.png" />
+    <Content Include="Resources\icons8_Dossier_528px.png" />
+    <Content Include="Resources\icons8_Dossier_96px.png" />
+    <Content Include="Resources\icons8_Edit_96px.png" />
+    <Content Include="Resources\icons8_Edit_File_96px.png" />
+    <Content Include="Resources\icons8_Employee_500px.png" />
+    <Content Include="Resources\icons8_Enter_48px.png" />
+    <Content Include="Resources\icons8_Enter_512px.png" />
+    <Content Include="Resources\icons8_Eye_500px.png" />
+    <Content Include="Resources\icons8_Eye_96px.png" />
+    <Content Include="Resources\icons8_General_Ledger_500px.png" />
+    <Content Include="Resources\icons8_Inventory_Flow_500px_1.png" />
+    <Content Include="Resources\icons8_List_512px.png" />
+    <Content Include="Resources\icons8_Minimize_Window_512px.png" />
+    <Content Include="Resources\icons8_Minimize_Window_96px.png" />
+    <Content Include="Resources\icons8_Moleskine_500px.png" />
+    <Content Include="Resources\icons8_Ok_96px.png" />
+    <Content Include="Resources\icons8_Paycheque_528px.png" />
+    <Content Include="Resources\icons8_Plus_528px_1.png" />
+    <Content Include="Resources\icons8_Plus_Math_96px_1.png" />
+    <Content Include="Resources\icons8_Plus_Math_96px_11.png" />
+    <Content Include="Resources\icons8_Purchase_Order_512px.png" />
+    <Content Include="Resources\icons8_Purchase_Order_528px.png" />
+    <Content Include="Resources\icons8_Receipt_528px.png" />
+    <Content Include="Resources\icons8_Receive_Cash_528px.png" />
+    <Content Include="Resources\icons8_Refund_500px.png" />
+    <Content Include="Resources\icons8_Refund_512px.png" />
+    <Content Include="Resources\icons8_Refund_528px.png" />
+    <Content Include="Resources\icons8_Reset_512px.png" />
+    <Content Include="Resources\icons8_Reset_96px %282%29.png" />
+    <Content Include="Resources\icons8_Return_Purchase_500px.png" />
+    <Content Include="Resources\icons8_Search_528px.png" />
+    <Content Include="Resources\icons8_Search_96px.png" />
+    <Content Include="Resources\icons8_Sell_500px.png" />
+    <Content Include="Resources\icons8_Sell_512px.png" />
+    <Content Include="Resources\icons8_Sell_528px.png" />
+    <Content Include="Resources\icons8_Settings_512px.png" />
+    <Content Include="Resources\icons8_Shop_500px.png" />
+    <Content Include="Resources\icons8_Shop_512px.png" />
+    <Content Include="Resources\icons8_Shop_528px.png" />
+    <Content Include="Resources\icons8_Shop_528px1.png" />
+    <Content Include="Resources\icons8_Supplier_500px.png" />
+    <Content Include="Resources\icons8_Sync_500px.png" />
+    <Content Include="Resources\icons8_Transaction_512px.png" />
+    <Content Include="Resources\icons8_Transaction_528px.png" />
+    <Content Include="Resources\icons8_Trolley_512px.png" />
+    <Content Include="Resources\icons8_Trolley_528px.png" />
+    <Content Include="Resources\icons8_User_Account_500px.png" />
+    <Content Include="Resources\icons8_User_Account_512px.png" />
+    <Content Include="Resources\icons8_User_Account_528px.png" />
+    <Content Include="Resources\icons8_Warehouse_528px.png" />
+    <Content Include="Resources\SellButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
