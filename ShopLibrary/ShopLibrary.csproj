@@ -117,6 +117,7 @@
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Output\PrintSaleMemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

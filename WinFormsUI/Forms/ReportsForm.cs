@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShopLibrary.Models;
+using ShopLibrary.Output;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.ReportType;
 using static ShopLibrary.Models.UserRole;
@@ -1570,6 +1573,15 @@ namespace WinFormsUI.Forms {
                 case SaleReport:
                     // Todo - Show Sale
                     sale = report.Sales[index];
+                    string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                                         + @"\Brotal\" + sale.SaleId + ".pdf";
+                    if (!File.Exists(outfilename))
+                    {
+                        PrintSaleMemo.ToPdf(sale,
+                            Shops.SingleOrDefault(s => s.ObjectId == sale.ShopId),
+                            Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId));
+                    }
+                    Process.Start(outfilename);
                     break;
 
                 case SupplierReport:

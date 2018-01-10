@@ -45,6 +45,23 @@ namespace ShopLibrary {
             }
         }
 
+        public static void LoadBasicDatabase()
+        {
+            Users = Connection[0].GetUserAll();
+            if (Users.Count == 0)
+            {
+                Connection[0].InsertUser(new User("brotality"));
+                Users = Connection[0].GetUserAll();
+            }
+            BankAccounts = Connection[0].GetBankAccountsAll();
+            Shops        = Connection[0].GetShopsAll();
+            Employees    = Connection[0].GetEmployeeAll();
+            Customers    = Connection[0].GetCustomersAll();
+            Suppliers    = Connection[0].GetSupplierAll();
+            Categories   = Connection[0].GetCategoryAll();
+            Products     = Connection[0].GetProductsAll();
+        }
+
         public static string CnnString(string name) => ConfigurationManager.ConnectionStrings[name].ConnectionString;
     }
 }

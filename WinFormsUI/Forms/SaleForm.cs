@@ -4,7 +4,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using ShopLibrary.Models;
+using ShopLibrary.Output;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
 
@@ -173,6 +175,15 @@ namespace WinFormsUI.Forms {
             if (!ValidateForm())
                 return;
 
+            _sale.CustomerName    = CustomerNameText.Text;
+            _sale.CustomerCompany = CompanyText.Text;
+            _sale.CustomerAddress = AddressText.Text;
+            _sale.Note            = NotesText.Text;
+            _sale.SaleType        = WholeSaleRadio.Checked
+                ? SaleType.WholeSale
+                : SaleType.RetailSale;
+            _sale.DealTime = SaleDateTime.Value;
+
             if (CustomerCombo.SelectedIndex > -1) {
                 _sale.CustomerId = _customer.ObjectId;
             } else {
@@ -186,17 +197,6 @@ namespace WinFormsUI.Forms {
                 }
                 _sale.CustomerId = ObjectId.Empty;
             }
-            _sale.CustomerName = CustomerNameText.Text;
-            _sale.CustomerCompany = CompanyText.Text;
-            _sale.CustomerAddress = AddressText.Text;
-
-            _sale.Note = NotesText.Text;
-
-            _sale.SaleType = WholeSaleRadio.Checked
-                ? SaleType.WholeSale
-                : SaleType.RetailSale;
-
-            _sale.DealTime = SaleDateTime.Value;
 
             if (sender as Button == SubmitButton) {
                 DialogResult confirm = MessageBox.Show("Are you sure want to register this sale?\n" +
@@ -213,6 +213,7 @@ namespace WinFormsUI.Forms {
 
                 try {
                     _sale = Connection[0].InsertSale(_sale);
+                    PrintSaleMemo.ToPdf(_sale, Shops[ShopSelectorCombo.SelectedIndex], _customer);
                     ReloadButton_Click(sender, e);
                     SaleForm_Load(sender, e);
                 } catch (Exception ex) {

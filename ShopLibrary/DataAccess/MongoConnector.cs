@@ -1,12 +1,11 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using ShopLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Conventions;
-using MongoDB.Driver;
-using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 
 namespace ShopLibrary.DataAccess
@@ -304,15 +303,7 @@ namespace ShopLibrary.DataAccess
                     : (-1) * model.Amount));
                 BankAccountCollection.UpdateOne(filter, update);
                 TransactionCollection.InsertOne(model);
-
-                // Modify Cash
-                filter = new BsonDocument("_id", CurrentCash.ObjectId);
-                update = new BsonDocument("$inc",
-                    new BsonDocument("current",
-                        model.TransactionType == TransactionType.Deposit
-                            ? (-1) * model.Amount
-                            : model.Amount));
-                CashCollection.UpdateOne(filter, update);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -502,6 +493,7 @@ namespace ShopLibrary.DataAccess
                 BsonDocument update = new BsonDocument("$inc", new BsonDocument("debt", (-1) * model.Amount));
                 CustomerCollection.UpdateOne(filter, update);
                 DebtCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -740,6 +732,7 @@ namespace ShopLibrary.DataAccess
                 BsonDocument update = new BsonDocument("$inc", new BsonDocument("payable", (-1) * model.Amount));
                 SupplierCollection.UpdateOne(filter, update);
                 _db.GetCollection<Repayment>("Repayment").InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -881,6 +874,7 @@ namespace ShopLibrary.DataAccess
                 BsonDocument update = new BsonDocument("$inc", new BsonDocument("currentBalance", (-1) * model.Amount));
                 EmployeeCollection.UpdateOne(filter, update);
                 PaymentCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -929,6 +923,7 @@ namespace ShopLibrary.DataAccess
                     Product result = ProductCollection.FindOneAndUpdate(filter, update);
                 }
                 SaleCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
                 if (model.Due > 0 && model.CustomerId != ObjectId.Empty)
                 {
                     BsonDocument filter = new BsonDocument("_id", model.CustomerId);
@@ -1032,6 +1027,7 @@ namespace ShopLibrary.DataAccess
             try
             {
                 ExpenseCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -1082,7 +1078,7 @@ namespace ShopLibrary.DataAccess
                     Product product = Products.First(p => p.ObjectId == cart.ProductId);
                     Products.Remove(product);
                     product.PurchasePrice =
-                        product.ShopStock + product.GodownStock + cart.BaseQuantity == 0
+                        product.ShopStock + product.GodownStock + cart.BaseQuantity == 0.00
                             ? 0
                             : ((decimal)(product.ShopStock + product.GodownStock) * product.PurchasePrice
                                + cart.NetPurchasePrice)
@@ -1093,6 +1089,7 @@ namespace ShopLibrary.DataAccess
                     Product result = ProductCollection.FindOneAndUpdate(filter, update);
                 }
                 PurchaseCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
                 if (model.Due > 0 && model.SupplierId != ObjectId.Empty)
                 {
                     BsonDocument filter = new BsonDocument("_id", model.SupplierId);
@@ -1189,6 +1186,7 @@ namespace ShopLibrary.DataAccess
                     ProductCollection.UpdateOne(filter, update);
                 }
                 RefundCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -1252,6 +1250,7 @@ namespace ShopLibrary.DataAccess
                     ProductCollection.UpdateOne(filter, update);
                 }
                 PurchaseReturnCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -1306,6 +1305,7 @@ namespace ShopLibrary.DataAccess
             try
             {
                 CashModificationCollection.InsertOne(model);
+                CurrentCash = UpdateCash(model);
             }
             catch (Exception e)
             {
@@ -1332,5 +1332,15 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         public Cash GetCurrentCash() => CashCollection.AsQueryable().SingleOrDefault();
+        private Cash UpdateCash(ICashFlow cashFlow)
+        {
+            BsonDocument filter = new BsonDocument("_id", CurrentCash.ObjectId);
+            BsonDocument update = new BsonDocument("$inc",
+                new BsonDocument("current",
+                    cashFlow.InFlow > 0 
+                    ? cashFlow.InFlow 
+                    : cashFlow.OutFlow));
+            return CashCollection.FindOneAndUpdate<Cash>(filter, update);
+        }
     }
 }
