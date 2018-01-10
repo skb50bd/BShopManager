@@ -725,7 +725,7 @@ namespace ShopLibrary.DataAccess
         public Repayment Repay(Repayment model)
         {
             model.ObjectId = GetNextObjectId(nameof(Repayment));
-            model.Meta.Create();
+            model.Meta = new Metadata();
             try
             {
                 BsonDocument filter = new BsonDocument("_id", model.SupplierId);
@@ -780,7 +780,7 @@ namespace ShopLibrary.DataAccess
         public Employee InsertEmployee(Employee model)
         {
             model.ObjectId = GetNextObjectId(nameof(Employee));
-            model.Meta.Create();
+            model.Meta = new Metadata();
             try
             {
                 EmployeeCollection.InsertOne(model);
@@ -867,7 +867,7 @@ namespace ShopLibrary.DataAccess
         public Payment Pay(Payment model)
         {
             model.ObjectId = GetNextObjectId(nameof(Payment));
-            model.Meta.Create();
+            model.Meta = new Metadata();
             try
             {
                 BsonDocument filter = new BsonDocument("_id", model.EmployeeId);
@@ -906,7 +906,7 @@ namespace ShopLibrary.DataAccess
         public Sale InsertSale(Sale model)
         {
             model.ObjectId = GetNextObjectId(nameof(Sale));
-            model.Meta.Create();
+            model.Meta = new Metadata();
             try
             {
                 foreach (ShoppingCart cart in model.Cart)
@@ -933,6 +933,7 @@ namespace ShopLibrary.DataAccess
             }
             catch (Exception e)
             {
+                Debug.WriteLine(e.Message);
                 throw e;
             }
             return model;
@@ -981,7 +982,7 @@ namespace ShopLibrary.DataAccess
         public Sale SaveSale(Sale model)
         {
             model.ObjectId = GetNextObjectId("SavedSale");
-            model.Meta.Create();
+            model.Meta = new Metadata();
 
             try
             {
@@ -1334,13 +1335,11 @@ namespace ShopLibrary.DataAccess
         public Cash GetCurrentCash() => CashCollection.AsQueryable().SingleOrDefault();
         private Cash UpdateCash(ICashFlow cashFlow)
         {
+            decimal m = cashFlow.InFlow - cashFlow.OutFlow;
             BsonDocument filter = new BsonDocument("_id", CurrentCash.ObjectId);
-            BsonDocument update = new BsonDocument("$inc",
-                new BsonDocument("current",
-                    cashFlow.InFlow > 0 
-                    ? cashFlow.InFlow 
-                    : cashFlow.OutFlow));
-            return CashCollection.FindOneAndUpdate<Cash>(filter, update);
+            BsonDocument update = new BsonDocument("$inc", new BsonDocument("current", m));
+            var c= CashCollection.FindOneAndUpdate<Cash>(filter, update);
+            return c;
         }
     }
 }

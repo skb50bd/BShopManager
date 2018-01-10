@@ -375,7 +375,7 @@
             this.DiscountPercentageText.Size = new System.Drawing.Size(36, 22);
             this.DiscountPercentageText.TabIndex = 3;
             this.DiscountPercentageText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            this.DiscountPercentageText.Leave += new System.EventHandler(this.UpdateFields);
+            this.DiscountPercentageText.Leave += new System.EventHandler(this.DiscountText_Leave);
             // 
             // AddressText
             // 
@@ -448,7 +448,7 @@
             this.PaidAmountText.TabIndex = 9;
             this.PaidAmountText.TextChanged += new System.EventHandler(this.PaidAmountText_TextChanged);
             this.PaidAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            this.PaidAmountText.Leave += new System.EventHandler(this.UpdateFields);
+            this.PaidAmountText.Leave += new System.EventHandler(this.DiscountText_Leave);
             // 
             // LessAmountText
             // 
@@ -462,7 +462,7 @@
             this.LessAmountText.TabIndex = 5;
             this.LessAmountText.TextChanged += new System.EventHandler(this.LessAmountText_TextChanged);
             this.LessAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            this.LessAmountText.Leave += new System.EventHandler(this.UpdateFields);
+            this.LessAmountText.Leave += new System.EventHandler(this.DiscountText_Leave);
             // 
             // PercentageLabel
             // 

@@ -194,6 +194,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Languages\bn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Languages\en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\BankAccountInformationForm.resx">
       <DependentUpon>BankAccountInformationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +283,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\Languages\bn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>bn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Languages\en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -374,5 +392,6 @@
     <Content Include="Resources\icons8_Warehouse_528px.png" />
     <Content Include="Resources\SellButton.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

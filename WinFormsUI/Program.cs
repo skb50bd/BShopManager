@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using ShopLibrary;
 using ShopLibrary.Models;
 using WinFormsUI.Forms;
+using WinFormsUI.Resources.Languages;
+using System.Globalization;
 using static ShopLibrary.GlobalConfig;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
@@ -27,11 +29,14 @@ namespace WinFormsUI
             {
                 InitializeConnections(false, true, false);
                 LoadBasicDatabase();
+
+                Culture = CultureInfo.CreateSpecificCulture(Properties.Settings.Default.Language);
             }
             catch (Exception e)
             {
-                MessageBox.Show("Could not connect to server\n" +
-                                e.Message, "Error");
+                MessageBox.Show(ResourceManager.GetString("ErrorConnectingToDatabaseServer", Culture) +
+                                e.Message, 
+                                ResourceManager.GetString("Error", Culture));
             }
             finally
             {
@@ -59,7 +64,7 @@ namespace WinFormsUI
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message, "Error");
+                    MessageBox.Show(e.Message, en.Error);
                 }
 
                 Form login = new LoginForm();

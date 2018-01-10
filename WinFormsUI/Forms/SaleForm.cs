@@ -470,7 +470,9 @@ namespace WinFormsUI.Forms {
 
         #region Amount Calculations
 
-        private void UpdateFields() {
+        private void UpdateFields()
+        {
+            _sale.TotalAmount           = _sale.Cart.Sum(sc => sc.NetPrice);
             CartDataGrid.DataSource     = null;
             CartDataGrid.DataSource     = _sale.Cart;
             TotalText.Text              = _sale.GetTotalAmount;
@@ -481,8 +483,9 @@ namespace WinFormsUI.Forms {
             NewDueText.Text             = _sale.GetDue;
         }
 
-        private void UpdateFields(object sender, EventArgs e)
+        private void DiscountText_Leave(object sender, EventArgs e)
         {
+            _sale.TotalAmount           = _sale.Cart.Sum(sc => sc.NetPrice);
             if ((sender as TextBox) == DiscountPercentageText
                 && float.TryParse(DiscountPercentageText.Text, out float dp) && dp >= 0 && dp <= 100
                 && !decimal.TryParse(LessAmountText.Text, out decimal l))

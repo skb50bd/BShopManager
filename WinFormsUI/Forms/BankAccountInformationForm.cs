@@ -59,17 +59,17 @@ namespace WinFormsUI.Forms {
             DialogResult = DialogResult.Cancel;
             _account = account;
             TitleLabel.Text = _account.AccountName;
-            AddButton.Text = "Update Account";
+            AddButton.Text = "Update account";
         }
 
         private bool ValidateForm() {
             string message = string.Empty;
-            if (AddButton.Text == "Add Account")
+            if (AddButton.Text == "Add account")
                 if (BankAccounts.Any(a => a.AccountName == AccountNameText.Text))
-                    message += "Invalid or duplicate Account name";
+                    message += "Invalid or duplicate account name";
             else
                 if (BankAccounts.Any(a => a.AccountName == AccountNameText.Text && a.BankAccountId!= _account.BankAccountId))
-                    message += "Invalid or duplicate Account name";
+                    message += "Invalid or duplicate account name";
             if (BankNameText.Text.Length == 0)
                 message += "Empty bank name";
             if (AccountNumberText.Text.Length == 0)

@@ -3,6 +3,9 @@ using System.Configuration;
 using System.Diagnostics;
 using ShopLibrary.DataAccess;
 using ShopLibrary.Models;
+using System.Globalization;
+using System.Resources;
+using System.util;
 
 namespace ShopLibrary {
     public static class GlobalConfig {
@@ -20,6 +23,8 @@ namespace ShopLibrary {
         public static Cash CurrentCash;
         public static List<IDataConnection> Connection { get; set; }
 
+        public static CultureInfo Culture = CultureInfo.CreateSpecificCulture("en");
+        public static ResourceManager ResourceManager;
         public static readonly log4net.ILog log = LogHelper.GetLogger();
         #endregion
 
@@ -54,6 +59,7 @@ namespace ShopLibrary {
                 Users = Connection[0].GetUserAll();
             }
             BankAccounts = Connection[0].GetBankAccountsAll();
+            CurrentCash  = Connection[0].GetCurrentCash();
             Shops        = Connection[0].GetShopsAll();
             Employees    = Connection[0].GetEmployeeAll();
             Customers    = Connection[0].GetCustomersAll();
