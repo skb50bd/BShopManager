@@ -15,8 +15,13 @@ namespace ShopLibrary.Output
     {
         public static void ToPdf(Sale sale, Shop shop, Customer customer)
         {
-            string infilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                           + @"\Brotal\SaleMemorandumTemp.pdf";
+            string infilename = "SaleMemorandumTemp.pdf";
+            if (!File.Exists(infilename))
+            {
+                Debug.WriteLine("The template sale memo is missing from the application directory\n" +
+                                "Cannot print the sale memo");
+                return;
+            }
             string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                              + @"\Brotal\" + sale.SaleId + ".pdf";
 

@@ -99,9 +99,14 @@ namespace WinFormsUI.Forms
                 model.NewBalance = CurrentCash.Current -= rAmount;
             else
             {
-                MessageBox.Show("Invalid Input", "Error");
+                MessageBox.Show("Invalid input", "Error");
                 return;
             }
+            if (MessageBox.Show("Are you sure to make the following change to cash amount?\n" +
+                                $"Previous balance : {CurrentCash.Current}\n" +
+                                $"New balance      : {model.NewBalance}", "Confirm", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+
             model = Connection[0].InsertCashModification(model);
             CashForm_Load(sender, e);
         }

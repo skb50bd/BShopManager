@@ -4,6 +4,7 @@ using ShopLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using static ShopLibrary.GlobalConfig;
@@ -58,7 +59,12 @@ namespace ShopLibrary.DataAccess
                     //CnnString("BShopMan")
                 };
 
-                _client = new MongoClient();
+                string fileName = "connectionString";
+                if (!File.Exists(fileName))
+                    File.WriteAllText(fileName, "mongodb://localhost:27017");
+                string connectionString = File.ReadLines(fileName).First();
+
+                _client = new MongoClient(connectionString);
                 _db = _client.GetDatabase("BShopManDb");
                 _log = _client.GetDatabase("BShopManLog");
             }

@@ -31,6 +31,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WinFormsUI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_Shop.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>lib\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -320,6 +326,7 @@
     <None Include="Resources\AddIcon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons8_Shop.ico" />
     <Content Include="Resources\Delete_48px_1.png" />
     <Content Include="Resources\icons8_Activity_History_512px.png" />
     <Content Include="Resources\icons8_Add_96px.png" />
