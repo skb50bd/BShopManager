@@ -6,6 +6,7 @@ using ShopLibrary.Models;
 using WinFormsUI.Forms;
 using WinFormsUI.Resources.Languages;
 using System.Globalization;
+using ExcelImporter;
 using static ShopLibrary.GlobalConfig;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
@@ -74,7 +75,7 @@ namespace WinFormsUI
                 {
                     Form form = new DashboardForm();
                     result = form.ShowDialog();
-                    //Application.Run(new Import());
+                    //Application.Run(new ImportForm());
                     if (result != DialogResult.OK)
                     {
                         Connection[0].Logout();

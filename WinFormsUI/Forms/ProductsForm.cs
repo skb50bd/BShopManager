@@ -78,7 +78,6 @@ namespace WinFormsUI.Forms {
             if (LowStockCheck.Checked)
                 _products = _products.Where(p => p.StockIsLow).ToList();
 
-
             string text = SearchProductText.Text.ToLowerInvariant();
             if (text.Length > 0) {
                 string[] tokens = text.Split();

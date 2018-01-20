@@ -71,7 +71,7 @@ namespace WinFormsUI.Forms {
         private void ReportsForm_Load(object sender, EventArgs e) {
             ReportsGrid.AutoGenerateColumns = false;
             DeleteButton.Enabled = CurrentUser.AccessLevel <= Admin;
-            report.FromDate = DateTime.Today.AddMonths(-1);
+            report.FromDate = DateTime.Today;
             FromDateTime.Value = report.FromDate;
             report.ToDate = DateTime.Now;
             ToDateTime.Value = report.ToDate;
@@ -1577,9 +1577,12 @@ namespace WinFormsUI.Forms {
                                          + @"\Brotal\" + sale.SaleId + ".pdf";
                     if (!File.Exists(outfilename))
                     {
+                        Customer _customer = new Customer();
+                        if (Customers.Exists(c => c.ObjectId == sale.CustomerId))
+                            _customer = Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId);
                         PrintSaleMemo.ToPdf(sale,
                             Shops.SingleOrDefault(s => s.ObjectId == sale.ShopId),
-                            Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId));
+                            _customer);
                     }
                     Process.Start(outfilename);
                     break;

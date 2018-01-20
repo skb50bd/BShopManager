@@ -94,9 +94,9 @@ namespace WinFormsUI.Forms
             };
 
             if (decimal.TryParse(AddAmountText.Text, out decimal aAmount) && aAmount > 0)
-                model.NewBalance = CurrentCash.Current += aAmount;
+                model.NewBalance = CurrentCash.Current + aAmount;
             else if (decimal.TryParse(RemoveAmountText.Text, out decimal rAmount) && rAmount > 0)
-                model.NewBalance = CurrentCash.Current -= rAmount;
+                model.NewBalance = CurrentCash.Current - rAmount;
             else
             {
                 MessageBox.Show("Invalid input", "Error");

@@ -159,7 +159,7 @@
             this.exportToJsonToolStripMenuItem,
             this.exportSessionLogToJsonToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // exportDatabaseToolStripMenuItem
@@ -187,7 +187,7 @@
             this.importDatabaseToolStripMenuItem,
             this.importFromExcelToolStripMenuItem});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // importDatabaseToolStripMenuItem
@@ -202,6 +202,7 @@
             this.importFromExcelToolStripMenuItem.Name = "importFromExcelToolStripMenuItem";
             this.importFromExcelToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.importFromExcelToolStripMenuItem.Text = "Import from Excel";
+            this.importFromExcelToolStripMenuItem.Click += new System.EventHandler(this.importFromExcelToolStripMenuItem_Click);
             // 
             // CurrentTimeLabel
             // 
@@ -558,6 +559,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DashboardForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shop Management";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);

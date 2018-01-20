@@ -193,7 +193,7 @@ namespace WinFormsUI.Forms {
 
             foreach (DataGridViewRow row in CustomersDataGrid.SelectedRows)
                 Connection[0].DisableCustomer(_groupedCustomers[row.Index]);
-            WireUp();
+            RefreshCustomersButton_Click(sender, e);
         }
 
         private void DeleteEntryButton_Click(object sender, EventArgs e) {
@@ -228,7 +228,7 @@ namespace WinFormsUI.Forms {
             // Todo - Show Sale / Debt Collection / Refund
         }
 
-        private void RefreshSuppliersButton_Click(object sender, EventArgs e)
+        private void RefreshCustomersButton_Click(object sender, EventArgs e)
         {
             Customers = Connection[0].GetCustomersAll();
             WireUp();

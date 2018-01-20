@@ -220,7 +220,7 @@
             // 
             this.ToDateTime.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDateTime.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
-            this.ToDateTime.CustomFormat = "dddd dd/MM/yyyy HH:mm tt";
+            this.ToDateTime.CustomFormat = "dddd dd/MM/yyyy hh:mm tt";
             this.ToDateTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ToDateTime.Location = new System.Drawing.Point(92, 77);
@@ -248,7 +248,7 @@
             // 
             this.FromDateTime.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDateTime.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
-            this.FromDateTime.CustomFormat = "dddd dd/MM/yyyy HH:mm tt";
+            this.FromDateTime.CustomFormat = "dddd dd/MM/yyyy hh:mm tt";
             this.FromDateTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FromDateTime.Location = new System.Drawing.Point(92, 28);

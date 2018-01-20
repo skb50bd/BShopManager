@@ -32,8 +32,8 @@ namespace ShopLibrary.Models
 
         #region ICashFlow Fields
         string ICashFlow.Type => PreviousBalance > NewBalance ? "Cash Decrease" : "Cash Increase";
-        decimal ICashFlow.InFlow => PreviousBalance > NewBalance ? 0 : PreviousBalance - NewBalance;
-        string ICashFlow.GetInFlow => PreviousBalance > NewBalance ? "0" : (PreviousBalance - NewBalance).ToString("0.##");
+        decimal ICashFlow.InFlow => PreviousBalance > NewBalance ? 0 : NewBalance - PreviousBalance;
+        string ICashFlow.GetInFlow => PreviousBalance > NewBalance ? "0" : (NewBalance - PreviousBalance).ToString("0.##");
         decimal ICashFlow.OutFlow => PreviousBalance > NewBalance ? (PreviousBalance - NewBalance) : 0;
         string ICashFlow.GetOutFlow => PreviousBalance > NewBalance ? (PreviousBalance - NewBalance).ToString("0.##") : "0";
         DateTime ICashFlow.TimeStamp => Meta.Created;

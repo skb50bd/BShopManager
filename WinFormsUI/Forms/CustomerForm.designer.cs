@@ -240,7 +240,7 @@
             this.CustomerIdColumn.HeaderText = "Id";
             this.CustomerIdColumn.Name = "CustomerIdColumn";
             this.CustomerIdColumn.ReadOnly = true;
-            this.CustomerIdColumn.Width = 48;
+            this.CustomerIdColumn.Width = 46;
             // 
             // FullNameColumn
             // 
@@ -248,7 +248,7 @@
             this.FullNameColumn.HeaderText = "Name";
             this.FullNameColumn.Name = "FullNameColumn";
             this.FullNameColumn.ReadOnly = true;
-            this.FullNameColumn.Width = 77;
+            this.FullNameColumn.Width = 75;
             // 
             // CurrentDueColumn
             // 
@@ -256,7 +256,7 @@
             this.CurrentDueColumn.HeaderText = "Due";
             this.CurrentDueColumn.Name = "CurrentDueColumn";
             this.CurrentDueColumn.ReadOnly = true;
-            this.CurrentDueColumn.Width = 63;
+            this.CurrentDueColumn.Width = 61;
             // 
             // CompanyNameColumn
             // 
@@ -264,7 +264,6 @@
             this.CompanyNameColumn.HeaderText = "Company";
             this.CompanyNameColumn.Name = "CompanyNameColumn";
             this.CompanyNameColumn.ReadOnly = true;
-            this.CompanyNameColumn.Width = 102;
             // 
             // CreatedColumn
             // 
@@ -272,7 +271,6 @@
             this.CreatedColumn.HeaderText = "Added on";
             this.CreatedColumn.Name = "CreatedColumn";
             this.CreatedColumn.ReadOnly = true;
-            this.CreatedColumn.Width = 102;
             // 
             // CreatorColumn
             // 
@@ -280,7 +278,7 @@
             this.CreatorColumn.HeaderText = "Added by";
             this.CreatorColumn.Name = "CreatorColumn";
             this.CreatorColumn.ReadOnly = true;
-            this.CreatorColumn.Width = 101;
+            this.CreatorColumn.Width = 99;
             // 
             // ModifiedColumn
             // 
@@ -288,7 +286,7 @@
             this.ModifiedColumn.HeaderText = "Last modified";
             this.ModifiedColumn.Name = "ModifiedColumn";
             this.ModifiedColumn.ReadOnly = true;
-            this.ModifiedColumn.Width = 129;
+            this.ModifiedColumn.Width = 127;
             // 
             // ModifierColumn
             // 
@@ -296,7 +294,7 @@
             this.ModifierColumn.HeaderText = "Modified by";
             this.ModifierColumn.Name = "ModifierColumn";
             this.ModifierColumn.ReadOnly = true;
-            this.ModifierColumn.Width = 118;
+            this.ModifierColumn.Width = 116;
             // 
             // CustomerHistoryDataGrid
             // 
@@ -350,7 +348,7 @@
             this.TypeColumn.HeaderText = "Type";
             this.TypeColumn.Name = "TypeColumn";
             this.TypeColumn.ReadOnly = true;
-            this.TypeColumn.Width = 67;
+            this.TypeColumn.Width = 65;
             // 
             // IdColumn2
             // 
@@ -358,7 +356,7 @@
             this.IdColumn2.HeaderText = "Id";
             this.IdColumn2.Name = "IdColumn2";
             this.IdColumn2.ReadOnly = true;
-            this.IdColumn2.Width = 48;
+            this.IdColumn2.Width = 46;
             // 
             // AmountColumn
             // 
@@ -366,7 +364,7 @@
             this.AmountColumn.HeaderText = "Amount";
             this.AmountColumn.Name = "AmountColumn";
             this.AmountColumn.ReadOnly = true;
-            this.AmountColumn.Width = 91;
+            this.AmountColumn.Width = 89;
             // 
             // DueColumn2
             // 
@@ -374,7 +372,7 @@
             this.DueColumn2.HeaderText = "Due";
             this.DueColumn2.Name = "DueColumn2";
             this.DueColumn2.ReadOnly = true;
-            this.DueColumn2.Width = 63;
+            this.DueColumn2.Width = 61;
             // 
             // ProfitColumn
             // 
@@ -382,7 +380,7 @@
             this.ProfitColumn.HeaderText = "Profit";
             this.ProfitColumn.Name = "ProfitColumn";
             this.ProfitColumn.ReadOnly = true;
-            this.ProfitColumn.Width = 73;
+            this.ProfitColumn.Width = 71;
             // 
             // RecordCreatedColumn
             // 
@@ -390,7 +388,6 @@
             this.RecordCreatedColumn.HeaderText = "Added on";
             this.RecordCreatedColumn.Name = "RecordCreatedColumn";
             this.RecordCreatedColumn.ReadOnly = true;
-            this.RecordCreatedColumn.Width = 102;
             // 
             // RecordCreatorColumn
             // 
@@ -398,7 +395,7 @@
             this.RecordCreatorColumn.HeaderText = "Added by";
             this.RecordCreatorColumn.Name = "RecordCreatorColumn";
             this.RecordCreatorColumn.ReadOnly = true;
-            this.RecordCreatorColumn.Width = 101;
+            this.RecordCreatorColumn.Width = 99;
             // 
             // SearchIcon
             // 
@@ -464,7 +461,7 @@
             this.ReloadCustomers.TabIndex = 7;
             this.ButtonToolTip.SetToolTip(this.ReloadCustomers, "Force refresh the customers from database");
             this.ReloadCustomers.UseVisualStyleBackColor = true;
-            this.ReloadCustomers.Click += new System.EventHandler(this.RefreshSuppliersButton_Click);
+            this.ReloadCustomers.Click += new System.EventHandler(this.RefreshCustomersButton_Click);
             // 
             // CustomerForm
             // 

@@ -4,14 +4,15 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MongoDB.Bson;
-using MongoDB.Bson.IO;
 using ShopLibrary.Models;
 using ShopLibrary.Output;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
 
-namespace WinFormsUI.Forms {
-    public partial class SaleForm : Form {
+namespace WinFormsUI.Forms
+{
+    public partial class SaleForm : Form
+    {
         #region MakeDraggable
 
         /// <summary>
@@ -27,8 +28,10 @@ namespace WinFormsUI.Forms {
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void MakeDraggable(object sender, MouseEventArgs e) {
-            if (e.Button == MouseButtons.Left) {
+        private void MakeDraggable(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
                 ReleaseCapture();
                 SendMessage(Handle, WmNclbuttondown, HtCaption, 0);
             }
@@ -43,9 +46,11 @@ namespace WinFormsUI.Forms {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NumericValueValidation(object sender, KeyPressEventArgs e) {
+        private void NumericValueValidation(object sender, KeyPressEventArgs e)
+        {
             // allows 0-9, backspace, and decimal
-            if ((e.KeyChar < 0x30 || e.KeyChar > 0x39) && e.KeyChar != 0x8 && e.KeyChar != 0x2E && e.KeyChar != 0x2D) {
+            if ((e.KeyChar < 0x30 || e.KeyChar > 0x39) && e.KeyChar != 0x8 && e.KeyChar != 0x2E && e.KeyChar != 0x2D)
+            {
                 e.Handled = true;
                 return;
             }
@@ -61,7 +66,6 @@ namespace WinFormsUI.Forms {
         #region Global Variables
 
         private Customer _customer = new Customer();
-        private List<Category> _categories;
         private List<Product> _products;
         private List<Product> _shopProducts;
         private List<Sale> _drafts;
@@ -70,34 +74,34 @@ namespace WinFormsUI.Forms {
 
         #endregion
 
-        public SaleForm() {
-            InitializeComponent();
-        }
+        public SaleForm() => InitializeComponent();
 
-        private void SaleForm_Load(object sender, EventArgs e) {
-            if (CurrentUser.AccessLevel > AppUser) {
+        private void SaleForm_Load(object sender, EventArgs e)
+        {
+            CartDataGrid.AutoGenerateColumns = false;
+
+            if (CurrentUser.AccessLevel > AppUser)
+            {
                 MessageBox.Show("Permission denied", "Error");
                 Close();
             }
 
             ShopSelectorCombo.DataSource     = null;
             ShopSelectorCombo.DataSource     = Shops;
-            NewDueText.Enabled               = false;
-            PayableTextBox.Enabled           = false;
             UnitPriceText.Enabled            = false;
             AvailableQuantityText.Enabled    = false;
-            CartDataGrid.AutoGenerateColumns = false;
 
             WireUp();
-
-            CategoryResetButton_Click(sender, e);
+            
             CustomerResetButton_Click(sender, e);
             ShopSelectorCombo.SelectedIndex = -1;
             RetailSaleRadio.Checked = false;
             WholeSaleRadio.Checked = false;
+            SearchProductText.Text = "";
         }
 
-        private void ResetForm() {
+        private void ResetForm()
+        {
             CustomerCombo.SelectedIndex        = -1;
             CompanyText.Text                   = "";
             AddressText.Text                   = "";
@@ -106,8 +110,10 @@ namespace WinFormsUI.Forms {
             DiscountPercentageText.Text        = "0";
             LessAmountText.Text                = "0";
             PaidAmountText.Text                = "0";
-            PayableTextBox.Text                = "0";
-            NewDueText.Text                    = "0";
+            PayableText.Text                   = "0";
+            FullPayableText.Text               = "0";
+            DueText.Text                       = "0";
+            FullDueText.Text                   = "0";
             TotalText.Text                     = "0 BDT";
             QuantityText.Text                  = "";
             SaleUnitPriceText.Text             = "";
@@ -117,38 +123,36 @@ namespace WinFormsUI.Forms {
             WholeSaleRadio.Enabled             = true;
         }
 
-        private void WireUp() {
+        private void WireUp()
+        {
             RefreshCustomers();
             RefreshProducts();
             RefreshSavedMemoList();
-            CategorySelectorCombo_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
-        private void ShopSelectorCombo_SelectedIndexChanged(object sender, EventArgs e) {
-            if (ShopSelectorCombo.SelectedIndex > -1) {
+        private void ShopSelectorCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ShopSelectorCombo.SelectedIndex > -1)
+            {
                 _shopProducts = Products.Where(p =>
                     p.ShopId == Shops[ShopSelectorCombo.SelectedIndex].ObjectId &&
                     p.ShopStock + p.GodownStock > 0).ToList();
-                _categories = _shopProducts.Count > 0
-                    ? Categories.Where(c => _shopProducts.Exists(p => p.Category == c.CategoryName))
-                        .ToList()
-                    : null;
 
-            } else {
-                _shopProducts = null;
-                _categories = null;
             }
-            CategorySelectorCombo.DataSource = _categories;
-            CategorySelectorCombo.SelectedIndex = -1;
-            CategorySelectorCombo_SelectedIndexChanged(sender, e);
-
+            else
+            {
+                _shopProducts = null;
+            }
             _sale.ShopId = ShopSelectorCombo.SelectedIndex > -1
                 ? Shops[ShopSelectorCombo.SelectedIndex].ObjectId
                 : ObjectId.Empty;
             _sale.Cart.Clear();
+            SearchProductText.Text = "";
+            SearchProductText_TextChanged(sender, e);
         }
 
-        private bool ValidateForm() {
+        private bool ValidateForm()
+        {
             string error = string.Empty;
             string warning = string.Empty;
 
@@ -158,36 +162,42 @@ namespace WinFormsUI.Forms {
                 LessAmountText.Text.Length == 0 ||
                 PaidAmountText.Text.Length == 0)
                 error += "Must input Cash Amounts\n";
-            if (_sale.Cart.Count == 0)
+            if (_customer.Debt == 0 && _sale.Cart.Count == 0)
                 error += "No Items in the Cart\n";
 
             if (ShopSelectorCombo.SelectedIndex < 0)
                 error += "Shop not selected\n";
 
-            if (error.Length > 0) {
+            if (error.Length > 0)
+            {
                 MessageBox.Show("These errors occurred during validation:\n" + error, "Error");
                 return false;
             }
             return true;
         }
 
-        private void SubmitButton_Click(object sender, EventArgs e) {
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
             if (!ValidateForm())
                 return;
 
-            _sale.CustomerName    = CustomerNameText.Text;
+            _sale.CustomerName = CustomerNameText.Text;
             _sale.CustomerCompany = CompanyText.Text;
             _sale.CustomerAddress = AddressText.Text;
-            _sale.Note            = NotesText.Text;
-            _sale.SaleType        = WholeSaleRadio.Checked
+            _sale.Note = NotesText.Text;
+            _sale.SaleType = WholeSaleRadio.Checked
                 ? SaleType.WholeSale
                 : SaleType.RetailSale;
             _sale.DealTime = SaleDateTime.Value;
 
-            if (CustomerCombo.SelectedIndex > -1) {
+            if (CustomerCombo.SelectedIndex > -1)
+            {
                 _sale.CustomerId = _customer.ObjectId;
-            } else {
-                if (_sale.Due > 0) {
+            }
+            else
+            {
+                if (_sale.Due > 0)
+                {
                     DialogResult result = MessageBox.Show("Non-documented customers should not enjoy late payments\n" +
                                                           "Do you want to continue anyway?",
                         "Confirm",
@@ -198,7 +208,8 @@ namespace WinFormsUI.Forms {
                 _sale.CustomerId = ObjectId.Empty;
             }
 
-            if (sender as Button == SubmitButton) {
+            if (sender as Button == SubmitButton)
+            {
                 DialogResult confirm = MessageBox.Show("Are you sure want to register this sale?\n" +
                                                        $"Customer Name\t\t: {_sale.CustomerName}\n" +
                                                        $"Customer Company\t: {_sale.CustomerCompany}\n" +
@@ -211,16 +222,21 @@ namespace WinFormsUI.Forms {
                 if (confirm != DialogResult.Yes)
                     return;
 
-                try {
+                try
+                {
                     _sale = Connection[0].InsertSale(_sale);
                     PrintSaleMemo.ToPdf(_sale, Shops[ShopSelectorCombo.SelectedIndex], _customer);
                     ReloadButton_Click(sender, e);
                     SaleForm_Load(sender, e);
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
                     return;
                 }
-            } else {
+            }
+            else if (sender as Button == SaveButton)
+            {
                 DialogResult confirm = MessageBox.Show("Are you sure want to save this sale?\n" +
                                                        $"Customer Name\t\t: {_sale.CustomerName}\n" +
                                                        $"Customer Company\t: {_sale.CustomerCompany}\n" +
@@ -232,10 +248,13 @@ namespace WinFormsUI.Forms {
                     MessageBoxButtons.YesNo);
                 if (confirm != DialogResult.Yes)
                     return;
-                try {
+                try
+                {
                     _sale = Connection[0].SaveSale(_sale);
                     SaleForm_Load(sender, e);
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
                     return;
                 }
@@ -245,13 +264,15 @@ namespace WinFormsUI.Forms {
 
         #region Sale Type
 
-        private void RetailSaleRadio_CheckedChanged(object sender, EventArgs e) {
+        private void RetailSaleRadio_CheckedChanged(object sender, EventArgs e)
+        {
             WholeSaleRadio.Enabled = false;
             RetailSaleRadio.Enabled = false;
             //_sale.Cart.Clear();
         }
 
-        private void WholeSaleRadio_CheckedChanged(object sender, EventArgs e) {
+        private void WholeSaleRadio_CheckedChanged(object sender, EventArgs e)
+        {
             RetailSaleRadio.Enabled = false;
             WholeSaleRadio.Enabled = false;
             //_sale.Cart.Clear();
@@ -261,46 +282,58 @@ namespace WinFormsUI.Forms {
 
         #region Customer
 
-        private void RefreshCustomers() {
+        private void RefreshCustomers()
+        {
             CustomerCombo.DataSource = null;
             CustomerCombo.DataSource = Customers;
         }
 
-        private void CustomerCombo_SelectedIndexChanged(object sender, EventArgs e) {
-            if (CustomerCombo.SelectedIndex > -1) {
+        private void CustomerCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CustomerCombo.SelectedIndex > -1)
+            {
                 _customer = Customers[CustomerCombo.SelectedIndex];
                 CustomerNameText.Text = _customer.FullName;
                 CompanyText.Text = _customer.CompanyName;
                 AddressText.Text = _customer.Address;
-                CurrentDueText.Text = _customer.GetDebt + " Tk";
-            } else {
+                PreviousDueText.Text = _customer.GetDebt + " Tk";
+            }
+            else
+            {
                 _customer = new Customer();
                 CustomerNameText.Text = "";
                 CompanyText.Text = "";
                 AddressText.Text = "";
-                CurrentDueText.Text = "0 Tk";
+                PreviousDueText.Text = "0 Tk";
             }
+            UpdateFields();
         }
 
-        private void CustomerResetButton_Click(object sender, EventArgs e) {
+        private void CustomerResetButton_Click(object sender, EventArgs e)
+        {
             CustomerCombo.SelectedIndex = -1;
             CustomerCombo_SelectedIndexChanged(sender, e);
         }
 
-        private void AddCustomerButton_Click(object sender, EventArgs e) {
+        private void AddCustomerButton_Click(object sender, EventArgs e)
+        {
             Form form = new CustomerInformationForm();
             DialogResult result = form.ShowDialog();
 
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
                 RefreshCustomers();
             }
         }
 
 
-        private void ViewCustomerButton_Click(object sender, EventArgs e) {
-            if (CustomerCombo.SelectedIndex > -1) {
+        private void ViewCustomerButton_Click(object sender, EventArgs e)
+        {
+            if (CustomerCombo.SelectedIndex > -1)
+            {
                 foreach (Form form in Application.OpenForms)
-                    if (form is CustomerForm) {
+                    if (form is CustomerForm)
+                    {
                         form.Show();
                         if (form.WindowState == FormWindowState.Minimized)
                             form.WindowState = FormWindowState.Normal;
@@ -311,10 +344,13 @@ namespace WinFormsUI.Forms {
             }
         }
 
-        private void CustomerCombo_MouseDoubleClick(object sender, MouseEventArgs e) {
-            if (CustomerCombo.SelectedIndex > -1) {
+        private void CustomerCombo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (CustomerCombo.SelectedIndex > -1)
+            {
                 foreach (Form form in Application.OpenForms)
-                    if (form is CustomerForm) {
+                    if (form is CustomerForm)
+                    {
                         form.Show();
                         if (form.WindowState == FormWindowState.Minimized)
                             form.WindowState = FormWindowState.Normal;
@@ -329,13 +365,16 @@ namespace WinFormsUI.Forms {
 
         #region Product
 
-        private void RefreshProducts() {
+        private void RefreshProducts()
+        {
             ProductSelectorCombo.DataSource = null;
             Products = Connection[0].GetProductsAll();
         }
 
-        private void ProductSelectorCombo_SelectedIndexChanged(object sender, EventArgs e) {
-            if (ProductSelectorCombo.SelectedIndex > -1) {
+        private void ProductSelectorCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ProductSelectorCombo.SelectedIndex > -1)
+            {
                 _product = _products[ProductSelectorCombo.SelectedIndex];
                 AvailableQuantityText.Text = "S- " + _product.GetShopStock + " G- " + _product.GetGodownStock;
                 SaleUnitPriceText.Text =
@@ -346,7 +385,9 @@ namespace WinFormsUI.Forms {
                 UnitSelectorCombo.DataSource = null;
                 UnitSelectorCombo.DataSource = _product.Units;
                 SaleNetPriceText.Text = "";
-            } else {
+            }
+            else
+            {
                 AvailableQuantityText.Text = "";
                 UnitPriceText.Text = "";
                 SaleUnitPriceText.Text = "";
@@ -357,9 +398,11 @@ namespace WinFormsUI.Forms {
         }
 
 
-        private void UnitSelectorCombo_SelectedIndexChanged(object sender, EventArgs e) {
+        private void UnitSelectorCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
             int index = UnitSelectorCombo.SelectedIndex;
-            if (index > -1) {
+            if (index > -1)
+            {
                 SaleUnitPriceText.Text = WholeSaleRadio.Checked
                     ? (_product.WholeSalePrice / (decimal)_product.Units[index].Weight).ToString("0.##")
                     : (_product.RetailPrice / (decimal)_product.Units[index].Weight).ToString("0.##");
@@ -367,62 +410,29 @@ namespace WinFormsUI.Forms {
                     SaleNetPriceText.Text = (decimal.Parse(SaleUnitPriceText.Text) * (decimal)q).ToString("0.##");
                 else
                     SaleNetPriceText.Text = "";
-            } else {
+            }
+            else
+            {
                 SaleUnitPriceText.Text = "";
                 SaleNetPriceText.Text = "";
             }
         }
 
-
-        #region Category and Specification
-
-        private void CategoryResetButton_Click(object sender, EventArgs e) {
-            CategorySelectorCombo.SelectedIndex = -1;
-            CategorySelectorCombo_SelectedIndexChanged(sender, e);
-        }
-
-        private void CategorySelectorCombo_SelectedIndexChanged(object sender, EventArgs e) {
-            SpecificationSelectorCombo.DataSource = null;
-            if (CategorySelectorCombo.SelectedIndex > -1) {
-                _products = _shopProducts.Where(p => p.Category == CategorySelectorCombo.Text).ToList();
-                SpecificationSelectorCombo.DataSource = Categories
-                    .FirstOrDefault(c => c.CategoryName == CategorySelectorCombo.Text).Specifications;
-            } else {
-                _products = _shopProducts;
-            }
-            SpecificationResetButton_Click(sender, e);
-        }
-
-        private void SpecificationResetButton_Click(object sender, EventArgs e) {
-            SpecificationSelectorCombo.SelectedIndex = -1;
-            SpecificationSelectorCombo_SelectedIndexChanged(sender, e);
-
-        }
-
-        private void SpecificationSelectorCombo_SelectedIndexChanged(object sender, EventArgs e) {
-            if (SpecificationSelectorCombo.SelectedIndex > -1)
-                _products = _shopProducts.Where(p => p.Category == CategorySelectorCombo.Text
-                                                     && p.Specification == SpecificationSelectorCombo.Text).ToList();
-            ProductSelectorCombo.DataSource = null;
-            ProductSelectorCombo.DataSource = _products;
-        }
-
-        #endregion
-
         #endregion
 
         #region Cart
 
-        private bool ProductValidation() {
+        private bool ProductValidation()
+        {
             string error = String.Empty;
 
             if (ProductSelectorCombo.SelectedIndex < 0)
                 error += "No product is selected. Please select a product properly.\n";
             if (UnitSelectorCombo.SelectedIndex < 0)
                 error += "Unit is invalid. Please select a corresponding unit for the product\n";
-            if (!float.TryParse(QuantityText.Text, out float q) || q < 0 ||
-                _product.TotalStock < q * _product.Units[UnitSelectorCombo.SelectedIndex].Weight)
-                error += "QuantityColumn is more than available or invalid\n";
+            //if (!float.TryParse(QuantityText.Text, out float q) || q < 0 ||
+            //    _product.TotalStock < q * _product.Units[UnitSelectorCombo.SelectedIndex].Weight)
+            //    error += "QuantityColumn is more than available or invalid\n";
             if (!decimal.TryParse(SaleUnitPriceText.Text, out decimal up) || up < 0)
                 error += "Selling unit price is invalid\n";
             if (!decimal.TryParse(SaleNetPriceText.Text, out decimal np) || np < 0)
@@ -431,22 +441,26 @@ namespace WinFormsUI.Forms {
                 error += "\nThis product already exists in the cart.\n" +
                          "Remove the previous to add again\n";
 
-            if (error.Length > 0) {
+            if (error.Length > 0)
+            {
                 MessageBox.Show("Following errors occurred adding the product to sell cart:\n" + error, "Information");
                 return false;
             }
             return true;
         }
 
-        private void AddToCartButton_Click(object sender, EventArgs e) {
+        private void AddToCartButton_Click(object sender, EventArgs e)
+        {
             if (!ProductValidation())
                 return;
-            if (!RetailSaleRadio.Checked && !WholeSaleRadio.Checked) {
+            if (!RetailSaleRadio.Checked && !WholeSaleRadio.Checked)
+            {
                 MessageBox.Show("Select retail or whole sale", "Info");
                 return;
             }
 
-            ShoppingCart sc = new ShoppingCart {
+            ShoppingCart sc = new ShoppingCart
+            {
                 ProductId = _product.ObjectId,
                 ProductName = _product.ProductName,
                 UnitPrice = decimal.Parse(SaleUnitPriceText.Text),
@@ -460,7 +474,8 @@ namespace WinFormsUI.Forms {
             UpdateFields();
         }
 
-        private void RemoveSelectedButton_Click(object sender, EventArgs e) {
+        private void RemoveSelectedButton_Click(object sender, EventArgs e)
+        {
             if (CartDataGrid.CurrentCell.RowIndex > -1)
                 _sale.Cart.RemoveAt(CartDataGrid.CurrentCell.RowIndex);
             UpdateFields();
@@ -472,24 +487,28 @@ namespace WinFormsUI.Forms {
 
         private void UpdateFields()
         {
-            _sale.TotalAmount           = _sale.Cart.Sum(sc => sc.NetPrice);
-            CartDataGrid.DataSource     = null;
-            CartDataGrid.DataSource     = _sale.Cart;
-            TotalText.Text              = _sale.GetTotalAmount;
+            _sale.TotalAmount = _sale.Cart.Sum(sc => sc.NetPrice);
+            CartDataGrid.DataSource = null;
+            CartDataGrid.DataSource = _sale.Cart;
+            TotalText.Text = _sale.GetTotalAmount;
             DiscountPercentageText.Text = _sale.GetDiscount;
-            LessAmountText.Text         = _sale.GetLess;
-            PayableTextBox.Text         = _sale.GetPayable;
-            PaidAmountText.Text         = _sale.GetPaid;
-            NewDueText.Text             = _sale.GetDue;
+            LessAmountText.Text = _sale.GetLess;
+            PreviousDueText.Text = _customer.GetDebt;
+            PayableText.Text = _sale.GetPayable;
+            FullPayableText.Text = (_sale.Payable + _customer.Debt).ToString("0.##");
+            PaidAmountText.Text = _sale.GetPaid;
+            DueText.Text = _sale.Due < 0
+                ? "0"
+                : _sale.GetDue; ;
+            FullDueText.Text = (_sale.Payable + _customer.Debt - _sale.Paid).ToString("0.##");
         }
 
         private void DiscountText_Leave(object sender, EventArgs e)
         {
-            _sale.TotalAmount           = _sale.Cart.Sum(sc => sc.NetPrice);
+            _sale.TotalAmount = _sale.Cart.Sum(sc => sc.NetPrice);
             if ((sender as TextBox) == DiscountPercentageText
-                && float.TryParse(DiscountPercentageText.Text, out float dp) && dp >= 0 && dp <= 100
-                && !decimal.TryParse(LessAmountText.Text, out decimal l))
-                _sale.Less = _sale.TotalAmount * (decimal) dp / 100;
+                && float.TryParse(DiscountPercentageText.Text, out float dp) && dp >= 0 && dp <= 100)
+                _sale.Less = _sale.TotalAmount * (decimal)dp / 100;
             UpdateFields();
         }
 
@@ -497,8 +516,10 @@ namespace WinFormsUI.Forms {
 
         #region Drafts
 
-        private void LoadSale() {
-            try {
+        private void LoadSale()
+        {
+            try
+            {
                 RetailSaleRadio.Checked = _sale.SaleType == SaleType.RetailSale;
                 WholeSaleRadio.Checked = _sale.SaleType == SaleType.WholeSale;
                 ShopSelectorCombo.SelectedIndex = Shops.FindIndex(s => s.ObjectId == _sale.ShopId);
@@ -508,29 +529,38 @@ namespace WinFormsUI.Forms {
                 CompanyText.Text = _sale.CustomerCompany;
                 AddressText.Text = _sale.CustomerAddress;
                 NotesText.Text = _sale.Note;
+                CartDataGrid.DataSource = _sale.Cart;
                 UpdateFields();
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Console.WriteLine(e);
                 throw;
             }
         }
 
-        private void RefreshSavedMemoList() {
+        private void RefreshSavedMemoList()
+        {
             SavedMemoList.DataSource = null;
             _drafts = Connection[0].GetSavedSaleAll();
             SavedMemoList.DataSource = _drafts;
         }
 
-        private void LoadSavedMemoButton_Click(object sender, EventArgs e) {
-            if (SavedMemoList.SelectedIndex > -1) {
+        private void LoadSavedMemoButton_Click(object sender, EventArgs e)
+        {
+            if (SavedMemoList.SelectedIndex > -1)
+            {
                 _sale = _drafts[SavedMemoList.SelectedIndex];
                 LoadSale();
-            } else
+            }
+            else
                 MessageBox.Show("Invalid selection", "Error");
         }
 
-        private void RemoveSavedMemoButton_Click(object sender, EventArgs e) {
-            if (SavedMemoList.SelectedIndex > -1) {
+        private void RemoveSavedMemoButton_Click(object sender, EventArgs e)
+        {
+            if (SavedMemoList.SelectedIndex > -1)
+            {
                 Connection[0].DeleteSavedSale(_drafts[SavedMemoList.SelectedIndex]);
 
                 _drafts.RemoveAt(SavedMemoList.SelectedIndex);
@@ -541,49 +571,185 @@ namespace WinFormsUI.Forms {
 
         #endregion
 
-        private void ReloadButton_Click(object sender, EventArgs e) {
+        private void ReloadButton_Click(object sender, EventArgs e)
+        {
             Customers = Connection[0].GetCustomersAll();
             Shops = Connection[0].GetShopsAll();
             Products = Connection[0].GetProductsAll();
             WireUp();
         }
 
-        private void QuantityText_TextChanged(object sender, EventArgs e) {
-            if (float.TryParse(QuantityText.Text, out float q)) {
-                if (q > 0) {
+        private void QuantityText_TextChanged(object sender, EventArgs e)
+        {
+            if (float.TryParse(QuantityText.Text, out float q))
+            {
+                if (q > 0)
+                {
                     if (decimal.TryParse(SaleUnitPriceText.Text, out decimal up) && up > 0)
                         SaleNetPriceText.Text = ((decimal)q * up).ToString("0.##");
                     else if (decimal.TryParse(SaleNetPriceText.Text, out decimal np) && np > 0)
                         SaleUnitPriceText.Text = (np / (decimal)q).ToString("0.##");
-                } else if (q < 0)
+                }
+                else if (q < 0)
                     QuantityText.Text = "0";
-            } else
+            }
+            else
                 QuantityText.Text = "";
         }
 
-        private void SaleUnitPriceText_TextChanged(object sender, EventArgs e) {
+        private void SaleUnitPriceText_TextChanged(object sender, EventArgs e)
+        {
             if (decimal.TryParse(SaleUnitPriceText.Text, out decimal up) && up > 0)
                 if (float.TryParse(QuantityText.Text, out float q) && q > 0)
                     SaleNetPriceText.Text = (up * (decimal)q).ToString("0.##");
         }
 
-        private void SaleNetPriceText_TextChanged(object sender, EventArgs e) {
+        private void SaleNetPriceText_TextChanged(object sender, EventArgs e)
+        {
             if (decimal.TryParse(SaleNetPriceText.Text, out decimal np) && np > 0)
                 if (float.TryParse(QuantityText.Text, out float q) && q > 0)
                     SaleUnitPriceText.Text = (np / (decimal)q).ToString("0.##");
         }
 
-        private void LessAmountText_TextChanged(object sender, EventArgs e) {
-            if (decimal.TryParse(LessAmountText.Text, out decimal l) && l >= 0 && l <= _sale.TotalAmount) {
+        private void LessAmountText_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(LessAmountText.Text, out decimal l) && l >= 0 && l <= _sale.TotalAmount)
+            {
                 _sale.Less = l;
             }
         }
 
-        private void PaidAmountText_TextChanged(object sender, EventArgs e) {
-            if (decimal.TryParse(PaidAmountText.Text, out decimal p) && p >= 0 && p <= _sale.Payable) {
+        private void PaidAmountText_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(PaidAmountText.Text, out decimal p) && p >= 0 && p <= _sale.Payable + _customer.Debt)
+            {
                 _sale.Paid = p;
-                NewDueText.Text = _sale.GetDue;
+                DueText.Text = _sale.Due < 0
+                    ? "0"
+                    : _sale.GetDue;
+                FullDueText.Text = (_customer.Debt + _sale.Payable - p).ToString("0.##");
             }
         }
+
+        private void SearchProductText_TextChanged(object sender, EventArgs e)
+        {
+            string text = SearchProductText.Text;
+
+            ProductSelectorCombo.DataSource = null;
+            if (text.Length == 0)
+                _products = _shopProducts;
+            else
+            {
+
+                text = text.ToLowerInvariant();
+                if (text.Length > 0)
+                {
+                    string[] tokens = text.Split();
+                    if (tokens.Length == 1 && text.Substring(0, 1).ToLowerInvariant() == "p")
+                        _products = _shopProducts
+                            .Where(p => p.ProductId.ToLowerInvariant().Contains(text))
+                            .ToList();
+                    else
+                        _products = _shopProducts
+                            .Where(p =>
+                                p.ProductName.ToLowerInvariant().Contains(text)
+                                || p.Category.ToLowerInvariant().Contains(text)
+                                || p.Specification.ToLowerInvariant().Contains(text))
+                            .ToList();
+                }
+            }
+                ProductSelectorCombo.DataSource = _products;
+        }
+
+        #region Key Downs
+        private void CustomerCombo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                CustomerNameText.Focus();
+        }
+
+        private void CustomerNameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                CompanyText.Focus();
+        }
+
+        private void CompanyText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                AddressText.Focus();
+        }
+
+        private void AddressText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                NotesText.Focus();
+        }
+
+        private void SearchProductText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ProductSelectorCombo.Focus();
+        }
+
+        private void RetailSaleRadio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SearchProductText.Focus();
+        }
+
+        private void ProductSelectorCombo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                QuantityText.Focus();
+        }
+
+        private void QuantityText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                UnitPriceText.Focus();
+        }
+
+        private void UnitSelectorCombo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                UnitPriceText.Focus();
+        }
+
+        private void SaleUnitPriceText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SaleNetPriceText.Focus();
+        }
+
+        private void SaleNetPriceText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                AddToCartButton.Focus();
+        }
+
+        private void AddToCartButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SearchProductText.Focus();
+        }
+        private void DiscountPercentageText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                LessAmountText.Focus();
+        }
+
+        private void LessAmountText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                PaidAmountText.Focus();
+        }
+
+        private void PaidAmountText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SubmitButton.Focus();
+        }
+        #endregion
     }
 }

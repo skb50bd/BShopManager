@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iTextSharp.text.pdf;
+using MongoDB.Bson;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 
@@ -15,7 +16,8 @@ namespace ShopLibrary.Output
     {
         public static void ToPdf(Sale sale, Shop shop, Customer customer)
         {
-            string infilename = "SaleMemorandumTemp.pdf";
+            string infilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                                + @"\Brotal\SaleMemorandumTemp.pdf";
             if (!File.Exists(infilename))
             {
                 Debug.WriteLine("The template sale memo is missing from the application directory\n" +
@@ -27,7 +29,6 @@ namespace ShopLibrary.Output
 
             using (FileStream outFile = new FileStream(outfilename, FileMode.Create))
             {
-
                 PdfReader reader = new PdfReader(infilename);
                 PdfStamper stamper = new PdfStamper(reader, outFile);
                 AcroFields form = stamper.AcroFields;
@@ -38,13 +39,22 @@ namespace ShopLibrary.Output
                 form.SetField("ShopAddress", shop.Address);
                 form.SetField("ShopContacts",
                     string.Join(", ", shop.ContactNumbers) + " - " + string.Join(", ", shop.EmailAddresses));
-                form.SetField("Date", sale.DealTime.ToLocalTime().ToString("dd/mm/yyyy hh:mm tt"));
+                form.SetField("Date", sale.DealTime.ToLocalTime().ToString("dd MMM yyyy"));
                 form.SetField("Memo", sale.SaleId);
-                form.SetField("Customer Id", sale.GetCustomerId);
+
+                if (sale.CustomerId != ObjectId.Empty)
+                {
+                    form.SetField("Customer Id", sale.GetCustomerId);
+                    form.SetField("Customer Phone", Customers.Single(c => c.ObjectId == sale.CustomerId).Phone);
+                }
+                else
+                {
+                    form.SetField("Customer Id", "N/A");
+                    form.SetField("Customer Phone", "N/A");
+                }
                 form.SetField("Customer Name", sale.CustomerName);
                 form.SetField("Customer Company", sale.CustomerCompany);
                 form.SetField("Customer Address", sale.CustomerAddress);
-                form.SetField("Customer Phone", Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId).Phone);
 
                 // FILL UP THE TABLE
                 int i = 1;
@@ -63,9 +73,8 @@ namespace ShopLibrary.Output
                 form.SetField("PreviousDue", customer.GetDebt);
                 form.SetField("TotalPayable", (customer.Debt + sale.Payable).ToString("0.##"));
                 form.SetField("Paid", sale.GetPaid);
-                form.SetField("CurrentDue", (sale.Payable - sale.Paid).ToString("0.##"));
+                form.SetField("CurrentDue", (customer.Debt + sale.Payable - sale.Paid).ToString("0.##"));
                 form.SetField("Quotation", "Thanks for shopping with us");
-                // TODO - Complete These Fields
 
                 stamper.Close();
                 reader.Close();

@@ -36,6 +36,23 @@ namespace WinFormsUI.Forms {
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            if (CurrentUser.AccessLevel > UserRole.Admin)
+            {
+                BankTransactionButton.Enabled = false;
+                CashButton.Enabled            = false;
+                CustomersButton.Enabled       = false;
+                EmployeeButton.Enabled        = false;
+                ExpenseButton.Enabled         = false;
+                ItemsButton.Enabled           = false;
+                OptionsDropDown.Enabled       = false;
+                PurchaseButton.Enabled        = false;
+                PurchaseReturnButton.Enabled  = false;
+                RecordsButton.Enabled         = false;
+                ShopSettingsButton.Enabled    = false;
+                SuppliersButton.Enabled       = false;
+                UserSettingsButton.Enabled    = false;
+            }
+
             CurrentUserName.Text = CurrentUser.FullName;
             CurrentTimeLabel.Text = " | " + DateTime.Now.ToLocalTime().ToString("ddd, dd/MM/yyyy, hh:mm tt") + " | ";
             UpdateTimeTimer.Start();
@@ -319,5 +336,10 @@ namespace WinFormsUI.Forms {
         private void UpdateTimeTimer_Tick(object sender, EventArgs e) => CurrentTimeLabel.Text = " | " + DateTime.Now.ToLocalTime().ToString("ddd, dd/MM/yyyy hh:mm tt");
 
         private void importDatabaseToolStripMenuItem_Click(object sender, EventArgs e) => RestoreDb();
+
+        private void importFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
