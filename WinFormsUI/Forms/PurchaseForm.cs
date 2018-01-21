@@ -83,10 +83,10 @@ namespace WinFormsUI.Forms {
         #region Supplier
 
         private void RefreshSuppliersFields() {
-            CurrentPayableText.Text = _supplier.GetPayable;
+            RefreshAmounts();
             SupplierNameText.Text = _supplier.FullName;
-            CompanyText.Text = _supplier.CompanyName;
-            AddressText.Text = _supplier.Address;
+            CompanyText.Text      = _supplier.CompanyName;
+            AddressText.Text      = _supplier.Address;
         }
 
         private void RefreshSuppliers() {
@@ -237,12 +237,16 @@ namespace WinFormsUI.Forms {
 
         private void RefreshAmounts() {
             TotalText.Text = _purchase.TotalAmount.ToString("0.##") + " Tk";
-
+            PreviousDueText.Text = _supplier.GetPayable;
             LessAmountText.Text = _purchase.GetLess;
-            PayableTextBox.Text = _purchase.GetPayable;
+            PayableText.Text = _purchase.GetPayable;
+            FullPayableText.Text = (_supplier.Payable + _purchase.Due).ToString("0.##");
             DiscountPercentageText.Text = _purchase.GetDiscount;
-            NewDueText.Text = _purchase.GetDue;
-
+            PaidAmountText.Text = _purchase.GetPaid;
+            DueText.Text = _purchase.Due < 0
+                ? "0"
+                : _purchase.GetDue;
+            FullDueText.Text = (_purchase.Due + _supplier.Payable).ToString("0.##");
         }
 
         #endregion
@@ -252,17 +256,12 @@ namespace WinFormsUI.Forms {
         private void LoadVouchar() {
             try {
                 SupplierCombo.SelectedIndex = Suppliers.FindIndex(s => s.ObjectId == _purchase.SupplierId);
-                CurrentPayableText.Text     = _supplier.GetPayable;
+                PayableText.Text            = _purchase.GetPayable;
                 SupplierNameText.Text       = _purchase.SupplierName;
                 CompanyText.Text            = _purchase.SupplierCompany;
                 AddressText.Text            = _purchase.SupplierAddress;
                 NotesText.Text              = _purchase.Note;
-                TotalText.Text              = _purchase.TotalAmount.ToString("0.##") + " Tk";
-                DiscountPercentageText.Text = _purchase.GetDiscount;
-                LessAmountText.Text         = _purchase.GetLess;
-                PayableTextBox.Text         = _purchase.GetPayable;
-                PaidAmountText.Text         = _purchase.GetPaid;
-                NewDueText.Text             = _purchase.GetDue;
+                RefreshAmounts();
                 RefreshCart();
             } catch (Exception e) {
                 Debug.WriteLine(e);
@@ -473,13 +472,8 @@ namespace WinFormsUI.Forms {
             RefreshProducts();
             ResetSupplierButton_Click(this, EventArgs.Empty);
             ResetProductButton_Click(this, EventArgs.Empty);
-            TotalText.Text              = "0 Tk";
-            DiscountPercentageText.Text = "";
-            LessAmountText.Text         = "";
-            PayableTextBox.Text         = "";
-            PaidAmountText.Text         = "";
-            NewDueText.Text             = "";
-            CartDataGrid.DataSource     = null;
+            RefreshAmounts();
+            RefreshCart();
             RefreshSavedVoucharList();
         }
 
@@ -496,9 +490,8 @@ namespace WinFormsUI.Forms {
             if (decimal.TryParse(PaidAmountText.Text, out decimal p))
             {
                 _purchase.Paid = p;
-                NewDueText.Text = _purchase.GetDue;
+                RefreshAmounts();
             }
-            else NewDueText.Text = "";
         }
     }
 }

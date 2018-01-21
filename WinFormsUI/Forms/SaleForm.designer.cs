@@ -151,10 +151,10 @@
             this.QuantityText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.QuantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuantityText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityText.Location = new System.Drawing.Point(105, 151);
+            this.QuantityText.Location = new System.Drawing.Point(87, 151);
             this.QuantityText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.QuantityText.Name = "QuantityText";
-            this.QuantityText.Size = new System.Drawing.Size(117, 22);
+            this.QuantityText.Size = new System.Drawing.Size(135, 22);
             this.QuantityText.TabIndex = 11;
             this.QuantityText.TextChanged += new System.EventHandler(this.QuantityText_TextChanged);
             this.QuantityText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuantityText_KeyDown);
@@ -219,10 +219,10 @@
             this.ProductSelectorCombo.BackColor = System.Drawing.Color.White;
             this.ProductSelectorCombo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductSelectorCombo.FormattingEnabled = true;
-            this.ProductSelectorCombo.Location = new System.Drawing.Point(105, 82);
+            this.ProductSelectorCombo.Location = new System.Drawing.Point(87, 82);
             this.ProductSelectorCombo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ProductSelectorCombo.Name = "ProductSelectorCombo";
-            this.ProductSelectorCombo.Size = new System.Drawing.Size(261, 29);
+            this.ProductSelectorCombo.Size = new System.Drawing.Size(279, 29);
             this.ProductSelectorCombo.TabIndex = 7;
             this.ProductSelectorCombo.SelectedIndexChanged += new System.EventHandler(this.ProductSelectorCombo_SelectedIndexChanged);
             this.ProductSelectorCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductSelectorCombo_KeyDown);
@@ -279,10 +279,10 @@
             this.AddToCartButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddToCartButton.ForeColor = System.Drawing.Color.White;
             this.AddToCartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddToCartButton.Location = new System.Drawing.Point(105, 213);
+            this.AddToCartButton.Location = new System.Drawing.Point(87, 213);
             this.AddToCartButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddToCartButton.Name = "AddToCartButton";
-            this.AddToCartButton.Size = new System.Drawing.Size(261, 42);
+            this.AddToCartButton.Size = new System.Drawing.Size(279, 42);
             this.AddToCartButton.TabIndex = 17;
             this.AddToCartButton.Text = "Add";
             this.AddToCartButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -491,10 +491,10 @@
             this.UnitPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.UnitPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UnitPriceText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitPriceText.Location = new System.Drawing.Point(105, 120);
+            this.UnitPriceText.Location = new System.Drawing.Point(87, 120);
             this.UnitPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.UnitPriceText.Name = "UnitPriceText";
-            this.UnitPriceText.Size = new System.Drawing.Size(117, 22);
+            this.UnitPriceText.Size = new System.Drawing.Size(135, 22);
             this.UnitPriceText.TabIndex = 8;
             // 
             // AvailableQuantityText
@@ -801,10 +801,10 @@
             this.SearchProductText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.SearchProductText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchProductText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchProductText.Location = new System.Drawing.Point(105, 51);
+            this.SearchProductText.Location = new System.Drawing.Point(87, 51);
             this.SearchProductText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SearchProductText.Name = "SearchProductText";
-            this.SearchProductText.Size = new System.Drawing.Size(261, 22);
+            this.SearchProductText.Size = new System.Drawing.Size(279, 22);
             this.SearchProductText.TabIndex = 19;
             this.SearchProductText.TextChanged += new System.EventHandler(this.SearchProductText_TextChanged);
             this.SearchProductText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProductText_KeyDown);
@@ -839,10 +839,10 @@
             this.SaleUnitPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.SaleUnitPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SaleUnitPriceText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaleUnitPriceText.Location = new System.Drawing.Point(105, 182);
+            this.SaleUnitPriceText.Location = new System.Drawing.Point(87, 182);
             this.SaleUnitPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SaleUnitPriceText.Name = "SaleUnitPriceText";
-            this.SaleUnitPriceText.Size = new System.Drawing.Size(85, 22);
+            this.SaleUnitPriceText.Size = new System.Drawing.Size(103, 22);
             this.SaleUnitPriceText.TabIndex = 14;
             this.SaleUnitPriceText.TextChanged += new System.EventHandler(this.SaleUnitPriceText_TextChanged);
             this.SaleUnitPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleUnitPriceText_KeyDown);
