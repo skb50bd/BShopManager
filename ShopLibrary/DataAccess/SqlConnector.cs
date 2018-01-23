@@ -257,6 +257,7 @@ namespace ShopLibrary.DataAccess {
         public List<CashModification> GetCashModificationAll() => throw new NotImplementedException();
         public bool DeleteCashModification(CashModification model) => throw new NotImplementedException();
         public Cash GetCurrentCash() => throw new NotImplementedException();
+        public Sale InsertOldSale(Sale model) => throw new NotImplementedException();
 
         //        public BankAccount InsertBankAccount(BankAccount model) {
         //            model.Id = 0;

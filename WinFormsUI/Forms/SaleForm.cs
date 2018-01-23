@@ -79,6 +79,8 @@ namespace WinFormsUI.Forms
         private void SaleForm_Load(object sender, EventArgs e)
         {
             CartDataGrid.AutoGenerateColumns = false;
+            CartDataGrid.SelectionMode       = DataGridViewSelectionMode.FullRowSelect;
+            SaleDateTime.Value               = DateTime.Now.ToLocalTime();
 
             if (CurrentUser.AccessLevel > AppUser)
             {
@@ -95,9 +97,9 @@ namespace WinFormsUI.Forms
             
             CustomerResetButton_Click(sender, e);
             ShopSelectorCombo.SelectedIndex = -1;
-            RetailSaleRadio.Checked = false;
-            WholeSaleRadio.Checked = false;
-            SearchProductText.Text = "";
+            RetailSaleRadio.Checked         = false;
+            WholeSaleRadio.Checked          = false;
+            SearchProductText.Text          = "";
         }
 
         private void ResetForm()
@@ -472,6 +474,7 @@ namespace WinFormsUI.Forms
             _sale.TotalAmount = _sale.Cart.Sum(c => c.NetPrice);
             ProductSelectorCombo.SelectedIndex = -1;
             UpdateFields();
+            SearchProductText.Focus();
         }
 
         private void RemoveSelectedButton_Click(object sender, EventArgs e)
@@ -707,13 +710,7 @@ namespace WinFormsUI.Forms
         private void QuantityText_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                UnitPriceText.Focus();
-        }
-
-        private void UnitSelectorCombo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                UnitPriceText.Focus();
+                SaleUnitPriceText.Focus();
         }
 
         private void SaleUnitPriceText_KeyDown(object sender, KeyEventArgs e)
@@ -726,12 +723,6 @@ namespace WinFormsUI.Forms
         {
             if (e.KeyCode == Keys.Enter)
                 AddToCartButton.Focus();
-        }
-
-        private void AddToCartButton_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                SearchProductText.Focus();
         }
         private void DiscountPercentageText_KeyDown(object sender, KeyEventArgs e)
         {

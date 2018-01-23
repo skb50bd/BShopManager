@@ -344,6 +344,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserInformationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "User Information";
             this.Load += new System.EventHandler(this.UserInformationForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);

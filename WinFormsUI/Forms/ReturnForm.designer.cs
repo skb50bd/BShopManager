@@ -154,8 +154,8 @@
             this.CutPercentageText.Name = "CutPercentageText";
             this.CutPercentageText.Size = new System.Drawing.Size(52, 22);
             this.CutPercentageText.TabIndex = 1;
-            this.CutPercentageText.Leave += new System.EventHandler(this.CutPercentageText_Leave);
             this.CutPercentageText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
+            this.CutPercentageText.Leave += new System.EventHandler(this.CutPercentageText_Leave);
             // 
             // CutAmountText
             // 
@@ -296,31 +296,31 @@
             // 
             // ViewReceiptButton
             // 
-            this.ViewReceiptButton.BackgroundImage           = global::WinFormsUI.Properties.Resources.icons8_Eye_96px;
-            this.ViewReceiptButton.BackgroundImageLayout     = System.Windows.Forms.ImageLayout.Zoom;
+            this.ViewReceiptButton.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Eye_96px;
+            this.ViewReceiptButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ViewReceiptButton.FlatAppearance.BorderSize = 0;
-            this.ViewReceiptButton.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewReceiptButton.Font                      = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewReceiptButton.Location                  = new System.Drawing.Point(460, 27);
-            this.ViewReceiptButton.Name                      = "ViewReceiptButton";
-            this.ViewReceiptButton.Size                      = new System.Drawing.Size(29, 29);
-            this.ViewReceiptButton.TabIndex                  = 3;
-            this.ViewReceiptButton.UseVisualStyleBackColor   = true;
-            this.ViewReceiptButton.Click                    += new System.EventHandler(this.ViewReceiptButton_Click);
+            this.ViewReceiptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewReceiptButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewReceiptButton.Location = new System.Drawing.Point(460, 27);
+            this.ViewReceiptButton.Name = "ViewReceiptButton";
+            this.ViewReceiptButton.Size = new System.Drawing.Size(29, 29);
+            this.ViewReceiptButton.TabIndex = 3;
+            this.ViewReceiptButton.UseVisualStyleBackColor = true;
+            this.ViewReceiptButton.Click += new System.EventHandler(this.ViewReceiptButton_Click);
             // 
             // ResetReceiptButton
             // 
-            this.ResetReceiptButton.BackgroundImage           = global::WinFormsUI.Properties.Resources.icons8_Reset_96px__2_;
-            this.ResetReceiptButton.BackgroundImageLayout     = System.Windows.Forms.ImageLayout.Zoom;
+            this.ResetReceiptButton.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Reset_96px__2_;
+            this.ResetReceiptButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ResetReceiptButton.FlatAppearance.BorderSize = 0;
-            this.ResetReceiptButton.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
-            this.ResetReceiptButton.Font                      = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResetReceiptButton.Location                  = new System.Drawing.Point(497, 27);
-            this.ResetReceiptButton.Name                      = "ResetReceiptButton";
-            this.ResetReceiptButton.Size                      = new System.Drawing.Size(29, 29);
-            this.ResetReceiptButton.TabIndex                  = 2;
-            this.ResetReceiptButton.UseVisualStyleBackColor   = true;
-            this.ResetReceiptButton.Click                    += new System.EventHandler(this.ResetReceiptButton_Click);
+            this.ResetReceiptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResetReceiptButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetReceiptButton.Location = new System.Drawing.Point(497, 27);
+            this.ResetReceiptButton.Name = "ResetReceiptButton";
+            this.ResetReceiptButton.Size = new System.Drawing.Size(29, 29);
+            this.ResetReceiptButton.TabIndex = 2;
+            this.ResetReceiptButton.UseVisualStyleBackColor = true;
+            this.ResetReceiptButton.Click += new System.EventHandler(this.ResetReceiptButton_Click);
             // 
             // SelectProductForRefundGroup
             // 
@@ -339,57 +339,57 @@
             // 
             // QuantityText
             // 
-            this.QuantityText.BackColor   = System.Drawing.Color.WhiteSmoke;
+            this.QuantityText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.QuantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.QuantityText.Font        = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityText.Location    = new System.Drawing.Point(89, 66);
-            this.QuantityText.Margin      = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.QuantityText.Name        = "QuantityText";
-            this.QuantityText.Size        = new System.Drawing.Size(54, 22);
-            this.QuantityText.TabIndex    = 3;
-            this.QuantityText.KeyPress   += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
+            this.QuantityText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuantityText.Location = new System.Drawing.Point(89, 66);
+            this.QuantityText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.QuantityText.Name = "QuantityText";
+            this.QuantityText.Size = new System.Drawing.Size(54, 22);
+            this.QuantityText.TabIndex = 3;
+            this.QuantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // CartDataGrid
             // 
-            this.CartDataGrid.AllowUserToAddRows            = false;
-            this.CartDataGrid.AllowUserToDeleteRows         = false;
-            this.CartDataGrid.AllowUserToResizeRows         = false;
-            this.CartDataGrid.AutoSizeColumnsMode           = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.CartDataGrid.BackgroundColor               = System.Drawing.Color.WhiteSmoke;
-            this.CartDataGrid.BorderStyle                   = System.Windows.Forms.BorderStyle.None;
-            this.CartDataGrid.CellBorderStyle               = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment                = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor                = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font                     = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor                = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor       = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor       = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode                 = System.Windows.Forms.DataGridViewTriState.False;
+            this.CartDataGrid.AllowUserToAddRows = false;
+            this.CartDataGrid.AllowUserToDeleteRows = false;
+            this.CartDataGrid.AllowUserToResizeRows = false;
+            this.CartDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.CartDataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.CartDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CartDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CartDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.CartDataGrid.ColumnHeadersHeightSizeMode   = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CartDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CartDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductIdColumn,
             this.ProductNameColumn,
             this.QuantityColumn,
             this.UnitNameColumn,
             this.NetPriceColumn});
-            dataGridViewCellStyle2.Alignment          = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor          = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font               = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor          = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode           = System.Windows.Forms.DataGridViewTriState.False;
-            this.CartDataGrid.DefaultCellStyle        = dataGridViewCellStyle2;
-            this.CartDataGrid.GridColor               = System.Drawing.Color.WhiteSmoke;
-            this.CartDataGrid.Location                = new System.Drawing.Point(7, 182);
-            this.CartDataGrid.Margin                  = new System.Windows.Forms.Padding(4);
-            this.CartDataGrid.Name                    = "CartDataGrid";
-            this.CartDataGrid.RowHeadersVisible       = false;
-            this.CartDataGrid.SelectionMode           = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CartDataGrid.Size                    = new System.Drawing.Size(519, 248);
-            this.CartDataGrid.TabIndex                = 7;
-            this.CartDataGrid.TabStop                 = false;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CartDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CartDataGrid.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.CartDataGrid.Location = new System.Drawing.Point(7, 182);
+            this.CartDataGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.CartDataGrid.Name = "CartDataGrid";
+            this.CartDataGrid.RowHeadersVisible = false;
+            this.CartDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CartDataGrid.Size = new System.Drawing.Size(519, 248);
+            this.CartDataGrid.TabIndex = 7;
+            this.CartDataGrid.TabStop = false;
             // 
             // ProductIdColumn
             // 
@@ -505,6 +505,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ReturnForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Return";
             this.Load += new System.EventHandler(this.ReturnForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);

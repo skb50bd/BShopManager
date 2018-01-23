@@ -271,7 +271,7 @@ namespace WinFormsUI.Forms {
             else
                 return;
 
-            dumpLocation += DateTime.Now.ToLocalTime().ToString("yyyymmddHHmmss");
+            dumpLocation += DateTime.Now.ToLocalTime().ToString("/yyyyMMddHHmmss");
             Process process = new Process
             {
                 StartInfo = new ProcessStartInfo

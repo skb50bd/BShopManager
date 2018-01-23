@@ -27,7 +27,11 @@ namespace WinFormsUI.Forms {
         public static extern bool ReleaseCapture();
 
         private void MakeDraggable(object sender, MouseEventArgs e) {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WmNclbuttondown, HtCaption, 0);
+            }
         }
 
         #endregion
@@ -493,5 +497,79 @@ namespace WinFormsUI.Forms {
                 RefreshAmounts();
             }
         }
+
+        #region Key Downs
+        private void SupplierCombo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SupplierNameText.Focus();
+        }
+
+        private void SupplierNameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                CompanyText.Focus();
+        }
+
+        private void AddressText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                NotesText.Focus();
+        }
+
+        private void CompanyText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                AddressText.Focus();
+        }
+
+        private void NotesText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                DealDateTime.Focus();
+        }
+
+        private void ProductSelectorCombo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                QuantityText.Focus();
+        }
+
+        private void QuantityText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                UnitPriceText.Focus();
+        }
+
+        private void UnitPriceText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                NetPriceText.Focus();
+        }
+
+        private void NetPriceText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                AddToCartButton.Focus();
+        }
+
+        private void DiscountPercentageText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                LessAmountText.Focus();
+        }
+
+        private void LessAmountText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                PaidAmountText.Focus();
+        }
+
+        private void PaidAmountText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SubmitButton.Focus();
+        } 
+        #endregion
     }
 }

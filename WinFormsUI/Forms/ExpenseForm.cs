@@ -97,6 +97,7 @@ namespace WinFormsUI.Forms {
         private void LoadExpense()
         {
             TotalText.Text = _expense.Cart.Sum(c => c.NetPurchasePrice).ToString("0.##") + " Tk";
+            TitleText.Text = _expense.Title;
             NotesText.Text = _expense.Note;
             CartDataGrid.DataSource = _expense.Cart;
         }
@@ -160,6 +161,8 @@ namespace WinFormsUI.Forms {
             string error = string.Empty;
             string warning = string.Empty;
 
+            if (TitleText.Text.Length == 0)
+                error += "Expense title is empty\n";
             if (NotesText.Text.Length == 0)
                 warning += "Note not added\n";
             if (_expense.Cart.Count == 0)
@@ -186,6 +189,7 @@ namespace WinFormsUI.Forms {
                 return;
 
             _expense.TotalAmount  = _expense.Cart.Sum(sc => sc.UnitPurchasePrice * (decimal)sc.Quantity);
+            _expense.Title        = TitleText.Text;
             _expense.Note         = NotesText.Text;
             _expense.Meta.Created = ExpenseDateTime.Value;
 
@@ -195,6 +199,7 @@ namespace WinFormsUI.Forms {
             if (result == DialogResult.Yes)
             {
                 _expense.Meta.Created = ExpenseDateTime.Value;
+                _expense.Title = TitleText.Text;
                 _expense.Note = NotesText.Text;
 
                 Connection[0].InsertExpense(_expense);
@@ -236,5 +241,49 @@ namespace WinFormsUI.Forms {
                 }
             }
         }
+
+        #region Key Downs
+        private void ProductText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                UnitPriceText.Focus();
+        }
+
+        private void UnitPriceText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                QuantityText.Focus();
+        }
+
+        private void NetPriceText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                AddToListButton.Focus();
+        }
+
+        private void QuantityText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                NetPriceText.Focus();
+        }
+
+        private void ExpenseDateTime_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                TitleText.Focus();
+        }
+
+        private void TitleText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                NotesText.Focus();
+        }
+
+        private void NotesText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SubmitButton.Focus();
+        } 
+        #endregion
     }
 }

@@ -84,9 +84,9 @@
             this.SearchProductLabel = new System.Windows.Forms.Label();
             this.SearchProductText = new System.Windows.Forms.TextBox();
             this.SaleNetPriceText = new System.Windows.Forms.TextBox();
-            this.UnitPriceLabel = new System.Windows.Forms.Label();
             this.SaleUnitPriceText = new System.Windows.Forms.TextBox();
             this.NetPriceLabel = new System.Windows.Forms.Label();
+            this.UnitPriceLabel = new System.Windows.Forms.Label();
             this.BasicInfoGroup = new System.Windows.Forms.GroupBox();
             this.SaleDateTime = new System.Windows.Forms.DateTimePicker();
             this.AmountGroup = new System.Windows.Forms.GroupBox();
@@ -155,7 +155,7 @@
             this.QuantityText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.QuantityText.Name = "QuantityText";
             this.QuantityText.Size = new System.Drawing.Size(135, 22);
-            this.QuantityText.TabIndex = 11;
+            this.QuantityText.TabIndex = 9;
             this.QuantityText.TextChanged += new System.EventHandler(this.QuantityText_TextChanged);
             this.QuantityText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuantityText_KeyDown);
             this.QuantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
@@ -168,7 +168,7 @@
             this.ProductSelectorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductSelectorLabel.Name = "ProductSelectorLabel";
             this.ProductSelectorLabel.Size = new System.Drawing.Size(71, 21);
-            this.ProductSelectorLabel.TabIndex = 6;
+            this.ProductSelectorLabel.TabIndex = 4;
             this.ProductSelectorLabel.Text = "Product :";
             this.ProductSelectorLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -181,7 +181,7 @@
             this.CompanyText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CompanyText.Name = "CompanyText";
             this.CompanyText.Size = new System.Drawing.Size(261, 22);
-            this.CompanyText.TabIndex = 7;
+            this.CompanyText.TabIndex = 5;
             this.CompanyText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CompanyText_KeyDown);
             // 
             // CompanyLabel
@@ -192,7 +192,7 @@
             this.CompanyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CompanyLabel.Name = "CompanyLabel";
             this.CompanyLabel.Size = new System.Drawing.Size(84, 21);
-            this.CompanyLabel.TabIndex = 6;
+            this.CompanyLabel.TabIndex = 4;
             this.CompanyLabel.Text = "Company :";
             this.CompanyLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -223,7 +223,7 @@
             this.ProductSelectorCombo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ProductSelectorCombo.Name = "ProductSelectorCombo";
             this.ProductSelectorCombo.Size = new System.Drawing.Size(279, 29);
-            this.ProductSelectorCombo.TabIndex = 7;
+            this.ProductSelectorCombo.TabIndex = 5;
             this.ProductSelectorCombo.SelectedIndexChanged += new System.EventHandler(this.ProductSelectorCombo_SelectedIndexChanged);
             this.ProductSelectorCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductSelectorCombo_KeyDown);
             // 
@@ -235,7 +235,7 @@
             this.QuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.QuantityLabel.Name = "QuantityLabel";
             this.QuantityLabel.Size = new System.Drawing.Size(77, 21);
-            this.QuantityLabel.TabIndex = 10;
+            this.QuantityLabel.TabIndex = 8;
             this.QuantityLabel.Text = "Quantity :";
             this.QuantityLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -247,7 +247,7 @@
             this.RetailSaleRadio.Margin = new System.Windows.Forms.Padding(4);
             this.RetailSaleRadio.Name = "RetailSaleRadio";
             this.RetailSaleRadio.Size = new System.Drawing.Size(100, 25);
-            this.RetailSaleRadio.TabIndex = 3;
+            this.RetailSaleRadio.TabIndex = 0;
             this.RetailSaleRadio.TabStop = true;
             this.RetailSaleRadio.Text = "Retail Sale";
             this.RetailSaleRadio.UseVisualStyleBackColor = true;
@@ -262,7 +262,7 @@
             this.WholeSaleRadio.Margin = new System.Windows.Forms.Padding(4);
             this.WholeSaleRadio.Name = "WholeSaleRadio";
             this.WholeSaleRadio.Size = new System.Drawing.Size(106, 25);
-            this.WholeSaleRadio.TabIndex = 4;
+            this.WholeSaleRadio.TabIndex = 1;
             this.WholeSaleRadio.TabStop = true;
             this.WholeSaleRadio.Text = "Whole Sale";
             this.WholeSaleRadio.UseVisualStyleBackColor = true;
@@ -283,13 +283,12 @@
             this.AddToCartButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddToCartButton.Name = "AddToCartButton";
             this.AddToCartButton.Size = new System.Drawing.Size(279, 42);
-            this.AddToCartButton.TabIndex = 17;
+            this.AddToCartButton.TabIndex = 15;
             this.AddToCartButton.Text = "Add";
             this.AddToCartButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ButtonToolTip.SetToolTip(this.AddToCartButton, "Add the product to the cart");
             this.AddToCartButton.UseVisualStyleBackColor = false;
             this.AddToCartButton.Click += new System.EventHandler(this.AddToCartButton_Click);
-            this.AddToCartButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddToCartButton_KeyDown);
             // 
             // TotalText
             // 
@@ -329,7 +328,7 @@
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(274, 42);
-            this.SubmitButton.TabIndex = 12;
+            this.SubmitButton.TabIndex = 16;
             this.SubmitButton.Text = "Sell";
             this.SubmitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ButtonToolTip.SetToolTip(this.SubmitButton, "Execute the sale");
@@ -350,7 +349,7 @@
             this.RemoveSelectedButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RemoveSelectedButton.Name = "RemoveSelectedButton";
             this.RemoveSelectedButton.Size = new System.Drawing.Size(742, 42);
-            this.RemoveSelectedButton.TabIndex = 7;
+            this.RemoveSelectedButton.TabIndex = 5;
             this.RemoveSelectedButton.Text = "Remove Selected";
             this.RemoveSelectedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonToolTip.SetToolTip(this.RemoveSelectedButton, "Remove the selected product from cart");
@@ -392,7 +391,7 @@
             this.AddressText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddressText.Name = "AddressText";
             this.AddressText.Size = new System.Drawing.Size(261, 22);
-            this.AddressText.TabIndex = 9;
+            this.AddressText.TabIndex = 7;
             this.AddressText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressText_KeyDown);
             // 
             // AddressLabel
@@ -403,7 +402,7 @@
             this.AddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(73, 21);
-            this.AddressLabel.TabIndex = 8;
+            this.AddressLabel.TabIndex = 6;
             this.AddressLabel.Text = "Address :";
             this.AddressLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -415,7 +414,7 @@
             this.PayableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PayableLabel.Name = "PayableLabel";
             this.PayableLabel.Size = new System.Drawing.Size(70, 21);
-            this.PayableLabel.TabIndex = 6;
+            this.PayableLabel.TabIndex = 8;
             this.PayableLabel.Text = "Payable :";
             this.PayableLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -429,7 +428,7 @@
             this.PayableText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PayableText.Name = "PayableText";
             this.PayableText.Size = new System.Drawing.Size(88, 22);
-            this.PayableText.TabIndex = 7;
+            this.PayableText.TabIndex = 9;
             this.PayableText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // PaidAmountLabel
@@ -440,7 +439,7 @@
             this.PaidAmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PaidAmountLabel.Name = "PaidAmountLabel";
             this.PaidAmountLabel.Size = new System.Drawing.Size(46, 21);
-            this.PaidAmountLabel.TabIndex = 8;
+            this.PaidAmountLabel.TabIndex = 11;
             this.PaidAmountLabel.Text = "Paid :";
             this.PaidAmountLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -453,7 +452,7 @@
             this.PaidAmountText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaidAmountText.Name = "PaidAmountText";
             this.PaidAmountText.Size = new System.Drawing.Size(186, 22);
-            this.PaidAmountText.TabIndex = 9;
+            this.PaidAmountText.TabIndex = 12;
             this.PaidAmountText.TextChanged += new System.EventHandler(this.PaidAmountText_TextChanged);
             this.PaidAmountText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaidAmountText_KeyDown);
             this.PaidAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
@@ -495,7 +494,7 @@
             this.UnitPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.UnitPriceText.Name = "UnitPriceText";
             this.UnitPriceText.Size = new System.Drawing.Size(135, 22);
-            this.UnitPriceText.TabIndex = 8;
+            this.UnitPriceText.TabIndex = 6;
             // 
             // AvailableQuantityText
             // 
@@ -506,7 +505,7 @@
             this.AvailableQuantityText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AvailableQuantityText.Name = "AvailableQuantityText";
             this.AvailableQuantityText.Size = new System.Drawing.Size(136, 22);
-            this.AvailableQuantityText.TabIndex = 9;
+            this.AvailableQuantityText.TabIndex = 7;
             // 
             // CartDataGrid
             // 
@@ -551,7 +550,7 @@
             this.CartDataGrid.RowHeadersVisible = false;
             this.CartDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CartDataGrid.Size = new System.Drawing.Size(742, 266);
-            this.CartDataGrid.TabIndex = 6;
+            this.CartDataGrid.TabIndex = 4;
             // 
             // ProductIdColumn
             // 
@@ -609,7 +608,7 @@
             this.NewDueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NewDueLabel.Name = "NewDueLabel";
             this.NewDueLabel.Size = new System.Drawing.Size(83, 21);
-            this.NewDueLabel.TabIndex = 10;
+            this.NewDueLabel.TabIndex = 13;
             this.NewDueLabel.Text = "Curr. Due :";
             this.NewDueLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -623,7 +622,7 @@
             this.DueText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.DueText.Name = "DueText";
             this.DueText.Size = new System.Drawing.Size(87, 22);
-            this.DueText.TabIndex = 11;
+            this.DueText.TabIndex = 14;
             this.DueText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // UnitSelectorCombo
@@ -633,9 +632,8 @@
             this.UnitSelectorCombo.Location = new System.Drawing.Point(230, 148);
             this.UnitSelectorCombo.Name = "UnitSelectorCombo";
             this.UnitSelectorCombo.Size = new System.Drawing.Size(136, 29);
-            this.UnitSelectorCombo.TabIndex = 12;
+            this.UnitSelectorCombo.TabIndex = 10;
             this.UnitSelectorCombo.SelectedIndexChanged += new System.EventHandler(this.UnitSelectorCombo_SelectedIndexChanged);
-            this.UnitSelectorCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitSelectorCombo_KeyDown);
             // 
             // NotesText
             // 
@@ -646,7 +644,7 @@
             this.NotesText.Margin = new System.Windows.Forms.Padding(4);
             this.NotesText.Name = "NotesText";
             this.NotesText.Size = new System.Drawing.Size(261, 59);
-            this.NotesText.TabIndex = 14;
+            this.NotesText.TabIndex = 12;
             this.NotesText.Text = "";
             // 
             // NotesLabel
@@ -657,7 +655,7 @@
             this.NotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NotesLabel.Name = "NotesLabel";
             this.NotesLabel.Size = new System.Drawing.Size(62, 21);
-            this.NotesLabel.TabIndex = 13;
+            this.NotesLabel.TabIndex = 11;
             this.NotesLabel.Text = "Notes : ";
             this.NotesLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -692,7 +690,7 @@
             this.ViewCustomerButton.Location = new System.Drawing.Point(324, 160);
             this.ViewCustomerButton.Name = "ViewCustomerButton";
             this.ViewCustomerButton.Size = new System.Drawing.Size(29, 29);
-            this.ViewCustomerButton.TabIndex = 10;
+            this.ViewCustomerButton.TabIndex = 8;
             this.ButtonToolTip.SetToolTip(this.ViewCustomerButton, "View or Edit the selected customer");
             this.ViewCustomerButton.UseVisualStyleBackColor = true;
             this.ViewCustomerButton.Click += new System.EventHandler(this.ViewCustomerButton_Click);
@@ -718,7 +716,7 @@
             this.CustomerResetButton.Location = new System.Drawing.Point(256, 160);
             this.CustomerResetButton.Name = "CustomerResetButton";
             this.CustomerResetButton.Size = new System.Drawing.Size(29, 29);
-            this.CustomerResetButton.TabIndex = 12;
+            this.CustomerResetButton.TabIndex = 10;
             this.ButtonToolTip.SetToolTip(this.CustomerResetButton, "Reset Customer");
             this.CustomerResetButton.UseVisualStyleBackColor = true;
             this.CustomerResetButton.Click += new System.EventHandler(this.CustomerResetButton_Click);
@@ -733,7 +731,7 @@
             this.AddCustomerButton.Location = new System.Drawing.Point(288, 160);
             this.AddCustomerButton.Name = "AddCustomerButton";
             this.AddCustomerButton.Size = new System.Drawing.Size(29, 29);
-            this.AddCustomerButton.TabIndex = 11;
+            this.AddCustomerButton.TabIndex = 9;
             this.ButtonToolTip.SetToolTip(this.AddCustomerButton, "Add new customer");
             this.AddCustomerButton.UseVisualStyleBackColor = true;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
@@ -746,7 +744,7 @@
             this.CustomerNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
             this.CustomerNameLabel.Size = new System.Drawing.Size(88, 21);
-            this.CustomerNameLabel.TabIndex = 4;
+            this.CustomerNameLabel.TabIndex = 2;
             this.CustomerNameLabel.Text = "Full Name :";
             // 
             // CustomerNameText
@@ -758,7 +756,7 @@
             this.CustomerNameText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CustomerNameText.Name = "CustomerNameText";
             this.CustomerNameText.Size = new System.Drawing.Size(260, 22);
-            this.CustomerNameText.TabIndex = 5;
+            this.CustomerNameText.TabIndex = 3;
             this.CustomerNameText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerNameText_KeyDown);
             // 
             // ProductGroup
@@ -767,7 +765,6 @@
             this.ProductGroup.Controls.Add(this.SearchProductText);
             this.ProductGroup.Controls.Add(this.SaleNetPriceText);
             this.ProductGroup.Controls.Add(this.WholeSaleRadio);
-            this.ProductGroup.Controls.Add(this.UnitPriceLabel);
             this.ProductGroup.Controls.Add(this.SaleUnitPriceText);
             this.ProductGroup.Controls.Add(this.ProductSelectorLabel);
             this.ProductGroup.Controls.Add(this.RetailSaleRadio);
@@ -779,10 +776,11 @@
             this.ProductGroup.Controls.Add(this.AvailableQuantityText);
             this.ProductGroup.Controls.Add(this.QuantityText);
             this.ProductGroup.Controls.Add(this.NetPriceLabel);
+            this.ProductGroup.Controls.Add(this.UnitPriceLabel);
             this.ProductGroup.Location = new System.Drawing.Point(382, 103);
             this.ProductGroup.Name = "ProductGroup";
             this.ProductGroup.Size = new System.Drawing.Size(375, 265);
-            this.ProductGroup.TabIndex = 5;
+            this.ProductGroup.TabIndex = 3;
             this.ProductGroup.TabStop = false;
             // 
             // SearchProductLabel
@@ -793,7 +791,7 @@
             this.SearchProductLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchProductLabel.Name = "SearchProductLabel";
             this.SearchProductLabel.Size = new System.Drawing.Size(64, 21);
-            this.SearchProductLabel.TabIndex = 18;
+            this.SearchProductLabel.TabIndex = 2;
             this.SearchProductLabel.Text = "Search :";
             // 
             // SearchProductText
@@ -805,7 +803,7 @@
             this.SearchProductText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SearchProductText.Name = "SearchProductText";
             this.SearchProductText.Size = new System.Drawing.Size(279, 22);
-            this.SearchProductText.TabIndex = 19;
+            this.SearchProductText.TabIndex = 3;
             this.SearchProductText.TextChanged += new System.EventHandler(this.SearchProductText_TextChanged);
             this.SearchProductText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProductText_KeyDown);
             // 
@@ -818,21 +816,10 @@
             this.SaleNetPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SaleNetPriceText.Name = "SaleNetPriceText";
             this.SaleNetPriceText.Size = new System.Drawing.Size(99, 22);
-            this.SaleNetPriceText.TabIndex = 16;
+            this.SaleNetPriceText.TabIndex = 14;
             this.SaleNetPriceText.TextChanged += new System.EventHandler(this.SaleNetPriceText_TextChanged);
             this.SaleNetPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleNetPriceText_KeyDown);
             this.SaleNetPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            // 
-            // UnitPriceLabel
-            // 
-            this.UnitPriceLabel.AutoSize = true;
-            this.UnitPriceLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitPriceLabel.Location = new System.Drawing.Point(4, 182);
-            this.UnitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UnitPriceLabel.Name = "UnitPriceLabel";
-            this.UnitPriceLabel.Size = new System.Drawing.Size(84, 21);
-            this.UnitPriceLabel.TabIndex = 13;
-            this.UnitPriceLabel.Text = "Unit Price :";
             // 
             // SaleUnitPriceText
             // 
@@ -843,7 +830,7 @@
             this.SaleUnitPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SaleUnitPriceText.Name = "SaleUnitPriceText";
             this.SaleUnitPriceText.Size = new System.Drawing.Size(103, 22);
-            this.SaleUnitPriceText.TabIndex = 14;
+            this.SaleUnitPriceText.TabIndex = 12;
             this.SaleUnitPriceText.TextChanged += new System.EventHandler(this.SaleUnitPriceText_TextChanged);
             this.SaleUnitPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleUnitPriceText_KeyDown);
             this.SaleUnitPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
@@ -856,8 +843,19 @@
             this.NetPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NetPriceLabel.Name = "NetPriceLabel";
             this.NetPriceLabel.Size = new System.Drawing.Size(71, 21);
-            this.NetPriceLabel.TabIndex = 15;
+            this.NetPriceLabel.TabIndex = 13;
             this.NetPriceLabel.Text = "Net Prc. :";
+            // 
+            // UnitPriceLabel
+            // 
+            this.UnitPriceLabel.AutoSize = true;
+            this.UnitPriceLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitPriceLabel.Location = new System.Drawing.Point(4, 182);
+            this.UnitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UnitPriceLabel.Name = "UnitPriceLabel";
+            this.UnitPriceLabel.Size = new System.Drawing.Size(84, 21);
+            this.UnitPriceLabel.TabIndex = 11;
+            this.UnitPriceLabel.Text = "Unit Price :";
             // 
             // BasicInfoGroup
             // 
@@ -873,7 +871,7 @@
             // SaleDateTime
             // 
             this.SaleDateTime.CalendarMonthBackground = System.Drawing.Color.White;
-            this.SaleDateTime.CustomFormat = "dddd dd MMMM yyyy - hh:mm tt";
+            this.SaleDateTime.CustomFormat = "dddd ddMMMMyyyy - hh:mm tt";
             this.SaleDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.SaleDateTime.Location = new System.Drawing.Point(367, 19);
             this.SaleDateTime.Name = "SaleDateTime";
@@ -904,7 +902,7 @@
             this.AmountGroup.Location = new System.Drawing.Point(763, 46);
             this.AmountGroup.Name = "AmountGroup";
             this.AmountGroup.Size = new System.Drawing.Size(295, 312);
-            this.AmountGroup.TabIndex = 8;
+            this.AmountGroup.TabIndex = 6;
             this.AmountGroup.TabStop = false;
             // 
             // label2
@@ -915,7 +913,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 21);
-            this.label2.TabIndex = 16;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Prev. Due :";
             // 
             // PreviousDueText
@@ -928,7 +926,7 @@
             this.PreviousDueText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PreviousDueText.Name = "PreviousDueText";
             this.PreviousDueText.Size = new System.Drawing.Size(186, 22);
-            this.PreviousDueText.TabIndex = 17;
+            this.PreviousDueText.TabIndex = 7;
             // 
             // FullDueText
             // 
@@ -952,7 +950,7 @@
             this.FullPayableText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.FullPayableText.Name = "FullPayableText";
             this.FullPayableText.Size = new System.Drawing.Size(90, 22);
-            this.FullPayableText.TabIndex = 14;
+            this.FullPayableText.TabIndex = 10;
             // 
             // SaveButton
             // 
@@ -968,7 +966,7 @@
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(275, 42);
-            this.SaveButton.TabIndex = 13;
+            this.SaveButton.TabIndex = 17;
             this.SaveButton.Text = "Save";
             this.SaveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ButtonToolTip.SetToolTip(this.SaveButton, "Save the memo for future use");
@@ -983,7 +981,7 @@
             this.SavedMemoGroup.Location = new System.Drawing.Point(763, 364);
             this.SavedMemoGroup.Name = "SavedMemoGroup";
             this.SavedMemoGroup.Size = new System.Drawing.Size(295, 325);
-            this.SavedMemoGroup.TabIndex = 10;
+            this.SavedMemoGroup.TabIndex = 7;
             this.SavedMemoGroup.TabStop = false;
             this.SavedMemoGroup.Text = "Saved Memo";
             // 
@@ -1050,7 +1048,7 @@
             this.ReloadButton.Location = new System.Drawing.Point(1026, 22);
             this.ReloadButton.Name = "ReloadButton";
             this.ReloadButton.Size = new System.Drawing.Size(29, 29);
-            this.ReloadButton.TabIndex = 9;
+            this.ReloadButton.TabIndex = 8;
             this.ReloadButton.UseVisualStyleBackColor = true;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 

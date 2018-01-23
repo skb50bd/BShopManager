@@ -38,14 +38,6 @@
             this.TransactionsLabel = new System.Windows.Forms.Label();
             this.TransactionTypeSelectorCombo = new System.Windows.Forms.ComboBox();
             this.TransactionsDataGrid = new System.Windows.Forms.DataGridView();
-            this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.AddAccountButton = new System.Windows.Forms.Button();
-            this.EditAccountButton = new System.Windows.Forms.Button();
-            this.DeleteAccountButton = new System.Windows.Forms.Button();
-            this.PrintButton = new System.Windows.Forms.Button();
-            this.AddTransactionButton = new System.Windows.Forms.Button();
-            this.AccountSelectorCombo = new System.Windows.Forms.ComboBox();
-            this.ViewEditEmployeeButton = new System.Windows.Forms.Button();
             this.BankAccountIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BankAccountNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransactionTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +47,14 @@
             this.IndividualColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.AddAccountButton = new System.Windows.Forms.Button();
+            this.EditAccountButton = new System.Windows.Forms.Button();
+            this.DeleteAccountButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
+            this.AddTransactionButton = new System.Windows.Forms.Button();
+            this.AccountSelectorCombo = new System.Windows.Forms.ComboBox();
+            this.ViewEditEmployeeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,6 +174,78 @@
             this.TransactionsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TransactionsDataGrid.Size = new System.Drawing.Size(804, 383);
             this.TransactionsDataGrid.TabIndex = 8;
+            // 
+            // BankAccountIdColumn
+            // 
+            this.BankAccountIdColumn.DataPropertyName = "GetAccountId";
+            this.BankAccountIdColumn.HeaderText = "Account Id";
+            this.BankAccountIdColumn.Name = "BankAccountIdColumn";
+            this.BankAccountIdColumn.ReadOnly = true;
+            this.BankAccountIdColumn.Width = 94;
+            // 
+            // BankAccountNameColumn
+            // 
+            this.BankAccountNameColumn.DataPropertyName = "BankAccountName";
+            this.BankAccountNameColumn.HeaderText = "Account Name";
+            this.BankAccountNameColumn.Name = "BankAccountNameColumn";
+            this.BankAccountNameColumn.ReadOnly = true;
+            this.BankAccountNameColumn.Width = 118;
+            // 
+            // TransactionTypeColumn
+            // 
+            this.TransactionTypeColumn.DataPropertyName = "GetTransactionType";
+            this.TransactionTypeColumn.HeaderText = "Type";
+            this.TransactionTypeColumn.Name = "TransactionTypeColumn";
+            this.TransactionTypeColumn.ReadOnly = true;
+            this.TransactionTypeColumn.Width = 60;
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "GetAmount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Width = 78;
+            // 
+            // TransactionCodeColumn
+            // 
+            this.TransactionCodeColumn.DataPropertyName = "TransactionCode";
+            this.TransactionCodeColumn.HeaderText = "Trx. Code";
+            this.TransactionCodeColumn.Name = "TransactionCodeColumn";
+            this.TransactionCodeColumn.ReadOnly = true;
+            this.TransactionCodeColumn.Width = 88;
+            // 
+            // CheckNumberColumn
+            // 
+            this.CheckNumberColumn.DataPropertyName = "CheckNumber";
+            this.CheckNumberColumn.HeaderText = "Check #";
+            this.CheckNumberColumn.Name = "CheckNumberColumn";
+            this.CheckNumberColumn.ReadOnly = true;
+            this.CheckNumberColumn.Width = 79;
+            // 
+            // IndividualColumn
+            // 
+            this.IndividualColumn.DataPropertyName = "Individual";
+            this.IndividualColumn.HeaderText = "Individual";
+            this.IndividualColumn.Name = "IndividualColumn";
+            this.IndividualColumn.ReadOnly = true;
+            this.IndividualColumn.Width = 88;
+            // 
+            // CreatedColumn
+            // 
+            this.CreatedColumn.DataPropertyName = "Created";
+            this.CreatedColumn.HeaderText = "Added on";
+            this.CreatedColumn.Name = "CreatedColumn";
+            this.CreatedColumn.ReadOnly = true;
+            this.CreatedColumn.Width = 91;
+            // 
+            // CreatorColumn
+            // 
+            this.CreatorColumn.DataPropertyName = "Creator";
+            this.CreatorColumn.HeaderText = "Added by";
+            this.CreatorColumn.Name = "CreatorColumn";
+            this.CreatorColumn.ReadOnly = true;
+            this.CreatorColumn.Width = 90;
             // 
             // ButtonToolTip
             // 
@@ -299,78 +371,6 @@
             this.ViewEditEmployeeButton.UseVisualStyleBackColor = false;
             this.ViewEditEmployeeButton.Click += new System.EventHandler(this.ViewEditEmployeeButton_Click);
             // 
-            // BankAccountIdColumn
-            // 
-            this.BankAccountIdColumn.DataPropertyName = "GetAccountId";
-            this.BankAccountIdColumn.HeaderText = "Account Id";
-            this.BankAccountIdColumn.Name = "BankAccountIdColumn";
-            this.BankAccountIdColumn.ReadOnly = true;
-            this.BankAccountIdColumn.Width = 94;
-            // 
-            // BankAccountNameColumn
-            // 
-            this.BankAccountNameColumn.DataPropertyName = "BankAccountName";
-            this.BankAccountNameColumn.HeaderText = "Account Name";
-            this.BankAccountNameColumn.Name = "BankAccountNameColumn";
-            this.BankAccountNameColumn.ReadOnly = true;
-            this.BankAccountNameColumn.Width = 118;
-            // 
-            // TransactionTypeColumn
-            // 
-            this.TransactionTypeColumn.DataPropertyName = "GetTransactionType";
-            this.TransactionTypeColumn.HeaderText = "Type";
-            this.TransactionTypeColumn.Name = "TransactionTypeColumn";
-            this.TransactionTypeColumn.ReadOnly = true;
-            this.TransactionTypeColumn.Width = 60;
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "GetAmount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 78;
-            // 
-            // TransactionCodeColumn
-            // 
-            this.TransactionCodeColumn.DataPropertyName = "TransactionCode";
-            this.TransactionCodeColumn.HeaderText = "Trx. Code";
-            this.TransactionCodeColumn.Name = "TransactionCodeColumn";
-            this.TransactionCodeColumn.ReadOnly = true;
-            this.TransactionCodeColumn.Width = 88;
-            // 
-            // CheckNumberColumn
-            // 
-            this.CheckNumberColumn.DataPropertyName = "CheckNumber";
-            this.CheckNumberColumn.HeaderText = "Check #";
-            this.CheckNumberColumn.Name = "CheckNumberColumn";
-            this.CheckNumberColumn.ReadOnly = true;
-            this.CheckNumberColumn.Width = 79;
-            // 
-            // IndividualColumn
-            // 
-            this.IndividualColumn.DataPropertyName = "Individual";
-            this.IndividualColumn.HeaderText = "Individual";
-            this.IndividualColumn.Name = "IndividualColumn";
-            this.IndividualColumn.ReadOnly = true;
-            this.IndividualColumn.Width = 88;
-            // 
-            // CreatedColumn
-            // 
-            this.CreatedColumn.DataPropertyName = "Created";
-            this.CreatedColumn.HeaderText = "Added on";
-            this.CreatedColumn.Name = "CreatedColumn";
-            this.CreatedColumn.ReadOnly = true;
-            this.CreatedColumn.Width = 91;
-            // 
-            // CreatorColumn
-            // 
-            this.CreatorColumn.DataPropertyName = "Creator";
-            this.CreatorColumn.HeaderText = "Added by";
-            this.CreatorColumn.Name = "CreatorColumn";
-            this.CreatorColumn.ReadOnly = true;
-            this.CreatorColumn.Width = 90;
-            // 
             // BankAccountsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -395,6 +395,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BankAccountsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bank Accounts";
             this.Load += new System.EventHandler(this.BankAccountsForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);

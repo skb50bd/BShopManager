@@ -51,9 +51,10 @@ namespace ShopLibrary.Models {
         public decimal Profit             => Payable - TotalPurchasePrice;
         public decimal TotalPurchasePrice => Cart.Sum(sc => sc.NetPurchasePrice);
         public float Discount             => TotalAmount == 0 ? 0 : (float)(Less / TotalAmount * (decimal)100.0);
-        public string Created             => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created             => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator             => Meta.Creator;
         public string GetCustomerId       => "C" + CustomerId.Increment;
+        public string GetDealTime         => DealTime.ToLocalTime().ToString("dd//MM/yyyy hh:mm tt");
         public string GetDiscount         => Discount.ToString("0.##");
         public string GetDue              => Due.ToString("0.##");
         public string GetLess             => Less.ToString("0.##");
@@ -62,9 +63,9 @@ namespace ShopLibrary.Models {
         public string GetProfit           => Profit.ToString("0.##");
         public string GetShopId           => "SP" + ShopId.Increment;
         public string GetTotalAmount      => TotalAmount.ToString("0.##");
-        public string Modified            => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified            => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier            => Meta.Modifier;
-        public string SaleId              => "S" + ObjectId.Increment;
+        public string SaleId              => "S" + ObjectId.Increment.ToString("0000");
         public string SaleTypeInitial     => SaleType == RetailSale ? "R" : "W";
         #endregion
 
@@ -74,14 +75,14 @@ namespace ShopLibrary.Models {
         string ICustomerReportable.Amount    => GetPayable;
         string ICustomerReportable.Due       => GetDue;
         string ICustomerReportable.Profit    => Profit.ToString("0.##");
-        string ICustomerReportable.TimeStamp => Meta.Created.ToString("u");
+        string ICustomerReportable.TimeStamp => DealTime.ToLocalTime().ToString("u");
         #endregion
 
         public override string ToString()
             => (SaleType == RetailSale
                 ? "R-"
                 : "W-") +
-                  DealTime.ToString("yyyyMMddHHmmss") +
+                  DealTime.ToLocalTime().ToString("yyyyMMddHHmmss") +
                   " " +
                   CustomerName;
         public void AddToCart(ShoppingCart sc) => Cart.Add(sc);

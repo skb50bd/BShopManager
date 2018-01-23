@@ -40,11 +40,6 @@
             this.PrintButton = new System.Windows.Forms.Button();
             this.LowStockCheck = new System.Windows.Forms.CheckBox();
             this.ProductsDataGrid = new System.Windows.Forms.DataGridView();
-            this.AddProductButton = new System.Windows.Forms.Button();
-            this.EditUpdateButton = new System.Windows.Forms.Button();
-            this.SearchIcon = new System.Windows.Forms.PictureBox();
-            this.ReloadProducts = new System.Windows.Forms.Button();
-            this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +49,11 @@
             this.PurchasePriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddProductButton = new System.Windows.Forms.Button();
+            this.EditUpdateButton = new System.Windows.Forms.Button();
+            this.SearchIcon = new System.Windows.Forms.PictureBox();
+            this.ReloadProducts = new System.Windows.Forms.Button();
+            this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchIcon)).BeginInit();
             this.SuspendLayout();
@@ -209,74 +209,6 @@
             this.ProductsDataGrid.Size = new System.Drawing.Size(1098, 515);
             this.ProductsDataGrid.TabIndex = 5;
             // 
-            // AddProductButton
-            // 
-            this.AddProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.AddProductButton.FlatAppearance.BorderSize = 0;
-            this.AddProductButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(170)))));
-            this.AddProductButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.AddProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddProductButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProductButton.ForeColor = System.Drawing.Color.White;
-            this.AddProductButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddProductButton.Location = new System.Drawing.Point(561, 679);
-            this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.AddProductButton.Name = "AddProductButton";
-            this.AddProductButton.Size = new System.Drawing.Size(554, 42);
-            this.AddProductButton.TabIndex = 7;
-            this.AddProductButton.Text = "+ Add New Product";
-            this.AddProductButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddProductButton.UseVisualStyleBackColor = false;
-            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
-            // 
-            // EditUpdateButton
-            // 
-            this.EditUpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
-            this.EditUpdateButton.FlatAppearance.BorderSize = 0;
-            this.EditUpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            this.EditUpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
-            this.EditUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditUpdateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUpdateButton.ForeColor = System.Drawing.Color.White;
-            this.EditUpdateButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditUpdateButton.Location = new System.Drawing.Point(561, 629);
-            this.EditUpdateButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.EditUpdateButton.Name = "EditUpdateButton";
-            this.EditUpdateButton.Size = new System.Drawing.Size(554, 42);
-            this.EditUpdateButton.TabIndex = 6;
-            this.EditUpdateButton.Text = "Edit / Update Selected Product";
-            this.EditUpdateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.EditUpdateButton.UseVisualStyleBackColor = false;
-            this.EditUpdateButton.Click += new System.EventHandler(this.EditUpdateButton_Click);
-            // 
-            // SearchIcon
-            // 
-            this.SearchIcon.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Search_96px;
-            this.SearchIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SearchIcon.ErrorImage = null;
-            this.SearchIcon.InitialImage = null;
-            this.SearchIcon.Location = new System.Drawing.Point(750, 71);
-            this.SearchIcon.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchIcon.Name = "SearchIcon";
-            this.SearchIcon.Size = new System.Drawing.Size(25, 25);
-            this.SearchIcon.TabIndex = 89;
-            this.SearchIcon.TabStop = false;
-            // 
-            // ReloadProducts
-            // 
-            this.ReloadProducts.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Sync_500px;
-            this.ReloadProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ReloadProducts.FlatAppearance.BorderSize = 0;
-            this.ReloadProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReloadProducts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReloadProducts.Location = new System.Drawing.Point(1099, 3);
-            this.ReloadProducts.Name = "ReloadProducts";
-            this.ReloadProducts.Size = new System.Drawing.Size(29, 29);
-            this.ReloadProducts.TabIndex = 10;
-            this.ButtonToolTip.SetToolTip(this.ReloadProducts, "Force refresh products from database");
-            this.ReloadProducts.UseVisualStyleBackColor = true;
-            this.ReloadProducts.Click += new System.EventHandler(this.ReloadProducts_Click);
-            // 
             // IdColumn
             // 
             this.IdColumn.DataPropertyName = "ProductId";
@@ -349,6 +281,74 @@
             this.CreatorColumn.ReadOnly = true;
             this.CreatorColumn.Width = 101;
             // 
+            // AddProductButton
+            // 
+            this.AddProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.AddProductButton.FlatAppearance.BorderSize = 0;
+            this.AddProductButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(170)))));
+            this.AddProductButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.AddProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddProductButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddProductButton.ForeColor = System.Drawing.Color.White;
+            this.AddProductButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddProductButton.Location = new System.Drawing.Point(561, 679);
+            this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.AddProductButton.Name = "AddProductButton";
+            this.AddProductButton.Size = new System.Drawing.Size(554, 42);
+            this.AddProductButton.TabIndex = 7;
+            this.AddProductButton.Text = "+ Add New Product";
+            this.AddProductButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddProductButton.UseVisualStyleBackColor = false;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
+            // 
+            // EditUpdateButton
+            // 
+            this.EditUpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
+            this.EditUpdateButton.FlatAppearance.BorderSize = 0;
+            this.EditUpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            this.EditUpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            this.EditUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditUpdateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUpdateButton.ForeColor = System.Drawing.Color.White;
+            this.EditUpdateButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EditUpdateButton.Location = new System.Drawing.Point(561, 629);
+            this.EditUpdateButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.EditUpdateButton.Name = "EditUpdateButton";
+            this.EditUpdateButton.Size = new System.Drawing.Size(554, 42);
+            this.EditUpdateButton.TabIndex = 6;
+            this.EditUpdateButton.Text = "Edit / Update Selected Product";
+            this.EditUpdateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EditUpdateButton.UseVisualStyleBackColor = false;
+            this.EditUpdateButton.Click += new System.EventHandler(this.EditUpdateButton_Click);
+            // 
+            // SearchIcon
+            // 
+            this.SearchIcon.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Search_96px;
+            this.SearchIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SearchIcon.ErrorImage = null;
+            this.SearchIcon.InitialImage = null;
+            this.SearchIcon.Location = new System.Drawing.Point(750, 71);
+            this.SearchIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchIcon.Name = "SearchIcon";
+            this.SearchIcon.Size = new System.Drawing.Size(25, 25);
+            this.SearchIcon.TabIndex = 89;
+            this.SearchIcon.TabStop = false;
+            // 
+            // ReloadProducts
+            // 
+            this.ReloadProducts.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Sync_500px;
+            this.ReloadProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ReloadProducts.FlatAppearance.BorderSize = 0;
+            this.ReloadProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReloadProducts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReloadProducts.Location = new System.Drawing.Point(1099, 3);
+            this.ReloadProducts.Name = "ReloadProducts";
+            this.ReloadProducts.Size = new System.Drawing.Size(29, 29);
+            this.ReloadProducts.TabIndex = 10;
+            this.ButtonToolTip.SetToolTip(this.ReloadProducts, "Force refresh products from database");
+            this.ReloadProducts.UseVisualStyleBackColor = true;
+            this.ReloadProducts.Click += new System.EventHandler(this.ReloadProducts_Click);
+            // 
             // ProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -372,6 +372,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ProductsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Products";
             this.Load += new System.EventHandler(this.ProductsForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);

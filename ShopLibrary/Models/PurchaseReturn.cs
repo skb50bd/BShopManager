@@ -41,7 +41,7 @@ namespace ShopLibrary.Models {
         public string GetSupplierId          => "SP" + SupplierId.Increment;
         public string Modified               => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier               => Meta.Modifier;
-        public string PurchaseReturnId       => "PR" + ObjectId.Increment;
+        public string PurchaseReturnId       => "PR" + ObjectId.Increment.ToString("0000");
         #endregion
 
         #region ISupplierReportable Fields

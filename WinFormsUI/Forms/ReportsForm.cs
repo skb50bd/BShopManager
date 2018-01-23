@@ -257,7 +257,7 @@ namespace WinFormsUI.Forms {
 
                     // Time
                     col = new DataGridViewTextBoxColumn {
-                        DataPropertyName = nameof(Sale.DealTime),
+                        DataPropertyName = nameof(Sale.GetDealTime),
                         Name = "Time"
                     };
                     ReportsGrid.Columns.Add(col);
@@ -336,7 +336,15 @@ namespace WinFormsUI.Forms {
                     // Expense ID
                     col = new DataGridViewTextBoxColumn {
                         DataPropertyName = nameof(Expense.ExpenseId),
-                        Name = "Expense Id"
+                        Name = "ID"
+                    };
+                    ReportsGrid.Columns.Add(col);
+
+                    // Expense Title
+                    col = new DataGridViewTextBoxColumn
+                    {
+                        DataPropertyName = nameof(Expense.Title),
+                        Name = "Subject"
                     };
                     ReportsGrid.Columns.Add(col);
 
@@ -351,6 +359,14 @@ namespace WinFormsUI.Forms {
                     col = new DataGridViewTextBoxColumn {
                         DataPropertyName = nameof(Expense.Created),
                         Name = "Time"
+                    };
+                    ReportsGrid.Columns.Add(col);
+
+                    // Note
+                    col = new DataGridViewTextBoxColumn
+                    {
+                        DataPropertyName = nameof(Expense.Note),
+                        Name = "Note"
                     };
                     ReportsGrid.Columns.Add(col);
 
@@ -1571,7 +1587,6 @@ namespace WinFormsUI.Forms {
                     break;
 
                 case SaleReport:
-                    // Todo - Show Sale
                     sale = report.Sales[index];
                     string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                                          + @"\Brotal\" + sale.SaleId + ".pdf";

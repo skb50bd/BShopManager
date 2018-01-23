@@ -12,6 +12,8 @@ namespace ShopLibrary.Models {
         #region Fields
         [BsonId]
         public ObjectId ObjectId { get; set; }
+        [BsonElement("title")]
+        public string Title { get; set; }
         [BsonElement("totalAmount")]
         [BsonRepresentation(BsonType.Decimal128)]
         public decimal TotalAmount { get; set; }

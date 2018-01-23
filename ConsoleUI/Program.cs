@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System;
+using System.Threading;
 using static ShopLibrary.GlobalConfig;
+using static ConsoleUI.ReadDatabase;
 
 namespace ConsoleUI
 {
@@ -14,9 +16,11 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            #region Load dem database
             try
             {
                 InitializeConnections(false, true, false);
+                Console.WriteLine("Reading database...");
                 LoadBasicDatabase();
             }
             catch (Exception)
@@ -24,101 +28,111 @@ namespace ConsoleUI
                 Console.WriteLine("Error connecting to database");
                 Console.WriteLine("The program will exit now");
             }
+            #endregion
 
-            string command = String.Empty;
-
-            Console.WriteLine("Welcome to BShop Manager");
+            #region Greeting and Authentication
+            Console.WriteLine("Welcome to BShopConsole");
             Console.WriteLine("________________________");
             Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("This UI is for troubleshooting purposes");
-            Console.Write("Login : ");
+            Console.WriteLine("This UI is for developer's use");
+            Console.Write("Login    : ");
             string user = Console.ReadLine();
             Console.Write("Password : ");
-            string pwd = Console.ReadLine();
+            string pwd = Console.ReadLine(); 
+            #endregion
 
-            if (Connection[0].Login(user, pwd))
+            if (Connection[0].Login(user, pwd)) // Successful Login
             {
                 Console.WriteLine("The login was successful");
-                Console.Clear();
-                Console.WriteLine("Counting items in database...");
-                Console.WriteLine();
+                Thread.Sleep(500);
 
-                #region Customer
-                Console.WriteLine($"Customers : \t{Customers.Count}." +
-                                          $"\n\tTotal Due : \t{Customers.Sum(c => c.Debt).ToString("0.##") + " Tk"} ({Customers.Count(c => c.Debt > 0)})");
-                Console.Write("Show List? (y/N) : ");
-                command = Console.ReadLine();
-                if (command.ToLower() == "y")
+                while (true)
                 {
-                    Console.WriteLine("ID".PadLeft(6) + " " +
-                        "Name".PadRight(35) + " " +
-                        "Phone".PadLeft(15) + " " +
-                        "Due".PadLeft(10));
-                    foreach (Customer customer in Customers)
+                    Console.Clear();
+                    Console.WriteLine("MAIN MENU");
+                    Console.WriteLine("---------");
+                    Console.WriteLine("1. Read database");
+                    Console.WriteLine("2. Import excel data");
+                    Console.WriteLine("3. Import ini data");
+                    Console.WriteLine("0. Exit");
+
+                    Console.Write("Enter your choice: ");
+                    string line = Console.ReadLine();
+
+                    if (line.ToLowerInvariant() == "exit" || line == "0")
                     {
-                        Console.WriteLine(customer.CustomerId.PadLeft(6) + " " +
-                                          customer.FullName.PadRight(35) + " " +
-                                          customer.Phone.PadLeft(15) + " " +
-                                          customer.GetDebt.PadLeft(10));
+                        Console.WriteLine("Exiting...");
+                        Thread.Sleep(500);
+                    }
+                    else if (int.TryParse(line, out int choice))
+                    {
+                        ChooseMenu(choice);
+                    }
+                    else
+                    {
+                        Console.Error.WriteLine("Invalid Input.\n" +
+                                                "Try Again");
+                        Thread.Sleep(500);
+
                     }
                 }
-                Console.WriteLine("\n\n");
-                #endregion
-                #region Supplier
-                Console.WriteLine($"Suppliers : \t{Suppliers.Count}." +
-                                          $"\n\tTotal Payable: \t{Suppliers.Sum(s => s.Payable).ToString("0.##") + " Tk"} ({Suppliers.Count(s => s.Payable > 0)})");
-                Console.Write("Show List? (y/N) : ");
-                command = Console.ReadLine();
-                if (command.ToLower() == "y")
-                {
-                    Console.WriteLine("ID".PadLeft(6) + " " +
-                                      "Name".PadRight(35) + " " +
-                                      "Phone".PadLeft(15) + " " +
-                                      "Payable".PadLeft(10));
-                    foreach (Supplier supplier in Suppliers)
-                    {
-                        Console.WriteLine(supplier.SupplierId.PadLeft(6) + " " +
-                                          supplier.FullName.PadRight(35) + " " +
-                                          supplier.Phone.PadLeft(15) + " " +
-                                          supplier.GetPayable.PadLeft(10));
-                    }
-                }
-                Console.WriteLine("\n\n");
-                #endregion
-                #region Product
-                Console.WriteLine($"Products : \t{Products.Count}" +
-                                          $"\n\tLow Stock : \t{Products.Count(c => c.StockIsLow && c.TotalStock > 0)}" +
-                                          $"\n\tEmpty Stock : \t{Products.Count(c => c.TotalStock == 0.0)}" +
-                                          $"\n\tPurchase Worth : \t{Products.Sum(p => p.PurchasePrice * (decimal)p.TotalStock).ToString("0.##")}");
-                Console.Write("Show List? (y/N) : ");
-                command = Console.ReadLine();
-                if (command.ToLower() == "y")
-                {
-                    Console.WriteLine("ID".PadLeft(6) + " " +
-                                      "Name".PadRight(35) + " " +
-                                      "Stock".PadLeft(15) + " " +
-                                      "Prc. Price".PadRight(10) + " " +
-                                      "Ret Price".PadRight(10));
-                    foreach (Product product in Products)
-                    {
-                        Console.WriteLine(product.ProductId.PadLeft(6) + " " +
-                                          product.ProductName.PadRight(35) + " " +
-                                          $"{product.GetTotalStock} {product.GetDefaultUnitName}".PadLeft(15) + " " +
-                                          $"{product.GetPurchasePrice} Tk".PadRight(10) + " " +
-                                          $"{product.GetRetailPrice} Tk".PadRight(10));
-                    }
-                }
-                Console.WriteLine("\n\n"); 
-                #endregion
-                Console.WriteLine("Press enter to quit");
-                Console.ReadLine();
             }
-            else if (Users.Exists(u => u.UserName == user))
-                Console.WriteLine("Incorrect Password");
+            else if (Users.Exists(u => u.UserName == user)) 
+                Console.WriteLine("Incorrect password");
             else
-                Console.WriteLine("Invalid User");
+                Console.WriteLine("Invalid user");
 
+        }
+
+        static void ChooseMenu(int choice)
+        {
+            switch (choice)
+            {
+                case 1:
+                    ReadCustomers();
+                    ReadSuppliers();
+                    ReadProducts();
+                    break;
+
+                case 2:
+                    Console.WriteLine("Not implemented");
+                    break;
+
+                case 3:
+                    while (true)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("MENU");
+                        Console.WriteLine("-------------------");
+                        Console.WriteLine("1. Sale Records");
+                        Console.WriteLine("2. Purchase Records");
+                        Console.WriteLine("0. Exit");
+                        Console.Write("Enter your choice : ");
+                        string line = Console.ReadLine();
+                        if (line.ToLowerInvariant() == "exit" || line == "0")
+                        {
+                            Console.WriteLine("Exiting...");
+                            Thread.Sleep(500);
+                            return;
+                        }
+
+                        if (int.TryParse(line, out int choice2))
+                        {
+                            ImportIni.Choice(choice2);
+                        }
+                        else
+                        {
+                            Console.Error.WriteLine("Invalid Input.\n" +
+                                                    "Try Again");
+                            Thread.Sleep(500);
+                        }
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid choice");
+                    break;
+            }
         }
     }
 }

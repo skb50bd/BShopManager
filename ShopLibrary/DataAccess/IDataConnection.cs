@@ -106,6 +106,7 @@ namespace ShopLibrary.DataAccess {
         #region Sale
         //bool CheckSale(Sale model);
         Sale InsertSale(Sale model);
+        Sale InsertOldSale(Sale model);
         bool DeleteSale(Sale model);
         List<Sale> GetSaleByCustomer(Customer customer, DateTime _from, DateTime _to);
         List<Sale> GetSaleByDate(DateTime _from, DateTime _to);

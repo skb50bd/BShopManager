@@ -55,6 +55,8 @@
             this.ProductText = new System.Windows.Forms.TextBox();
             this.ProductInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.SubmissionGroupBox = new System.Windows.Forms.GroupBox();
+            this.TitleText = new System.Windows.Forms.TextBox();
+            this.ExpenseTitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CartDataGrid)).BeginInit();
             this.ProductInfoGroupBox.SuspendLayout();
             this.SubmissionGroupBox.SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(7, 7);
+            this.TitleLabel.Location = new System.Drawing.Point(3, 3);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(142, 47);
@@ -76,12 +78,12 @@
             // 
             this.ProductLabel.AutoSize = true;
             this.ProductLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductLabel.Location = new System.Drawing.Point(16, 20);
+            this.ProductLabel.Location = new System.Drawing.Point(7, 23);
             this.ProductLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProductLabel.Name = "ProductLabel";
-            this.ProductLabel.Size = new System.Drawing.Size(99, 21);
+            this.ProductLabel.Size = new System.Drawing.Size(71, 21);
             this.ProductLabel.TabIndex = 0;
-            this.ProductLabel.Text = "Entry Name :";
+            this.ProductLabel.Text = "Product :";
             this.ProductLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // SubmitButton
@@ -94,11 +96,11 @@
             this.SubmitButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
             this.SubmitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SubmitButton.Location = new System.Drawing.Point(70, 216);
+            this.SubmitButton.Location = new System.Drawing.Point(69, 192);
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(268, 42);
-            this.SubmitButton.TabIndex = 5;
+            this.SubmitButton.Size = new System.Drawing.Size(224, 42);
+            this.SubmitButton.TabIndex = 7;
             this.SubmitButton.Text = "Save";
             this.SubmitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.SubmitButton.UseVisualStyleBackColor = false;
@@ -114,10 +116,10 @@
             this.RemoveSelectedButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveSelectedButton.ForeColor = System.Drawing.Color.White;
             this.RemoveSelectedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RemoveSelectedButton.Location = new System.Drawing.Point(14, 412);
+            this.RemoveSelectedButton.Location = new System.Drawing.Point(11, 507);
             this.RemoveSelectedButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RemoveSelectedButton.Name = "RemoveSelectedButton";
-            this.RemoveSelectedButton.Size = new System.Drawing.Size(417, 42);
+            this.RemoveSelectedButton.Size = new System.Drawing.Size(648, 42);
             this.RemoveSelectedButton.TabIndex = 3;
             this.RemoveSelectedButton.Text = "Remove Selected";
             this.RemoveSelectedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -129,11 +131,12 @@
             this.UnitPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.UnitPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UnitPriceText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitPriceText.Location = new System.Drawing.Point(129, 51);
+            this.UnitPriceText.Location = new System.Drawing.Point(102, 57);
             this.UnitPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.UnitPriceText.Name = "UnitPriceText";
-            this.UnitPriceText.Size = new System.Drawing.Size(98, 22);
+            this.UnitPriceText.Size = new System.Drawing.Size(78, 22);
             this.UnitPriceText.TabIndex = 3;
+            this.UnitPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitPriceText_KeyDown);
             this.UnitPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             this.UnitPriceText.Leave += new System.EventHandler(this.UnitPriceText_Leave);
             // 
@@ -141,7 +144,7 @@
             // 
             this.UnitPriceLabel.AutoSize = true;
             this.UnitPriceLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitPriceLabel.Location = new System.Drawing.Point(31, 51);
+            this.UnitPriceLabel.Location = new System.Drawing.Point(7, 57);
             this.UnitPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UnitPriceLabel.Name = "UnitPriceLabel";
             this.UnitPriceLabel.Size = new System.Drawing.Size(84, 21);
@@ -154,11 +157,12 @@
             this.QuantityText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.QuantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuantityText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityText.Location = new System.Drawing.Point(312, 51);
+            this.QuantityText.Location = new System.Drawing.Point(251, 57);
             this.QuantityText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.QuantityText.Name = "QuantityText";
-            this.QuantityText.Size = new System.Drawing.Size(98, 22);
+            this.QuantityText.Size = new System.Drawing.Size(79, 22);
             this.QuantityText.TabIndex = 5;
+            this.QuantityText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuantityText_KeyDown);
             this.QuantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             this.QuantityText.Leave += new System.EventHandler(this.QuantityText_Leave);
             // 
@@ -166,7 +170,7 @@
             // 
             this.QuantityLabel.AutoSize = true;
             this.QuantityLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityLabel.Location = new System.Drawing.Point(256, 51);
+            this.QuantityLabel.Location = new System.Drawing.Point(201, 57);
             this.QuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.QuantityLabel.Name = "QuantityLabel";
             this.QuantityLabel.Size = new System.Drawing.Size(42, 21);
@@ -184,10 +188,10 @@
             this.AddToListButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddToListButton.ForeColor = System.Drawing.Color.White;
             this.AddToListButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddToListButton.Location = new System.Drawing.Point(239, 83);
+            this.AddToListButton.Location = new System.Drawing.Point(102, 121);
             this.AddToListButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddToListButton.Name = "AddToListButton";
-            this.AddToListButton.Size = new System.Drawing.Size(171, 42);
+            this.AddToListButton.Size = new System.Drawing.Size(228, 42);
             this.AddToListButton.TabIndex = 8;
             this.AddToListButton.Text = "Add to List";
             this.AddToListButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -199,22 +203,23 @@
             this.NotesText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NotesText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NotesText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesText.Location = new System.Drawing.Point(70, 102);
+            this.NotesText.Location = new System.Drawing.Point(69, 125);
             this.NotesText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.NotesText.Name = "NotesText";
-            this.NotesText.Size = new System.Drawing.Size(268, 101);
-            this.NotesText.TabIndex = 4;
+            this.NotesText.Size = new System.Drawing.Size(224, 59);
+            this.NotesText.TabIndex = 6;
             this.NotesText.Text = "";
+            this.NotesText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NotesText_KeyDown);
             // 
             // NotesLabel
             // 
             this.NotesLabel.AutoSize = true;
             this.NotesLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesLabel.Location = new System.Drawing.Point(4, 102);
+            this.NotesLabel.Location = new System.Drawing.Point(7, 125);
             this.NotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NotesLabel.Name = "NotesLabel";
             this.NotesLabel.Size = new System.Drawing.Size(58, 21);
-            this.NotesLabel.TabIndex = 3;
+            this.NotesLabel.TabIndex = 5;
             this.NotesLabel.Text = "Notes :";
             this.NotesLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -222,11 +227,11 @@
             // 
             this.TotalLabel.AutoSize = true;
             this.TotalLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLabel.Location = new System.Drawing.Point(4, 69);
+            this.TotalLabel.Location = new System.Drawing.Point(7, 93);
             this.TotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TotalLabel.Name = "TotalLabel";
             this.TotalLabel.Size = new System.Drawing.Size(49, 21);
-            this.TotalLabel.TabIndex = 1;
+            this.TotalLabel.TabIndex = 3;
             this.TotalLabel.Text = "Total :";
             this.TotalLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -234,11 +239,11 @@
             // 
             this.TotalText.AutoSize = true;
             this.TotalText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalText.Location = new System.Drawing.Point(65, 69);
+            this.TotalText.Location = new System.Drawing.Point(64, 90);
             this.TotalText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TotalText.Name = "TotalText";
             this.TotalText.Size = new System.Drawing.Size(90, 25);
-            this.TotalText.TabIndex = 2;
+            this.TotalText.TabIndex = 4;
             this.TotalText.Text = "<TOTAL>";
             this.TotalText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
@@ -276,15 +281,15 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CartDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.CartDataGrid.GridColor = System.Drawing.Color.White;
-            this.CartDataGrid.Location = new System.Drawing.Point(14, 193);
+            this.CartDataGrid.Location = new System.Drawing.Point(11, 250);
             this.CartDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.CartDataGrid.MultiSelect = false;
             this.CartDataGrid.Name = "CartDataGrid";
             this.CartDataGrid.ReadOnly = true;
             this.CartDataGrid.RowHeadersVisible = false;
             this.CartDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CartDataGrid.Size = new System.Drawing.Size(417, 210);
-            this.CartDataGrid.TabIndex = 0;
+            this.CartDataGrid.Size = new System.Drawing.Size(648, 251);
+            this.CartDataGrid.TabIndex = 2;
             // 
             // ProductNameColumn
             // 
@@ -323,11 +328,12 @@
             this.NetPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NetPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NetPriceText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NetPriceText.Location = new System.Drawing.Point(129, 83);
+            this.NetPriceText.Location = new System.Drawing.Point(102, 89);
             this.NetPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.NetPriceText.Name = "NetPriceText";
-            this.NetPriceText.Size = new System.Drawing.Size(98, 22);
+            this.NetPriceText.Size = new System.Drawing.Size(228, 22);
             this.NetPriceText.TabIndex = 7;
+            this.NetPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NetPriceText_KeyDown);
             this.NetPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             this.NetPriceText.Leave += new System.EventHandler(this.NetPriceText_Leave);
             // 
@@ -335,7 +341,7 @@
             // 
             this.NetPriceLabel.AutoSize = true;
             this.NetPriceLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NetPriceLabel.Location = new System.Drawing.Point(35, 83);
+            this.NetPriceLabel.Location = new System.Drawing.Point(7, 89);
             this.NetPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NetPriceLabel.Name = "NetPriceLabel";
             this.NetPriceLabel.Size = new System.Drawing.Size(80, 21);
@@ -345,23 +351,27 @@
             // ExpenseDateTime
             // 
             this.ExpenseDateTime.CalendarMonthBackground = System.Drawing.Color.White;
-            this.ExpenseDateTime.CustomFormat = "dd MMMM yyyy - hh:mm tt";
+            this.ExpenseDateTime.CustomFormat = " ddMMMMyyyy - hh:mm tt";
             this.ExpenseDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ExpenseDateTime.Location = new System.Drawing.Point(8, 21);
+            this.ExpenseDateTime.Location = new System.Drawing.Point(7, 21);
             this.ExpenseDateTime.Name = "ExpenseDateTime";
-            this.ExpenseDateTime.Size = new System.Drawing.Size(330, 29);
+            this.ExpenseDateTime.Size = new System.Drawing.Size(286, 29);
             this.ExpenseDateTime.TabIndex = 0;
+            this.ExpenseDateTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExpenseDateTime_KeyDown);
             // 
             // ProductText
             // 
+            this.ProductText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ProductText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.ProductText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ProductText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProductText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductText.Location = new System.Drawing.Point(129, 20);
+            this.ProductText.Location = new System.Drawing.Point(102, 23);
             this.ProductText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ProductText.Name = "ProductText";
-            this.ProductText.Size = new System.Drawing.Size(281, 22);
+            this.ProductText.Size = new System.Drawing.Size(228, 22);
             this.ProductText.TabIndex = 1;
+            this.ProductText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductText_KeyDown);
             // 
             // ProductInfoGroupBox
             // 
@@ -374,32 +384,57 @@
             this.ProductInfoGroupBox.Controls.Add(this.UnitPriceText);
             this.ProductInfoGroupBox.Controls.Add(this.UnitPriceLabel);
             this.ProductInfoGroupBox.Controls.Add(this.ProductLabel);
-            this.ProductInfoGroupBox.Location = new System.Drawing.Point(12, 50);
+            this.ProductInfoGroupBox.Location = new System.Drawing.Point(11, 69);
             this.ProductInfoGroupBox.Name = "ProductInfoGroupBox";
-            this.ProductInfoGroupBox.Size = new System.Drawing.Size(417, 136);
+            this.ProductInfoGroupBox.Size = new System.Drawing.Size(340, 175);
             this.ProductInfoGroupBox.TabIndex = 1;
             this.ProductInfoGroupBox.TabStop = false;
             // 
             // SubmissionGroupBox
             // 
+            this.SubmissionGroupBox.Controls.Add(this.TitleText);
+            this.SubmissionGroupBox.Controls.Add(this.ExpenseTitleLabel);
             this.SubmissionGroupBox.Controls.Add(this.ExpenseDateTime);
             this.SubmissionGroupBox.Controls.Add(this.SubmitButton);
             this.SubmissionGroupBox.Controls.Add(this.NotesLabel);
             this.SubmissionGroupBox.Controls.Add(this.NotesText);
             this.SubmissionGroupBox.Controls.Add(this.TotalText);
             this.SubmissionGroupBox.Controls.Add(this.TotalLabel);
-            this.SubmissionGroupBox.Location = new System.Drawing.Point(436, 50);
+            this.SubmissionGroupBox.Location = new System.Drawing.Point(357, -2);
             this.SubmissionGroupBox.Name = "SubmissionGroupBox";
-            this.SubmissionGroupBox.Size = new System.Drawing.Size(347, 268);
+            this.SubmissionGroupBox.Size = new System.Drawing.Size(302, 246);
             this.SubmissionGroupBox.TabIndex = 4;
             this.SubmissionGroupBox.TabStop = false;
+            // 
+            // TitleText
+            // 
+            this.TitleText.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TitleText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TitleText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleText.Location = new System.Drawing.Point(69, 61);
+            this.TitleText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.TitleText.Name = "TitleText";
+            this.TitleText.Size = new System.Drawing.Size(224, 22);
+            this.TitleText.TabIndex = 2;
+            this.TitleText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TitleText_KeyDown);
+            // 
+            // ExpenseTitleLabel
+            // 
+            this.ExpenseTitleLabel.AutoSize = true;
+            this.ExpenseTitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseTitleLabel.Location = new System.Drawing.Point(7, 61);
+            this.ExpenseTitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ExpenseTitleLabel.Name = "ExpenseTitleLabel";
+            this.ExpenseTitleLabel.Size = new System.Drawing.Size(46, 21);
+            this.ExpenseTitleLabel.TabIndex = 1;
+            this.ExpenseTitleLabel.Text = "Title :";
             // 
             // ExpenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(795, 465);
+            this.ClientSize = new System.Drawing.Size(672, 560);
             this.Controls.Add(this.SubmissionGroupBox);
             this.Controls.Add(this.ProductInfoGroupBox);
             this.Controls.Add(this.CartDataGrid);
@@ -410,6 +445,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ExpenseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Expense";
             this.Load += new System.EventHandler(this.ExpenseForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
@@ -448,5 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NetPriceColumn;
+        private System.Windows.Forms.TextBox TitleText;
+        private System.Windows.Forms.Label ExpenseTitleLabel;
     }
 }
