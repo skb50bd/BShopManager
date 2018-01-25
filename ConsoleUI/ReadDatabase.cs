@@ -76,7 +76,7 @@ namespace ConsoleUI
                 {
                     Console.WriteLine(product.ProductId.PadLeft(6) + " " +
                                       product.ProductName.PadRight(35) + " " +
-                                      $"{product.GetTotalStock} {product.GetDefaultUnitName}".PadLeft(15) + " " +
+                                      $"{product.GetTotalStock} {product.DefaultUnitName}".PadLeft(15) + " " +
                                       $"{product.GetPurchasePrice} Tk".PadRight(10) + " " +
                                       $"{product.GetRetailPrice} Tk".PadRight(10));
                 }

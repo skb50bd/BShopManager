@@ -39,22 +39,27 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public decimal Due             => Payable - Paid;
-        public decimal Payable         => TotalAmount - Less;
-        public float Discount          => TotalAmount == 0
-                                            ? 0
-                                            : (float)(Less / TotalAmount * (decimal)100.0);
-        public string Created          => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
-        public string Creator          => Meta.Creator;
-        public string GetDiscount      => Discount.ToString("0.##");
-        public string GetDue           => Due.ToString("0.##");
-        public string GetLess          => Less.ToString("0.##");
-        public string GetPaid          => Paid.ToString("0.##");
-        public string GetPayable       => Payable.ToString("0.##");
-        public string GetSupplierId    => "SP" + SupplierId.Increment;
-        public string Modified         => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
-        public string Modifier         => Meta.Modifier;
-        public string PurchaseId       => "PC" + ObjectId.Increment;
+        public decimal Due => Payable - Paid;
+        public decimal Payable => TotalAmount - Less;
+
+        public float Discount {
+            get => TotalAmount == 0
+                ? 0
+                : (float)(Less / TotalAmount * 100);
+            set => Less = TotalAmount * (decimal)value / 100;
+        }
+
+        public string Created => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+        public string Creator => Meta.Creator;
+        public string GetDiscount => Discount.ToString("0.##");
+        public string GetDue => Due.ToString("0.##");
+        public string GetLess => Less.ToString("0.##");
+        public string GetPaid => Paid.ToString("0.##");
+        public string GetPayable => Payable.ToString("0.##");
+        public string GetSupplierId => "SP" + SupplierId.Increment;
+        public string Modified => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+        public string Modifier => Meta.Modifier;
+        public string PurchaseId => "PC" + ObjectId.Increment;
         #endregion
 
         #region ISupplierReportable Fields
@@ -63,12 +68,12 @@ namespace ShopLibrary.Models {
         string ISupplierReportable.Type => "Purchase";
         string ISupplierReportable.Amount => GetPayable;
         string ISupplierReportable.Due => GetDue;
-        string ISupplierReportable.TimeStamp => Meta.Created.ToString("u");
+        string ISupplierReportable.TimeStamp => Meta.Created.ToLocalTime().ToString("u");
 
         #endregion
 
         public void AddToCart(ShoppingCart sc) => Cart.Add(sc);
-        public override string ToString() => "P" + DealTime.ToString("yyyyMMddHHmmss") + " " + SupplierName;
+        public override string ToString() => "P" + DealTime.ToLocalTime().ToString("yyyyMMddHHmmss") + " " + SupplierName;
 
         #region ICashFlow Fields
         string ICashFlow.Type => "Purchase";

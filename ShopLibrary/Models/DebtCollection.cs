@@ -23,12 +23,12 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public string Created => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator => Meta.Creator;
         public string DebtCollectionId => "DC" + ObjectId.Increment;
         public string GetAmount => Amount.ToString("0.##");
         public string GetCustomerId => "C" + CustomerId.Increment;
-        public string Modified => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier => Meta.Modifier;
         #endregion
 
@@ -38,7 +38,7 @@ namespace ShopLibrary.Models {
         string ICustomerReportable.Amount => GetAmount;
         string ICustomerReportable.Due => "";
         string ICustomerReportable.Profit => "";
-        string ICustomerReportable.TimeStamp => Meta.Created.ToString("u");
+        string ICustomerReportable.TimeStamp => Meta.Created.ToLocalTime().ToString("u");
         #endregion
 
         #region ICashFlow Fields

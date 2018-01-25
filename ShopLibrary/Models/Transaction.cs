@@ -35,13 +35,13 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public string Created            => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created            => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator            => Meta.Creator;
         public string GetAccountId       => "B" + BankAccountId.Increment;
         public string GetAmount          => Amount.ToString("0.##");
         public string GetCustomerId      => "C" + CustomerId.Increment;
         public string GetTransactionType => TransactionType.ToString();
-        public string Modified           => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified           => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier           => Meta.Modifier;
         public string TransactionId      => "T" + ObjectId.Increment;
         #endregion

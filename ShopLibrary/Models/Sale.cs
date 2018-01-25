@@ -8,7 +8,10 @@ using static ShopLibrary.Models.SaleType;
 namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class Sale : ICustomerReportable, ICashFlow {
-        public Sale() {
+        public Sale()
+        {
+            DealTime = DateTime.Now;
+            Meta = new Metadata();
         }
 
         #region Fields
@@ -50,7 +53,13 @@ namespace ShopLibrary.Models {
         public decimal Payable            => TotalAmount - Less;
         public decimal Profit             => Payable - TotalPurchasePrice;
         public decimal TotalPurchasePrice => Cart.Sum(sc => sc.NetPurchasePrice);
-        public float Discount             => TotalAmount == 0 ? 0 : (float)(Less / TotalAmount * (decimal)100.0);
+
+        public float Discount
+        {
+            get => TotalAmount == 0 ? 0 : (float) (Less / TotalAmount * 100);
+            set => Less = TotalAmount * (decimal) value / 100;
+        }
+
         public string Created             => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator             => Meta.Creator;
         public string GetCustomerId       => "C" + CustomerId.Increment;

@@ -32,14 +32,14 @@ namespace ShopLibrary.Models {
 
         #region Getters
         public decimal PurchaseReturnCut     => PriceAmount - PurchaseReturnAmount;
-        public string Created                => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created                => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator                => Meta.Creator;
         public string GetPriceAmount         => PriceAmount.ToString("0.##");
         public string GetPurchaseId          => "PC" + PurchaseId.Increment;
         public string GetPurchaseReturnCut   => PurchaseReturnCut.ToString("0.##");
         public string GetPurchasReturnAmount => PurchaseReturnAmount.ToString("0.##");
         public string GetSupplierId          => "SP" + SupplierId.Increment;
-        public string Modified               => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified               => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier               => Meta.Modifier;
         public string PurchaseReturnId       => "PR" + ObjectId.Increment.ToString("0000");
         #endregion
@@ -50,7 +50,7 @@ namespace ShopLibrary.Models {
         string ISupplierReportable.Type => "Prc. Rtrn";
         string ISupplierReportable.Amount => GetPurchasReturnAmount;
         string ISupplierReportable.Due => "";
-        string ISupplierReportable.TimeStamp => Meta.Created.ToString("u");
+        string ISupplierReportable.TimeStamp => Meta.Created.ToLocalTime().ToString("u");
 
 
         #endregion

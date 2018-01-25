@@ -62,20 +62,13 @@ namespace ShopLibrary.Models {
         private string Password { get; set; }
         #endregion
 
-        public bool IsRealUser(string userName, string password) {
-            Debug.WriteLine($"Username: {this.UserName} - {userName}");
-            Debug.WriteLine($"Password: {this.Password} - {AES.Encrypt(password, this.Salt)}");
-            if (userName == UserName && AES.Encrypt(password, this.Salt) == this.Password) {
-
-                return true;
-            }
-            return false;
-        }
+        public bool IsRealUser(string userName, string password) => userName == UserName 
+                                                                    && AES.Encrypt(password, this.Salt) == this.Password;
 
         #region Getter
-        public string Created => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator => Meta.Creator;
-        public string Modified => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier => Meta.Modifier;
         public string UserId => "U" + ObjectId.Increment;
         #endregion

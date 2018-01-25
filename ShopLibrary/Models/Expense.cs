@@ -26,11 +26,11 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public string Created                  => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created                  => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator                  => Meta.Creator;
         public string ExpenseId                => "EX" + ObjectId.Increment;
         public string GetTotalAmount           => TotalAmount.ToString("0.##");
-        public string Modified                 => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified                 => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier                 => Meta.Modifier;
         #endregion
 

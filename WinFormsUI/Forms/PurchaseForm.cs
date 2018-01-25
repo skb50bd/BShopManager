@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using ShopLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using MongoDB.Bson;
-using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 
 
@@ -68,12 +68,12 @@ namespace WinFormsUI.Forms {
         #endregion
 
 
-        public PurchaseForm() {
-            InitializeComponent();
-        }
+        public PurchaseForm() => InitializeComponent();
+
         private void PurchaseForm_Load(object sender, EventArgs e) {
             CartDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CartDataGrid.AutoGenerateColumns = false;
+            DealDateTime.Value = DateTime.Now.ToLocalTime();
 
             _purchase = new Purchase();
             _sCart = new ShoppingCart();
@@ -82,6 +82,17 @@ namespace WinFormsUI.Forms {
             RefreshSavedVoucharList();
             ResetProductButton_Click(sender, e);
             ResetSupplierButton_Click(sender, e);
+        }
+
+        private void ResetForm() {
+            _purchase = new Purchase();
+            RefreshSuppliers();
+            RefreshProducts();
+            ResetSupplierButton_Click(this, EventArgs.Empty);
+            ResetProductButton_Click(this, EventArgs.Empty);
+            RefreshAmounts();
+            RefreshCart();
+            RefreshSavedVoucharList();
         }
 
         #region Supplier
@@ -296,6 +307,7 @@ namespace WinFormsUI.Forms {
 
         #endregion
 
+        #region Amount Calculation
         private void QuantityText_TextChanged(object sender, EventArgs e) {
             if (float.TryParse(QuantityText.Text, out float q) && q > 0) {
                 _sCart.Quantity = q;
@@ -319,7 +331,7 @@ namespace WinFormsUI.Forms {
         private void NetPriceText_TextChanged(object sender, EventArgs e) {
             if (decimal.TryParse(NetPriceText.Text, out decimal np)) {
                 if (float.TryParse(QuantityText.Text, out float q) && q > 0)
-                    UnitPriceText.Text = (np / (decimal)q).ToString("0.##"); 
+                    UnitPriceText.Text = (np / (decimal)q).ToString("0.##");
                 else if (decimal.TryParse(UnitPriceText.Text, out decimal up) && up > 0)
                     QuantityText.Text = (np / up).ToString("0.##");
             }
@@ -337,7 +349,8 @@ namespace WinFormsUI.Forms {
                         (_product.PurchasePrice / (decimal)_sCart.Unit.Weight * (decimal)q).ToString("0.##");
 
                 }
-            } else {
+            }
+            else {
                 QuantityText.Text = "";
                 UnitPriceText.Text = "";
                 NetPriceText.Text = "";
@@ -362,6 +375,94 @@ namespace WinFormsUI.Forms {
             RefreshAmounts();
         }
 
+        private void SubmitButton_Click(object sender, EventArgs e) {
+            if (!ValidatePurchase())
+                return;
+
+            if (SupplierCombo.SelectedIndex > -1) {
+                _purchase.SupplierId = _supplier.ObjectId;
+            }
+            else {
+                if (_purchase.Due > 0) {
+                    DialogResult result = MessageBox.Show("Non-documented suppliers should not get late payments\n" +
+                                                          "Do you want to continue anyway?",
+                                                          "Confirm",
+                                                          MessageBoxButtons.YesNo);
+                    if (result != DialogResult.Yes)
+                        return;
+                }
+                _purchase.SupplierId = ObjectId.Empty;
+            }
+            _purchase.SupplierName = SupplierNameText.Text;
+            _purchase.SupplierCompany = CompanyText.Text;
+            _purchase.SupplierAddress = AddressText.Text;
+            _purchase.Note = NotesText.Text;
+            _purchase.DealTime = DealDateTime.Value;
+            _purchase.TotalAmount = _purchase.Cart.Sum(c => c.NetPurchasePrice);
+            _purchase.Less = decimal.Parse(LessAmountText.Text);
+            _purchase.Paid = decimal.Parse(PaidAmountText.Text);
+
+            if (sender as Button == SubmitButton) {
+                DialogResult confirm = MessageBox.Show("Are you sure want to register this purchase?\n" +
+                        $"Supplier Name\t\t: {_purchase.SupplierName}\n" +
+                        $"Supplier Company\t\t: {_purchase.SupplierCompany}\n" +
+                        $"Products\t\t\t: {_purchase.Cart.Count}\n" +
+                        $"Payable\t\t\t: {_purchase.Payable.ToString("0.##")}\n" +
+                        $"Paid\t\t\t: {_purchase.Paid.ToString("0.##")}\n" +
+                        $"Due\t\t\t: {_purchase.Due.ToString("0.##")}\n",
+                    "Confirm",
+                    MessageBoxButtons.YesNo);
+                if (confirm != DialogResult.Yes)
+                    return;
+
+                try {
+                    _purchase = Connection[0].InsertPurchase(_purchase);
+                }
+                catch (Exception ex) {
+                    MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
+                    return;
+                }
+            }
+            else if (sender as Button == SaveButton) {
+                DialogResult confirm = MessageBox.Show("Are you sure want to save this vouchar?\n" +
+                        $"Supplier Name\t\t: {_purchase.SupplierName}\n" +
+                        $"Supplier Company\t\t: {_purchase.SupplierCompany}\n" +
+                        $"Products\t\t\t: {_purchase.Cart.Count}\n" +
+                        $"Payable\t\t\t: {_purchase.Payable.ToString("0.##")}\n" +
+                        $"Paid\t\t\t: {_purchase.Paid.ToString("0.##")}\n" +
+                        $"Due\t\t\t: {_purchase.Due.ToString("0.##")}\n",
+                    "Confirm",
+                    MessageBoxButtons.YesNo);
+                if (confirm != DialogResult.Yes)
+                    return;
+                try {
+                    _purchase = Connection[0].SavePurchase(_purchase);
+                    RefreshSavedVoucharList();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
+                    return;
+                }
+            }
+            ReloadSuppliersProducts_Click(sender, e);
+            ResetForm();
+        }
+
+        private void ReloadSuppliersProducts_Click(object sender, EventArgs e) {
+            Suppliers = Connection[0].GetSupplierAll();
+            RefreshSuppliers();
+            Products = Connection[0].GetProductsAll();
+            RefreshProducts();
+            RefreshSavedVoucharList();
+        }
+
+        private void PaidAmountText_TextChanged_1(object sender, EventArgs e) {
+            if (decimal.TryParse(PaidAmountText.Text, out decimal p)) {
+                _purchase.Paid = p;
+                RefreshAmounts();
+            }
+        }
+        #endregion
 
         private bool ValidatePurchase() {
             string error = string.Empty;
@@ -399,103 +500,6 @@ namespace WinFormsUI.Forms {
                 return false;
             }
             return true;
-        }
-
-        private void SubmitButton_Click(object sender, EventArgs e) {
-            if (!ValidatePurchase())
-                return;
-
-            if (SupplierCombo.SelectedIndex > -1) {
-                _purchase.SupplierId = _supplier.ObjectId;
-            } else {
-                if (_purchase.Due > 0) {
-                    DialogResult result = MessageBox.Show("Non-documented suppliers should not get late payments\n" +
-                                                          "Do you want to continue anyway?",
-                                                          "Confirm",
-                                                          MessageBoxButtons.YesNo);
-                    if (result != DialogResult.Yes)
-                        return;
-                }
-                _purchase.SupplierId = ObjectId.Empty;
-            }
-            _purchase.SupplierName = SupplierNameText.Text;
-            _purchase.SupplierCompany = CompanyText.Text;
-            _purchase.SupplierAddress = AddressText.Text;
-            _purchase.Note = NotesText.Text;
-            _purchase.DealTime = DealDateTime.Value;
-            _purchase.TotalAmount = _purchase.Cart.Sum(c => c.NetPurchasePrice);
-            _purchase.Less = decimal.Parse(LessAmountText.Text);
-            _purchase.Paid = decimal.Parse(PaidAmountText.Text);
-
-            if (sender as Button == SubmitButton) {
-                DialogResult confirm = MessageBox.Show("Are you sure want to register this purchase?\n" +
-                        $"Supplier Name\t\t: {_purchase.SupplierName}\n" +
-                        $"Supplier Company\t\t: {_purchase.SupplierCompany}\n" +
-                        $"Products\t\t\t: {_purchase.Cart.Count}\n" +
-                        $"Payable\t\t\t: {_purchase.Payable.ToString("0.##")}\n" +
-                        $"Paid\t\t\t: {_purchase.Paid.ToString("0.##")}\n" +
-                        $"Due\t\t\t: {_purchase.Due.ToString("0.##")}\n",
-                    "Confirm",
-                    MessageBoxButtons.YesNo);
-                if (confirm != DialogResult.Yes)
-                    return;
-
-                try {
-                    _purchase = Connection[0].InsertPurchase(_purchase);
-                } catch (Exception ex) {
-                    MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
-                    return;
-                }
-            } else if (sender as Button == SaveButton) {
-                DialogResult confirm = MessageBox.Show("Are you sure want to save this vouchar?\n" +
-                        $"Supplier Name\t\t: {_purchase.SupplierName}\n" +
-                        $"Supplier Company\t\t: {_purchase.SupplierCompany}\n" +
-                        $"Products\t\t\t: {_purchase.Cart.Count}\n" +
-                        $"Payable\t\t\t: {_purchase.Payable.ToString("0.##")}\n" +
-                        $"Paid\t\t\t: {_purchase.Paid.ToString("0.##")}\n" +
-                        $"Due\t\t\t: {_purchase.Due.ToString("0.##")}\n",
-                    "Confirm",
-                    MessageBoxButtons.YesNo);
-                if (confirm != DialogResult.Yes)
-                    return;
-                try {
-                    _purchase = Connection[0].SavePurchase(_purchase);
-                    RefreshSavedVoucharList();
-                } catch (Exception ex) {
-                    MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
-                    return;
-                }
-            }
-            ReloadSuppliersProducts_Click(sender, e);
-            ResetForm();
-        }
-
-        private void ResetForm() {
-            _purchase = new Purchase();
-            RefreshSuppliers();
-            RefreshProducts();
-            ResetSupplierButton_Click(this, EventArgs.Empty);
-            ResetProductButton_Click(this, EventArgs.Empty);
-            RefreshAmounts();
-            RefreshCart();
-            RefreshSavedVoucharList();
-        }
-
-        private void ReloadSuppliersProducts_Click(object sender, EventArgs e) {
-            Suppliers = Connection[0].GetSupplierAll();
-            RefreshSuppliers();
-            Products = Connection[0].GetProductsAll();
-            RefreshProducts();
-            RefreshSavedVoucharList();
-        }
-
-        private void PaidAmountText_TextChanged_1(object sender, EventArgs e)
-        {
-            if (decimal.TryParse(PaidAmountText.Text, out decimal p))
-            {
-                _purchase.Paid = p;
-                RefreshAmounts();
-            }
         }
 
         #region Key Downs

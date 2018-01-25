@@ -48,7 +48,6 @@
             this.TotalText = new System.Windows.Forms.Label();
             this.TotalLabel = new System.Windows.Forms.Label();
             this.SubmitButton = new System.Windows.Forms.Button();
-            this.RemoveSelectedButton = new System.Windows.Forms.Button();
             this.DiscountLabel = new System.Windows.Forms.Label();
             this.DiscountPercentageText = new System.Windows.Forms.TextBox();
             this.AddressText = new System.Windows.Forms.TextBox();
@@ -61,13 +60,6 @@
             this.PercentageLabel = new System.Windows.Forms.Label();
             this.UnitPriceText = new System.Windows.Forms.TextBox();
             this.AvailableQuantityText = new System.Windows.Forms.TextBox();
-            this.CartDataGrid = new System.Windows.Forms.DataGridView();
-            this.ProductIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NetPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewDueLabel = new System.Windows.Forms.Label();
             this.DueText = new System.Windows.Forms.TextBox();
             this.UnitSelectorCombo = new System.Windows.Forms.ComboBox();
@@ -88,7 +80,7 @@
             this.NetPriceLabel = new System.Windows.Forms.Label();
             this.UnitPriceLabel = new System.Windows.Forms.Label();
             this.BasicInfoGroup = new System.Windows.Forms.GroupBox();
-            this.SaleDateTime = new System.Windows.Forms.DateTimePicker();
+            this.DealDateTime = new System.Windows.Forms.DateTimePicker();
             this.AmountGroup = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PreviousDueText = new System.Windows.Forms.TextBox();
@@ -101,12 +93,20 @@
             this.SavedMemoList = new System.Windows.Forms.ListBox();
             this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ReloadButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.CartDataGrid)).BeginInit();
+            this.RemoveSelectedButton = new System.Windows.Forms.Button();
+            this.CartDataGrid = new System.Windows.Forms.DataGridView();
+            this.ProductIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NetPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerGroup.SuspendLayout();
             this.ProductGroup.SuspendLayout();
             this.BasicInfoGroup.SuspendLayout();
             this.AmountGroup.SuspendLayout();
             this.SavedMemoGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CartDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ShopSelectorCombo
@@ -180,7 +180,7 @@
             this.CompanyText.Location = new System.Drawing.Point(91, 94);
             this.CompanyText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CompanyText.Name = "CompanyText";
-            this.CompanyText.Size = new System.Drawing.Size(261, 22);
+            this.CompanyText.Size = new System.Drawing.Size(262, 22);
             this.CompanyText.TabIndex = 5;
             this.CompanyText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CompanyText_KeyDown);
             // 
@@ -206,11 +206,10 @@
             this.CustomerCombo.Location = new System.Drawing.Point(91, 23);
             this.CustomerCombo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CustomerCombo.Name = "CustomerCombo";
-            this.CustomerCombo.Size = new System.Drawing.Size(260, 29);
+            this.CustomerCombo.Size = new System.Drawing.Size(263, 29);
             this.CustomerCombo.TabIndex = 1;
             this.CustomerCombo.SelectedIndexChanged += new System.EventHandler(this.CustomerCombo_SelectedIndexChanged);
             this.CustomerCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerCombo_KeyDown);
-            this.CustomerCombo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CustomerCombo_MouseDoubleClick);
             // 
             // ProductSelectorCombo
             // 
@@ -335,27 +334,6 @@
             this.SubmitButton.UseVisualStyleBackColor = false;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // RemoveSelectedButton
-            // 
-            this.RemoveSelectedButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
-            this.RemoveSelectedButton.FlatAppearance.BorderSize = 0;
-            this.RemoveSelectedButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.RemoveSelectedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
-            this.RemoveSelectedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveSelectedButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveSelectedButton.ForeColor = System.Drawing.Color.White;
-            this.RemoveSelectedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RemoveSelectedButton.Location = new System.Drawing.Point(15, 647);
-            this.RemoveSelectedButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.RemoveSelectedButton.Name = "RemoveSelectedButton";
-            this.RemoveSelectedButton.Size = new System.Drawing.Size(742, 42);
-            this.RemoveSelectedButton.TabIndex = 5;
-            this.RemoveSelectedButton.Text = "Remove Selected";
-            this.RemoveSelectedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonToolTip.SetToolTip(this.RemoveSelectedButton, "Remove the selected product from cart");
-            this.RemoveSelectedButton.UseVisualStyleBackColor = false;
-            this.RemoveSelectedButton.Click += new System.EventHandler(this.RemoveSelectedButton_Click);
-            // 
             // DiscountLabel
             // 
             this.DiscountLabel.AutoSize = true;
@@ -378,9 +356,9 @@
             this.DiscountPercentageText.Name = "DiscountPercentageText";
             this.DiscountPercentageText.Size = new System.Drawing.Size(57, 22);
             this.DiscountPercentageText.TabIndex = 3;
+            this.DiscountPercentageText.TextChanged += new System.EventHandler(this.DiscountPercentageText_TextChanged);
             this.DiscountPercentageText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DiscountPercentageText_KeyDown);
             this.DiscountPercentageText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            this.DiscountPercentageText.Leave += new System.EventHandler(this.DiscountText_Leave);
             // 
             // AddressText
             // 
@@ -390,7 +368,7 @@
             this.AddressText.Location = new System.Drawing.Point(91, 127);
             this.AddressText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddressText.Name = "AddressText";
-            this.AddressText.Size = new System.Drawing.Size(261, 22);
+            this.AddressText.Size = new System.Drawing.Size(262, 22);
             this.AddressText.TabIndex = 7;
             this.AddressText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressText_KeyDown);
             // 
@@ -429,7 +407,6 @@
             this.PayableText.Name = "PayableText";
             this.PayableText.Size = new System.Drawing.Size(88, 22);
             this.PayableText.TabIndex = 9;
-            this.PayableText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // PaidAmountLabel
             // 
@@ -456,7 +433,6 @@
             this.PaidAmountText.TextChanged += new System.EventHandler(this.PaidAmountText_TextChanged);
             this.PaidAmountText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaidAmountText_KeyDown);
             this.PaidAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            this.PaidAmountText.Leave += new System.EventHandler(this.DiscountText_Leave);
             // 
             // LessAmountText
             // 
@@ -471,7 +447,6 @@
             this.LessAmountText.TextChanged += new System.EventHandler(this.LessAmountText_TextChanged);
             this.LessAmountText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LessAmountText_KeyDown);
             this.LessAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
-            this.LessAmountText.Leave += new System.EventHandler(this.DiscountText_Leave);
             // 
             // PercentageLabel
             // 
@@ -489,6 +464,7 @@
             // 
             this.UnitPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.UnitPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UnitPriceText.Enabled = false;
             this.UnitPriceText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UnitPriceText.Location = new System.Drawing.Point(87, 120);
             this.UnitPriceText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -500,105 +476,13 @@
             // 
             this.AvailableQuantityText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.AvailableQuantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AvailableQuantityText.Enabled = false;
             this.AvailableQuantityText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AvailableQuantityText.Location = new System.Drawing.Point(230, 120);
             this.AvailableQuantityText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AvailableQuantityText.Name = "AvailableQuantityText";
             this.AvailableQuantityText.Size = new System.Drawing.Size(136, 22);
             this.AvailableQuantityText.TabIndex = 7;
-            // 
-            // CartDataGrid
-            // 
-            this.CartDataGrid.AllowUserToAddRows = false;
-            this.CartDataGrid.AllowUserToDeleteRows = false;
-            this.CartDataGrid.AllowUserToOrderColumns = true;
-            this.CartDataGrid.AllowUserToResizeRows = false;
-            this.CartDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.CartDataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.CartDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CartDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.CartDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CartDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.CartDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CartDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductIdColumn,
-            this.ProductNameColumn,
-            this.QuantityColumn,
-            this.UnitNameColumn,
-            this.UnitPriceColumn,
-            this.NetPriceColumn});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CartDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CartDataGrid.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.CartDataGrid.Location = new System.Drawing.Point(15, 375);
-            this.CartDataGrid.Margin = new System.Windows.Forms.Padding(4);
-            this.CartDataGrid.Name = "CartDataGrid";
-            this.CartDataGrid.ReadOnly = true;
-            this.CartDataGrid.RowHeadersVisible = false;
-            this.CartDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CartDataGrid.Size = new System.Drawing.Size(742, 266);
-            this.CartDataGrid.TabIndex = 4;
-            // 
-            // ProductIdColumn
-            // 
-            this.ProductIdColumn.DataPropertyName = "GetProductId";
-            this.ProductIdColumn.HeaderText = "Product ID";
-            this.ProductIdColumn.Name = "ProductIdColumn";
-            this.ProductIdColumn.ReadOnly = true;
-            this.ProductIdColumn.Width = 108;
-            // 
-            // ProductNameColumn
-            // 
-            this.ProductNameColumn.DataPropertyName = "ProductName";
-            this.ProductNameColumn.HeaderText = "Product Name";
-            this.ProductNameColumn.Name = "ProductNameColumn";
-            this.ProductNameColumn.ReadOnly = true;
-            this.ProductNameColumn.Width = 135;
-            // 
-            // QuantityColumn
-            // 
-            this.QuantityColumn.DataPropertyName = "GetQuantity";
-            this.QuantityColumn.HeaderText = "Qty";
-            this.QuantityColumn.Name = "QuantityColumn";
-            this.QuantityColumn.ReadOnly = true;
-            this.QuantityColumn.Width = 60;
-            // 
-            // UnitNameColumn
-            // 
-            this.UnitNameColumn.DataPropertyName = "GetUnitName";
-            this.UnitNameColumn.HeaderText = "Unit";
-            this.UnitNameColumn.Name = "UnitNameColumn";
-            this.UnitNameColumn.ReadOnly = true;
-            this.UnitNameColumn.Width = 64;
-            // 
-            // UnitPriceColumn
-            // 
-            this.UnitPriceColumn.DataPropertyName = "GetUnitPrice";
-            this.UnitPriceColumn.HeaderText = "Unit Price";
-            this.UnitPriceColumn.Name = "UnitPriceColumn";
-            this.UnitPriceColumn.ReadOnly = true;
-            this.UnitPriceColumn.Width = 102;
-            // 
-            // NetPriceColumn
-            // 
-            this.NetPriceColumn.DataPropertyName = "GetNetPrice";
-            this.NetPriceColumn.HeaderText = "Net Price";
-            this.NetPriceColumn.Name = "NetPriceColumn";
-            this.NetPriceColumn.ReadOnly = true;
-            this.NetPriceColumn.Width = 98;
             // 
             // NewDueLabel
             // 
@@ -623,7 +507,6 @@
             this.DueText.Name = "DueText";
             this.DueText.Size = new System.Drawing.Size(87, 22);
             this.DueText.TabIndex = 14;
-            this.DueText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // UnitSelectorCombo
             // 
@@ -643,7 +526,7 @@
             this.NotesText.Location = new System.Drawing.Point(92, 196);
             this.NotesText.Margin = new System.Windows.Forms.Padding(4);
             this.NotesText.Name = "NotesText";
-            this.NotesText.Size = new System.Drawing.Size(261, 59);
+            this.NotesText.Size = new System.Drawing.Size(262, 59);
             this.NotesText.TabIndex = 12;
             this.NotesText.Text = "";
             // 
@@ -755,7 +638,7 @@
             this.CustomerNameText.Location = new System.Drawing.Point(91, 61);
             this.CustomerNameText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CustomerNameText.Name = "CustomerNameText";
-            this.CustomerNameText.Size = new System.Drawing.Size(260, 22);
+            this.CustomerNameText.Size = new System.Drawing.Size(263, 22);
             this.CustomerNameText.TabIndex = 3;
             this.CustomerNameText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerNameText_KeyDown);
             // 
@@ -820,6 +703,7 @@
             this.SaleNetPriceText.TextChanged += new System.EventHandler(this.SaleNetPriceText_TextChanged);
             this.SaleNetPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleNetPriceText_KeyDown);
             this.SaleNetPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
+            this.SaleNetPriceText.Leave += new System.EventHandler(this.SaleNetPriceText_Leave);
             // 
             // SaleUnitPriceText
             // 
@@ -860,7 +744,7 @@
             // BasicInfoGroup
             // 
             this.BasicInfoGroup.Controls.Add(this.SelectShopLabel);
-            this.BasicInfoGroup.Controls.Add(this.SaleDateTime);
+            this.BasicInfoGroup.Controls.Add(this.DealDateTime);
             this.BasicInfoGroup.Controls.Add(this.ShopSelectorCombo);
             this.BasicInfoGroup.Location = new System.Drawing.Point(15, 46);
             this.BasicInfoGroup.Name = "BasicInfoGroup";
@@ -868,16 +752,16 @@
             this.BasicInfoGroup.TabIndex = 1;
             this.BasicInfoGroup.TabStop = false;
             // 
-            // SaleDateTime
+            // DealDateTime
             // 
-            this.SaleDateTime.CalendarMonthBackground = System.Drawing.Color.White;
-            this.SaleDateTime.CustomFormat = "dddd ddMMMMyyyy - hh:mm tt";
-            this.SaleDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.SaleDateTime.Location = new System.Drawing.Point(367, 19);
-            this.SaleDateTime.Name = "SaleDateTime";
-            this.SaleDateTime.Size = new System.Drawing.Size(366, 29);
-            this.SaleDateTime.TabIndex = 2;
-            this.ButtonToolTip.SetToolTip(this.SaleDateTime, "Time and Date of the sale");
+            this.DealDateTime.CalendarMonthBackground = System.Drawing.Color.White;
+            this.DealDateTime.CustomFormat = "dddd ddMMMMyyyy - hh:mm tt";
+            this.DealDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DealDateTime.Location = new System.Drawing.Point(367, 19);
+            this.DealDateTime.Name = "DealDateTime";
+            this.DealDateTime.Size = new System.Drawing.Size(366, 29);
+            this.DealDateTime.TabIndex = 2;
+            this.ButtonToolTip.SetToolTip(this.DealDateTime, "Time and Date of the sale");
             // 
             // AmountGroup
             // 
@@ -1052,20 +936,132 @@
             this.ReloadButton.UseVisualStyleBackColor = true;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
+            // RemoveSelectedButton
+            // 
+            this.RemoveSelectedButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
+            this.RemoveSelectedButton.FlatAppearance.BorderSize = 0;
+            this.RemoveSelectedButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.RemoveSelectedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
+            this.RemoveSelectedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveSelectedButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveSelectedButton.ForeColor = System.Drawing.Color.White;
+            this.RemoveSelectedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RemoveSelectedButton.Location = new System.Drawing.Point(15, 646);
+            this.RemoveSelectedButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.RemoveSelectedButton.Name = "RemoveSelectedButton";
+            this.RemoveSelectedButton.Size = new System.Drawing.Size(742, 42);
+            this.RemoveSelectedButton.TabIndex = 10;
+            this.RemoveSelectedButton.Text = "Remove Selected";
+            this.RemoveSelectedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.RemoveSelectedButton.UseVisualStyleBackColor = false;
+            this.RemoveSelectedButton.Click += new System.EventHandler(this.RemoveSelectedButton_Click);
+            // 
+            // CartDataGrid
+            // 
+            this.CartDataGrid.AllowUserToAddRows = false;
+            this.CartDataGrid.AllowUserToDeleteRows = false;
+            this.CartDataGrid.AllowUserToResizeRows = false;
+            this.CartDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.CartDataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.CartDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CartDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.CartDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CartDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.CartDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CartDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductIdColumn,
+            this.ProductNameColumn,
+            this.QuantityColumn,
+            this.UnitNameColumn,
+            this.UnitPriceColumn,
+            this.NetPriceColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CartDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CartDataGrid.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.CartDataGrid.Location = new System.Drawing.Point(15, 375);
+            this.CartDataGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.CartDataGrid.Name = "CartDataGrid";
+            this.CartDataGrid.ReadOnly = true;
+            this.CartDataGrid.RowHeadersVisible = false;
+            this.CartDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CartDataGrid.Size = new System.Drawing.Size(742, 265);
+            this.CartDataGrid.TabIndex = 9;
+            // 
+            // ProductIdColumn
+            // 
+            this.ProductIdColumn.DataPropertyName = "GetProductId";
+            this.ProductIdColumn.HeaderText = "Product ID";
+            this.ProductIdColumn.Name = "ProductIdColumn";
+            this.ProductIdColumn.ReadOnly = true;
+            this.ProductIdColumn.Width = 108;
+            // 
+            // ProductNameColumn
+            // 
+            this.ProductNameColumn.DataPropertyName = "ProductName";
+            this.ProductNameColumn.HeaderText = "Product Name";
+            this.ProductNameColumn.Name = "ProductNameColumn";
+            this.ProductNameColumn.ReadOnly = true;
+            this.ProductNameColumn.Width = 135;
+            // 
+            // QuantityColumn
+            // 
+            this.QuantityColumn.DataPropertyName = "GetQuantity";
+            this.QuantityColumn.HeaderText = "Qty";
+            this.QuantityColumn.Name = "QuantityColumn";
+            this.QuantityColumn.ReadOnly = true;
+            this.QuantityColumn.Width = 60;
+            // 
+            // UnitNameColumn
+            // 
+            this.UnitNameColumn.DataPropertyName = "GetUnitName";
+            this.UnitNameColumn.HeaderText = "Unit";
+            this.UnitNameColumn.Name = "UnitNameColumn";
+            this.UnitNameColumn.ReadOnly = true;
+            this.UnitNameColumn.Width = 64;
+            // 
+            // UnitPriceColumn
+            // 
+            this.UnitPriceColumn.DataPropertyName = "GetUnitPurchasePrice";
+            this.UnitPriceColumn.HeaderText = "Unit Price";
+            this.UnitPriceColumn.Name = "UnitPriceColumn";
+            this.UnitPriceColumn.ReadOnly = true;
+            this.UnitPriceColumn.Width = 102;
+            // 
+            // NetPriceColumn
+            // 
+            this.NetPriceColumn.DataPropertyName = "GetNetPurchasePrice";
+            this.NetPriceColumn.HeaderText = "Net Price";
+            this.NetPriceColumn.Name = "NetPriceColumn";
+            this.NetPriceColumn.ReadOnly = true;
+            this.NetPriceColumn.Width = 98;
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1070, 702);
+            this.ClientSize = new System.Drawing.Size(1072, 702);
+            this.Controls.Add(this.RemoveSelectedButton);
+            this.Controls.Add(this.CartDataGrid);
             this.Controls.Add(this.ReloadButton);
             this.Controls.Add(this.SavedMemoGroup);
             this.Controls.Add(this.AmountGroup);
             this.Controls.Add(this.BasicInfoGroup);
             this.Controls.Add(this.ProductGroup);
             this.Controls.Add(this.CustomerGroup);
-            this.Controls.Add(this.CartDataGrid);
-            this.Controls.Add(this.RemoveSelectedButton);
             this.Controls.Add(this.TitleLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1076,7 +1072,6 @@
             this.Text = "Sell";
             this.Load += new System.EventHandler(this.SaleForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
-            ((System.ComponentModel.ISupportInitialize)(this.CartDataGrid)).EndInit();
             this.CustomerGroup.ResumeLayout(false);
             this.CustomerGroup.PerformLayout();
             this.ProductGroup.ResumeLayout(false);
@@ -1086,6 +1081,7 @@
             this.AmountGroup.ResumeLayout(false);
             this.AmountGroup.PerformLayout();
             this.SavedMemoGroup.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CartDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,7 +1104,6 @@
         private System.Windows.Forms.Label TotalText;
         private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.Button SubmitButton;
-        private System.Windows.Forms.Button RemoveSelectedButton;
         private System.Windows.Forms.Label DiscountLabel;
         private System.Windows.Forms.TextBox DiscountPercentageText;
         private System.Windows.Forms.TextBox AddressText;
@@ -1121,7 +1116,6 @@
         private System.Windows.Forms.Label PercentageLabel;
         private System.Windows.Forms.TextBox UnitPriceText;
         private System.Windows.Forms.TextBox AvailableQuantityText;
-        private System.Windows.Forms.DataGridView CartDataGrid;
         private System.Windows.Forms.Label NewDueLabel;
         private System.Windows.Forms.TextBox DueText;
         private System.Windows.Forms.ComboBox UnitSelectorCombo;
@@ -1130,7 +1124,7 @@
         private System.Windows.Forms.GroupBox CustomerGroup;
         private System.Windows.Forms.GroupBox ProductGroup;
         private System.Windows.Forms.GroupBox BasicInfoGroup;
-        private System.Windows.Forms.DateTimePicker SaleDateTime;
+        private System.Windows.Forms.DateTimePicker DealDateTime;
         private System.Windows.Forms.GroupBox AmountGroup;
         private System.Windows.Forms.GroupBox SavedMemoGroup;
         private System.Windows.Forms.Button LoadSavedMemoButton;
@@ -1149,17 +1143,19 @@
         private System.Windows.Forms.TextBox SaleUnitPriceText;
         private System.Windows.Forms.Label NetPriceLabel;
         private System.Windows.Forms.Button ReloadButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UnitNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UnitPriceColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NetPriceColumn;
         private System.Windows.Forms.Label SearchProductLabel;
         private System.Windows.Forms.TextBox SearchProductText;
         private System.Windows.Forms.TextBox FullPayableText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox PreviousDueText;
         private System.Windows.Forms.TextBox FullDueText;
+        private System.Windows.Forms.Button RemoveSelectedButton;
+        private System.Windows.Forms.DataGridView CartDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitPriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NetPriceColumn;
     }
 }

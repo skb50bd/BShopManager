@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -53,10 +54,10 @@ namespace ShopLibrary.Models {
         #region Getters
         public bool StockIsLow           => TotalStock <= AlertStock;
         public float TotalStock          => ShopStock + GodownStock;
-        public string Created            => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created            => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator            => Meta.Creator;
         public string GetAlertStock      => AlertStock.ToString("0.##");
-        public string GetDefaultUnitName => Units[0].UnitName;
+        public string DefaultUnitName => Units.Count > 0 ? Units.First().UnitName : "";
         public string GetGodownStock     => GodownStock.ToString("0.##");
         public string GetMrp             => Mrp.ToString("0.##");
         public string GetPurchasePrice   => PurchasePrice.ToString("0.##");
@@ -65,7 +66,7 @@ namespace ShopLibrary.Models {
         public string GetShopStock       => ShopStock.ToString("0.##");
         public string GetTotalStock      => TotalStock.ToString("0.##"); // Stock in Total
         public string GetWholeSalePrice  => WholeSalePrice.ToString("0.##");
-        public string Modified           => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified           => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier           => Meta.Modifier;
         public string ProductId          => "P" + ObjectId.Increment;
         #endregion

@@ -28,13 +28,13 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public string Created          => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created          => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator          => Meta.Creator;
         public string EmployeeId       => "EM" + ObjectId.Increment;
         public string GetBalance       => Balance.ToString("0.##");
-        public string GetJoinDate      => JoinDate.ToString("dd/MM/yyyy");
+        public string GetJoinDate      => JoinDate.ToLocalTime().ToString("dd/MM/yyyy");
         public string GetMonthlySalary => MonthlySalary.ToString("0.##");
-        public string Modified         => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified         => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier         => Meta.Modifier;
         #endregion
 

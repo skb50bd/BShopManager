@@ -26,7 +26,7 @@ namespace ShopLibrary.Models {
 
         #region Getters
         public string SessionId   => "SessionId_" + ObjectId.Increment;
-        public DateTime LoginTime => ObjectId.CreationTime;
+        public DateTime LoginTime => ObjectId.CreationTime.ToLocalTime();
         #endregion
     }
 }

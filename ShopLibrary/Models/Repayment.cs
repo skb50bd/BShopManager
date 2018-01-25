@@ -22,11 +22,11 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public string Created       => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created       => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator       => Meta.Creator;
         public string GetAmount     => Amount.ToString("0.##");
         public string GetSupplierId => "SP" + SupplierId.Increment;
-        public string Modified      => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified      => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier      => Meta.Modifier;
         public string RepaymentId   => "RP" + ObjectId.Increment;
         #endregion
@@ -37,7 +37,7 @@ namespace ShopLibrary.Models {
         string ISupplierReportable.Type => "Repayment";
         string ISupplierReportable.Amount => Amount.ToString("0.##");
         string ISupplierReportable.Due => "";
-        string ISupplierReportable.TimeStamp => Meta.Created.ToString("u");
+        string ISupplierReportable.TimeStamp => Meta.Created.ToLocalTime().ToString("u");
 
 
         #endregion

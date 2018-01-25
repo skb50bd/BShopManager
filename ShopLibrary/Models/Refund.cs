@@ -32,14 +32,14 @@ namespace ShopLibrary.Models {
 
         #region Getters
         public decimal RefundCut      => PriceAmount - RefundAmount;
-        public string Created         => Meta.Created.ToString("dd/MM/yyyy hh:mm tt");
+        public string Created         => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Creator         => Meta.Creator;
         public string GetCustomerId   => "C" + CustomerId.Increment;
         public string GetPriceAmount  => PriceAmount.ToString("0.##");
         public string GetRefundAmount => RefundAmount.ToString("0.##");
         public string GetRefundCut    => RefundCut.ToString("0.##");
         public string GetSaleId       => "S" + SaleId.Increment;
-        public string Modified        => Meta.Modified.ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified        => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
         public string Modifier        => Meta.Modifier;
         public string RefundId        => "RF" + ObjectId.Increment;
         #endregion
