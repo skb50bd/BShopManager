@@ -7,6 +7,7 @@ namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class Product {
         public Product() {
+            ObjectId = ObjectId.Empty;
         }
 
         #region Fields
@@ -52,24 +53,31 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public bool StockIsLow           => TotalStock <= AlertStock;
-        public float TotalStock          => ShopStock + GodownStock;
-        public string Created            => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
-        public string Creator            => Meta.Creator;
-        public string GetAlertStock      => AlertStock.ToString("0.##");
-        public string DefaultUnitName => Units.Count > 0 ? Units.First().UnitName : "";
-        public string GetGodownStock     => GodownStock.ToString("0.##");
-        public string GetMrp             => Mrp.ToString("0.##");
-        public string GetPurchasePrice   => PurchasePrice.ToString("0.##");
-        public string GetRetailPrice     => RetailPrice.ToString("0.##");
-        public string GetShopId          => "SP" + ShopId.Increment;
-        public string GetShopStock       => ShopStock.ToString("0.##");
-        public string GetTotalStock      => TotalStock.ToString("0.##"); // Stock in Total
-        public string GetWholeSalePrice  => WholeSalePrice.ToString("0.##");
-        public string Modified           => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
-        public string Modifier           => Meta.Modifier;
-        public string ProductId          => "P" + ObjectId.Increment;
+        public bool StockIsLow                           => TotalStock <= AlertStock;
+        public decimal PurchasePriceByUnit(Unit unit)    => unit.Weight != 0 ? PurchasePrice / (decimal)unit.Weight : PurchasePrice;
+        public decimal RetailPriceByUnit(Unit unit)      => unit.Weight != 0 ? RetailPrice / (decimal)unit.Weight : RetailPrice;
+        public decimal WholeSalePriceByUnit(Unit unit)   => unit.Weight != 0 ? WholeSalePrice / (decimal)unit.Weight : WholeSalePrice;
+        public float TotalStock                          => ShopStock + GodownStock;
+        public string Created                            => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+        public string Creator                            => Meta.Creator;
+        public string DefaultUnitName                    => Units.Count > 0 ? Units.First().UnitName : "";
+        public string GetAlertStock                      => AlertStock.ToString("0.##");
+        public string GetGodownStock                     => GodownStock.ToString("0.##");
+        public string GetMrp                             => Mrp.ToString("0.##");
+        public string GetPurchasePrice                   => PurchasePrice.ToString("0.##");
+        public string GetPurchasePriceByUnit(Unit unit)  => PurchasePriceByUnit(unit).ToString("0.##");
+        public string GetRetailPrice                     => RetailPrice.ToString("0.##");
+        public string GetRetailPriceByUnit(Unit unit)    => RetailPriceByUnit(unit).ToString("0.##");
+        public string GetShopId                          => "SP" + ShopId.Increment;
+        public string GetShopStock                       => ShopStock.ToString("0.##");
+        public string GetTotalStock                      => TotalStock.ToString("0.##"); // Stock in Total
+        public string GetWholeSalePrice                  => WholeSalePrice.ToString("0.##");
+        public string GetWholeSalePriceByUnit(Unit unit) => WholeSalePriceByUnit(unit).ToString("0.##");
+        public string Modified                           => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+        public string Modifier                           => Meta.Modifier;
+        public string ProductId                          => "P" + ObjectId.Increment;
+        public string Signature                          => ProductId + " - " + ProductName;
         #endregion
-        public override string ToString() => ProductName + " - " + GetTotalStock;
+        public override string ToString() => ProductName;
     }
 }

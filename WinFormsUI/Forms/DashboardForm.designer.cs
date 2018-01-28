@@ -74,9 +74,9 @@
             this.TitleLabel.Location = new System.Drawing.Point(7, 11);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(307, 47);
+            this.TitleLabel.Size = new System.Drawing.Size(306, 47);
             this.TitleLabel.TabIndex = 0;
-            this.TitleLabel.Text = "Shop Management";
+            this.TitleLabel.Text = "Rovel Refrigeration";
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // LogoutLinkLabel
@@ -159,7 +159,7 @@
             this.exportToJsonToolStripMenuItem,
             this.exportSessionLogToJsonToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // exportDatabaseToolStripMenuItem
@@ -187,7 +187,7 @@
             this.importDatabaseToolStripMenuItem,
             this.importFromExcelToolStripMenuItem});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // importDatabaseToolStripMenuItem

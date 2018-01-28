@@ -1,4 +1,5 @@
-﻿namespace WinFormsUI.Forms
+﻿using ShopLibrary.Models;
+namespace WinFormsUI.Forms
 {
     partial class ProductsForm
     {
@@ -127,7 +128,7 @@
             this.SearchProductText.Name = "SearchProductText";
             this.SearchProductText.Size = new System.Drawing.Size(338, 22);
             this.SearchProductText.TabIndex = 4;
-            this.SearchProductText.TextChanged += new System.EventHandler(this.SearchProductText_TextChanged);
+            this.SearchProductText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProductText_KeyDown);
             // 
             // PrintButton
             // 
@@ -235,7 +236,7 @@
             // 
             // UnitColumn
             // 
-            this.UnitColumn.DataPropertyName = "GetDefaultUnitName";
+            this.UnitColumn.DataPropertyName = "DefaultUnitName";
             this.UnitColumn.HeaderText = "Unit";
             this.UnitColumn.Name = "UnitColumn";
             this.UnitColumn.ReadOnly = true;

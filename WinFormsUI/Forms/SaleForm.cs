@@ -366,7 +366,7 @@ namespace WinFormsUI.Forms {
                 error += "Unit is invalid. Please select a corresponding unit for the product\n";
             if (!float.TryParse(QuantityText.Text, out float q) || q < 0 ||
                 _product.TotalStock < q * _product.Units[UnitSelectorCombo.SelectedIndex].Weight)
-                error += "QuantityColumn is more than available or invalid\n";
+                error += "Quantity is more than available or invalid\n";
             if (!decimal.TryParse(SaleUnitPriceText.Text, out decimal up) || up < 0)
                 error += "Selling unit price is invalid\n";
             if (!decimal.TryParse(SaleNetPriceText.Text, out decimal np) || np < 0)
@@ -396,13 +396,14 @@ namespace WinFormsUI.Forms {
                 ProductName       = _product.ProductName,
                 UnitPrice         = decimal.Parse(SaleUnitPriceText.Text),
                 Unit              = _product.Units[UnitSelectorCombo.SelectedIndex],
-                UnitPurchasePrice = _product.PurchasePrice / (decimal)_product.Units[UnitSelectorCombo.SelectedIndex].Weight,
+                UnitPurchasePrice = _product.PurchasePriceByUnit(_product.Units[UnitSelectorCombo.SelectedIndex]),
                 Quantity          = float.Parse(QuantityText.Text)
             };
             _sale.Cart.Add(sc);
+            
+            RefreshAmounts();
             _product = new Product();
             RefreshProductFields();
-            RefreshAmounts();
             SearchProductText.Focus();
         }
 
@@ -417,17 +418,23 @@ namespace WinFormsUI.Forms {
         #region Amount Calculations
         private void RefreshAmounts()
         {
-
             CartDataGrid.DataSource = null;
+            CartDataGrid.AutoGenerateColumns = false;
             CartDataGrid.DataSource = _sale.Cart;
+            CartDataGrid.ClearSelection();
+
             _sale.TotalAmount = _sale.Cart.Sum(sc => sc.NetPrice);
             TotalText.Text = _sale.GetTotalAmount;
-            DiscountPercentageText.Text = _sale.GetDiscount;
-            LessAmountText.Text = _sale.GetLess;
+
+            if (!LessAmountText.Focused)
+                LessAmountText.Text = _sale.GetLess;
+            if (!DiscountPercentageText.Focused)
+                DiscountPercentageText.Text = _sale.GetDiscount;
             PreviousDueText.Text = _customer.GetDebt;
             PayableText.Text = _sale.GetPayable;
             FullPayableText.Text = (_sale.Payable + _customer.Debt).ToString("0.##");
-            PaidAmountText.Text = _sale.GetPaid;
+            if (!PaidAmountText.Focused)
+                PaidAmountText.Text = _sale.GetPaid;
             DueText.Text = _sale.Due < 0
                                             ? "0"
                                             : _sale.GetDue;
@@ -441,8 +448,6 @@ namespace WinFormsUI.Forms {
                 else if (decimal.TryParse(SaleNetPriceText.Text, out decimal np) && np > 0)
                     SaleUnitPriceText.Text = (np / (decimal)q).ToString("0.##");
             }
-            else
-                QuantityText.Text = "";
         }
 
         private void SaleUnitPriceText_TextChanged(object sender, EventArgs e) {

@@ -5,6 +5,7 @@ namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class Customer : Person {
         public Customer() {
+            ObjectId = ObjectId.Empty;
             Meta = new Metadata();
             IsActive = true;
         }

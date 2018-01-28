@@ -5,6 +5,7 @@ namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class ShoppingCart {
         public ShoppingCart() {
+            ProductId = ObjectId.Empty;
         }
 
         #region Fields
@@ -25,10 +26,15 @@ namespace ShopLibrary.Models {
         public decimal UnitPurchasePrice { get; set; }
         #endregion
 
-        #region Getters
-        public decimal BaseUnitPrice           => UnitPrice * (decimal)Unit.Weight;
-        public decimal BaseUnitPurchasePrice   => UnitPurchasePrice * (decimal)Unit.Weight;
-        public decimal NetPrice                => (decimal)Quantity * UnitPrice;
+        #region Getters & Setters
+        public decimal BaseUnitPrice         => UnitPrice * (decimal)Unit.Weight;
+        public decimal BaseUnitPurchasePrice => UnitPurchasePrice * (decimal)Unit.Weight;
+        public decimal NetPrice {
+            get => (decimal)Quantity * UnitPrice;
+            set => UnitPrice = Quantity != 0.00
+                ? value / (decimal)Quantity
+                : 0;
+        }
         public decimal NetPurchasePrice        => (decimal)Quantity * UnitPurchasePrice;
         public decimal Profit                  => NetPrice - NetPurchasePrice;
         public float BaseQuantity              => Unit.ToBaseUnit(Quantity, Unit);
@@ -44,35 +50,36 @@ namespace ShopLibrary.Models {
         public string GetUnitPrice             => UnitPrice.ToString("0.##");
         public string GetUnitPurchasePrice     => UnitPurchasePrice.ToString("0.##");
         public string GetUnitWeight            => Unit.Weight.ToString("0.##");
+        public string Signature                => GetProductId + " - " + ProductName;
         #endregion
 
         #region Operator Overloads
         public static ShoppingCart operator -(ShoppingCart left, ShoppingCart right) {
-            if (left.ProductId == right.ProductId
-                && left.ProductName == right.ProductName) {
+            if (left?.ProductId == right?.ProductId
+                && left?.ProductName == right?.ProductName) {
                 left.Quantity = (left.BaseQuantity - right.BaseQuantity) * left.Unit.Weight;
             }
             return left;
         }
 
         public static ShoppingCart operator +(ShoppingCart left, ShoppingCart right) {
-            if (left.ProductId == right.ProductId
-                && left.ProductName == right.ProductName) {
+            if (left?.ProductId == right?.ProductId
+                && left?.ProductName == right?.ProductName) {
                 left.Quantity = (left.BaseQuantity + right.BaseQuantity) * left.Unit.Weight;
             }
             return left;
         }
 
         public static bool operator ==(ShoppingCart left, ShoppingCart right) {
-            return left.ProductId == right.ProductId
-                   && left.ProductName == right.ProductName
-                   && left.BaseQuantity == right.BaseQuantity;
+            return left?.ProductId == right?.ProductId
+                   && left?.ProductName == right?.ProductName
+                   && left?.BaseQuantity == right?.BaseQuantity;
         }
 
         public static bool operator !=(ShoppingCart left, ShoppingCart right) {
-            return left.ProductId != right.ProductId
-                   || left.ProductName != right.ProductName
-                   || left.BaseQuantity != right.BaseQuantity;
+            return left?.ProductId != right?.ProductId
+                   || left?.ProductName != right?.ProductName
+                   || left?.BaseQuantity != right?.BaseQuantity;
         }
         protected bool Equals(ShoppingCart other) => string.Equals(ProductName, other.ProductName) && ProductId.Equals(other.ProductId) && Quantity.Equals(other.Quantity) && Equals(Unit, other.Unit) && UnitPrice == other.UnitPrice && UnitPurchasePrice == other.UnitPurchasePrice;
 

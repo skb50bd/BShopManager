@@ -1,4 +1,5 @@
-﻿namespace WinFormsUI.Forms
+﻿using ShopLibrary.Models;
+namespace WinFormsUI.Forms
 {
     partial class SaleForm
     {
@@ -138,7 +139,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(7, 4);
+            this.TitleLabel.Location = new System.Drawing.Point(0, 0);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(117, 47);
@@ -950,7 +951,7 @@
             this.RemoveSelectedButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RemoveSelectedButton.Name = "RemoveSelectedButton";
             this.RemoveSelectedButton.Size = new System.Drawing.Size(742, 42);
-            this.RemoveSelectedButton.TabIndex = 10;
+            this.RemoveSelectedButton.TabIndex = 5;
             this.RemoveSelectedButton.Text = "Remove Selected";
             this.RemoveSelectedButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.RemoveSelectedButton.UseVisualStyleBackColor = false;
@@ -998,7 +999,7 @@
             this.CartDataGrid.RowHeadersVisible = false;
             this.CartDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CartDataGrid.Size = new System.Drawing.Size(742, 265);
-            this.CartDataGrid.TabIndex = 9;
+            this.CartDataGrid.TabIndex = 4;
             // 
             // ProductIdColumn
             // 
@@ -1034,7 +1035,7 @@
             // 
             // UnitPriceColumn
             // 
-            this.UnitPriceColumn.DataPropertyName = "GetUnitPurchasePrice";
+            this.UnitPriceColumn.DataPropertyName = "GetUnitPrice";
             this.UnitPriceColumn.HeaderText = "Unit Price";
             this.UnitPriceColumn.Name = "UnitPriceColumn";
             this.UnitPriceColumn.ReadOnly = true;
@@ -1042,7 +1043,7 @@
             // 
             // NetPriceColumn
             // 
-            this.NetPriceColumn.DataPropertyName = "GetNetPurchasePrice";
+            this.NetPriceColumn.DataPropertyName = "GetNetPrice";
             this.NetPriceColumn.HeaderText = "Net Price";
             this.NetPriceColumn.Name = "NetPriceColumn";
             this.NetPriceColumn.ReadOnly = true;
@@ -1054,15 +1055,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 702);
-            this.Controls.Add(this.RemoveSelectedButton);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.CartDataGrid);
+            this.Controls.Add(this.RemoveSelectedButton);
             this.Controls.Add(this.ReloadButton);
             this.Controls.Add(this.SavedMemoGroup);
             this.Controls.Add(this.AmountGroup);
             this.Controls.Add(this.BasicInfoGroup);
             this.Controls.Add(this.ProductGroup);
             this.Controls.Add(this.CustomerGroup);
-            this.Controls.Add(this.TitleLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

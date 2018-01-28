@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MongoDB.Bson;
 using ShopLibrary.Models;
+using ShopLibrary.Searcher;
+using static ShopLibrary.Searcher.Search;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
 
@@ -69,30 +71,15 @@ namespace WinFormsUI.Forms {
             ProductsDataGrid.DataSource = null;
 
             if (Shops.Count > 0) {
-                ObjectId shopId = Shops[ShopSelectorCombo.SelectedIndex].ObjectId;
-                _products = Products.Where(p => p.ShopId == shopId).ToList();
+                _products = SearchProductsByShop(Shops[ShopSelectorCombo.SelectedIndex]);
                 ProductsDataGrid.DataSource = null;
                 ProductsDataGrid.DataSource = _products;
             }
 
             if (LowStockCheck.Checked)
                 _products = _products.Where(p => p.StockIsLow).ToList();
-
-            string text = SearchProductText.Text.ToLowerInvariant();
-            if (text.Length > 0) {
-                string[] tokens = text.Split();
-                if (tokens.Length == 1 && text.Substring(0, 1).ToLowerInvariant() == "p")
-                    _products = _products
-                        .Where(p => p.ProductId.ToLowerInvariant().Contains(text))
-                        .ToList();
-                else
-                    _products = _products
-                        .Where(p =>
-                            p.ProductName.ToLowerInvariant().Contains(text))
-                            //|| p.Category.ToLowerInvariant().Contains(text)
-                            //|| p.Specification.ToLowerInvariant().Contains(text))
-                        .ToList();
-            }
+            
+            _products = SearchProductsByText(SearchProductText.Text, _products);
             ProductsDataGrid.DataSource = _products;
             ProductsDataGrid.ClearSelection();
         }
@@ -130,8 +117,6 @@ namespace WinFormsUI.Forms {
             }
         }
 
-        private void SearchProductText_TextChanged(object sender, EventArgs e) => SearchProduct();
-
         private void PrintButton_Click(object sender, EventArgs e) {
             // Todo - Handle the printing
         }
@@ -141,6 +126,12 @@ namespace WinFormsUI.Forms {
         private void ReloadProducts_Click(object sender, EventArgs e) {
             Products = Connection[0].GetProductsAll();
             WireUp();
+        }
+
+        private void SearchProductText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SearchProduct();
         }
     }
 }

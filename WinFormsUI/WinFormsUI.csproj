@@ -35,7 +35,7 @@
     <StartupObject>WinFormsUI.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_Shop.ico</ApplicationIcon>
+    <ApplicationIcon>icons8_Small_Business.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
@@ -328,6 +328,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_Shop.ico" />
+    <Content Include="icons8_Small_Business.ico" />
     <Content Include="Resources\Delete_48px_1.png" />
     <Content Include="Resources\icons8_Activity_History_512px.png" />
     <Content Include="Resources\icons8_Add_96px.png" />

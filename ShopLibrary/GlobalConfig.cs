@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Diagnostics;
 using ShopLibrary.DataAccess;
 using ShopLibrary.Models;
 using System.Globalization;
 using System.Resources;
+using System.Threading.Tasks;
+using System.Timers;
 using System.util;
 
 namespace ShopLibrary {
@@ -58,16 +62,40 @@ namespace ShopLibrary {
                 Connection[0].InsertUser(new User("brotality"));
                 Users = Connection[0].GetUserAll();
             }
+            Stopwatch sw = Stopwatch.StartNew();
             BankAccounts = Connection[0].GetBankAccountsAll();
-            CurrentCash  = Connection[0].GetCurrentCash();
-            Shops        = Connection[0].GetShopsAll();
-            Employees    = Connection[0].GetEmployeeAll();
-            Customers    = Connection[0].GetCustomersAll();
-            Suppliers    = Connection[0].GetSupplierAll();
-            Categories   = Connection[0].GetCategoryAll();
-            Products     = Connection[0].GetProductsAll();
+            CurrentCash = Connection[0].GetCurrentCash();
+            Shops = Connection[0].GetShopsAll();
+            Employees = Connection[0].GetEmployeeAll();
+            Customers = Connection[0].GetCustomersAll();
+            Suppliers = Connection[0].GetSupplierAll();
+            Categories = Connection[0].GetCategoryAll();
+            Products = Connection[0].GetProductsAll(); 
+            Debug.WriteLine("Tasks took {0}", sw.Elapsed);
+            sw = Stopwatch.StartNew();
+            BankAccounts = Task.Factory.StartNew(() => Connection[0].GetBankAccountsAll()).Result;
+            CurrentCash = Task.Factory.StartNew(() => Connection[0].GetCurrentCash()).Result;
+            Shops = Task.Factory.StartNew(() => Connection[0].GetShopsAll()).Result;
+            Employees = Task.Factory.StartNew(() => Connection[0].GetEmployeeAll()).Result;
+            Customers = Task.Factory.StartNew(() => Connection[0].GetCustomersAll()).Result;
+            Suppliers = Task.Factory.StartNew(() => Connection[0].GetSupplierAll()).Result;
+            Categories = Task.Factory.StartNew(() => Connection[0].GetCategoryAll()).Result;
+            Products = Task.Factory.StartNew(() => Connection[0].GetProductsAll()).Result;
+            Debug.WriteLine("Sync took {0}", sw.Elapsed);
         }
 
         public static string CnnString(string name) => ConfigurationManager.ConnectionStrings[name].ConnectionString;
+
+        public static void Init()
+        {
+            try {
+                InitializeConnections(false, true, false);
+                LoadBasicDatabase();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
