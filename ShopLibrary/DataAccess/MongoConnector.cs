@@ -552,7 +552,7 @@ namespace ShopLibrary.DataAccess
         public List<Product> GetProductsAll()
             => ProductCollection
                 .AsQueryable()
-                .OrderByDescending(p => p.Meta.Created)
+                .OrderBy(p => p.ProductName)
                 .ToList();
 
         public bool UpdateProduct(Product model)

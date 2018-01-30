@@ -10,7 +10,6 @@ using System.Windows.Input;
 using MahApps.Metro.Controls;
 using MongoDB.Bson;
 using ShopLibrary.Output;
-using MahApps.Metro.Controls;
 using WpfUI.UserControls;
 using static ShopLibrary.Searcher.Search;
 using static ShopLibrary.GlobalConfig;
@@ -251,17 +250,17 @@ namespace WpfUI.Forms {
 
         private void CustomerAddressText_KeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter)
-                NoteText.Focus();
+                ProductCombo.Focus();
         }
 
         private void NoteText_OnKeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter)
-                ProductCombo.Focus();
+                SaleButton.Focus();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e) {
-            if (e.ChangedButton == MouseButton.Left) ;
-            //this.DragMove();
+            //if (e.ChangedButton == MouseButton.Left)
+            //    this.DragMove();
         }
 
         private void ResetCustomerButton_Click(object sender, RoutedEventArgs e) {
@@ -334,7 +333,7 @@ namespace WpfUI.Forms {
             if (e.Key == Key.Enter) {
                 _customer = SearchSingleCustomerByText(CustomerCombo.Text);
                 if (_customer != null && _customer.ObjectId != ObjectId.Empty)
-                    NoteText.Focus();
+                    ProductCombo.Focus();
                 else
                     CustomerNameText.Focus();
                 SetCustomerFields();
@@ -470,7 +469,7 @@ namespace WpfUI.Forms {
 
         private void PaidText_KeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter) {
-                SaleButton.Focus();
+                NoteText.Focus();
                 PaidText_TextChanged(sender, null);
             }
         }
