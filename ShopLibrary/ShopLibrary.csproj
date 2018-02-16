@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_Brain.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
@@ -71,7 +72,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\BackUpDatabase.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />
-    <Compile Include="DataAccess\JsonConnector.cs" />
+    <Compile Include="DataAccess\LiteDBConnector.cs" />
     <Compile Include="DataAccess\MongoConnector.cs" />
     <Compile Include="DataAccess\SqlConnector.cs" />
     <Compile Include="GlobalConfig.cs" />
@@ -128,7 +129,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icons8_Brain.ico" />
     <Content Include="icons8_Shop.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

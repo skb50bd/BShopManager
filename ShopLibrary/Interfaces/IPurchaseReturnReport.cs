@@ -8,6 +8,6 @@ namespace ShopLibrary.Models {
         decimal CutAmountTotal { get; }
         decimal RefundAmountTotal { get; }
 
-        List<PurchaseReturn> GetPurchaseReturn();
+        List<PurchaseReturn> GetPurchaseReturns();
     }
 }

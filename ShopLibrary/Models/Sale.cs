@@ -49,7 +49,7 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Getters
-        public decimal Due                => Payable - Paid;
+        public decimal Due                => Payable - Paid > 0 ? Payable - Paid : 0;
         public decimal Payable            => TotalAmount - Less;
         public decimal Profit             => Payable - TotalPurchasePrice;
         public decimal TotalPurchasePrice => Cart.Sum(sc => sc.NetPurchasePrice);
@@ -78,7 +78,7 @@ namespace ShopLibrary.Models {
         public string SaleTypeInitial     => SaleType == RetailSale ? "R" : "W";
         #endregion
 
-        #region ICustomerReportable Fields
+        #region ICustomerReportable Members
         string ICustomerReportable.Id        => SaleId;
         string ICustomerReportable.Type      => "Sale" + $" ({ SaleTypeInitial })";
         string ICustomerReportable.Amount    => GetPayable;
@@ -96,7 +96,8 @@ namespace ShopLibrary.Models {
                   CustomerName;
         public void AddToCart(ShoppingCart sc) => Cart.Add(sc);
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => SaleId;
         string ICashFlow.Type => "Sale" + $" ({ SaleTypeInitial })";
         decimal ICashFlow.InFlow => Paid;
         string ICashFlow.GetInFlow => GetPaid;

@@ -125,6 +125,7 @@
             this.ReportTypeSelectorCombo.Font = new System.Drawing.Font("Segoe UI Semi Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportTypeSelectorCombo.FormattingEnabled = true;
             this.ReportTypeSelectorCombo.Items.AddRange(new object[] {
+            "Summary",
             "Bank Account ",
             "Customer ",
             "Due Collection ",
@@ -276,7 +277,7 @@
             this.ReportsGrid.AllowUserToAddRows = false;
             this.ReportsGrid.AllowUserToDeleteRows = false;
             this.ReportsGrid.AllowUserToResizeRows = false;
-            this.ReportsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.ReportsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ReportsGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.ReportsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ReportsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;

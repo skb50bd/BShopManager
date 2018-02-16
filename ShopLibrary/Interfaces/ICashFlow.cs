@@ -4,6 +4,7 @@ namespace ShopLibrary.Models
 {
     public interface ICashFlow
     {
+        string Id { get; }
         string Type { get; }
         decimal InFlow { get; }
         string GetInFlow { get; }

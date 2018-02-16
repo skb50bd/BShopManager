@@ -36,7 +36,8 @@ namespace ShopLibrary.Models {
 
         public void AddToCart(ShoppingCart sc) => Cart.Add(sc);
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => ExpenseId;
         string ICashFlow.Type => "Expense";
         decimal ICashFlow.InFlow => 0;
         string ICashFlow.GetInFlow => "0";

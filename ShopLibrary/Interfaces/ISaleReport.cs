@@ -6,6 +6,8 @@ namespace ShopLibrary.Models {
         decimal PurchasePriceTotal { get; }
         decimal SalePriceTotal { get; }
         decimal TotalProfit { get; }
+        decimal TotalPaid { get; }
+        decimal TotalDue { get; }
         int NumberOfWholeSales { get; }
         int NumberOfRetailSales { get; }
         int NumberOfSales { get; }

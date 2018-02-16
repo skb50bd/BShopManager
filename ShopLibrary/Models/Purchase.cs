@@ -75,7 +75,8 @@ namespace ShopLibrary.Models {
         public void AddToCart(ShoppingCart sc) => Cart.Add(sc);
         public override string ToString() => "P" + DealTime.ToLocalTime().ToString("yyyyMMddHHmmss") + " " + SupplierName;
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => PurchaseId;
         string ICashFlow.Type => "Purchase";
         decimal ICashFlow.InFlow => 0;
         string ICashFlow.GetInFlow => "0";

@@ -54,6 +54,7 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region ICashFlow Fields
+        string ICashFlow.Id => RefundId;
         string ICashFlow.Type => "Refund";
         decimal ICashFlow.InFlow => 0;
         string ICashFlow.GetInFlow => "0";

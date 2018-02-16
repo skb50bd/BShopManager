@@ -43,6 +43,7 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region ICashFlow Fields
+        string ICashFlow.Id => RepaymentId;
         string ICashFlow.Type         => "Repayment";
         decimal ICashFlow.InFlow      => 0;
         string ICashFlow.GetInFlow    => "0";

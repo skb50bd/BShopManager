@@ -32,7 +32,8 @@ namespace ShopLibrary.Models {
         public string PaymentId     => "PY" + ObjectId.Increment;
         #endregion
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => PaymentId;
         string ICashFlow.Type => "Employee Salary";
         decimal ICashFlow.InFlow => 0;
         string ICashFlow.GetInFlow => "0";

@@ -34,23 +34,12 @@ namespace ShopLibrary {
 
         public static void InitializeConnections(bool sqlDb, bool mongoDb, bool jsonDb) {
             Connection = new List<IDataConnection>();
-            if (sqlDb) {
-                SqlConnector sql = new SqlConnector();
-                Connection.Add(sql);
-            }
-
             if (mongoDb)
             {
                 Debug.WriteLine("Mongo Trying to Initialize Mongo Connector");
                 MongoConnector mongo = new MongoConnector();
                 Debug.WriteLine("Adding MongoConnector to Connections");
                 Connection.Add(mongo);
-            }
-
-            if (jsonDb)
-            {
-                JsonConnector json = new JsonConnector();
-                Connection.Add(json);
             }
         }
 
@@ -72,15 +61,15 @@ namespace ShopLibrary {
             Categories = Connection[0].GetCategoryAll();
             Products = Connection[0].GetProductsAll(); 
             Debug.WriteLine("Tasks took {0}", sw.Elapsed);
-            sw = Stopwatch.StartNew();
+            sw           = Stopwatch.StartNew();
             BankAccounts = Task.Factory.StartNew(() => Connection[0].GetBankAccountsAll()).Result;
-            CurrentCash = Task.Factory.StartNew(() => Connection[0].GetCurrentCash()).Result;
-            Shops = Task.Factory.StartNew(() => Connection[0].GetShopsAll()).Result;
-            Employees = Task.Factory.StartNew(() => Connection[0].GetEmployeeAll()).Result;
-            Customers = Task.Factory.StartNew(() => Connection[0].GetCustomersAll()).Result;
-            Suppliers = Task.Factory.StartNew(() => Connection[0].GetSupplierAll()).Result;
-            Categories = Task.Factory.StartNew(() => Connection[0].GetCategoryAll()).Result;
-            Products = Task.Factory.StartNew(() => Connection[0].GetProductsAll()).Result;
+            CurrentCash  = Task.Factory.StartNew(() => Connection[0].GetCurrentCash()).Result;
+            Shops        = Task.Factory.StartNew(() => Connection[0].GetShopsAll()).Result;
+            Employees    = Task.Factory.StartNew(() => Connection[0].GetEmployeeAll()).Result;
+            Customers    = Task.Factory.StartNew(() => Connection[0].GetCustomersAll()).Result;
+            Suppliers    = Task.Factory.StartNew(() => Connection[0].GetSupplierAll()).Result;
+            Categories   = Task.Factory.StartNew(() => Connection[0].GetCategoryAll()).Result;
+            Products     = Task.Factory.StartNew(() => Connection[0].GetProductsAll()).Result;
             Debug.WriteLine("Sync took {0}", sw.Elapsed);
         }
 

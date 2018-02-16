@@ -70,11 +70,11 @@ namespace WinFormsUI.Forms {
 
         private void ReportsForm_Load(object sender, EventArgs e) {
             ReportsGrid.AutoGenerateColumns = false;
-            DeleteButton.Enabled = CurrentUser.AccessLevel <= Admin;
-            report.FromDate = DateTime.Today;
-            FromDateTime.Value = report.FromDate;
-            report.ToDate = DateTime.Now;
-            ToDateTime.Value = report.ToDate;
+            DeleteButton.Enabled            = CurrentUser.AccessLevel <= Admin;
+            report.FromDate                 = DateTime.Today;
+            FromDateTime.Value              = report.FromDate;
+            report.ToDate                   = DateTime.Now;
+            ToDateTime.Value                = report.ToDate;
         }
 
         private void FixColumns() {
@@ -82,11 +82,43 @@ namespace WinFormsUI.Forms {
             ReportsGrid.Columns.Clear();
 
             switch (report.ReportType) {
+                case Summary:
+                    #region Summary Columns
+                    // ID
+                    DataGridViewColumn col = new DataGridViewTextBoxColumn {
+                        DataPropertyName = nameof(ICashFlow.Id),
+                        Name = "Id"
+                    };
+                    ReportsGrid.Columns.Add(col);
+                    
+                    // Type
+                    col = new DataGridViewTextBoxColumn {
+                        DataPropertyName = nameof(ICashFlow.Type),
+                        Name = "Type"
+                    };
+                    ReportsGrid.Columns.Add(col);
+
+                    // Amount
+                    col = new DataGridViewTextBoxColumn {
+                        DataPropertyName = nameof(ICashFlow.GetInFlow),
+                        Name = "Amount (In)"
+                    };
+                    ReportsGrid.Columns.Add(col);
+                    
+                    // Created
+                    col = new DataGridViewTextBoxColumn {
+                        DataPropertyName = nameof(ICashFlow.TimeStamp),
+                        Name = "Time"
+                    };
+                    ReportsGrid.Columns.Add(col);
+                    #endregion
+                    break;
+
                 case BankAccountReport:
                 case TransactionReport:
                     #region Transaction Columns
                     // Transaction ID
-                    DataGridViewColumn col = new DataGridViewTextBoxColumn {
+                    col = new DataGridViewTextBoxColumn {
                         DataPropertyName = nameof(Transaction.TransactionId),
                         Name = "Trs. Id"
                     };
@@ -238,6 +270,13 @@ namespace WinFormsUI.Forms {
                     col = new DataGridViewTextBoxColumn {
                         DataPropertyName = nameof(Sale.GetLess),
                         Name = "Less"
+                    };
+                    ReportsGrid.Columns.Add(col);
+
+                    // Due
+                    col = new DataGridViewTextBoxColumn {
+                        DataPropertyName = nameof(Sale.GetPaid),
+                        Name = "Paid"
                     };
                     ReportsGrid.Columns.Add(col);
 
@@ -694,429 +733,6 @@ namespace WinFormsUI.Forms {
             }
         }
 
-        private void LoadGrid() {
-            FixColumns();
-            ReportsGrid.DataSource = null;
-            switch (report.ReportType) {
-                case BankAccountReport:
-                case TransactionReport:
-                    ReportsGrid.DataSource = report.Transactions;
-                    break;
-
-                case CustomerReport:
-                    report.CustomerReportables.Clear();
-                    report.CustomerReportables.AddRange(report.Sales);
-                    report.CustomerReportables.AddRange(report.DebtCollections);
-                    report.CustomerReportables.AddRange(report.Refunds);
-                    report.CustomerReportables.OrderByDescending(r => r.TimeStamp);
-                    ReportsGrid.DataSource = report.CustomerReportables;
-                    break;
-
-                case DebtCollectionReport:
-                    ReportsGrid.DataSource = report.DebtCollections;
-                    break;
-
-                case EmployeeReport:
-                case PaymentReport:
-                    ReportsGrid.DataSource = report.Payments;
-                    break;
-
-                case ExpenseReport:
-                    ReportsGrid.DataSource = report.Expenses;
-                    break;
-
-                case PurchaseReport:
-                    ReportsGrid.DataSource = report.Purchases;
-                    break;
-
-                case PurchaseReturnReport:
-                    ReportsGrid.DataSource = report.PurchaseReturns;
-                    break;
-
-                case RefundReport:
-                    ReportsGrid.DataSource = report.Refunds;
-                    break;
-
-                case RepaymentReport:
-                    ReportsGrid.DataSource = report.Repayments;
-                    break;
-
-                case SaleReport:
-                    ReportsGrid.DataSource = report.Sales;
-                    break;
-
-                case SupplierReport:
-                    report.SupplierReportables.Clear();
-                    report.SupplierReportables.AddRange(report.Purchases);
-                    report.SupplierReportables.AddRange(report.Repayments);
-                    report.SupplierReportables.AddRange(report.PurchaseReturns);
-                    report.SupplierReportables.OrderByDescending(r => r.TimeStamp);
-                    ReportsGrid.DataSource = report.SupplierReportables;
-                    break;
-            }
-            ReportsGrid.ClearSelection();
-            LoadStats();
-        }
-
-        private void LoadStats() {
-            #region Make The Fields Visible
-            StatPropLabel1.Visible  = true;
-            StatPropText1.Visible   = true;
-            StatPropLabel2.Visible  = true;
-            StatPropText2.Visible   = true;
-            StatPropLabel3.Visible  = true;
-            StatPropText3.Visible   = true;
-            StatPropLabel4.Visible  = true;
-            StatPropText4.Visible   = true;
-            StatPropLabel5.Visible  = true;
-            StatPropText5.Visible   = true;
-            StatPropLabel6.Visible  = true;
-            StatPropText6.Visible   = true;
-            StatPropLabel7.Visible  = true;
-            StatPropText7.Visible   = true;
-            StatPropLabel8.Visible  = true;
-            StatPropText8.Visible   = true;
-            StatPropLabel9.Visible  = true;
-            StatPropText9.Visible   = true;
-            StatPropLabel10.Visible = true;
-            StatPropText10.Visible  = true;
-            #endregion
-
-            switch (report.ReportType) {
-                case BankAccountReport:
-                case TransactionReport:
-                    #region Bank Account & Transaction
-                    StatPropLabel1.Text = "Total Transactions";
-                    StatPropText1.Text  = (report as ITransactionReport).NumberOfTransactions.ToString();
-                    StatPropLabel2.Text = "Deposits";
-                    StatPropText2.Text  = (report as ITransactionReport).NumberOfDeposits.ToString();
-                    StatPropLabel3.Text = "Deposit Amount";
-                    StatPropText3.Text  = (report as ITransactionReport).DepositTotal.ToString("0.##") + " Tk";
-                    StatPropLabel4.Text = "Withdraws";
-                    StatPropText4.Text  = (report as ITransactionReport).NumberOfWithdraws.ToString();
-                    StatPropLabel5.Text = "Withdraw Amount";
-                    StatPropText5.Text  = (report as ITransactionReport).WithdrawTotal.ToString("0.##") + " Tk";
-                    StatPropLabel6.Text = "Deposit - Withdraw";
-                    StatPropText6.Text  = ((report as ITransactionReport).DepositTotal
-                                          - (report as ITransactionReport).WithdrawTotal).ToString("0.##") + " Tk";
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case CustomerReport:
-                    #region Customer
-                    StatPropLabel1.Text = "Sales | Due Col. | Refund";
-                    StatPropText1.Text  = (report as ICustomerReport).NumberOfSales + " | " +
-                                         (report as ICustomerReport).NumberOfDebtCollections + " | " +
-                                         (report as ICustomerReport).NumberOfRefunds;
-                    StatPropLabel2.Text     = "Total Sale Amount";
-                    StatPropText2.Text      = (report as ICustomerReport).SalesPriceTotal.ToString("0.##") + " Tk";
-                    StatPropLabel3.Text     = "Total Paid";
-                    StatPropText3.Text      = (report as ICustomerReport).TotalPaid.ToString("0.##") + " Tk";
-                    StatPropLabel4.Text     = "Total Due";
-                    StatPropText4.Text      = (report as ICustomerReport).TotalDue.ToString("0.##") + " Tk";
-                    StatPropLabel5.Text     = "Profit";
-                    StatPropText5.Text      = (report as ICustomerReport).TotalProfit.ToString("0.##") + " Tk";
-                    StatPropLabel6.Text     = "Collected Due";
-                    StatPropText6.Text      = (report as ICustomerReport).TotalDebtCollection.ToString("0.##") + " Tk";
-                    StatPropLabel7.Text     = "Current Due";
-                    StatPropText7.Text      = (report as ICustomerReport).CurrentDue.ToString("0.##") + " Tk";
-                    StatPropLabel8.Text     = "Refund Amount";
-                    StatPropText8.Text      = (report as ICustomerReport).TotalRefund.ToString("0.##") + " Tk";
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case DebtCollectionReport:
-                    #region Debt Collection
-                    StatPropLabel1.Text     = "Debt Collections";
-                    StatPropText1.Text      = (report as IDebtCollectionReport).NumberOfDebtCollections.ToString();
-                    StatPropLabel2.Text     = "Total Amount";
-                    StatPropText2.Text      = (report as IDebtCollectionReport).DebtCollectionTotal.ToString("0.##") + " Tk";
-                    StatPropLabel3.Visible  = false;
-                    StatPropText3.Visible   = false;
-                    StatPropLabel4.Visible  = false;
-                    StatPropText4.Visible   = false;
-                    StatPropLabel5.Visible  = false;
-                    StatPropText5.Visible   = false;
-                    StatPropLabel6.Visible  = false;
-                    StatPropText6.Visible   = false;
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case EmployeeReport:
-                    #region Employee
-                    StatPropLabel1.Text = "Employee";
-                    StatPropText1.Text = (report as IEmployeeReport).Employee.EmployeeId + " - "
-                                         + (report as IEmployeeReport).Employee.FullName;
-                    StatPropLabel2.Text     = "Designation";
-                    StatPropText2.Text      = (report as IEmployeeReport).Employee.Designation;
-                    StatPropLabel3.Text     = "Join Date";
-                    StatPropText3.Text      = (report as IEmployeeReport).JoinDate.ToLongDateString();
-                    StatPropLabel4.Text     = "Months Worked";
-                    StatPropText4.Text      = (report as IEmployeeReport).MonthsWorked + " months";
-                    StatPropLabel5.Text     = "Salary";
-                    StatPropText5.Text      = (report as IEmployeeReport).Employee.GetMonthlySalary + " Tk";
-                    StatPropLabel6.Text     = "Payments";
-                    StatPropText6.Text      = (report as IEmployeeReport).NumberOfPayments.ToString();
-                    StatPropLabel7.Text     = "Total Paid";
-                    StatPropText7.Text      = (report as IEmployeeReport).TotalPaid.ToString("0.##") + " Tk";
-                    StatPropLabel8.Text     = "Current Balance";
-                    StatPropText8.Text      = (report as IEmployeeReport).CurrentBalance.ToString("0.##") + " Tk";
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible = false;
-                    #endregion
-                    break;
-
-                case ExpenseReport:
-                    #region Expense
-                    StatPropLabel1.Text     = "Expenses";
-                    StatPropText1.Text      = (report as IExpenseReport).NumberOfExpenses.ToString();
-                    StatPropLabel2.Text     = "Total Expense";
-                    StatPropText2.Text      = (report as IExpenseReport).TotalExpense.ToString("0.##") + " Tk";
-                    StatPropLabel3.Visible  = false;
-                    StatPropText3.Visible   = false;
-                    StatPropLabel4.Visible  = false;
-                    StatPropText4.Visible   = false;
-                    StatPropLabel5.Visible  = false;
-                    StatPropText5.Visible   = false;
-                    StatPropLabel6.Visible  = false;
-                    StatPropText6.Visible   = false;
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case PaymentReport:
-                    #region Payment
-                    StatPropLabel1.Text     = "Payments";
-                    StatPropText1.Text      = (report as IPaymentReport).NumberOfPayments.ToString();
-                    StatPropLabel2.Text     = "Total Salary Paid";
-                    StatPropText2.Text      = (report as IPaymentReport).TotalPaid.ToString("0.##") + " Tk";
-                    StatPropLabel3.Visible  = false;
-                    StatPropText3.Visible   = false;
-                    StatPropLabel4.Visible  = false;
-                    StatPropText4.Visible   = false;
-                    StatPropLabel5.Visible  = false;
-                    StatPropText5.Visible   = false;
-                    StatPropLabel6.Visible  = false;
-                    StatPropText6.Visible   = false;
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case PurchaseReport:
-                    #region Purchase
-                    StatPropLabel1.Text     = "Purchases";
-                    StatPropText1.Text      = (report as IPurchaseReport).NumberOfPurchases.ToString();
-                    StatPropLabel2.Text     = "Total Amount";
-                    StatPropText2.Text      = (report as IPurchaseReport).PurchasePriceTotal.ToString("0.##") + " Tk";
-                    StatPropLabel3.Text     = "Total Paid";
-                    StatPropText3.Text      = (report as IPurchaseReport).TotalPaid.ToString("0.##") + " Tk";
-                    StatPropLabel4.Text     = "Total Due";
-                    StatPropText4.Text      = (report as IPurchaseReport).TotalRepayable.ToString("0.##") + " Tk";
-                    StatPropLabel5.Visible = false;
-                    StatPropText5.Visible   = false;
-                    StatPropLabel6.Visible  = false;
-                    StatPropText6.Visible   = false;
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case PurchaseReturnReport:
-                    #region Purchase Return
-                    StatPropLabel1.Text     = "Purchase Returns";
-                    StatPropText1.Text      = (report as IPurchaseReturnReport).NumberOfPurchaseReturns.ToString();
-                    StatPropLabel2.Text     = "Product Price";
-                    StatPropText2.Text      = (report as IPurchaseReturnReport).PriceAmountTotal.ToString("0.##") + " Tk";
-                    StatPropLabel3.Text     = "Deduced Amount";
-                    StatPropText3.Text      = (report as IPurchaseReturnReport).CutAmountTotal.ToString("0.##") + " Tk";
-                    StatPropLabel4.Text     = "Refund Amount";
-                    StatPropText4.Text      = (report as IPurchaseReturnReport).RefundAmountTotal.ToString("0.##") + " Tk";
-                    StatPropLabel5.Visible = false;
-                    StatPropText5.Visible   = false;
-                    StatPropLabel6.Visible  = false;
-                    StatPropText6.Visible   = false;
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case RefundReport:
-                    #region Refund
-                    StatPropLabel1.Text = "Refunds";
-                    StatPropText1.Text = (report as IRefundReport).NumberOfRefunds.ToString();
-                    StatPropLabel2.Text = "Product Price";
-                    StatPropText2.Text = (report as IRefundReport).PriceAmountTotal.ToString("0.##") + " Tk";
-                    StatPropLabel3.Text = "Deduced Amount";
-                    StatPropText3.Text = (report as IRefundReport).CutAmountTotal.ToString("0.##") + " Tk";
-                    StatPropLabel4.Text = "Refund Amount";
-                    StatPropText4.Text = (report as IRefundReport).RefundAmountTotal.ToString("0.##") + " Tk";
-                    StatPropLabel5.Visible = false;
-                    StatPropText5.Visible = false;
-                    StatPropLabel6.Visible = false;
-                    StatPropText6.Visible = false;
-                    StatPropLabel7.Visible = false;
-                    StatPropText7.Visible = false;
-                    StatPropLabel8.Visible = false;
-                    StatPropText8.Visible = false;
-                    StatPropLabel9.Visible = false;
-                    StatPropText9.Visible = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible = false;
-                    #endregion
-                    break;
-
-                case RepaymentReport:
-                    #region Repayment
-                    StatPropLabel1.Text     = "Repayments";
-                    StatPropText1.Text      = (report as IRepaymentReport).NumberOfRepayments.ToString();
-                    StatPropLabel2.Text     = "Total Repaid";
-                    StatPropText2.Text      = (report as IRepaymentReport).TotalRepaid.ToString("0.##") + " Tk";
-                    StatPropLabel3.Visible  = false;
-                    StatPropText3.Visible   = false;
-                    StatPropLabel4.Visible  = false;
-                    StatPropText4.Visible   = false;
-                    StatPropLabel5.Visible  = false;
-                    StatPropText5.Visible   = false;
-                    StatPropLabel6.Visible  = false;
-                    StatPropText6.Visible   = false;
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case SaleReport:
-                    #region Sale
-                    StatPropLabel1.Text     = "Sales";
-                    StatPropText1.Text      = (report as ISaleReport).NumberOfSales.ToString();
-                    StatPropLabel2.Text     = "Whole Sales";
-                    StatPropText2.Text      = (report as ISaleReport).NumberOfWholeSales.ToString();
-                    StatPropLabel3.Text     = "Retail Sales";
-                    StatPropText3.Text      = (report as ISaleReport).NumberOfRetailSales.ToString();
-                    StatPropLabel4.Text     = "Total Purchase Price";
-                    StatPropText4.Text      = (report as ISaleReport).PurchasePriceTotal.ToString("0.##") + " Tk";
-                    StatPropLabel5.Text     = "Total Sale Price";
-                    StatPropText5.Text      = (report as ISaleReport).SalePriceTotal.ToString("0.##") + " Tk";
-                    StatPropLabel6.Text     = "Total Profit";
-                    StatPropText6.Text      = (report as ISaleReport).TotalProfit.ToString("0.##") + " Tk";
-                    StatPropLabel7.Visible  = false;
-                    StatPropText7.Visible   = false;
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
-                    #endregion
-                    break;
-
-                case SupplierReport:
-                    #region Supplier
-                    StatPropLabel1.Text = "Prc. | Rep. | Prc. Rtn.";
-                    StatPropText1.Text = (report as ISupplierReport).NumberOfPurchases + " | " +
-                                         (report as ISupplierReport).NumberOfRepayments + " | " +
-                                         (report as ISupplierReport).NumberOfPurchaseReturns;
-                    StatPropLabel2.Text = "Total Purchase Amount";
-                    StatPropText2.Text  = (report as ISupplierReport).PurchasesPriceTotal.ToString("0.##") + " Tk";
-                    StatPropLabel3.Text = "Total Paid";
-                    StatPropText3.Text  = (report as ISupplierReport).TotalPaid.ToString("0.##") + " Tk";
-                    StatPropLabel4.Text = "Total Repayable";
-                    StatPropText4.Text  = (report as ISupplierReport).TotalRepayable.ToString("0.##") + " Tk";
-                    StatPropLabel5.Text = "Total Repaid Amount";
-                    StatPropText5.Text  = (report as ISupplierReport).Repayments.Sum(r => r.Amount).ToString("0.##") + " Tk";
-                    StatPropLabel6.Text = "Current Repayable";
-                    StatPropText6.Text  = (report as ISupplierReport).CurrentRepayable.ToString("0.##") + " Tk";
-                    StatPropLabel7.Text = "Purchase Return Amount";
-                    StatPropText7.Text = (report as ISupplierReport).PurchaseReturnPriceTotal.ToString("0.##") + " Tk";
-                    StatPropLabel8.Visible = false;
-                    StatPropText8.Visible = false;
-                    StatPropLabel9.Visible = false;
-                    StatPropText9.Visible = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible = false;
-                    #endregion
-                    break;
-
-                default:
-                    #region Hide all the Fields
-                    StatPropLabel1.Visible = false;
-                    StatPropText1.Visible = false;
-                    StatPropLabel2.Visible = false;
-                    StatPropText2.Visible = false;
-                    StatPropLabel3.Visible = false;
-                    StatPropText3.Visible = false;
-                    StatPropLabel4.Visible = false;
-                    StatPropText4.Visible = false;
-                    StatPropLabel5.Visible = false;
-                    StatPropText5.Visible = false;
-                    StatPropLabel6.Visible = false;
-                    StatPropText6.Visible = false;
-                    StatPropLabel7.Visible = false;
-                    StatPropText7.Visible = false;
-                    StatPropLabel8.Visible = false;
-                    StatPropText8.Visible = false;
-                    StatPropLabel9.Visible = false;
-                    StatPropText9.Visible = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible = false;
-                    #endregion
-                    break;
-            }
-        }
-
         private void RefreshForm() {
             Filter1Label.Enabled = true;
             Filter1Combo.Enabled = true;
@@ -1135,6 +751,13 @@ namespace WinFormsUI.Forms {
 
             #region Fix The Combo-Box Label and Items
             switch (report.ReportType) {
+                case Summary:
+                    Filter1Label.Text       = "Shop";
+                    Filter1Combo.DataSource = Shops;
+                    Filter2Combo.Enabled    = false;
+                    Filter2Label.Enabled    = false;
+                    break;
+
                 case BankAccountReport:
                 case TransactionReport:
                     Filter1Label.Text = "Bank Account";
@@ -1243,6 +866,10 @@ namespace WinFormsUI.Forms {
 
             if (index > -1) {
                 switch (report.ReportType) {
+                    case Summary:
+                        report.Shop = Shops[index];
+                        break;
+
                     case BankAccountReport:
                     case TransactionReport:
                         report.BankAccount = BankAccounts[index];
@@ -1287,6 +914,10 @@ namespace WinFormsUI.Forms {
                 }
             } else if (index == -1) {
                 switch (report.ReportType) {
+                    case Summary:
+                        report.Shop = new Shop();
+                        break;
+
                     case BankAccountReport:
                         report.BankAccount = new BankAccount();
                         report.Transactions = new List<Transaction>();
@@ -1357,6 +988,27 @@ namespace WinFormsUI.Forms {
             int index2 = Filter2Combo.SelectedIndex;
 
             switch (report.ReportType) {
+                case Summary:
+                    if (index1 > -1)
+                    {
+                        report.Sales = (report as ISaleReport).GetSales()
+                            .Where(s => s.ShopId == report.Shop.ObjectId)
+                            .ToList();
+                    }
+                    else if (index1 == -1)
+                    {
+                        report.Sales = (report as ISaleReport).GetSales();
+                    }
+                    report.DebtCollections = (report as IDebtCollectionReport).GetDebtCollections();
+                    report.Refunds         = (report as IRefundReport).GetRefunds();
+                    report.Purchases       = (report as IPurchaseReport).GetPurchases();
+                    report.Repayments      = (report as IRepaymentReport).GetRepayments();
+                    report.PurchaseReturns = (report as IPurchaseReturnReport).GetPurchaseReturns();
+                    report.Expenses        = (report as IExpenseReport).GetExpenses();
+                    report.Transactions    = (report as ITransactionReport).GetTransactions();
+                    report.Payments        = (report as IPaymentReport).GetPayments();
+                    break;
+
                 case BankAccountReport:
                 case TransactionReport:
                     #region Bank Account & Transactions
@@ -1441,7 +1093,7 @@ namespace WinFormsUI.Forms {
                 case PurchaseReturnReport:
                     #region Purchase Return
                     if (index1 == -1) // Supplier NOT Selected
-                        report.PurchaseReturns = (report as IPurchaseReturnReport).GetPurchaseReturn();
+                        report.PurchaseReturns = (report as IPurchaseReturnReport).GetPurchaseReturns();
                     else if (index1 > -1) // Supplier Selected
                         report.PurchaseReturns =
                             (report as ISupplierReport).GetSupplierPurchaseReturns(report.Supplier);
@@ -1451,7 +1103,7 @@ namespace WinFormsUI.Forms {
                 case RefundReport:
                     #region Refund
                     if (index1 == -1) // Customer NOT Selected
-                        report.Refunds = (report as IRefundReport).GetRefund();
+                        report.Refunds = (report as IRefundReport).GetRefunds();
                     else if (index1 > -1) // Customer Selected
                         report.Refunds = (report as ICustomerReport).GetCustomerRefunds(report.Customer);
                     break;
@@ -1512,6 +1164,479 @@ namespace WinFormsUI.Forms {
             LoadGrid();
         }
 
+        private void LoadGrid() {
+            FixColumns();
+            ReportsGrid.DataSource = null;
+            switch (report.ReportType) {
+                case Summary:
+                    report.CashFlows.Clear();
+                    report.CashFlows.AddRange(report.Sales);
+                    report.CashFlows.AddRange(report.DebtCollections);
+                    report.CashFlows.AddRange(report.Refunds);
+                    report.CashFlows.AddRange(report.Purchases);
+                    report.CashFlows.AddRange(report.Repayments);
+                    report.CashFlows.AddRange(report.PurchaseReturns);
+                    report.CashFlows.AddRange(report.Expenses);
+                    report.CashFlows.AddRange(report.Transactions);
+                    report.CashFlows.AddRange(report.Payments);
+
+                    report.CashFlows.OrderByDescending(cf => cf.TimeStamp);
+
+                    ReportsGrid.DataSource = report.CashFlows;
+                    break;
+
+                case BankAccountReport:
+                case TransactionReport:
+                    ReportsGrid.DataSource = report.Transactions;
+                    break;
+
+                case CustomerReport:
+                    report.CustomerReportables.Clear();
+                    report.CustomerReportables.AddRange(report.Sales);
+                    report.CustomerReportables.AddRange(report.DebtCollections);
+                    report.CustomerReportables.AddRange(report.Refunds);
+                    report.CustomerReportables.OrderByDescending(r => r.TimeStamp);
+                    ReportsGrid.DataSource = report.CustomerReportables;
+                    break;
+
+                case DebtCollectionReport:
+                    ReportsGrid.DataSource = report.DebtCollections;
+                    break;
+
+                case EmployeeReport:
+                case PaymentReport:
+                    ReportsGrid.DataSource = report.Payments;
+                    break;
+
+                case ExpenseReport:
+                    ReportsGrid.DataSource = report.Expenses;
+                    break;
+
+                case PurchaseReport:
+                    ReportsGrid.DataSource = report.Purchases;
+                    break;
+
+                case PurchaseReturnReport:
+                    ReportsGrid.DataSource = report.PurchaseReturns;
+                    break;
+
+                case RefundReport:
+                    ReportsGrid.DataSource = report.Refunds;
+                    break;
+
+                case RepaymentReport:
+                    ReportsGrid.DataSource = report.Repayments;
+                    break;
+
+                case SaleReport:
+                    ReportsGrid.DataSource = report.Sales;
+                    break;
+
+                case SupplierReport:
+                    report.SupplierReportables.Clear();
+                    report.SupplierReportables.AddRange(report.Purchases);
+                    report.SupplierReportables.AddRange(report.Repayments);
+                    report.SupplierReportables.AddRange(report.PurchaseReturns);
+                    report.SupplierReportables.OrderByDescending(r => r.TimeStamp);
+                    ReportsGrid.DataSource = report.SupplierReportables;
+                    break;
+            }
+            ReportsGrid.ClearSelection();
+            LoadStats();
+        }
+
+        private void LoadStats() {
+            #region Make The Fields Visible
+            StatPropLabel1.Visible = true;
+            StatPropText1.Visible = true;
+            StatPropLabel2.Visible = true;
+            StatPropText2.Visible = true;
+            StatPropLabel3.Visible = true;
+            StatPropText3.Visible = true;
+            StatPropLabel4.Visible = true;
+            StatPropText4.Visible = true;
+            StatPropLabel5.Visible = true;
+            StatPropText5.Visible = true;
+            StatPropLabel6.Visible = true;
+            StatPropText6.Visible = true;
+            StatPropLabel7.Visible = true;
+            StatPropText7.Visible = true;
+            StatPropLabel8.Visible = true;
+            StatPropText8.Visible = true;
+            StatPropLabel9.Visible = true;
+            StatPropText9.Visible = true;
+            StatPropLabel10.Visible = true;
+            StatPropText10.Visible = true;
+            #endregion
+
+            switch (report.ReportType) {
+                case Summary:
+                    #region Summary
+                    StatPropLabel1.Text = "Inflow Count";
+                    StatPropText1.Text = report.CashFlows.Count(c => c.InFlow > 0) + " entries";
+                    StatPropLabel2.Text = "Inflow Amount";
+                    StatPropText2.Text = report.CashFlows.Where(c => c.InFlow > 0).Sum(sc => sc.InFlow).ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Outflow Count";
+                    StatPropText3.Text = report.CashFlows.Count(c => c.OutFlow > 0) + " entries";
+                    StatPropLabel4.Text = "Outflow Amount";
+                    StatPropText4.Text = report.CashFlows.Where(c => c.OutFlow > 0).Sum(sc => sc.OutFlow).ToString("0.##") + " Tk";
+                    StatPropLabel5.Text = "Inflow - Outflow";
+                    StatPropText5.Text = (report as ITransactionReport).WithdrawTotal.ToString("0.##") + " Tk";
+                    StatPropLabel6.Text = "Deposit - Withdraw";
+                    StatPropText6.Text = ((report as ITransactionReport).DepositTotal
+                                          - (report as ITransactionReport).WithdrawTotal).ToString("0.##") + " Tk";
+
+                    StatPropLabel7.Text = "Cash";
+                        
+                    StatPropText7.Text = (report.CashFlows.Sum(c => c.InFlow) -
+                                          ((report as ITransactionReport).DepositTotal -
+                                           (report as ITransactionReport).WithdrawTotal))
+                                         .ToString("0.##") + " Tk";
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case BankAccountReport:
+                case TransactionReport:
+                    #region Bank Account & Transaction
+                    StatPropLabel1.Text = "Total Transactions";
+                    StatPropText1.Text = (report as ITransactionReport).NumberOfTransactions.ToString();
+                    StatPropLabel2.Text = "Deposits";
+                    StatPropText2.Text = (report as ITransactionReport).NumberOfDeposits.ToString();
+                    StatPropLabel3.Text = "Deposit Amount";
+                    StatPropText3.Text = (report as ITransactionReport).DepositTotal.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Withdraws";
+                    StatPropText4.Text = (report as ITransactionReport).NumberOfWithdraws.ToString();
+                    StatPropLabel5.Text = "Withdraw Amount";
+                    StatPropText5.Text = (report as ITransactionReport).WithdrawTotal.ToString("0.##") + " Tk";
+                    StatPropLabel6.Text = "Deposit - Withdraw";
+                    StatPropText6.Text = ((report as ITransactionReport).DepositTotal
+                                          - (report as ITransactionReport).WithdrawTotal).ToString("0.##") + " Tk";
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case CustomerReport:
+                    #region Customer
+                    StatPropLabel1.Text = "Sales | Due Col. | Refund";
+                    StatPropText1.Text = (report as ICustomerReport).NumberOfSales + " | " +
+                                         (report as ICustomerReport).NumberOfDebtCollections + " | " +
+                                         (report as ICustomerReport).NumberOfRefunds;
+                    StatPropLabel2.Text = "Total Sale Amount";
+                    StatPropText2.Text = (report as ICustomerReport).SalesPriceTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Total Paid";
+                    StatPropText3.Text = (report as ICustomerReport).TotalPaid.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Total Due";
+                    StatPropText4.Text = (report as ICustomerReport).TotalDue.ToString("0.##") + " Tk";
+                    StatPropLabel5.Text = "Profit";
+                    StatPropText5.Text = (report as ICustomerReport).TotalProfit.ToString("0.##") + " Tk";
+                    StatPropLabel6.Text = "Collected Due";
+                    StatPropText6.Text = (report as ICustomerReport).TotalDebtCollection.ToString("0.##") + " Tk";
+                    StatPropLabel7.Text = "Current Due";
+                    StatPropText7.Text = (report as ICustomerReport).CurrentDue.ToString("0.##") + " Tk";
+                    StatPropLabel8.Text = "Refund Amount";
+                    StatPropText8.Text = (report as ICustomerReport).TotalRefund.ToString("0.##") + " Tk";
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case DebtCollectionReport:
+                    #region Debt Collection
+                    StatPropLabel1.Text = "Debt Collections";
+                    StatPropText1.Text = (report as IDebtCollectionReport).NumberOfDebtCollections.ToString();
+                    StatPropLabel2.Text = "Total Amount";
+                    StatPropText2.Text = (report as IDebtCollectionReport).DebtCollectionTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Visible = false;
+                    StatPropText3.Visible = false;
+                    StatPropLabel4.Visible = false;
+                    StatPropText4.Visible = false;
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case EmployeeReport:
+                    #region Employee
+                    StatPropLabel1.Text = "Employee";
+                    StatPropText1.Text = (report as IEmployeeReport).Employee.EmployeeId + " - "
+                                         + (report as IEmployeeReport).Employee.FullName;
+                    StatPropLabel2.Text = "Designation";
+                    StatPropText2.Text = (report as IEmployeeReport).Employee.Designation;
+                    StatPropLabel3.Text = "Join Date";
+                    StatPropText3.Text = (report as IEmployeeReport).JoinDate.ToLongDateString();
+                    StatPropLabel4.Text = "Months Worked";
+                    StatPropText4.Text = (report as IEmployeeReport).MonthsWorked + " months";
+                    StatPropLabel5.Text = "Salary";
+                    StatPropText5.Text = (report as IEmployeeReport).Employee.GetMonthlySalary + " Tk";
+                    StatPropLabel6.Text = "Payments";
+                    StatPropText6.Text = (report as IEmployeeReport).NumberOfPayments.ToString();
+                    StatPropLabel7.Text = "Total Paid";
+                    StatPropText7.Text = (report as IEmployeeReport).TotalPaid.ToString("0.##") + " Tk";
+                    StatPropLabel8.Text = "Current Balance";
+                    StatPropText8.Text = (report as IEmployeeReport).CurrentBalance.ToString("0.##") + " Tk";
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case ExpenseReport:
+                    #region Expense
+                    StatPropLabel1.Text = "Expenses";
+                    StatPropText1.Text = (report as IExpenseReport).NumberOfExpenses.ToString();
+                    StatPropLabel2.Text = "Total Expense";
+                    StatPropText2.Text = (report as IExpenseReport).TotalExpense.ToString("0.##") + " Tk";
+                    StatPropLabel3.Visible = false;
+                    StatPropText3.Visible = false;
+                    StatPropLabel4.Visible = false;
+                    StatPropText4.Visible = false;
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case PaymentReport:
+                    #region Payment
+                    StatPropLabel1.Text = "Payments";
+                    StatPropText1.Text = (report as IPaymentReport).NumberOfPayments.ToString();
+                    StatPropLabel2.Text = "Total Salary Paid";
+                    StatPropText2.Text = (report as IPaymentReport).TotalPaid.ToString("0.##") + " Tk";
+                    StatPropLabel3.Visible = false;
+                    StatPropText3.Visible = false;
+                    StatPropLabel4.Visible = false;
+                    StatPropText4.Visible = false;
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case PurchaseReport:
+                    #region Purchase
+                    StatPropLabel1.Text = "Purchases";
+                    StatPropText1.Text = (report as IPurchaseReport).NumberOfPurchases.ToString();
+                    StatPropLabel2.Text = "Total Amount";
+                    StatPropText2.Text = (report as IPurchaseReport).PurchasePriceTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Total Paid";
+                    StatPropText3.Text = (report as IPurchaseReport).TotalPaid.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Total Due";
+                    StatPropText4.Text = (report as IPurchaseReport).TotalRepayable.ToString("0.##") + " Tk";
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case PurchaseReturnReport:
+                    #region Purchase Return
+                    StatPropLabel1.Text = "Purchase Returns";
+                    StatPropText1.Text = (report as IPurchaseReturnReport).NumberOfPurchaseReturns.ToString();
+                    StatPropLabel2.Text = "Product Price";
+                    StatPropText2.Text = (report as IPurchaseReturnReport).PriceAmountTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Deduced Amount";
+                    StatPropText3.Text = (report as IPurchaseReturnReport).CutAmountTotal.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Refund Amount";
+                    StatPropText4.Text = (report as IPurchaseReturnReport).RefundAmountTotal.ToString("0.##") + " Tk";
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case RefundReport:
+                    #region Refund
+                    StatPropLabel1.Text = "Refunds";
+                    StatPropText1.Text = (report as IRefundReport).NumberOfRefunds.ToString();
+                    StatPropLabel2.Text = "Product Price";
+                    StatPropText2.Text = (report as IRefundReport).PriceAmountTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Deduced Amount";
+                    StatPropText3.Text = (report as IRefundReport).CutAmountTotal.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Refund Amount";
+                    StatPropText4.Text = (report as IRefundReport).RefundAmountTotal.ToString("0.##") + " Tk";
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case RepaymentReport:
+                    #region Repayment
+                    StatPropLabel1.Text = "Repayments";
+                    StatPropText1.Text = (report as IRepaymentReport).NumberOfRepayments.ToString();
+                    StatPropLabel2.Text = "Total Repaid";
+                    StatPropText2.Text = (report as IRepaymentReport).TotalRepaid.ToString("0.##") + " Tk";
+                    StatPropLabel3.Visible = false;
+                    StatPropText3.Visible = false;
+                    StatPropLabel4.Visible = false;
+                    StatPropText4.Visible = false;
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case SaleReport:
+                    #region Sale
+                    StatPropLabel1.Text = "Number of sales";
+                    StatPropText1.Text = $"{ (report as ISaleReport).NumberOfSales } " +
+                                              $"(W: { (report as ISaleReport).NumberOfWholeSales } " +
+                                              $"| R: { (report as ISaleReport).NumberOfRetailSales })";
+                    StatPropLabel2.Text = "Purchase price";
+                    StatPropText2.Text = (report as ISaleReport).PurchasePriceTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Selling price";
+                    StatPropText3.Text = (report as ISaleReport).SalePriceTotal.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Cash received";
+                    StatPropText4.Text = (report as ISaleReport).TotalPaid.ToString("0.##") + " Tk";
+                    StatPropLabel5.Text = "Total profit";
+                    StatPropText5.Text = (report as ISaleReport).TotalProfit.ToString("0.##") + " Tk";
+                    StatPropLabel6.Text = "Total due";
+                    StatPropText6.Text = (report as ISaleReport).TotalDue.ToString("0.##") + " Tk";
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                case SupplierReport:
+                    #region Supplier
+                    StatPropLabel1.Text = "Prc. | Rep. | Prc. Rtn.";
+                    StatPropText1.Text = (report as ISupplierReport).NumberOfPurchases + " | " +
+                                         (report as ISupplierReport).NumberOfRepayments + " | " +
+                                         (report as ISupplierReport).NumberOfPurchaseReturns;
+                    StatPropLabel2.Text = "Total Purchase Amount";
+                    StatPropText2.Text = (report as ISupplierReport).PurchasesPriceTotal.ToString("0.##") + " Tk";
+                    StatPropLabel3.Text = "Total Paid";
+                    StatPropText3.Text = (report as ISupplierReport).TotalPaid.ToString("0.##") + " Tk";
+                    StatPropLabel4.Text = "Total Repayable";
+                    StatPropText4.Text = (report as ISupplierReport).TotalRepayable.ToString("0.##") + " Tk";
+                    StatPropLabel5.Text = "Total Repaid Amount";
+                    StatPropText5.Text = (report as ISupplierReport).Repayments.Sum(r => r.Amount).ToString("0.##") + " Tk";
+                    StatPropLabel6.Text = "Current Repayable";
+                    StatPropText6.Text = (report as ISupplierReport).CurrentRepayable.ToString("0.##") + " Tk";
+                    StatPropLabel7.Text = "Purchase Return Amount";
+                    StatPropText7.Text = (report as ISupplierReport).PurchaseReturnPriceTotal.ToString("0.##") + " Tk";
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+
+                default:
+                    #region Hide all the Fields
+                    StatPropLabel1.Visible = false;
+                    StatPropText1.Visible = false;
+                    StatPropLabel2.Visible = false;
+                    StatPropText2.Visible = false;
+                    StatPropLabel3.Visible = false;
+                    StatPropText3.Visible = false;
+                    StatPropLabel4.Visible = false;
+                    StatPropText4.Visible = false;
+                    StatPropLabel5.Visible = false;
+                    StatPropText5.Visible = false;
+                    StatPropLabel6.Visible = false;
+                    StatPropText6.Visible = false;
+                    StatPropLabel7.Visible = false;
+                    StatPropText7.Visible = false;
+                    StatPropLabel8.Visible = false;
+                    StatPropText8.Visible = false;
+                    StatPropLabel9.Visible = false;
+                    StatPropText9.Visible = false;
+                    StatPropLabel10.Visible = false;
+                    StatPropText10.Visible = false;
+                    #endregion
+                    break;
+            }
+        }
+
         private void FromDateTime_ValueChanged(object sender, EventArgs e) {
             report.FromDate = FromDateTime.Value;
             ReportTypeSelectorCombo_SelectedIndexChanged(sender, e);
@@ -1529,6 +1654,9 @@ namespace WinFormsUI.Forms {
                 return;
             }
             switch (report.ReportType) {
+                case Summary:
+                    break;
+
                 case BankAccountReport:
                 case TransactionReport:
                     // Todo - Show Transaction
@@ -1631,6 +1759,9 @@ namespace WinFormsUI.Forms {
                 return;
             
             switch (report.ReportType) {
+                case Summary:
+                    break;
+
                 case BankAccountReport:
                 case TransactionReport:
                     foreach (DataGridViewRow row in ReportsGrid.SelectedRows)

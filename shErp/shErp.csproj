@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EC573791-C315-42E0-AF19-CEDA1D9D33A2}</ProjectGuid>
+    <ProjectGuid>{5AEB3866-BE7C-4387-AA63-FC6C456BFBEA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfUI</RootNamespace>
-    <AssemblyName>WpfUI</AssemblyName>
+    <RootNamespace>shErp</RootNamespace>
+    <AssemblyName>shErp</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,17 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_Manager.ico</ApplicationIcon>
+    <ApplicationIcon>sherp.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
-    </Reference>
-    <Reference Include="MaterialDesignThemes.MahApps, Version=0.0.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignThemes.MahApps.0.0.11\lib\net45\MaterialDesignThemes.MahApps.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.1.953, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.3.1.953\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
@@ -54,10 +48,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,66 +60,32 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.DataGrid, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UserControls\ButtonView.xaml.cs">
-      <DependentUpon>ButtonView.xaml</DependentUpon>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Forms\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Views\MemoWindow.xaml.cs">
+      <DependentUpon>MemoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Forms\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Forms\MemoWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Icons.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\IconsNonShared.xaml">
+    <Page Include="Views\MemoWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\ButtonView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\MemoWindow.xaml.cs">
-      <DependentUpon>MemoWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -152,43 +108,22 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\icons8_Add_User_Male_50px.png" />
-    <Resource Include="icons\icons8_Invoice.ico" />
-    <Resource Include="icons\icons8_Reset_50px.png" />
-    <Resource Include="icons\icons8_Search_Property_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\ExcelReader\ExcelReader.csproj">
+      <Project>{6b53fbab-9bbc-4436-bfda-e62d98d7e6a9}</Project>
+      <Name>ExcelReader</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShopLibrary\ShopLibrary.csproj">
       <Project>{78f6cdc3-7345-43d5-89fe-559f7cee910b}</Project>
       <Name>ShopLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\icons8_Protect_1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icons\icons8_Manager.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icons\icons8_Small_Business_2.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icons8_Manager.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\WindowsIcons-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Entypo-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icons\icons8_Overview_512px_1.png" />
+    <Resource Include="sherp.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

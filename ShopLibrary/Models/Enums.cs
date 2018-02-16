@@ -25,7 +25,8 @@
 
     public enum ReportType
     {
-        BankAccountReport = 0,
+        Summary = 0,
+        BankAccountReport,
         CustomerReport,
         DebtCollectionReport,
         EmployeeReport,

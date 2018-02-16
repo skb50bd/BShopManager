@@ -41,7 +41,8 @@ namespace ShopLibrary.Models {
         string ICustomerReportable.TimeStamp => Meta.Created.ToLocalTime().ToString("u");
         #endregion
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => DebtCollectionId;
         string ICashFlow.Type => "Due Col.";
         decimal ICashFlow.InFlow => Amount;
         string ICashFlow.GetInFlow => GetAmount;

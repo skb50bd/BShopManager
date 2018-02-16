@@ -4,7 +4,7 @@ using ShopLibrary.Models;
 
 
 namespace ShopLibrary.DataAccess {
-    public class SqlConnector : IDataConnection {
+    public class SqlConnector {
         /// <summary>
         ///     Authenticates User and Returns It's User ID
         /// </summary>

@@ -4,27 +4,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfUI.Forms"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         x:Name="LoginWindow"
         x:Class="WpfUI.Forms.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="800"
-        Width="1100"
-        MinWidth="400"
-        MinHeight="300"
+        Height="285"
+        Width="350"
+        MinHeight="285"
+        MinWidth="350"
+        MaxHeight="285"
+        MaxWidth="350"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{StaticResource MaterialDesignFont}"
-        Custom:ControlsHelper.ContentCharacterCasing="Upper"
         MouseDown="Window_MouseDown"
         FontSize="16"
         SnapsToDevicePixels="True"
         Loaded="LoginWindow_Loaded"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Icon="../icons/icons8_Protect_1.ico"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -33,31 +33,17 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
-            <!-- data template used for the dialogs example, defines a View for a ViewModel of type DateTime  -->
-            <DataTemplate DataType="{x:Type system:DateTime}">
-                <StackPanel Margin="16">
-                    <TextBlock>England win the World Cup:</TextBlock>
-                    <TextBlock Margin="0 8 0 0"
-                               Text="{Binding }" />
-                    <TextBlock Margin="0 8 0 0">You will never see that again.</TextBlock>
-                    <Button  Margin="0 8 0 0"
-                             IsDefault="True"
-                             Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                             Style="{DynamicResource MaterialDesignFlatButton}">AWESOME</Button>
-                </StackPanel>
-            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <StackPanel Margin="0,0,0,2">
         <TextBlock HorizontalAlignment="Left"
                    Margin="10,10,10,0"
                    TextWrapping="Wrap"
-                   Text="BShopManager"
+                   Text="sh ERP"
                    VerticalAlignment="Top"
-                   FontSize="42"
-                   FontWeight="Light"/>
+                   FontSize="45"
+                   FontWeight="Light" />
         <TextBlock HorizontalAlignment="Left"
                    Margin="10,0,0,10"
                    TextWrapping="Wrap"
@@ -67,32 +53,49 @@
         <ComboBox x:Name="UserNameText"
                   IsEditable="True"
                   IsReadOnly="False"
-                  Height="30"
-                  Custom:TextBoxHelper.Watermark="Username"
+                  Height="40"
                   HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"
-                  Margin="10,5"
+                  Margin="10,10"
                   FontSize="16"
+                  materialDesign:HintAssist.Hint="Username"
+                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                   KeyDown="UserNameText_KeyDown" />
         <PasswordBox x:Name="PasswordText"
-                 Height="30"
-                 Custom:TextBoxHelper.Watermark="Password"
-                 VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Center"
-                 Margin="10,5"
-                 FontSize="16"
-                 KeyDown="PasswordText_KeyDown" />
-        <Button x:Name="LoginButton"
-                Margin="10,5"
-                FontSize="16"
-                Content="Login"
-                FontWeight="Normal"
-                Click="SubmitButton_Click" />
-        <Button x:Name="ExitButton"
-                Margin="10,5"
-                FontSize="16"
-                Content="Exit"
-                FontWeight="Normal"
-                Click="ExitButton_Click" />
+                     Height="40"
+                     materialDesign:HintAssist.Hint="Password"
+                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     Margin="10,10"
+                     FontSize="16"
+                     KeyDown="PasswordText_KeyDown" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="LoginButton"
+                    Grid.Column="0"
+                    Margin="10,10,5,10"
+                    FontSize="16"
+                    Content="Login"
+                    Height="40"
+                    FontWeight="Normal"
+                    HorizontalAlignment="Stretch"
+                    Style="{DynamicResource MaterialDesignRaisedButton}"
+                    Click="SubmitButton_Click" />
+            <Button x:Name="ExitButton"
+                    Grid.Column="1"
+                    Margin="5,10,10,10"
+                    FontSize="16"
+                    Content="Exit"
+                    Height="40"
+                    HorizontalAlignment="Stretch"
+                    FontWeight="Normal"
+                    Style="{DynamicResource MaterialDesignRaisedAccentButton}"
+                    Click="ExitButton_Click" />
+        </Grid>
+
     </StackPanel>
 </Window>

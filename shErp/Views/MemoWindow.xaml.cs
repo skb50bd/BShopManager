@@ -1,35 +1,37 @@
 ﻿using ShopLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
-using MahApps.Metro.Controls;
 using MongoDB.Bson;
 using ShopLibrary.Output;
-using WpfUI.UserControls;
 using static ShopLibrary.Searcher.Search;
 using static ShopLibrary.GlobalConfig;
 
-namespace WpfUI.Forms {
+namespace WpfUI.Views {
     /// <summary>
     /// Interaction logic for MemoWindow.xaml
     /// </summary>
-    public partial class MemoWindow : MetroWindow {
+    public partial class MemoWindow : Window {
         public MemoWindow() {
+            Debug.WriteLine("Before Init");
             InitializeComponent();
+            Debug.WriteLine("After Init");
+
         }
 
         #region Global Variables
 
-        private List<Sale> _savedSales = new List<Sale>();
-        private Customer _customer = new Customer();
-        private Sale _sale = new Sale();
-        private ShoppingCart _shoppingCart = new ShoppingCart();
-        private Product _product = new Product();
+        private List<Sale> _savedSales      = new List<Sale>();
+        private Customer _customer          = new Customer();
+        private Sale _sale                  = new Sale();
+        private ShoppingCart _shoppingCart  = new ShoppingCart();
+        private Product _product            = new Product();
         private List<Product> _shopProducts = new List<Product>();
 
         #endregion
@@ -52,9 +54,9 @@ namespace WpfUI.Forms {
             List<ShoppingCart> cart = _sale.Cart.ToList();
             try {
                 RetailSaleRadio.IsChecked = _sale.SaleType == SaleType.RetailSale;
-                WholeSaleRadio.IsChecked = _sale.SaleType == SaleType.WholeSale;
+                WholeSaleRadio.IsChecked  = _sale.SaleType == SaleType.WholeSale;
                 DealDateTime.SelectedDate = _sale.DealTime;
-                ShopCombo.SelectedIndex = Shops.FindIndex(s => s.ObjectId == _sale.ShopId);
+                ShopCombo.SelectedIndex   = Shops.FindIndex(s => s.ObjectId == _sale.ShopId);
 
                 if (_sale.ShopId != ObjectId.Empty && ShopCombo.SelectedIndex == -1)
                     MessageBox.Show("Shop match not found");
@@ -259,8 +261,8 @@ namespace WpfUI.Forms {
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e) {
-            //if (e.ChangedButton == MouseButton.Left)
-            //    this.DragMove();
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
 
         private void ResetCustomerButton_Click(object sender, RoutedEventArgs e) {
@@ -632,6 +634,10 @@ namespace WpfUI.Forms {
                 MessageBox.Show($"Error occurred\n{ex.Message}", "Error");
                 return;
             }
+        }
+
+        private void ViewCustomer_Closing(object sender, RoutedEventArgs e) {
+
         }
     }
 }

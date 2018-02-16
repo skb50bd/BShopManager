@@ -55,7 +55,8 @@ namespace ShopLibrary.Models {
 
         #endregion
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => PurchaseReturnId;
         string ICashFlow.Type => "Purchase Return";
         decimal ICashFlow.InFlow => PurchaseReturnAmount;
         string ICashFlow.GetInFlow => GetPurchasReturnAmount;

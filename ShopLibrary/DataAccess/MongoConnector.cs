@@ -9,12 +9,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using static ShopLibrary.GlobalConfig;
 
-namespace ShopLibrary.DataAccess
-{
-    public class MongoConnector : IDataConnection
-    {
-        public MongoConnector()
-        {
+namespace ShopLibrary.DataAccess {
+    public class MongoConnector : IDataConnection {
+        public MongoConnector() {
             if (!InitiateDatabase())
                 Debug.WriteLine("Could not initiate the MongoConnector");
         }
@@ -47,16 +44,9 @@ namespace ShopLibrary.DataAccess
         private IMongoCollection<Cash> CashCollection => _db.GetCollection<Cash>("Cash");
 
         #endregion
-        public bool InitiateDatabase()
-        {
+        public bool InitiateDatabase() {
             Debug.WriteLine("Trying to initiate DB");
             try {
-                MongoClientSettings clientSettings = new MongoClientSettings {
-                    Credential = MongoCredential.CreateCredential("admin", "appAdmin", "85H0P4DM1N"),
-                    Server = new MongoServerAddress("mongodb://localhost", 27017)
-                    //CnnString("BShopMan")
-                };
-
                 string fileName = "connectionString";
                 if (!File.Exists(fileName))
                     File.WriteAllText(fileName, "mongodb://localhost:27017");
@@ -75,8 +65,7 @@ namespace ShopLibrary.DataAccess
 
         #region Sequence
 
-        public ObjectId GetNextObjectId(string collectionName)
-        {
+        public ObjectId GetNextObjectId(string collectionName) {
             IMongoCollection<BsonDocument> col = _db.GetCollection<BsonDocument>("Counter");
             FilterDefinition<BsonDocument> filter = new FilterDefinitionBuilder<BsonDocument>().Eq(c => c["_id"], collectionName);
             UpdateDefinition<BsonDocument> update = new UpdateDefinitionBuilder<BsonDocument>().Inc("seq", 1);
@@ -90,8 +79,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region User and Login
-        public bool Login(string userName, string password)
-        {
+        public bool Login(string userName, string password) {
             foreach (User existingUser in Users)
                 if (existingUser.IsRealUser(userName, password)) {
                     CurrentUser = existingUser;
@@ -111,8 +99,7 @@ namespace ShopLibrary.DataAccess
             return false;
         }
 
-        public void Logout()
-        {
+        public void Logout() {
             CurrentSession.LogoutTime = DateTime.Now;
             BsonDocument filter = new BsonDocument("_id", CurrentSession.ObjectId);
             BsonDocument update = new BsonDocument("$set", CurrentSession.ToBsonDocument());
@@ -126,8 +113,7 @@ namespace ShopLibrary.DataAccess
 
         public List<User> GetUserAll() => UserCollection.AsQueryable().Where(u => u.IsActive).ToList();
 
-        public User InsertUser(User model)
-        {
+        public User InsertUser(User model) {
             model.ObjectId = GetNextObjectId(nameof(User));
             model.Meta = new Metadata(DateTime.Now, CurrentUser.UserName);
 
@@ -142,8 +128,7 @@ namespace ShopLibrary.DataAccess
             return model;
         }
 
-        public bool UpdateUser(User u)
-        {
+        public bool UpdateUser(User u) {
             u.Meta.Modifier = CurrentUser.UserName;
             u.Meta.Modified = DateTime.Now;
             BsonDocument filter = new BsonDocument("_id", u.ObjectId);
@@ -159,8 +144,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool DeleteUserByUserName(string userName)
-        {
+        public bool DeleteUserByUserName(string userName) {
             BsonDocument filter = new BsonDocument("userName", userName);
             try {
                 DeleteResult result = UserCollection.DeleteOne(filter);
@@ -172,8 +156,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool DisableUserByUserName(string userName)
-        {
+        public bool DisableUserByUserName(string userName) {
             BsonDocument filter = new BsonDocument("userName", userName);
             BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
             try {
@@ -192,8 +175,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Bank Account and Transaction
-        public BankAccount InsertBankAccount(BankAccount model)
-        {
+        public BankAccount InsertBankAccount(BankAccount model) {
             model.ObjectId = GetNextObjectId(nameof(BankAccount));
             model.Meta = new Metadata {
                 Creator = CurrentUser.UserName,
@@ -211,13 +193,11 @@ namespace ShopLibrary.DataAccess
             return BankAccounts.SingleOrDefault(ba => ba.AccountName == model.AccountName);
         }
 
-        public bool DeleteBankAccount(BankAccount model)
-        {
+        public bool DeleteBankAccount(BankAccount model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument tFilter = new BsonDocument("bankAccountId", model.BankAccountId);
             try {
-                async Task DeleteTransactionsAsync()
-                {
+                async Task DeleteTransactionsAsync() {
                     DeleteResult tResult = await TransactionCollection.DeleteManyAsync(tFilter);
                     DeleteResult result = BankAccountCollection.DeleteOne(filter);
                     if (tResult.DeletedCount > 0)
@@ -231,8 +211,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool UpdateBankAccount(BankAccount model)
-        {
+        public bool UpdateBankAccount(BankAccount model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
@@ -269,8 +248,7 @@ namespace ShopLibrary.DataAccess
 
         public List<BankAccount> GetBankAccountsAll() => BankAccountCollection.AsQueryable().ToList();
 
-        public Transaction InsertTransaction(Transaction model)
-        {
+        public Transaction InsertTransaction(Transaction model) {
             model.ObjectId = GetNextObjectId(nameof(Transaction));
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
@@ -291,8 +269,7 @@ namespace ShopLibrary.DataAccess
             return model;
         }
 
-        public bool DeleteTransaction(Transaction model)
-        {
+        public bool DeleteTransaction(Transaction model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult tResult = TransactionCollection.DeleteOne(filter);
@@ -306,8 +283,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Shop
-        public Shop InsertShop(Shop model)
-        {
+        public Shop InsertShop(Shop model) {
             model.ObjectId = GetNextObjectId(nameof(Shop));
             model.Meta = new Metadata {
                 Creator = CurrentUser.UserName,
@@ -327,8 +303,7 @@ namespace ShopLibrary.DataAccess
 
         public List<Shop> GetShopsAll() => ShopCollection.AsQueryable().ToList();
 
-        public bool UpdateShop(Shop model)
-        {
+        public bool UpdateShop(Shop model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
@@ -344,8 +319,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool DeleteShop(Shop model)
-        {
+        public bool DeleteShop(Shop model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = ShopCollection.DeleteOne(filter);
@@ -360,8 +334,7 @@ namespace ShopLibrary.DataAccess
 
         #region Customer and Debts (Due)
 
-        public Customer InsertCustomer(Customer model)
-        {
+        public Customer InsertCustomer(Customer model) {
             model.ObjectId = GetNextObjectId(nameof(Customer));
             model.Meta = new Metadata(DateTime.Now, CurrentUser.UserName);
             try {
@@ -397,8 +370,7 @@ namespace ShopLibrary.DataAccess
                 .OrderByDescending(dc => dc.Meta.Created)
                 .ToList();
 
-        public bool UpdateCustomer(Customer model)
-        {
+        public bool UpdateCustomer(Customer model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
@@ -416,8 +388,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool DeleteCustomer(Customer model)
-        {
+        public bool DeleteCustomer(Customer model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = CustomerCollection.DeleteOne(filter);
@@ -430,8 +401,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool DisableCustomer(Customer model)
-        {
+        public bool DisableCustomer(Customer model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
             try {
@@ -445,8 +415,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public DebtCollection CollectDebt(DebtCollection model)
-        {
+        public DebtCollection CollectDebt(DebtCollection model) {
             model.ObjectId = GetNextObjectId(nameof(Models.DebtCollection));
             model.Meta = new Metadata();
             try {
@@ -468,8 +437,7 @@ namespace ShopLibrary.DataAccess
                 .OrderByDescending(dc => dc.Meta.Created)
                 .ToList();
 
-        public bool DeleteDebtCollection(DebtCollection model)
-        {
+        public bool DeleteDebtCollection(DebtCollection model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = DebtCollection.DeleteOne(filter);
@@ -485,8 +453,7 @@ namespace ShopLibrary.DataAccess
         #region Category -Product
 
         #region Category
-        public Category InsertCategory(Category model)
-        {
+        public Category InsertCategory(Category model) {
             model.ObjectId = GetNextObjectId(nameof(Category));
             try {
                 CategoryCollection.InsertOne(model);
@@ -498,8 +465,7 @@ namespace ShopLibrary.DataAccess
             return Categories.SingleOrDefault(c => c.ObjectId == model.ObjectId);
         }
 
-        public bool DeleteCategory(Category model)
-        {
+        public bool DeleteCategory(Category model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = CategoryCollection.DeleteOne(filter);
@@ -511,8 +477,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool UpdateCategory(Category model)
-        {
+        public bool UpdateCategory(Category model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
             try {
@@ -535,8 +500,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Product
-        public Product InsertProduct(Product model)
-        {
+        public Product InsertProduct(Product model) {
             model.ObjectId = GetNextObjectId(nameof(Product));
             model.Meta = new Metadata(DateTime.Now, CurrentUser.UserName);
             try {
@@ -555,8 +519,7 @@ namespace ShopLibrary.DataAccess
                 .OrderBy(p => p.ProductName)
                 .ToList();
 
-        public bool UpdateProduct(Product model)
-        {
+        public bool UpdateProduct(Product model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
@@ -574,8 +537,7 @@ namespace ShopLibrary.DataAccess
             return true;
         }
 
-        public bool DeleteProduct(Product model)
-        {
+        public bool DeleteProduct(Product model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = ProductCollection.DeleteOne(filter);
@@ -592,8 +554,7 @@ namespace ShopLibrary.DataAccess
 
         #region Supplier and Repayments
 
-        public Supplier InsertSupplier(Supplier model)
-        {
+        public Supplier InsertSupplier(Supplier model) {
             model.ObjectId = GetNextObjectId(nameof(Supplier));
             model.Meta = new Metadata {
                 Creator = CurrentUser.UserName,
@@ -615,8 +576,7 @@ namespace ShopLibrary.DataAccess
                 .AsQueryable()
                 .Where(s => s.IsActive)
                 .ToList();
-        public bool UpdateSupplier(Supplier model)
-        {
+        public bool UpdateSupplier(Supplier model) {
             model.Meta.Modify();
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
@@ -632,8 +592,7 @@ namespace ShopLibrary.DataAccess
             Suppliers.Add(model);
             return true;
         }
-        public bool DeleteSupplier(Supplier model)
-        {
+        public bool DeleteSupplier(Supplier model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = SupplierCollection.DeleteOne(filter);
@@ -645,8 +604,7 @@ namespace ShopLibrary.DataAccess
             Suppliers.Remove(model);
             return true;
         }
-        public bool DisableSupplier(Supplier model)
-        {
+        public bool DisableSupplier(Supplier model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
             try {
@@ -659,8 +617,7 @@ namespace ShopLibrary.DataAccess
             }
             return true;
         }
-        public Repayment Repay(Repayment model)
-        {
+        public Repayment Repay(Repayment model) {
             model.ObjectId = GetNextObjectId(nameof(Repayment));
             model.Meta = new Metadata();
             try {
@@ -695,8 +652,7 @@ namespace ShopLibrary.DataAccess
                 .AsQueryable()
                 .OrderByDescending(r => r.Meta.Created)
                 .ToList();
-        public bool DeleteRepayment(Repayment model)
-        {
+        public bool DeleteRepayment(Repayment model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = _db.GetCollection<Repayment>("Repayment").DeleteOne(filter);
@@ -710,8 +666,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Employee and Salary
-        public Employee InsertEmployee(Employee model)
-        {
+        public Employee InsertEmployee(Employee model) {
             model.ObjectId = GetNextObjectId(nameof(Employee));
             model.Meta = new Metadata();
             try {
@@ -745,8 +700,7 @@ namespace ShopLibrary.DataAccess
                 .OrderByDescending(p => p.Meta.Created)
                 .ToList();
 
-        public bool UpdateEmployee(Employee model)
-        {
+        public bool UpdateEmployee(Employee model) {
             model.Meta.Modify();
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
@@ -762,8 +716,7 @@ namespace ShopLibrary.DataAccess
             Employees.Add(model);
             return true;
         }
-        public bool DeleteEmployee(Employee model)
-        {
+        public bool DeleteEmployee(Employee model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = EmployeeCollection.DeleteOne(filter);
@@ -775,8 +728,7 @@ namespace ShopLibrary.DataAccess
             Employees.Remove(model);
             return true;
         }
-        public bool DisableEmployee(Employee model)
-        {
+        public bool DisableEmployee(Employee model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
             try {
@@ -789,8 +741,7 @@ namespace ShopLibrary.DataAccess
             }
             return true;
         }
-        public Payment Pay(Payment model)
-        {
+        public Payment Pay(Payment model) {
             model.ObjectId = GetNextObjectId(nameof(Payment));
             model.Meta = new Metadata();
             try {
@@ -810,8 +761,7 @@ namespace ShopLibrary.DataAccess
                 .AsQueryable()
                 .OrderByDescending(p => p.Meta.Created)
                 .ToList();
-        public bool DeletePayment(Payment model)
-        {
+        public bool DeletePayment(Payment model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = PaymentCollection.DeleteOne(filter);
@@ -824,8 +774,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Sale
-        public Sale InsertSale(Sale model)
-        {
+        public Sale InsertSale(Sale model) {
             model.ObjectId = GetNextObjectId(nameof(Sale));
             model.Meta = new Metadata();
             try {
@@ -842,9 +791,9 @@ namespace ShopLibrary.DataAccess
                 }
                 SaleCollection.InsertOne(model);
                 CurrentCash = UpdateCash(model);
-                if (model.Due != 0 && model.CustomerId != ObjectId.Empty) {
+                if (model.CustomerId != ObjectId.Empty) {
                     BsonDocument filter = new BsonDocument("_id", model.CustomerId);
-                    BsonDocument update = new BsonDocument("$inc", new BsonDocument("debt", model.Due));
+                    BsonDocument update = new BsonDocument("$inc", new BsonDocument("debt", model.Payable - model.Paid));
                     CustomerCollection.UpdateOne(filter, update);
                 }
             }
@@ -861,8 +810,7 @@ namespace ShopLibrary.DataAccess
             return model;
         }
 
-        public bool DeleteSale(Sale model)
-        {
+        public bool DeleteSale(Sale model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = SaleCollection.DeleteOne(filter);
@@ -900,8 +848,7 @@ namespace ShopLibrary.DataAccess
                 .ToList();
         #endregion
         #region Drafts
-        public Sale SaveSale(Sale model)
-        {
+        public Sale SaveSale(Sale model) {
             model.ObjectId = GetNextObjectId("SavedSale");
             model.Meta = new Metadata();
 
@@ -914,8 +861,7 @@ namespace ShopLibrary.DataAccess
             return model;
         }
 
-        public bool DeleteSavedSale(Sale model)
-        {
+        public bool DeleteSavedSale(Sale model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = SavedSaleCollection.DeleteOne(filter);
@@ -936,8 +882,7 @@ namespace ShopLibrary.DataAccess
 
         #region Expense
 
-        public Expense InsertExpense(Expense model)
-        {
+        public Expense InsertExpense(Expense model) {
             model.ObjectId = GetNextObjectId(nameof(Expense));
             model.Meta.Creator = CurrentUser.UserName;
             model.Meta.Modify();
@@ -965,8 +910,7 @@ namespace ShopLibrary.DataAccess
                             && s.Meta.Created < to)
                 .OrderByDescending(e => e.Meta.Created)
                 .ToList();
-        public bool DeleteExpense(Expense model)
-        {
+        public bool DeleteExpense(Expense model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = ExpenseCollection.DeleteOne(filter);
@@ -980,8 +924,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Purchase
-        public Purchase InsertPurchase(Purchase model)
-        {
+        public Purchase InsertPurchase(Purchase model) {
             model.ObjectId = GetNextObjectId(nameof(Purchase));
             model.Meta = new Metadata();
             try {
@@ -1033,8 +976,7 @@ namespace ShopLibrary.DataAccess
                             && s.DealTime < to)
                 .OrderByDescending(p => p.DealTime)
                 .ToList();
-        public bool DeletePurchase(Purchase model)
-        {
+        public bool DeletePurchase(Purchase model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = PurchaseCollection.DeleteOne(filter);
@@ -1046,8 +988,7 @@ namespace ShopLibrary.DataAccess
         }
         #endregion
         #region Drafts
-        public Purchase SavePurchase(Purchase model)
-        {
+        public Purchase SavePurchase(Purchase model) {
             model.ObjectId = GetNextObjectId("SavePurchase"); ;
             model.Meta = new Metadata();
             try {
@@ -1058,8 +999,7 @@ namespace ShopLibrary.DataAccess
             }
             return model;
         }
-        public bool DeleteSavedPurchase(Purchase model)
-        {
+        public bool DeleteSavedPurchase(Purchase model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = SavedPurchaseCollection.DeleteOne(filter);
@@ -1077,8 +1017,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Refund
-        public Refund InsertRefund(Refund model)
-        {
+        public Refund InsertRefund(Refund model) {
             model.ObjectId = GetNextObjectId(nameof(Refund));
             model.Meta = new Metadata();
             try {
@@ -1095,8 +1034,7 @@ namespace ShopLibrary.DataAccess
             }
             return model;
         }
-        public bool DeleteRefund(Refund model)
-        {
+        public bool DeleteRefund(Refund model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = RefundCollection.DeleteOne(filter);
@@ -1136,8 +1074,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Purchase Return
-        public PurchaseReturn InsertPurchaseReturn(PurchaseReturn model)
-        {
+        public PurchaseReturn InsertPurchaseReturn(PurchaseReturn model) {
             model.ObjectId = GetNextObjectId(nameof(PurchaseReturn));
             model.Meta = new Metadata();
             try {
@@ -1154,8 +1091,7 @@ namespace ShopLibrary.DataAccess
             }
             return model;
         }
-        public bool DeletePurchaseReturn(PurchaseReturn model)
-        {
+        public bool DeletePurchaseReturn(PurchaseReturn model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = PurchaseReturnCollection.DeleteOne(filter);
@@ -1194,8 +1130,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         #region Cash Modification
-        public CashModification InsertCashModification(CashModification model)
-        {
+        public CashModification InsertCashModification(CashModification model) {
             model.ObjectId = GetNextObjectId(nameof(CashModification));
             model.Meta = new Metadata();
             try {
@@ -1210,8 +1145,7 @@ namespace ShopLibrary.DataAccess
 
         public List<CashModification> GetCashModificationAll() => CashModificationCollection.AsQueryable().ToList();
 
-        public bool DeleteCashModification(CashModification model)
-        {
+        public bool DeleteCashModification(CashModification model) {
             BsonDocument filter = new BsonDocument("_id", model.ObjectId);
             try {
                 DeleteResult result = CashModificationCollection.DeleteOne(filter);
@@ -1224,8 +1158,7 @@ namespace ShopLibrary.DataAccess
         #endregion
 
         public Cash GetCurrentCash() => CashCollection.AsQueryable().SingleOrDefault();
-        private Cash UpdateCash(ICashFlow cashFlow)
-        {
+        private Cash UpdateCash(ICashFlow cashFlow) {
             decimal m = cashFlow.InFlow - cashFlow.OutFlow;
             BsonDocument filter = new BsonDocument("_id", CurrentCash.ObjectId);
             BsonDocument update = new BsonDocument("$inc", new BsonDocument("current", m));

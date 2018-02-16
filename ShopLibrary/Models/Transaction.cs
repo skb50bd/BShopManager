@@ -46,7 +46,8 @@ namespace ShopLibrary.Models {
         public string TransactionId      => "T" + ObjectId.Increment;
         #endregion
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => TransactionId;
         string ICashFlow.Type         => TransactionType == Models.TransactionType.Deposit ? "Transaction (D)" : "Transaction (W)";
         decimal ICashFlow.InFlow      => TransactionType == Models.TransactionType.Deposit ? 0 : Amount;
         string ICashFlow.GetInFlow    => TransactionType == Models.TransactionType.Deposit ? "0" : GetAmount;

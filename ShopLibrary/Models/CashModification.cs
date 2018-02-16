@@ -30,7 +30,8 @@ namespace ShopLibrary.Models
         [BsonElement("note")]
         public string Note { get; set; }
 
-        #region ICashFlow Fields
+        #region ICashFlow Members
+        string ICashFlow.Id => "CM" + ObjectId.Increment;
         string ICashFlow.Type => PreviousBalance > NewBalance ? "Cash Decrease" : "Cash Increase";
         decimal ICashFlow.InFlow => PreviousBalance > NewBalance ? 0 : NewBalance - PreviousBalance;
         string ICashFlow.GetInFlow => PreviousBalance > NewBalance ? "0" : (NewBalance - PreviousBalance).ToString("0.##");

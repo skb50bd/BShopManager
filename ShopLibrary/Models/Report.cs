@@ -41,6 +41,7 @@ namespace ShopLibrary.Models {
             Employee            = new Employee();
             Shop                = new Shop();
             Supplier            = new Supplier();
+            CashFlows           = new List<ICashFlow>();
         }
 
         #region Global Variables
@@ -53,6 +54,7 @@ namespace ShopLibrary.Models {
         #endregion
 
         #region Lists
+        public List<ICashFlow> CashFlows { get; set;}
         public List<DebtCollection> DebtCollections { get; set; }
         public List<Expense> Expenses { get; set; }
         public List<ICustomerReportable> CustomerReportables { get; set; }
@@ -169,7 +171,7 @@ namespace ShopLibrary.Models {
         decimal IPurchaseReturnReport.PriceAmountTotal    => PurchaseReturns.Sum(p => p.PriceAmount);
         decimal IPurchaseReturnReport.CutAmountTotal      => PurchaseReturns.Sum(p => p.PurchaseReturnCut);
         decimal IPurchaseReturnReport.RefundAmountTotal   => PurchaseReturns.Sum(p => p.PurchaseReturnAmount);
-        List<PurchaseReturn> IPurchaseReturnReport.GetPurchaseReturn()
+        List<PurchaseReturn> IPurchaseReturnReport.GetPurchaseReturns()
             => Connection[0].GetPurchaseReturnByDate(FromDate, ToDate);
 
         #endregion
@@ -180,7 +182,7 @@ namespace ShopLibrary.Models {
         decimal IRefundReport.PriceAmountTotal  => Refunds.Sum(r => r.PriceAmount);
         decimal IRefundReport.RefundAmountTotal => Refunds.Sum(r => r.RefundAmount);
         decimal IRefundReport.CutAmountTotal    => Refunds.Sum(r => r.RefundCut);
-        List<Refund> IRefundReport.GetRefund()
+        List<Refund> IRefundReport.GetRefunds()
             => Connection[0].GetRefundByDate(FromDate, ToDate);
 
         #endregion
@@ -202,6 +204,8 @@ namespace ShopLibrary.Models {
         decimal ISaleReport.PurchasePriceTotal => Sales.Sum(s => s.TotalPurchasePrice);
         decimal ISaleReport.SalePriceTotal     => Sales.Sum(s => s.Payable);
         decimal ISaleReport.TotalProfit        => Sales.Sum(s => s.Profit);
+        decimal ISaleReport.TotalPaid          => Sales.Sum(s => s.Paid);
+        decimal ISaleReport.TotalDue           => Sales.Sum(s => s.Due);
         List<Sale> ISaleReport.GetSales()
             => Connection[0].GetSaleByDate(FromDate, ToDate);
 
