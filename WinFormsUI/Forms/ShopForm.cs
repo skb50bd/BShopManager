@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -8,6 +11,7 @@ using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
 namespace WinFormsUI.Forms {
     public partial class ShopForm : Form {
+        ResourceManager rm = new ResourceManager(typeof(ShopForm));
         #region MakeDraggable
         /// <summary>
         ///     This Part Makes the Form Draggable, as the Form Has No Border
@@ -102,8 +106,16 @@ namespace WinFormsUI.Forms {
             DetailsText.Text          = "";
             PhoneNumbersText.Text     = "";
             EmailAddressesText.Text   = "";
-            EditSaveButton.Text       = "Add Shop";
-            DeleteCancelButton.Text   = "Cancel";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {  
+                EditSaveButton.Text = rm.GetString("add"); 
+                DeleteCancelButton.Text = rm.GetString("cancel"); 
+            }
+            else
+            {
+                EditSaveButton.Text = "Add Shop";
+                DeleteCancelButton.Text = "Cancel";
+            }
             AddNewShopButton.Hide();
             ShopSelectorCombo.Hide();
             SelectShopLabel.Hide();
@@ -116,9 +128,9 @@ namespace WinFormsUI.Forms {
             ShopSelectorCombo.Show();
             AddNewShopButton.Show();
             SelectShopLabel.Show();
-            if (DeleteCancelButton.Text == "Cancel") {
+            if (DeleteCancelButton.Text == "Cancel" || DeleteCancelButton.Text == rm.GetString("cancel")) {
                 ResetForm();
-            } else if (DeleteCancelButton.Text == "Delete This Shop") {
+            } else if (DeleteCancelButton.Text == "Delete This Shop" || DeleteCancelButton.Text == rm.GetString("DeleteCancelButton.Text")) {
                 DialogResult confirm           = MessageBox.Show("Do You Really Want to Delete" +
                     $"\n {ShopSelectorCombo.Text}?" +
                     "\n All related Records will be DELETED",
@@ -139,7 +151,7 @@ namespace WinFormsUI.Forms {
             if (!ValidateForm())
                 return;
 
-            if (EditSaveButton.Text == "Add Shop") {
+            if (EditSaveButton.Text == "Add Shop" || EditSaveButton.Text == rm.GetString("add")) {
                 DialogResult result = MessageBox.Show("Are you sure want to add this Shop?", "Confirm",
                     MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes)
@@ -156,7 +168,7 @@ namespace WinFormsUI.Forms {
                 };
                 model = Connection[0].InsertShop(model);
                 WireUp();
-            } else if (EditSaveButton.Text == "Save") {
+            } else if (EditSaveButton.Text == "Save" || EditSaveButton.Text == rm.GetString("EditSaveButton.Text")) {
                 if (Shops.Exists(s => s.ShopName == ShopNameText.Text
                     && s.ShopId != Shops[ShopSelectorCombo.SelectedIndex].ShopId)) {
                     MessageBox.Show("Another Shop with same name exists", "Error");
@@ -197,8 +209,16 @@ namespace WinFormsUI.Forms {
                 DetailsText.Text        = Shops[ShopSelectorCombo.SelectedIndex].Details;
                 PhoneNumbersText.Text   = string.Join(", ", Shops[ShopSelectorCombo.SelectedIndex].ContactNumbers);
                 EmailAddressesText.Text = string.Join(", ", Shops[ShopSelectorCombo.SelectedIndex].EmailAddresses);
-                DeleteCancelButton.Text = "Delete This Shop";
-                EditSaveButton.Text     = "Save";
+                if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                {
+                    DeleteCancelButton.Text = rm.GetString("DeleteCancelButton.Text");
+                    EditSaveButton.Text = rm.GetString("EditSaveButton.Text");
+                }
+                else
+                {
+                    DeleteCancelButton.Text = "Delete This Shop";
+                    EditSaveButton.Text = "Save";
+                }
             } else
                 ResetForm();
         }

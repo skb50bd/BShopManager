@@ -131,7 +131,7 @@
     <value>+ নতুন কর্মচারী</value>
   </data>
   <data name="DeleteEmployeeButton.Text" xml:space="preserve">
-    <value>কর্মচারী ডিলিট </value>
+    <value>ডিলিট করুন</value>
   </data>
   <data name="ViewEditEmployeeButton.Text" xml:space="preserve">
     <value>দেখুন/এডিট করুন </value>

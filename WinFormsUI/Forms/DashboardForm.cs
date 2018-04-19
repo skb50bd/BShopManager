@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -31,10 +32,10 @@ namespace WinFormsUI.Forms {
         }
         #endregion
         public DashboardForm()
-        {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("bn-BD");
+        {         
             InitializeComponent();
-            MetroLabelLoad();
+            if(ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                MetroLabelLoad();
             DialogResult = DialogResult.Cancel;
         }
 

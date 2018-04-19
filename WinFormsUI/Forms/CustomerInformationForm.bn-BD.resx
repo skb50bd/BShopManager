@@ -1935,4 +1935,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>কাস্টমারের তথ্য </value>
   </data>
+  <data name="Submit" xml:space="preserve">
+    <value>জমা করুন</value>
+  </data>
 </root>

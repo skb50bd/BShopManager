@@ -134,7 +134,7 @@
     <value>+ সাপ্লায়ার যুক্ত করুন </value>
   </data>
   <data name="DeleteSupplierButton.Text" xml:space="preserve">
-    <value>ডিলিট সাপ্লায়ার  </value>
+    <value>ডিলিট করুন  </value>
   </data>
   <data name="ViewEditSupplierButton.Text" xml:space="preserve">
     <value>দেখুন/ এডিট করুন</value>

@@ -1904,4 +1904,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ব্যাংক একাউন্ট তথ্য</value>
   </data>
+  <data name="Update" xml:space="preserve">
+    <value>আপডেট করুন</value>
+  </data>
 </root>

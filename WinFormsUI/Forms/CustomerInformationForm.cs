@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShopLibrary.Models;
@@ -7,6 +9,7 @@ using static ShopLibrary.Models.UserRole;
 
 namespace WinFormsUI.Forms {
     public partial class CustomerInformationForm : Form {
+        ResourceManager rm = new ResourceManager(typeof(CustomerInformationForm));
         #region MakeDraggable
         /// <summary>
         ///     This Part Makes the Form Draggable, as the Form Has No Border
@@ -53,7 +56,12 @@ namespace WinFormsUI.Forms {
             InitializeComponent();
             DialogResult = DialogResult.Cancel;
 
-            SaveButton.Text = "Submit";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                SaveButton.Text = rm.GetString("Submit");
+            }
+            else
+                SaveButton.Text = "Submit";
             _customer = new Customer();
 
             DueCollectionGroupBox.Enabled = false;
@@ -63,7 +71,12 @@ namespace WinFormsUI.Forms {
             InitializeComponent();
             DialogResult = DialogResult.Cancel;
 
-            SaveButton.Text = "Save";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                SaveButton.Text = rm.GetString("SaveButton.Text");
+            }
+            else
+                SaveButton.Text = "Save";
             _customer = model;
             TitleLabel.Text = _customer.CustomerId;
 
@@ -141,7 +154,7 @@ namespace WinFormsUI.Forms {
             _customer.Note = NotesText.Text;
             _customer.Debt = decimal.Parse(CurrentDueText.Text.Split()[0]);
 
-            if (SaveButton.Text == "Submit") {
+            if (SaveButton.Text == "Submit" || SaveButton.Text == rm.GetString("Submit")) {
                 _customer = Connection[0].InsertCustomer(_customer);
                 if (_customer.CustomerId != "") {
                     MessageBox.Show("Customer added successfully", "Success");
@@ -149,7 +162,7 @@ namespace WinFormsUI.Forms {
                 } else {
                     MessageBox.Show("Something went wrong", "Error");
                 }
-            } else if (SaveButton.Text == "Save") {
+            } else if (SaveButton.Text == "Save" || SaveButton.Text == rm.GetString("SaveButton.Text")) {
                 if (Connection[0].UpdateCustomer(_customer))
                     MessageBox.Show("Customer updated successfully", "Success");
                 else

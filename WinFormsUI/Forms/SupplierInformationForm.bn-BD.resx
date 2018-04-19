@@ -2008,4 +2008,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>সাপ্লায়ারের তথ্য</value>
   </data>
+  <data name="Submit" xml:space="preserve">
+    <value>জমা করুন</value>
+  </data>
 </root>

@@ -2030,4 +2030,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ইউজারের তথ্য</value>
   </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>নতুন ইউজার</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>আপডেট করুন</value>
+  </data>
 </root>
