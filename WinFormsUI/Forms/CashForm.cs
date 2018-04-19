@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopLibrary;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
@@ -73,6 +74,14 @@ namespace WinFormsUI.Forms
             RemoveAmountText.Text = "";
             NotesText.Text = "";
             InputGroupBox.Enabled = CurrentUser.AccessLevel <= Admin;
+
+            decimal TotalAsset = Products.Sum(p => p.PurchasePrice * (decimal)(p.ShopStock + p.GodownStock));
+            decimal TotalReceivables = Customers.Sum(c => c.Debt);
+            decimal TotalPayables = Suppliers.Sum(s => s.Payable);
+
+            CurrentStockAssetAmount.Text = TotalAsset.ToString("0.##") + " Tk";
+            TotalPayablesAmount.Text = TotalPayables.ToString("0.##") + " Tk";
+            TotalReceivablesAmount.Text = TotalReceivables.ToString("0.##") + " Tk";
         }
 
         private void AddAmountText_TextChanged(object sender, EventArgs e)
