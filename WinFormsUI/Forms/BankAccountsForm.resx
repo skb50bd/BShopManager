@@ -117,37 +117,147 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="BankAccountIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AccountLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="BankAccountNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TransactionTypeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TransactionCodeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CheckNumberColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="IndividualColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  </data>
+  <data name="&gt;&gt;IndividualColumn.Name" xml:space="preserve">
+    <value>IndividualColumn</value>
+  </data>
+  <data name="&gt;&gt;DeleteTransactionButton.Name" xml:space="preserve">
+    <value>DeleteTransactionButton</value>
+  </data>
+  <data name="&gt;&gt;AddTransactionButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditAccountButton.Name" xml:space="preserve">
+    <value>EditAccountButton</value>
+  </data>
+  <data name="AddTransactionButton.ToolTip" xml:space="preserve">
+    <value>Add a new transaction</value>
+  </data>
+  <data name="&gt;&gt;AccountLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ViewEditEmployeeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 42</value>
+  </data>
+  <data name="DeleteAccountButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="BankAccountIdColumn.HeaderText" xml:space="preserve">
+    <value>Account Id</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 6</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="CreatedColumn.HeaderText" xml:space="preserve">
+    <value>Added on</value>
+  </data>
+  <data name="AddTransactionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>618, 487</value>
+  </data>
+  <data name="&gt;&gt;AccountSelectorCombo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DeleteAccountButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="BankAccountIdColumn.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 29</value>
+  </data>
+  <data name="EditAccountButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="CheckNumberColumn.Width" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="AddTransactionButton.Text" xml:space="preserve">
+    <value>+ Add New Transaction</value>
+  </data>
+  <data name="PrintButton.ToolTip" xml:space="preserve">
+    <value>Print the current list of transactions</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>826, 539</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 39</value>
+  </data>
+  <data name="TransactionsLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.Items" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="&gt;&gt;AddTransactionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;AddTransactionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bank Accounts</value>
+  </data>
+  <data name="TransactionsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 21</value>
+  </data>
+  <data name="EditAccountButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Name" xml:space="preserve">
+    <value>ButtonToolTip</value>
+  </data>
+  <data name="&gt;&gt;TransactionsDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AccountSelectorCombo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TransactionCodeColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AccountSelectorCombo.ToolTip" xml:space="preserve">
+    <value>Select the account you want</value>
+  </data>
+  <data name="PrintButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;AddAccountButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CreatorColumn.HeaderText" xml:space="preserve">
+    <value>Added by</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 17</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAACAgAAABACAAqBAAAM4EAAAwMAAAAQAgAKglAAB2FQAAQEAAAAEA
@@ -1892,4 +2002,487 @@
         AAAAAPFH5P8Asqr+RanWtZYAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="&gt;&gt;TransactionsDataGrid.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;DeleteAccountButton.Name" xml:space="preserve">
+    <value>DeleteAccountButton</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditAccountButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="DeleteTransactionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 42</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;DeleteTransactionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PrintButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 42</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="DeleteTransactionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 487</value>
+  </data>
+  <data name="TransactionsDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 95</value>
+  </data>
+  <data name="&gt;&gt;TransactionTypeColumn.Name" xml:space="preserve">
+    <value>TransactionTypeColumn</value>
+  </data>
+  <data name="IndividualColumn.Width" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="&gt;&gt;BankAccountNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.Name" xml:space="preserve">
+    <value>ViewEditEmployeeButton</value>
+  </data>
+  <data name="DeleteTransactionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;TransactionCodeColumn.Name" xml:space="preserve">
+    <value>TransactionCodeColumn</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.ToolTip" xml:space="preserve">
+    <value>Filter the list according to the transaction type</value>
+  </data>
+  <data name="AddAccountButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="Amount.Width" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;CheckNumberColumn.Name" xml:space="preserve">
+    <value>CheckNumberColumn</value>
+  </data>
+  <data name="&gt;&gt;TransactionTypeSelectorCombo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="PrintButton.Text" xml:space="preserve">
+    <value>Print List</value>
+  </data>
+  <data name="&gt;&gt;AccountSelectorCombo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AccountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 63</value>
+  </data>
+  <data name="TransactionTypeColumn.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="EditAccountButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="TransactionTypeColumn.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="AccountLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TransactionTypeSelectorCombo.Items2" xml:space="preserve">
+    <value>Withdrawal</value>
+  </data>
+  <data name="DeleteAccountButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>442, 59</value>
+  </data>
+  <data name="AccountSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 29</value>
+  </data>
+  <data name="AccountSelectorCombo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TransactionCodeColumn.HeaderText" xml:space="preserve">
+    <value>Trx. Code</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>416, 487</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.Items1" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="EditAccountButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Name" xml:space="preserve">
+    <value>PrintButton</value>
+  </data>
+  <data name="Amount.HeaderText" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="&gt;&gt;EditAccountButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DeleteTransactionButton.ToolTip" xml:space="preserve">
+    <value>Deletes the selected transaction(s)</value>
+  </data>
+  <data name="&gt;&gt;TransactionsLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;AddAccountButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckNumberColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteAccountButton.ToolTip" xml:space="preserve">
+    <value>Delete the selected Bank Account</value>
+  </data>
+  <data name="&gt;&gt;AddTransactionButton.Name" xml:space="preserve">
+    <value>AddTransactionButton</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BankAccountsForm</value>
+  </data>
+  <data name="TitleLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 487</value>
+  </data>
+  <data name="DeleteAccountButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="AddAccountButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Name" xml:space="preserve">
+    <value>CreatedColumn</value>
+  </data>
+  <data name="&gt;&gt;TransactionTypeSelectorCombo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ViewEditEmployeeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="AddTransactionButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="AddTransactionButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="TransactionsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;Amount.Name" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="&gt;&gt;AddAccountButton.Name" xml:space="preserve">
+    <value>AddAccountButton</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Bank Accounts</value>
+  </data>
+  <data name="&gt;&gt;DeleteTransactionButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="CreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="TransactionsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;EditAccountButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BankAccountNameColumn.Width" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AccountLabel.Text" xml:space="preserve">
+    <value>Account :</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AccountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;AccountLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="AddTransactionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 42</value>
+  </data>
+  <data name="&gt;&gt;TransactionsDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeleteAccountButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;IndividualColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteTransactionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EditAccountButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 58</value>
+  </data>
+  <data name="AddTransactionButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;DeleteTransactionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddTransactionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;AccountLabel.Name" xml:space="preserve">
+    <value>AccountLabel</value>
+  </data>
+  <data name="TransactionCodeColumn.Width" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="PrintButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddAccountButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 58</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AddAccountButton.ToolTip" xml:space="preserve">
+    <value>Add a new Bank Account</value>
+  </data>
+  <data name="&gt;&gt;TransactionsLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TransactionsDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;DeleteAccountButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;TransactionsDataGrid.Name" xml:space="preserve">
+    <value>TransactionsDataGrid</value>
+  </data>
+  <data name="&gt;&gt;TransactionsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddTransactionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="PrintButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;TransactionsLabel.Name" xml:space="preserve">
+    <value>TransactionsLabel</value>
+  </data>
+  <data name="&gt;&gt;TransactionTypeSelectorCombo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteAccountButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="DeleteAccountButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;AddAccountButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TransactionTypeSelectorCombo.Name" xml:space="preserve">
+    <value>TransactionTypeSelectorCombo</value>
+  </data>
+  <data name="AccountSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 60</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ViewEditEmployeeButton.ToolTip" xml:space="preserve">
+    <value>View the selected transaction</value>
+  </data>
+  <data name="&gt;&gt;AccountLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="TransactionTypeSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>679, 59</value>
+  </data>
+  <data name="TransactionsDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;BankAccountNameColumn.Name" xml:space="preserve">
+    <value>BankAccountNameColumn</value>
+  </data>
+  <data name="&gt;&gt;Amount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BankAccountIdColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Name" xml:space="preserve">
+    <value>CreatorColumn</value>
+  </data>
+  <data name="IndividualColumn.HeaderText" xml:space="preserve">
+    <value>Individual</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BankAccountNameColumn.HeaderText" xml:space="preserve">
+    <value>Account Name</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CheckNumberColumn.HeaderText" xml:space="preserve">
+    <value>Check #</value>
+  </data>
+  <data name="TransactionsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;AccountSelectorCombo.Name" xml:space="preserve">
+    <value>AccountSelectorCombo</value>
+  </data>
+  <data name="&gt;&gt;DeleteAccountButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="AccountSelectorCombo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ViewEditEmployeeButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="ViewEditEmployeeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ViewEditEmployeeButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="DeleteTransactionButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AccountLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="AddAccountButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="DeleteTransactionButton.Text" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
+  <data name="EditAccountButton.ToolTip" xml:space="preserve">
+    <value>Edit the selected Bank Account</value>
+  </data>
+  <data name="&gt;&gt;TransactionTypeColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAccountButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TransactionsDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>804, 383</value>
+  </data>
+  <data name="DeleteTransactionButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="AddAccountButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="AccountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 21</value>
+  </data>
+  <data name="&gt;&gt;BankAccountIdColumn.Name" xml:space="preserve">
+    <value>BankAccountIdColumn</value>
+  </data>
+  <data name="DeleteTransactionButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="TransactionsLabel.Text" xml:space="preserve">
+    <value>Transactions :</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="PrintButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Text" xml:space="preserve">
+    <value>View Transaction</value>
+  </data>
+  <data name="AddAccountButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="TransactionsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>569, 63</value>
+  </data>
+  <metadata name="CheckNumberColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="IndividualColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BankAccountIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bn-BD</value>
+  </metadata>
+  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="TransactionCodeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TransactionTypeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BankAccountNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -48,137 +48,87 @@ namespace WinFormsUI.Forms
             // 
             // _titleLabel
             // 
-            this._titleLabel.AutoSize = true;
-            this._titleLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._titleLabel.Location = new System.Drawing.Point(27, 31);
+            resources.ApplyResources(this._titleLabel, "_titleLabel");
             this._titleLabel.Name = "_titleLabel";
-            this._titleLabel.Size = new System.Drawing.Size(307, 47);
-            this._titleLabel.TabIndex = 0;
-            this._titleLabel.Text = "Shop Management";
             this._titleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // _tagLineLabel
             // 
-            this._tagLineLabel.AutoSize = true;
-            this._tagLineLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._tagLineLabel.Location = new System.Drawing.Point(202, 78);
+            resources.ApplyResources(this._tagLineLabel, "_tagLineLabel");
             this._tagLineLabel.Name = "_tagLineLabel";
-            this._tagLineLabel.Size = new System.Drawing.Size(80, 17);
-            this._tagLineLabel.TabIndex = 1;
-            this._tagLineLabel.Text = "product from";
             this._tagLineLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // _brotalLabel
             // 
-            this._brotalLabel.AutoSize = true;
-            this._brotalLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._brotalLabel.Location = new System.Drawing.Point(279, 78);
+            resources.ApplyResources(this._brotalLabel, "_brotalLabel");
             this._brotalLabel.Name = "_brotalLabel";
-            this._brotalLabel.Size = new System.Drawing.Size(44, 17);
-            this._brotalLabel.TabIndex = 2;
-            this._brotalLabel.Text = "Brotal";
             this._brotalLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // _userNameLabel
             // 
-            this._userNameLabel.AutoSize = true;
-            this._userNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._userNameLabel.Location = new System.Drawing.Point(31, 116);
+            resources.ApplyResources(this._userNameLabel, "_userNameLabel");
             this._userNameLabel.Name = "_userNameLabel";
-            this._userNameLabel.Size = new System.Drawing.Size(95, 21);
-            this._userNameLabel.TabIndex = 3;
-            this._userNameLabel.Text = "User Name :";
             this._userNameLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // _passwordLabel
             // 
-            this._passwordLabel.AutoSize = true;
-            this._passwordLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._passwordLabel.Location = new System.Drawing.Point(31, 155);
+            resources.ApplyResources(this._passwordLabel, "_passwordLabel");
             this._passwordLabel.Name = "_passwordLabel";
-            this._passwordLabel.Size = new System.Drawing.Size(83, 21);
-            this._passwordLabel.TabIndex = 5;
-            this._passwordLabel.Text = "Password :";
             this._passwordLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // _passwordText
             // 
+            resources.ApplyResources(this._passwordText, "_passwordText");
             this._passwordText.BackColor = System.Drawing.Color.WhiteSmoke;
             this._passwordText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._passwordText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._passwordText.Location = new System.Drawing.Point(132, 155);
             this._passwordText.Name = "_passwordText";
-            this._passwordText.Size = new System.Drawing.Size(191, 22);
-            this._passwordText.TabIndex = 6;
             this._passwordText.UseSystemPasswordChar = true;
             this._passwordText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordText_KeyDown);
             // 
             // _loginButton
             // 
+            resources.ApplyResources(this._loginButton, "_loginButton");
             this._loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this._loginButton.FlatAppearance.BorderSize = 0;
             this._loginButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this._loginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
-            this._loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._loginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._loginButton.ForeColor = System.Drawing.Color.White;
-            this._loginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._loginButton.Location = new System.Drawing.Point(35, 189);
             this._loginButton.Name = "_loginButton";
-            this._loginButton.Size = new System.Drawing.Size(288, 40);
-            this._loginButton.TabIndex = 7;
-            this._loginButton.Text = "Login";
-            this._loginButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._loginButton.UseVisualStyleBackColor = false;
             this._loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // _exitButton
             // 
+            resources.ApplyResources(this._exitButton, "_exitButton");
             this._exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this._exitButton.FlatAppearance.BorderSize = 0;
             this._exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this._exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
-            this._exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._exitButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._exitButton.ForeColor = System.Drawing.Color.White;
-            this._exitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._exitButton.Location = new System.Drawing.Point(35, 238);
             this._exitButton.Name = "_exitButton";
-            this._exitButton.Size = new System.Drawing.Size(288, 40);
-            this._exitButton.TabIndex = 8;
-            this._exitButton.Text = "Exit";
-            this._exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._exitButton.UseVisualStyleBackColor = false;
             this._exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // _userNameCombo
             // 
+            resources.ApplyResources(this._userNameCombo, "_userNameCombo");
             this._userNameCombo.BackColor = System.Drawing.Color.White;
-            this._userNameCombo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._userNameCombo.FormattingEnabled = true;
-            this._userNameCombo.Location = new System.Drawing.Point(132, 113);
             this._userNameCombo.Name = "_userNameCombo";
-            this._userNameCombo.Size = new System.Drawing.Size(191, 29);
-            this._userNameCombo.TabIndex = 4;
             this._userNameCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserNameCombo_KeyDown);
             // 
             // _activateLinkText
             // 
-            this._activateLinkText.AutoSize = true;
+            resources.ApplyResources(this._activateLinkText, "_activateLinkText");
             this._activateLinkText.LinkColor = System.Drawing.Color.Black;
-            this._activateLinkText.Location = new System.Drawing.Point(270, 290);
             this._activateLinkText.Name = "_activateLinkText";
-            this._activateLinkText.Size = new System.Drawing.Size(53, 17);
-            this._activateLinkText.TabIndex = 9;
             this._activateLinkText.TabStop = true;
-            this._activateLinkText.Text = "Activate";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(354, 326);
             this.Controls.Add(this._activateLinkText);
             this.Controls.Add(this._userNameCombo);
             this.Controls.Add(this._exitButton);
@@ -189,13 +139,8 @@ namespace WinFormsUI.Forms
             this.Controls.Add(this._brotalLabel);
             this.Controls.Add(this._tagLineLabel);
             this.Controls.Add(this._titleLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             this.ResumeLayout(false);

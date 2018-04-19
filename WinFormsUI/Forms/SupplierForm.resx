@@ -117,52 +117,369 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TypeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="RecordIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="RecordAmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DueColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="RecordCreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="RecordCreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SupplierIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FullNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PayableColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CompanyNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ModifiedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ModifierColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="&gt;&gt;DeleteSupplierButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="FullNameColumn.Width" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="ModifiedColumn.Width" type="System.Int32, mscorlib">
+    <value>129</value>
+  </data>
+  <data name="DeleteSupplierButton.Text" xml:space="preserve">
+    <value>Delete Supplier(s)</value>
+  </data>
+  <data name="AddSupplierButton.Text" xml:space="preserve">
+    <value>+ Add Supplier</value>
+  </data>
+  <data name="&gt;&gt;RecordAmountColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="DeleteSupplierButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 42</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DueColumn.HeaderText" xml:space="preserve">
+    <value>Due</value>
+  </data>
+  <data name="HistoryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AddSupplierButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 42</value>
+  </data>
+  <data name="DueColumn.Width" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="RecordIdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="&gt;&gt;RefreshSuppliersButton.Name" xml:space="preserve">
+    <value>RefreshSuppliersButton</value>
+  </data>
+  <data name="CreatorColumn.HeaderText" xml:space="preserve">
+    <value>Added by</value>
+  </data>
+  <data name="SuppliersDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 456</value>
+  </data>
+  <data name="CreatedColumn.HeaderText" xml:space="preserve">
+    <value>Added on</value>
+  </data>
+  <data name="SuppliersDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteSupplierButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 554</value>
+  </data>
+  <data name="AddSupplierButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="HistoryLabel.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="SupplierIdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="DeleteRecordsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>688, 603</value>
+  </data>
+  <data name="ViewRecordButton.Text" xml:space="preserve">
+    <value>View Record</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AddSupplierButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="PrintButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ViewEditSupplierButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 42</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1150, 654</value>
+  </data>
+  <data name="&gt;&gt;ViewRecordButton.Name" xml:space="preserve">
+    <value>ViewRecordButton</value>
+  </data>
+  <data name="&gt;&gt;SupplierHistoryDataGrid.Name" xml:space="preserve">
+    <value>SupplierHistoryDataGrid</value>
+  </data>
+  <data name="SupplierHistoryDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;PayableColumn.Name" xml:space="preserve">
+    <value>PayableColumn</value>
+  </data>
+  <data name="ViewEditSupplierButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 555</value>
+  </data>
+  <data name="&gt;&gt;RecordAmountColumn.Name" xml:space="preserve">
+    <value>RecordAmountColumn</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ViewEditSupplierButton.Text" xml:space="preserve">
+    <value>View / Edit Supplier</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="PrintButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="SupplierHistoryDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Name" xml:space="preserve">
+    <value>ButtonToolTip</value>
+  </data>
+  <data name="RefreshSuppliersButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DeleteSupplierButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchIcon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;AddSupplierButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;HistoryLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SupplierHistoryDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteSupplierButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AddSupplierButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;SearchSupplierText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeleteSupplierButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 21</value>
+  </data>
+  <data name="&gt;&gt;FullNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CompanyNameColumn.Name" xml:space="preserve">
+    <value>CompanyNameColumn</value>
+  </data>
+  <data name="ViewRecordButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 42</value>
+  </data>
+  <data name="&gt;&gt;DeleteRecordsButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AddSupplierButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SuppliersDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HistoryLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SupplierIdColumn.Width" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="PrintButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="PrintButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 601</value>
+  </data>
+  <data name="SearchIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="SuppliersDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SuppliersDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ViewEditSupplierButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="DeleteRecordsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ViewRecordButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="PrintButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RefreshSuppliersButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ViewEditSupplierButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="TypeColumn.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="TypeColumn.Width" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="HistoryLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="PrintButton.Text" xml:space="preserve">
+    <value>Print List</value>
+  </data>
+  <data name="&gt;&gt;AddSupplierButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RefreshSuppliersButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="PrintButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 42</value>
+  </data>
+  <data name="&gt;&gt;SuppliersDataGrid.Name" xml:space="preserve">
+    <value>SuppliersDataGrid</value>
+  </data>
+  <data name="ViewRecordButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;ViewRecordButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="DeleteRecordsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="RefreshSuppliersButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="RecordAmountColumn.Width" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="ViewRecordButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteRecordsButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="HistoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 21</value>
+  </data>
+  <data name="&gt;&gt;SearchSupplierText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FullNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;DueColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SearchIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="DeleteRecordsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 42</value>
+  </data>
+  <data name="SearchIcon.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RecordIdColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RecordCreatedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Name" xml:space="preserve">
+    <value>PrintButton</value>
+  </data>
+  <data name="SearchSupplierText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ViewRecordButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="ViewRecordButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RecordCreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="ModifierColumn.Width" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Name" xml:space="preserve">
+    <value>SearchIcon</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="SearchSupplierText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ViewEditSupplierButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;SuppliersDataGrid.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SearchIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="SearchIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 61</value>
+  </data>
+  <data name="&gt;&gt;DeleteRecordsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PayableColumn.Width" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="ViewRecordButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="SearchSupplierText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAACAgAAABACAAqBAAAM4EAAAwMAAAAQAgAKglAAB2FQAAQEAAAAEA
@@ -1975,4 +2292,370 @@
         CCGEEEIIIYQQQggh1gTw/wH8ptyLUx58+QAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="&gt;&gt;RecordCreatorColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Name" xml:space="preserve">
+    <value>CreatedColumn</value>
+  </data>
+  <data name="&gt;&gt;HistoryLabel.Name" xml:space="preserve">
+    <value>HistoryLabel</value>
+  </data>
+  <data name="AddSupplierButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchIcon.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DeleteSupplierButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="DeleteRecordsButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;TypeColumn.Name" xml:space="preserve">
+    <value>TypeColumn</value>
+  </data>
+  <data name="DeleteSupplierButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="ViewRecordButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>937, 603</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="&gt;&gt;ViewEditSupplierButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="ViewEditSupplierButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;DeleteSupplierButton.Name" xml:space="preserve">
+    <value>DeleteSupplierButton</value>
+  </data>
+  <data name="&gt;&gt;RefreshSuppliersButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ViewEditSupplierButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="PayableColumn.HeaderText" xml:space="preserve">
+    <value>Payable</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ViewRecordButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SearchSupplierText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 63</value>
+  </data>
+  <data name="&gt;&gt;DueColumn.Name" xml:space="preserve">
+    <value>DueColumn</value>
+  </data>
+  <data name="&gt;&gt;CompanyNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SearchSupplierText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 22</value>
+  </data>
+  <data name="&gt;&gt;DeleteRecordsButton.Name" xml:space="preserve">
+    <value>DeleteRecordsButton</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="DeleteSupplierButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="&gt;&gt;ModifierColumn.Name" xml:space="preserve">
+    <value>ModifierColumn</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 39</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AddSupplierButton.Name" xml:space="preserve">
+    <value>AddSupplierButton</value>
+  </data>
+  <data name="SupplierHistoryDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>688, 93</value>
+  </data>
+  <data name="&gt;&gt;RefreshSuppliersButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ModifiedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SupplierHistoryDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SuppliersDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 93</value>
+  </data>
+  <data name="PrintButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HistoryLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchSupplierText.Name" xml:space="preserve">
+    <value>SearchSupplierText</value>
+  </data>
+  <data name="AddSupplierButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="HistoryLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="RecordCreatorColumn.HeaderText" xml:space="preserve">
+    <value>Added by</value>
+  </data>
+  <data name="&gt;&gt;RecordIdColumn.Name" xml:space="preserve">
+    <value>RecordIdColumn</value>
+  </data>
+  <data name="&gt;&gt;ViewEditSupplierButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="RefreshSuppliersButton.ToolTip" xml:space="preserve">
+    <value>Force refresh suppliers from database</value>
+  </data>
+  <data name="CompanyNameColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="&gt;&gt;ViewRecordButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ModifierColumn.HeaderText" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteSupplierButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;SupplierHistoryDataGrid.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="DeleteRecordsButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="AddSupplierButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;RecordCreatedColumn.Name" xml:space="preserve">
+    <value>RecordCreatedColumn</value>
+  </data>
+  <data name="SearchSupplierText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompanyNameColumn.HeaderText" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="&gt;&gt;ViewEditSupplierButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;SuppliersDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RefreshSuppliersButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FullNameColumn.Name" xml:space="preserve">
+    <value>FullNameColumn</value>
+  </data>
+  <data name="&gt;&gt;PayableColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ViewEditSupplierButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;SupplierIdColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddSupplierButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="RefreshSuppliersButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1118, 2</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Name" xml:space="preserve">
+    <value>CreatorColumn</value>
+  </data>
+  <data name="ViewRecordButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="RecordAmountColumn.HeaderText" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModifiedColumn.Name" xml:space="preserve">
+    <value>ModifiedColumn</value>
+  </data>
+  <data name="HistoryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="HistoryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>684, 68</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteRecordsButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SupplierHistoryDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 504</value>
+  </data>
+  <data name="DeleteRecordsButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteSupplierButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RefreshSuppliersButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="TitleLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;RecordCreatorColumn.Name" xml:space="preserve">
+    <value>RecordCreatorColumn</value>
+  </data>
+  <data name="&gt;&gt;SearchSupplierText.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;ViewEditSupplierButton.Name" xml:space="preserve">
+    <value>ViewEditSupplierButton</value>
+  </data>
+  <data name="RecordCreatedColumn.HeaderText" xml:space="preserve">
+    <value>Added on</value>
+  </data>
+  <data name="&gt;&gt;ModifierColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteSupplierButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SupplierIdColumn.Name" xml:space="preserve">
+    <value>SupplierIdColumn</value>
+  </data>
+  <data name="&gt;&gt;SupplierHistoryDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ViewEditSupplierButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SupplierForm</value>
+  </data>
+  <data name="AddSupplierButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 600</value>
+  </data>
+  <data name="&gt;&gt;HistoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RecordCreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="DeleteRecordsButton.Text" xml:space="preserve">
+    <value>Delete Selected Record(s)</value>
+  </data>
+  <data name="&gt;&gt;TypeColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PrintButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;DeleteRecordsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SearchIcon.ErrorImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ModifiedColumn.HeaderText" xml:space="preserve">
+    <value>Last modified</value>
+  </data>
+  <data name="RecordIdColumn.Width" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <metadata name="ModifiedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TypeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FullNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RecordCreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RecordCreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RecordAmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ModifierColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DueColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bn-BD</value>
+  </metadata>
+  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PayableColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SupplierIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RecordIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CompanyNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

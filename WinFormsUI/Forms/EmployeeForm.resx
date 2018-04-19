@@ -117,49 +117,168 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="IdColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="AmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="HistoryCreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="HistoryCreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="EmployeeIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FullNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DesignationColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="BalanceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MonthlySalaryColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="JoinDateColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ModifiedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="BalanceColumn.HeaderText" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="DeleteEntryButton.Text" xml:space="preserve">
+    <value>Delete Selected Record(s)</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="FullNameColumn.Width" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="ModifiedColumn.Width" type="System.Int32, mscorlib">
+    <value>129</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="EmployeesDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 514</value>
+  </data>
+  <data name="HistoryCreatedColumn.HeaderText" xml:space="preserve">
+    <value>Added on</value>
+  </data>
+  <data name="EmployeeHistoryDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 514</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AddEmployeeButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Name" xml:space="preserve">
+    <value>ButtonToolTip</value>
+  </data>
+  <data name="ReloadEmployees.ToolTip" xml:space="preserve">
+    <value>Force refresh employees from database</value>
+  </data>
+  <data name="AmountColumn.Width" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;HistoryCreatorColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HistoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="EmployeeHistoryDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 96</value>
+  </data>
+  <data name="&gt;&gt;EmployeeHistoryDataGrid.Name" xml:space="preserve">
+    <value>EmployeeHistoryDataGrid</value>
+  </data>
+  <data name="&gt;&gt;SearchEmployeeText.Name" xml:space="preserve">
+    <value>SearchEmployeeText</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="CreatedColumn.HeaderText" xml:space="preserve">
+    <value>Added on</value>
+  </data>
+  <data name="DeleteEntryButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="HistoryLabel.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="ViewEditEmployeeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DesignationColumn.HeaderText" xml:space="preserve">
+    <value>Designation</value>
+  </data>
+  <data name="&gt;&gt;ReloadEmployees.Name" xml:space="preserve">
+    <value>ReloadEmployees</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;DeleteEntryButton.Name" xml:space="preserve">
+    <value>DeleteEntryButton</value>
+  </data>
+  <data name="&gt;&gt;AddEmployeeButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EmployeeHistoryDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteEntryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EmployeesDataGrid.Name" xml:space="preserve">
+    <value>EmployeesDataGrid</value>
+  </data>
+  <data name="SearchEmployeeText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;IdColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="&gt;&gt;AmountColumn.Name" xml:space="preserve">
+    <value>AmountColumn</value>
+  </data>
+  <data name="&gt;&gt;EmployeesDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteEmployeeButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="SearchIcon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="SearchIcon.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;HistoryLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="SearchIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="&gt;&gt;AddEmployeeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteEmployeeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SearchIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="EmployeeHistoryDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;ReloadEmployees.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="SearchEmployeeText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 66</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAACAgAAABACAAqBAAAM4EAAAwMAAAAQAgAKglAAB2FQAAQEAAAAEA
@@ -1899,4 +2018,475 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0F1E/h8fhBsTUcFRzgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="&gt;&gt;DeleteEntryButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AddEmployeeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;HistoryCreatedColumn.Name" xml:space="preserve">
+    <value>HistoryCreatedColumn</value>
+  </data>
+  <data name="AddEmployeeButton.Text" xml:space="preserve">
+    <value>+ Add Employee</value>
+  </data>
+  <data name="ViewEditEmployeeButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="HistoryLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;JoinDateColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DesignationColumn.Name" xml:space="preserve">
+    <value>DesignationColumn</value>
+  </data>
+  <data name="EmployeeIdColumn.Width" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;HistoryCreatorColumn.Name" xml:space="preserve">
+    <value>HistoryCreatorColumn</value>
+  </data>
+  <data name="CreatorColumn.HeaderText" xml:space="preserve">
+    <value>Added by</value>
+  </data>
+  <data name="HistoryCreatorColumn.HeaderText" xml:space="preserve">
+    <value>Added by</value>
+  </data>
+  <data name="ReloadEmployees.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="EmployeeIdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="DeleteEmployeeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.Name" xml:space="preserve">
+    <value>ViewEditEmployeeButton</value>
+  </data>
+  <data name="DeleteEmployeeButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="EmployeesDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="AmountColumn.HeaderText" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="CreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="&gt;&gt;EmployeeHistoryDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="DeleteEntryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 621</value>
+  </data>
+  <data name="DeleteEntryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="DeleteEntryButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="CreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="AddEmployeeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 621</value>
+  </data>
+  <data name="&gt;&gt;BalanceColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>EmployeeForm</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1107, 677</value>
+  </data>
+  <data name="SearchEmployeeText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 22</value>
+  </data>
+  <data name="HistoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 21</value>
+  </data>
+  <data name="&gt;&gt;HistoryCreatedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FullNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;EmployeesDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 621</value>
+  </data>
+  <data name="&gt;&gt;IdColumn2.Name" xml:space="preserve">
+    <value>IdColumn2</value>
+  </data>
+  <data name="&gt;&gt;AddEmployeeButton.Name" xml:space="preserve">
+    <value>AddEmployeeButton</value>
+  </data>
+  <data name="DeleteEntryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;SearchEmployeeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HistoryCreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryColumn.Name" xml:space="preserve">
+    <value>MonthlySalaryColumn</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Name" xml:space="preserve">
+    <value>SearchIcon</value>
+  </data>
+  <data name="IdColumn2.Width" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="ReloadEmployees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="&gt;&gt;SearchEmployeeText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="DeleteEmployeeButton.Text" xml:space="preserve">
+    <value>Delete Employee(s)</value>
+  </data>
+  <data name="EmployeeHistoryDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="SearchIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>388, 64</value>
+  </data>
+  <data name="TitleLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddEmployeeButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="&gt;&gt;DeleteEmployeeButton.Name" xml:space="preserve">
+    <value>DeleteEmployeeButton</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Name" xml:space="preserve">
+    <value>CreatedColumn</value>
+  </data>
+  <data name="ViewEditEmployeeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EmployeesDataGrid.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SearchIcon.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="MonthlySalaryColumn.Width" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="SearchEmployeeText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="IdColumn2.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="&gt;&gt;EmployeeHistoryDataGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EmployeesDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="EmployeesDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;HistoryLabel.Name" xml:space="preserve">
+    <value>HistoryLabel</value>
+  </data>
+  <data name="BalanceColumn.Width" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteEmployeeButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;SearchEmployeeText.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;DesignationColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteEmployeeButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 6</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 39</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeleteEntryButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Text" xml:space="preserve">
+    <value>View / Edit Employee</value>
+  </data>
+  <data name="&gt;&gt;ModifiedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReloadEmployees.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ViewEditEmployeeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 42</value>
+  </data>
+  <data name="DeleteEntryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 42</value>
+  </data>
+  <data name="HistoryLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="DeleteEntryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HistoryLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DeleteEmployeeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="ViewEditEmployeeButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="JoinDateColumn.HeaderText" xml:space="preserve">
+    <value>Joining Date</value>
+  </data>
+  <data name="EmployeeHistoryDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReloadEmployees.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmployeesDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 96</value>
+  </data>
+  <data name="HistoryLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;AmountColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;JoinDateColumn.Name" xml:space="preserve">
+    <value>JoinDateColumn</value>
+  </data>
+  <data name="DeleteEmployeeButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DeleteEntryButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SearchIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="&gt;&gt;BalanceColumn.Name" xml:space="preserve">
+    <value>BalanceColumn</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 21</value>
+  </data>
+  <data name="&gt;&gt;ReloadEmployees.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddEmployeeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;EmployeeIdColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchEmployeeText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteEmployeeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 42</value>
+  </data>
+  <data name="&gt;&gt;FullNameColumn.Name" xml:space="preserve">
+    <value>FullNameColumn</value>
+  </data>
+  <data name="&gt;&gt;DeleteEmployeeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="HistoryCreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="SearchEmployeeText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="AddEmployeeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 42</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Name" xml:space="preserve">
+    <value>CreatorColumn</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModifiedColumn.Name" xml:space="preserve">
+    <value>ModifiedColumn</value>
+  </data>
+  <data name="HistoryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="HistoryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>644, 71</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FullNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddEmployeeButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="AddEmployeeButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MonthlySalaryColumn.HeaderText" xml:space="preserve">
+    <value>Salary</value>
+  </data>
+  <data name="ViewEditEmployeeButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="DeleteEntryButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReloadEmployees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1075, 3</value>
+  </data>
+  <data name="&gt;&gt;AddEmployeeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="HistoryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AddEmployeeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="DeleteEmployeeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ViewEditEmployeeButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ReloadEmployees.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DeleteEmployeeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 621</value>
+  </data>
+  <data name="JoinDateColumn.Width" type="System.Int32, mscorlib">
+    <value>121</value>
+  </data>
+  <data name="&gt;&gt;EmployeeIdColumn.Name" xml:space="preserve">
+    <value>EmployeeIdColumn</value>
+  </data>
+  <data name="DesignationColumn.Width" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="ReloadEmployees.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="SearchIcon.ErrorImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ModifiedColumn.HeaderText" xml:space="preserve">
+    <value>Last modified</value>
+  </data>
+  <metadata name="ModifiedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FullNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bn-BD</value>
+  </metadata>
+  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MonthlySalaryColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DesignationColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="JoinDateColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="HistoryCreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="IdColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="EmployeeIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BalanceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="HistoryCreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

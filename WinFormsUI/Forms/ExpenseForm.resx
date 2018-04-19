@@ -117,19 +117,621 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ProductNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="UnitPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="QuantityColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NetPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SubmissionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 246</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ProductNameColumn.Width" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="ProductLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AddToListButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="NotesText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 125</value>
+  </data>
+  <data name="&gt;&gt;NetPriceColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NetPriceLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 89</value>
+  </data>
+  <data name="UnitPriceText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;CartDataGrid.Name" xml:space="preserve">
+    <value>CartDataGrid</value>
+  </data>
+  <data name="UnitPriceLabel.Text" xml:space="preserve">
+    <value>Unit Price :</value>
+  </data>
+  <data name="&gt;&gt;ProductLabel.Name" xml:space="preserve">
+    <value>ProductLabel</value>
+  </data>
+  <data name="&gt;&gt;QuantityColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NetPriceLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 21</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Name" xml:space="preserve">
+    <value>NotesText</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceText.Name" xml:space="preserve">
+    <value>UnitPriceText</value>
+  </data>
+  <data name="SubmitButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;QuantityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SubmitButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;NetPriceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NotesText.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="NotesText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="CartDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 251</value>
+  </data>
+  <data name="RemoveSelectedButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="UnitPriceLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 57</value>
+  </data>
+  <data name="&gt;&gt;ExpenseTitleLabel.Name" xml:space="preserve">
+    <value>ExpenseTitleLabel</value>
+  </data>
+  <data name="SubmitButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="TotalText.Text" xml:space="preserve">
+    <value>&lt;TOTAL&gt;</value>
+  </data>
+  <data name="SubmitButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;AddToListButton.Name" xml:space="preserve">
+    <value>AddToListButton</value>
+  </data>
+  <data name="QuantityText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 22</value>
+  </data>
+  <data name="&gt;&gt;SubmitButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NetPriceLabel.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QuantityText.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="QuantityColumn.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="ProductNameColumn.HeaderText" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ExpenseTitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;ProductText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;QuantityText.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="AddToListButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="NetPriceText.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="RemoveSelectedButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;QuantityText.Name" xml:space="preserve">
+    <value>QuantityText</value>
+  </data>
+  <data name="NotesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="NotesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="NotesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddToListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;NetPriceColumn.Name" xml:space="preserve">
+    <value>NetPriceColumn</value>
+  </data>
+  <data name="UnitPriceColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="&gt;&gt;ExpenseDateTime.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="ExpenseTitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RemoveSelectedButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceLabel.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="UnitPriceLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SubmissionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, -2</value>
+  </data>
+  <data name="UnitPriceLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="NetPriceLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ExpenseDateTime.CustomFormat" xml:space="preserve">
+    <value> ddMMMMyyyy - hh:mm tt</value>
+  </data>
+  <data name="NetPriceLabel.Text" xml:space="preserve">
+    <value>Net Price :</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NotesText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ProductInfoGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SubmitButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 192</value>
+  </data>
+  <data name="&gt;&gt;ProductInfoGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TotalText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ProductLabel.Text" xml:space="preserve">
+    <value>Product :</value>
+  </data>
+  <data name="UnitPriceText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 57</value>
+  </data>
+  <data name="ProductInfoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 69</value>
+  </data>
+  <data name="SubmitButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;RemoveSelectedButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddToListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;RemoveSelectedButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RemoveSelectedButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="ProductText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="TitleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="QuantityLabel.Text" xml:space="preserve">
+    <value>Qty :</value>
+  </data>
+  <data name="&gt;&gt;ProductInfoGroupBox.Name" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="NetPriceText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="QuantityLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TotalLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="AddToListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;NotesText.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ProductLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="QuantityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="ProductText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TotalLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ExpenseDateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 29</value>
+  </data>
+  <data name="SubmitButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="UnitPriceLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ProductInfoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 175</value>
+  </data>
+  <data name="UnitPriceLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddToListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ExpenseTitleLabel.Text" xml:space="preserve">
+    <value>Title :</value>
+  </data>
+  <data name="ProductLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TitleText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;ProductText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;QuantityLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TotalText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 90</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ExpenseDateTime.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="RemoveSelectedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 42</value>
+  </data>
+  <data name="&gt;&gt;TotalText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="NetPriceText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 89</value>
+  </data>
+  <data name="NotesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SubmissionGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ExpenseTitleLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="QuantityLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ProductLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TotalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 21</value>
+  </data>
+  <data name="SubmitButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 42</value>
+  </data>
+  <data name="TitleText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 61</value>
+  </data>
+  <data name="NotesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;ProductNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TotalText.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="RemoveSelectedButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="QuantityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 57</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="NotesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 125</value>
+  </data>
+  <data name="&gt;&gt;SubmissionGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.Name" xml:space="preserve">
+    <value>TotalLabel</value>
+  </data>
+  <data name="SubmitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="TotalText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 25</value>
+  </data>
+  <data name="&gt;&gt;ExpenseDateTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UnitPriceLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;CartDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="QuantityText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;TitleText.Name" xml:space="preserve">
+    <value>TitleText</value>
+  </data>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="QuantityLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NetPriceLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;NetPriceText.Name" xml:space="preserve">
+    <value>NetPriceText</value>
+  </data>
+  <data name="NetPriceText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="&gt;&gt;SubmissionGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RemoveSelectedButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 507</value>
+  </data>
+  <data name="&gt;&gt;ProductLabel.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="ProductInfoGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RemoveSelectedButton.Text" xml:space="preserve">
+    <value>Remove Selected</value>
+  </data>
+  <data name="TotalLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TitleText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 22</value>
+  </data>
+  <data name="&gt;&gt;NetPriceText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SubmitButton.Name" xml:space="preserve">
+    <value>SubmitButton</value>
+  </data>
+  <data name="&gt;&gt;NetPriceText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProductText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="UnitPriceText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ProductInfoGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ExpenseTitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="&gt;&gt;ProductLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CartDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;AddToListButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AddToListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 121</value>
+  </data>
+  <data name="&gt;&gt;SubmitButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceText.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TotalText.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ProductText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 23</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ExpenseTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 21</value>
+  </data>
+  <data name="TotalLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TotalLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 93</value>
+  </data>
+  <data name="ProductLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="QuantityText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 57</value>
+  </data>
+  <data name="&gt;&gt;SubmitButton.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;CartDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 39</value>
+  </data>
+  <data name="&gt;&gt;QuantityColumn.Name" xml:space="preserve">
+    <value>QuantityColumn</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExpenseDateTime.Name" xml:space="preserve">
+    <value>ExpenseDateTime</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TotalLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AddToListButton.Text" xml:space="preserve">
+    <value>Add to List</value>
+  </data>
+  <data name="UnitPriceColumn.HeaderText" xml:space="preserve">
+    <value>Unit Price</value>
+  </data>
+  <data name="TotalText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="ExpenseDateTime.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ExpenseTitleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NetPriceLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;NetPriceLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RemoveSelectedButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="ProductLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 23</value>
+  </data>
+  <data name="UnitPriceText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 22</value>
+  </data>
+  <data name="&gt;&gt;SubmissionGroupBox.Name" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ProductText.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;QuantityLabel.Name" xml:space="preserve">
+    <value>QuantityLabel</value>
+  </data>
+  <data name="&gt;&gt;AddToListButton.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ProductLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;NetPriceText.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Name" xml:space="preserve">
+    <value>NotesLabel</value>
+  </data>
+  <data name="QuantityLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="CartDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="NotesText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 59</value>
+  </data>
+  <data name="SubmitButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAACAgAAABACAAqBAAAM4EAAAwMAAAAQAgAKglAAB2FQAAQEAAAAEA
@@ -1830,4 +2432,190 @@
         AAAAgHlJ6V9ubIf2mx0tpQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="&gt;&gt;ProductNameColumn.Name" xml:space="preserve">
+    <value>ProductNameColumn</value>
+  </data>
+  <data name="&gt;&gt;ExpenseTitleLabel.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CartDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 250</value>
+  </data>
+  <data name="RemoveSelectedButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 21</value>
+  </data>
+  <data name="NotesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="NotesLabel.Text" xml:space="preserve">
+    <value>Notes :</value>
+  </data>
+  <data name="&gt;&gt;TitleText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ExpenseTitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;TitleText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TitleText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="NetPriceLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceLabel.Name" xml:space="preserve">
+    <value>UnitPriceLabel</value>
+  </data>
+  <data name="NetPriceLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;NetPriceLabel.Name" xml:space="preserve">
+    <value>NetPriceLabel</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QuantityText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TotalLabel.Text" xml:space="preserve">
+    <value>Total :</value>
+  </data>
+  <data name="AddToListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;CartDataGrid.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TotalText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="&gt;&gt;QuantityText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceColumn.Name" xml:space="preserve">
+    <value>UnitPriceColumn</value>
+  </data>
+  <data name="&gt;&gt;AddToListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TitleText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>672, 560</value>
+  </data>
+  <data name="ExpenseTitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 61</value>
+  </data>
+  <data name="&gt;&gt;ExpenseTitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SubmissionGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="QuantityColumn.HeaderText" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="UnitPriceLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 21</value>
+  </data>
+  <data name="&gt;&gt;ProductText.Name" xml:space="preserve">
+    <value>ProductText</value>
+  </data>
+  <data name="NetPriceColumn.HeaderText" xml:space="preserve">
+    <value>Net Price</value>
+  </data>
+  <data name="TotalText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NetPriceText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AddToListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 42</value>
+  </data>
+  <data name="&gt;&gt;RemoveSelectedButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ExpenseDateTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 21</value>
+  </data>
+  <data name="NetPriceColumn.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="&gt;&gt;TitleText.Parent" xml:space="preserve">
+    <value>SubmissionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExpenseForm</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="&gt;&gt;TotalText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QuantityLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;UnitPriceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProductLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="UnitPriceText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ProductText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;TotalText.Name" xml:space="preserve">
+    <value>TotalText</value>
+  </data>
+  <data name="&gt;&gt;QuantityText.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;RemoveSelectedButton.Name" xml:space="preserve">
+    <value>RemoveSelectedButton</value>
+  </data>
+  <data name="&gt;&gt;QuantityLabel.Parent" xml:space="preserve">
+    <value>ProductInfoGroupBox</value>
+  </data>
+  <data name="NotesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <metadata name="NetPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bn-BD</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="QuantityColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ProductNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="UnitPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

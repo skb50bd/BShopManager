@@ -118,6 +118,542 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="FullNameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="AddressText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;AddressText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 21</value>
+  </data>
+  <data name="PaySalaryLabel.Text" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="MonthlySalaryLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ContactNumberLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="EmailAddressLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 21</value>
+  </data>
+  <data name="CurrentBalanceText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 364</value>
+  </data>
+  <data name="DesignationText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 42</value>
+  </data>
+  <data name="&gt;&gt;NotesText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.Text" xml:space="preserve">
+    <value>Current Balance</value>
+  </data>
+  <data name="JoinDateLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CurrentBalanceTextBig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 50</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JoinDateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 288</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="AddressLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NickNameText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InfoGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CurrentBalanceText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="&gt;&gt;JoinDateTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Name" xml:space="preserve">
+    <value>NotesText</value>
+  </data>
+  <data name="FullNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SaveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="DesignationLabel.Text" xml:space="preserve">
+    <value>Designation :</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PaymentGroupBox.Text" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="NidLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EmailAddressText.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;NidText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="NidText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DesignationLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 98</value>
+  </data>
+  <data name="PaymentGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Employee Information</value>
+  </data>
+  <data name="&gt;&gt;PaySalaryLabel.Name" xml:space="preserve">
+    <value>PaySalaryLabel</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabelBig.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="NickNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 60</value>
+  </data>
+  <data name="NidLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 21</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressText.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryText.Name" xml:space="preserve">
+    <value>MonthlySalaryText</value>
+  </data>
+  <data name="InfoGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ContactNumberText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 174</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressText.Name" xml:space="preserve">
+    <value>EmailAddressText</value>
+  </data>
+  <data name="EmailAddressLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="SalaryAmountText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;InfoGroupBox.Name" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;JoinDateLabel.Name" xml:space="preserve">
+    <value>JoinDateLabel</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CurrentBalanceLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 364</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MonthlySalaryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 21</value>
+  </data>
+  <data name="&gt;&gt;PayButton.Parent" xml:space="preserve">
+    <value>PaymentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;FullNameLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;NickNameLabel.Name" xml:space="preserve">
+    <value>NickNameLabel</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="NotesText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;MonthlySalaryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="JoinDateTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 282</value>
+  </data>
+  <data name="JoinDateLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="PayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="NidLabel.Text" xml:space="preserve">
+    <value>NID Number :</value>
+  </data>
+  <data name="&gt;&gt;PayButton.Name" xml:space="preserve">
+    <value>PayButton</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 21</value>
+  </data>
+  <data name="&gt;&gt;JoinDateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PayButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="FullNameText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="NotesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ContactNumberLabel.Text" xml:space="preserve">
+    <value>Contact Number :</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NickNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="EmailAddressLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DesignationLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="JoinDateLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="PaySalaryLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="EmailAddressText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DesignationLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CurrentBalanceTextBig.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="NotesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SaveButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;DesignationText.Name" xml:space="preserve">
+    <value>DesignationText</value>
+  </data>
+  <data name="MonthlySalaryText.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;FullNameLabel.Name" xml:space="preserve">
+    <value>FullNameLabel</value>
+  </data>
+  <data name="&gt;&gt;FullNameText.Name" xml:space="preserve">
+    <value>FullNameText</value>
+  </data>
+  <data name="&gt;&gt;NidText.Name" xml:space="preserve">
+    <value>NidText</value>
+  </data>
+  <data name="&gt;&gt;PayButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NickNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="MonthlySalaryText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberLabel.Name" xml:space="preserve">
+    <value>ContactNumberLabel</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="MonthlySalaryLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;SalaryAmountText.Name" xml:space="preserve">
+    <value>SalaryAmountText</value>
+  </data>
+  <data name="&gt;&gt;JoinDateTime.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="ContactNumberText.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="NotesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="ContactNumberLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="SalaryAmountText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 117</value>
+  </data>
+  <data name="PaymentGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 196</value>
+  </data>
+  <data name="NidText.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="MonthlySalaryLabel.Text" xml:space="preserve">
+    <value>Monthly Salary :</value>
+  </data>
+  <data name="PaySalaryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;PaymentGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SaveButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;InfoGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NotesLabel.Text" xml:space="preserve">
+    <value>Notes :</value>
+  </data>
+  <data name="&gt;&gt;PaymentGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="NidText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 135</value>
+  </data>
+  <data name="PaySalaryLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AddressLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 21</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabelBig.Name" xml:space="preserve">
+    <value>CurrentBalanceLabelBig</value>
+  </data>
+  <data name="ContactNumberLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 174</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="MonthlySalaryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 326</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;NidText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ContactNumberLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;NidLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JoinDateTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;PaySalaryLabel.Parent" xml:space="preserve">
+    <value>PaymentGroupBox</value>
+  </data>
+  <data name="InfoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 56</value>
+  </data>
+  <data name="CurrentBalanceLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 9</value>
+  </data>
+  <data name="NidLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;NidLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="NidText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="JoinDateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="PaySalaryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 93</value>
+  </data>
+  <data name="&gt;&gt;DesignationText.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="NotesText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;JoinDateTime.Name" xml:space="preserve">
+    <value>JoinDateTime</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="NotesText.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="JoinDateTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="EmailAddressLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NickNameText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ContactNumberText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="FullNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 21</value>
+  </data>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="CurrentBalanceLabel.Text" xml:space="preserve">
+    <value>Current Balance :</value>
+  </data>
+  <data name="EmailAddressText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;DesignationText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 39</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Employee Information</value>
+  </data>
+  <data name="NickNameText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="NotesText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 51</value>
+  </data>
+  <data name="AddressText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 250</value>
+  </data>
+  <data name="InfoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 518</value>
+  </data>
+  <data name="NickNameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="CurrentBalanceTextBig.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;NickNameText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;AddressText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="MonthlySalaryText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="PayButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="PayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 42</value>
+  </data>
+  <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 466</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAACAgAAABACAAqBAAAM4EAAAwMAAAAQAgAKglAAB2FQAAQEAAAAEA
@@ -1857,4 +2393,448 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0F1E/h8fhBsTUcFRzgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="&gt;&gt;CurrentBalanceTextBig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NidText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NickNameText.Name" xml:space="preserve">
+    <value>NickNameText</value>
+  </data>
+  <data name="CurrentBalanceLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="JoinDateLabel.Text" xml:space="preserve">
+    <value>Join Date :</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FullNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;PayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressLabel.Name" xml:space="preserve">
+    <value>EmailAddressLabel</value>
+  </data>
+  <data name="&gt;&gt;FullNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberText.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="EmailAddressLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="CurrentBalanceText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="CurrentBalanceLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ContactNumberLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ContactNumberLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 21</value>
+  </data>
+  <data name="DesignationText.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;NickNameLabel.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="AddressLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="JoinDateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 21</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceTextBig.Name" xml:space="preserve">
+    <value>CurrentBalanceTextBig</value>
+  </data>
+  <data name="AddressText.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.Name" xml:space="preserve">
+    <value>SaveButton</value>
+  </data>
+  <data name="&gt;&gt;NickNameLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="AddressText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="NotesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 402</value>
+  </data>
+  <data name="ContactNumberText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberText.Name" xml:space="preserve">
+    <value>ContactNumberText</value>
+  </data>
+  <data name="&gt;&gt;NickNameText.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressLabel.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="PayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;JoinDateLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="FullNameText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;PaymentGroupBox.Name" xml:space="preserve">
+    <value>PaymentGroupBox</value>
+  </data>
+  <data name="CurrentBalanceTextBig.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceTextBig.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PaymentGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>380, 56</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabel.Name" xml:space="preserve">
+    <value>CurrentBalanceLabel</value>
+  </data>
+  <data name="&gt;&gt;InfoGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PaySalaryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;DesignationLabel.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="FullNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>EmployeeInformationForm</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SaveButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="EmailAddressLabel.Text" xml:space="preserve">
+    <value>Email Address :</value>
+  </data>
+  <data name="CurrentBalanceLabelBig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 25</value>
+  </data>
+  <data name="SalaryAmountText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="AddressLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CurrentBalanceTextBig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 30</value>
+  </data>
+  <data name="CurrentBalanceLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 21</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceText.Name" xml:space="preserve">
+    <value>CurrentBalanceText</value>
+  </data>
+  <data name="NickNameText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 60</value>
+  </data>
+  <data name="JoinDateTime.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="PayButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="NotesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabelBig.Parent" xml:space="preserve">
+    <value>PaymentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NidLabel.Name" xml:space="preserve">
+    <value>NidLabel</value>
+  </data>
+  <data name="FullNameText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="&gt;&gt;AddressText.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="CurrentBalanceText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;SalaryAmountText.Parent" xml:space="preserve">
+    <value>PaymentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SalaryAmountText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DesignationLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 21</value>
+  </data>
+  <data name="&gt;&gt;NickNameText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddressText.Name" xml:space="preserve">
+    <value>AddressText</value>
+  </data>
+  <data name="NickNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 21</value>
+  </data>
+  <data name="&gt;&gt;FullNameText.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="MonthlySalaryText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 326</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="FullNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SalaryAmountText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SaveButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;DesignationText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DesignationLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="CurrentBalanceLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PaySalaryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CurrentBalanceTextBig.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;SaveButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;FullNameText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;JoinDateTime.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PaySalaryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 21</value>
+  </data>
+  <data name="NidLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PayButton.Text" xml:space="preserve">
+    <value>Pay</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Name" xml:space="preserve">
+    <value>NotesLabel</value>
+  </data>
+  <data name="&gt;&gt;JoinDateLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="FullNameLabel.Text" xml:space="preserve">
+    <value>Full Name :</value>
+  </data>
+  <data name="&gt;&gt;FullNameLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="SalaryAmountText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;DesignationLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="AddressText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;FullNameText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NickNameText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="CurrentBalanceText.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="FullNameText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="AddressLabel.Text" xml:space="preserve">
+    <value>Address :</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceText.Parent" xml:space="preserve">
+    <value>InfoGroupBox</value>
+  </data>
+  <data name="NidText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="NickNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PayButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="SaveButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;PaySalaryLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ContactNumberText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DesignationText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>568, 585</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceText.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="CurrentBalanceTextBig.Text" xml:space="preserve">
+    <value>&lt;Balance&gt;</value>
+  </data>
+  <data name="DesignationText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="MonthlySalaryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddressLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 250</value>
+  </data>
+  <data name="&gt;&gt;SalaryAmountText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NickNameLabel.Text" xml:space="preserve">
+    <value>Nick Name :</value>
+  </data>
+  <data name="DesignationLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="NotesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceLabelBig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NidLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 136</value>
+  </data>
+  <data name="DesignationLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 145</value>
+  </data>
+  <data name="JoinDateTime.CustomFormat" xml:space="preserve">
+    <value>dd/MM/yyyy hh:mm tt</value>
+  </data>
+  <data name="FullNameText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;DesignationLabel.Name" xml:space="preserve">
+    <value>DesignationLabel</value>
+  </data>
+  <data name="EmailAddressText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="MonthlySalaryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="JoinDateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 29</value>
+  </data>
+  <data name="NidLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="AddressLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;CurrentBalanceTextBig.Parent" xml:space="preserve">
+    <value>PaymentGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ContactNumberLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="NotesText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 402</value>
+  </data>
+  <data name="EmailAddressText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 212</value>
+  </data>
+  <data name="&gt;&gt;PaymentGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="EmailAddressLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 212</value>
+  </data>
+  <data name="NotesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MonthlySalaryText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;NickNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryLabel.Name" xml:space="preserve">
+    <value>MonthlySalaryLabel</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.Name" xml:space="preserve">
+    <value>AddressLabel</value>
+  </data>
+  <data name="&gt;&gt;MonthlySalaryText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DesignationText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 98</value>
+  </data>
+  <data name="&gt;&gt;NidLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bn-BD</value>
+  </metadata>
 </root>
