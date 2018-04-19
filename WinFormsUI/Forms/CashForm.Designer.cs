@@ -39,79 +39,135 @@
             this.AddAmountText = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.InputGroupBox = new System.Windows.Forms.GroupBox();
+            this.CurrentStockAsset = new System.Windows.Forms.Label();
+            this.CurrentStockAssetAmount = new System.Windows.Forms.Label();
+            this.TotalReceivablesAmount = new System.Windows.Forms.Label();
+            this.TotalReceivables = new System.Windows.Forms.Label();
+            this.TotalPayablesAmount = new System.Windows.Forms.Label();
+            this.TotalPayables = new System.Windows.Forms.Label();
             this.InputGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // CashAmountLabel
             // 
-            resources.ApplyResources(this.CashAmountLabel, "CashAmountLabel");
+            this.CashAmountLabel.AutoSize = true;
+            this.CashAmountLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CashAmountLabel.Location = new System.Drawing.Point(22, 48);
+            this.CashAmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CashAmountLabel.Name = "CashAmountLabel";
+            this.CashAmountLabel.Size = new System.Drawing.Size(186, 47);
+            this.CashAmountLabel.TabIndex = 2;
+            this.CashAmountLabel.Text = "<Amount>";
             this.CashAmountLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // CurrentDueTextBig
             // 
-            resources.ApplyResources(this.CurrentDueTextBig, "CurrentDueTextBig");
+            this.CurrentDueTextBig.AutoSize = true;
+            this.CurrentDueTextBig.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentDueTextBig.Location = new System.Drawing.Point(22, 18);
+            this.CurrentDueTextBig.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CurrentDueTextBig.Name = "CurrentDueTextBig";
+            this.CurrentDueTextBig.Size = new System.Drawing.Size(211, 30);
+            this.CurrentDueTextBig.TabIndex = 3;
+            this.CurrentDueTextBig.Text = "Current Cash Balance";
             this.CurrentDueTextBig.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // AddAmountLabel
             // 
-            resources.ApplyResources(this.AddAmountLabel, "AddAmountLabel");
+            this.AddAmountLabel.AutoSize = true;
+            this.AddAmountLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAmountLabel.Location = new System.Drawing.Point(4, 25);
+            this.AddAmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddAmountLabel.Name = "AddAmountLabel";
+            this.AddAmountLabel.Size = new System.Drawing.Size(105, 21);
+            this.AddAmountLabel.TabIndex = 17;
+            this.AddAmountLabel.Text = "Add Amount :";
             this.AddAmountLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // LessAmount
             // 
-            resources.ApplyResources(this.LessAmount, "LessAmount");
+            this.LessAmount.AutoSize = true;
+            this.LessAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LessAmount.Location = new System.Drawing.Point(4, 63);
+            this.LessAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LessAmount.Name = "LessAmount";
+            this.LessAmount.Size = new System.Drawing.Size(134, 21);
+            this.LessAmount.TabIndex = 19;
+            this.LessAmount.Text = "Remove Amount :";
             this.LessAmount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // NotesText
             // 
-            resources.ApplyResources(this.NotesText, "NotesText");
             this.NotesText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NotesText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NotesText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotesText.Location = new System.Drawing.Point(144, 98);
+            this.NotesText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.NotesText.Name = "NotesText";
+            this.NotesText.Size = new System.Drawing.Size(207, 51);
+            this.NotesText.TabIndex = 22;
+            this.NotesText.Text = "";
             // 
             // RemoveAmountText
             // 
-            resources.ApplyResources(this.RemoveAmountText, "RemoveAmountText");
             this.RemoveAmountText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.RemoveAmountText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RemoveAmountText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveAmountText.Location = new System.Drawing.Point(144, 63);
+            this.RemoveAmountText.Margin = new System.Windows.Forms.Padding(4);
             this.RemoveAmountText.Name = "RemoveAmountText";
+            this.RemoveAmountText.Size = new System.Drawing.Size(207, 22);
+            this.RemoveAmountText.TabIndex = 20;
             this.RemoveAmountText.TextChanged += new System.EventHandler(this.RemoveAmountText_TextChanged);
             this.RemoveAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // NotesLabel
             // 
-            resources.ApplyResources(this.NotesLabel, "NotesLabel");
+            this.NotesLabel.AutoSize = true;
+            this.NotesLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotesLabel.Location = new System.Drawing.Point(4, 98);
+            this.NotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NotesLabel.Name = "NotesLabel";
+            this.NotesLabel.Size = new System.Drawing.Size(58, 21);
+            this.NotesLabel.TabIndex = 21;
+            this.NotesLabel.Text = "Notes :";
             this.NotesLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // AddAmountText
             // 
-            resources.ApplyResources(this.AddAmountText, "AddAmountText");
             this.AddAmountText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.AddAmountText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AddAmountText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAmountText.Location = new System.Drawing.Point(144, 24);
+            this.AddAmountText.Margin = new System.Windows.Forms.Padding(4);
             this.AddAmountText.Name = "AddAmountText";
+            this.AddAmountText.Size = new System.Drawing.Size(207, 22);
+            this.AddAmountText.TabIndex = 18;
             this.AddAmountText.TextChanged += new System.EventHandler(this.AddAmountText_TextChanged);
             this.AddAmountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
             // 
             // SaveButton
             // 
-            resources.ApplyResources(this.SaveButton, "SaveButton");
             this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.SaveButton.FlatAppearance.BorderSize = 0;
             this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.White;
+            this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveButton.Location = new System.Drawing.Point(10, 164);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(341, 42);
+            this.SaveButton.TabIndex = 23;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // InputGroupBox
             // 
-            resources.ApplyResources(this.InputGroupBox, "InputGroupBox");
             this.InputGroupBox.Controls.Add(this.AddAmountLabel);
             this.InputGroupBox.Controls.Add(this.LessAmount);
             this.InputGroupBox.Controls.Add(this.NotesText);
@@ -119,19 +175,100 @@
             this.InputGroupBox.Controls.Add(this.NotesLabel);
             this.InputGroupBox.Controls.Add(this.AddAmountText);
             this.InputGroupBox.Controls.Add(this.SaveButton);
+            this.InputGroupBox.Location = new System.Drawing.Point(22, 103);
             this.InputGroupBox.Name = "InputGroupBox";
+            this.InputGroupBox.Size = new System.Drawing.Size(360, 216);
+            this.InputGroupBox.TabIndex = 24;
             this.InputGroupBox.TabStop = false;
+            // 
+            // CurrentStockAsset
+            // 
+            this.CurrentStockAsset.AutoSize = true;
+            this.CurrentStockAsset.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentStockAsset.Location = new System.Drawing.Point(407, 18);
+            this.CurrentStockAsset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CurrentStockAsset.Name = "CurrentStockAsset";
+            this.CurrentStockAsset.Size = new System.Drawing.Size(193, 30);
+            this.CurrentStockAsset.TabIndex = 25;
+            this.CurrentStockAsset.Text = "Current Stock Asset";
+            // 
+            // CurrentStockAssetAmount
+            // 
+            this.CurrentStockAssetAmount.AutoSize = true;
+            this.CurrentStockAssetAmount.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentStockAssetAmount.Location = new System.Drawing.Point(404, 48);
+            this.CurrentStockAssetAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CurrentStockAssetAmount.Name = "CurrentStockAssetAmount";
+            this.CurrentStockAssetAmount.Size = new System.Drawing.Size(186, 47);
+            this.CurrentStockAssetAmount.TabIndex = 26;
+            this.CurrentStockAssetAmount.Text = "<Amount>";
+            // 
+            // TotalReceivablesAmount
+            // 
+            this.TotalReceivablesAmount.AutoSize = true;
+            this.TotalReceivablesAmount.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalReceivablesAmount.Location = new System.Drawing.Point(404, 149);
+            this.TotalReceivablesAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalReceivablesAmount.Name = "TotalReceivablesAmount";
+            this.TotalReceivablesAmount.Size = new System.Drawing.Size(186, 47);
+            this.TotalReceivablesAmount.TabIndex = 28;
+            this.TotalReceivablesAmount.Text = "<Amount>";
+            // 
+            // TotalReceivables
+            // 
+            this.TotalReceivables.AutoSize = true;
+            this.TotalReceivables.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalReceivables.Location = new System.Drawing.Point(407, 119);
+            this.TotalReceivables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalReceivables.Name = "TotalReceivables";
+            this.TotalReceivables.Size = new System.Drawing.Size(170, 30);
+            this.TotalReceivables.TabIndex = 27;
+            this.TotalReceivables.Text = "Total Receivables";
+            // 
+            // TotalPayablesAmount
+            // 
+            this.TotalPayablesAmount.AutoSize = true;
+            this.TotalPayablesAmount.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPayablesAmount.Location = new System.Drawing.Point(404, 252);
+            this.TotalPayablesAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalPayablesAmount.Name = "TotalPayablesAmount";
+            this.TotalPayablesAmount.Size = new System.Drawing.Size(186, 47);
+            this.TotalPayablesAmount.TabIndex = 30;
+            this.TotalPayablesAmount.Text = "<Amount>";
+            // 
+            // TotalPayables
+            // 
+            this.TotalPayables.AutoSize = true;
+            this.TotalPayables.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPayables.Location = new System.Drawing.Point(407, 222);
+            this.TotalPayables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalPayables.Name = "TotalPayables";
+            this.TotalPayables.Size = new System.Drawing.Size(143, 30);
+            this.TotalPayables.TabIndex = 29;
+            this.TotalPayables.Text = "Total Payables";
             // 
             // CashForm
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(689, 337);
+            this.Controls.Add(this.TotalPayablesAmount);
+            this.Controls.Add(this.TotalPayables);
+            this.Controls.Add(this.TotalReceivablesAmount);
+            this.Controls.Add(this.TotalReceivables);
+            this.Controls.Add(this.CurrentStockAssetAmount);
+            this.Controls.Add(this.CurrentStockAsset);
             this.Controls.Add(this.InputGroupBox);
             this.Controls.Add(this.CashAmountLabel);
             this.Controls.Add(this.CurrentDueTextBig);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CashForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cash";
             this.Load += new System.EventHandler(this.CashForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             this.InputGroupBox.ResumeLayout(false);
@@ -153,5 +290,11 @@
         private System.Windows.Forms.TextBox AddAmountText;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.GroupBox InputGroupBox;
+        private System.Windows.Forms.Label CurrentStockAsset;
+        private System.Windows.Forms.Label CurrentStockAssetAmount;
+        private System.Windows.Forms.Label TotalReceivablesAmount;
+        private System.Windows.Forms.Label TotalReceivables;
+        private System.Windows.Forms.Label TotalPayablesAmount;
+        private System.Windows.Forms.Label TotalPayables;
     }
 }

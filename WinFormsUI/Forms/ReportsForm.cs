@@ -956,6 +956,8 @@ namespace WinFormsUI.Forms {
                         break;
 
                     case SaleReport:
+                        if (index > -1)
+                            report.Shop = Shops[index];
                         break;
 
                     case SupplierReport:
@@ -1122,7 +1124,7 @@ namespace WinFormsUI.Forms {
                     #region Sale
                     if (index2 > -1) { // Customer Selected
                         report.Customer = Customers[index2];
-                        if (index1 > 0) // Shop Selected
+                        if (index1 > -1) // Shop Selected
                             report.Sales = (report as ICustomerReport).GetCustomerSales(report.Customer)
                                 .Where(s => s.ShopId == report.Shop.ObjectId)
                                 .ToList();
@@ -1130,7 +1132,7 @@ namespace WinFormsUI.Forms {
                             report.Sales = (report as ICustomerReport).GetCustomerSales(report.Customer)
                                 .ToList();
                     } else if (index2 == -1) { // No Customer Selected
-                        if (index1 > 0) // Shop Selected
+                        if (index1 > -1) // Shop Selected
                             report.Sales = (report as ISaleReport).GetSales()
                                 .Where(s => s.ShopId == report.Shop.ObjectId)
                                 .ToList();
