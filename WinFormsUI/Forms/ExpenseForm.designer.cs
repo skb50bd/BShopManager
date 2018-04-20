@@ -76,11 +76,11 @@
             // 
             // SubmitButton
             // 
-            resources.ApplyResources(this.SubmitButton, "SubmitButton");
             this.SubmitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.SubmitButton.FlatAppearance.BorderSize = 0;
             this.SubmitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.SubmitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            resources.ApplyResources(this.SubmitButton, "SubmitButton");
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.UseVisualStyleBackColor = false;
@@ -88,11 +88,11 @@
             // 
             // RemoveSelectedButton
             // 
-            resources.ApplyResources(this.RemoveSelectedButton, "RemoveSelectedButton");
             this.RemoveSelectedButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.RemoveSelectedButton.FlatAppearance.BorderSize = 0;
             this.RemoveSelectedButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.RemoveSelectedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
+            resources.ApplyResources(this.RemoveSelectedButton, "RemoveSelectedButton");
             this.RemoveSelectedButton.ForeColor = System.Drawing.Color.White;
             this.RemoveSelectedButton.Name = "RemoveSelectedButton";
             this.RemoveSelectedButton.UseVisualStyleBackColor = false;
@@ -100,9 +100,9 @@
             // 
             // UnitPriceText
             // 
-            resources.ApplyResources(this.UnitPriceText, "UnitPriceText");
             this.UnitPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.UnitPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.UnitPriceText, "UnitPriceText");
             this.UnitPriceText.Name = "UnitPriceText";
             this.UnitPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitPriceText_KeyDown);
             this.UnitPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
@@ -116,9 +116,9 @@
             // 
             // QuantityText
             // 
-            resources.ApplyResources(this.QuantityText, "QuantityText");
             this.QuantityText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.QuantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.QuantityText, "QuantityText");
             this.QuantityText.Name = "QuantityText";
             this.QuantityText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuantityText_KeyDown);
             this.QuantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
@@ -132,11 +132,11 @@
             // 
             // AddToListButton
             // 
-            resources.ApplyResources(this.AddToListButton, "AddToListButton");
             this.AddToListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.AddToListButton.FlatAppearance.BorderSize = 0;
             this.AddToListButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.AddToListButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            resources.ApplyResources(this.AddToListButton, "AddToListButton");
             this.AddToListButton.ForeColor = System.Drawing.Color.White;
             this.AddToListButton.Name = "AddToListButton";
             this.AddToListButton.UseVisualStyleBackColor = false;
@@ -144,9 +144,9 @@
             // 
             // NotesText
             // 
-            resources.ApplyResources(this.NotesText, "NotesText");
             this.NotesText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NotesText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.NotesText, "NotesText");
             this.NotesText.Name = "NotesText";
             this.NotesText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NotesText_KeyDown);
             // 
@@ -170,7 +170,6 @@
             // 
             // CartDataGrid
             // 
-            resources.ApplyResources(this.CartDataGrid, "CartDataGrid");
             this.CartDataGrid.AllowUserToAddRows = false;
             this.CartDataGrid.AllowUserToDeleteRows = false;
             this.CartDataGrid.AllowUserToOrderColumns = true;
@@ -203,6 +202,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CartDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.CartDataGrid.GridColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.CartDataGrid, "CartDataGrid");
             this.CartDataGrid.MultiSelect = false;
             this.CartDataGrid.Name = "CartDataGrid";
             this.CartDataGrid.ReadOnly = true;
@@ -239,9 +239,9 @@
             // 
             // NetPriceText
             // 
-            resources.ApplyResources(this.NetPriceText, "NetPriceText");
             this.NetPriceText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NetPriceText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.NetPriceText, "NetPriceText");
             this.NetPriceText.Name = "NetPriceText";
             this.NetPriceText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NetPriceText_KeyDown);
             this.NetPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericValueValidation);
@@ -254,25 +254,24 @@
             // 
             // ExpenseDateTime
             // 
-            resources.ApplyResources(this.ExpenseDateTime, "ExpenseDateTime");
             this.ExpenseDateTime.CalendarMonthBackground = System.Drawing.Color.White;
+            resources.ApplyResources(this.ExpenseDateTime, "ExpenseDateTime");
             this.ExpenseDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ExpenseDateTime.Name = "ExpenseDateTime";
             this.ExpenseDateTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExpenseDateTime_KeyDown);
             // 
             // ProductText
             // 
-            resources.ApplyResources(this.ProductText, "ProductText");
             this.ProductText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.ProductText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.ProductText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ProductText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.ProductText, "ProductText");
             this.ProductText.Name = "ProductText";
             this.ProductText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductText_KeyDown);
             // 
             // ProductInfoGroupBox
             // 
-            resources.ApplyResources(this.ProductInfoGroupBox, "ProductInfoGroupBox");
             this.ProductInfoGroupBox.Controls.Add(this.ProductText);
             this.ProductInfoGroupBox.Controls.Add(this.AddToListButton);
             this.ProductInfoGroupBox.Controls.Add(this.NetPriceText);
@@ -282,12 +281,12 @@
             this.ProductInfoGroupBox.Controls.Add(this.UnitPriceText);
             this.ProductInfoGroupBox.Controls.Add(this.UnitPriceLabel);
             this.ProductInfoGroupBox.Controls.Add(this.ProductLabel);
+            resources.ApplyResources(this.ProductInfoGroupBox, "ProductInfoGroupBox");
             this.ProductInfoGroupBox.Name = "ProductInfoGroupBox";
             this.ProductInfoGroupBox.TabStop = false;
             // 
             // SubmissionGroupBox
             // 
-            resources.ApplyResources(this.SubmissionGroupBox, "SubmissionGroupBox");
             this.SubmissionGroupBox.Controls.Add(this.TitleText);
             this.SubmissionGroupBox.Controls.Add(this.ExpenseTitleLabel);
             this.SubmissionGroupBox.Controls.Add(this.ExpenseDateTime);
@@ -296,14 +295,15 @@
             this.SubmissionGroupBox.Controls.Add(this.NotesText);
             this.SubmissionGroupBox.Controls.Add(this.TotalText);
             this.SubmissionGroupBox.Controls.Add(this.TotalLabel);
+            resources.ApplyResources(this.SubmissionGroupBox, "SubmissionGroupBox");
             this.SubmissionGroupBox.Name = "SubmissionGroupBox";
             this.SubmissionGroupBox.TabStop = false;
             // 
             // TitleText
             // 
-            resources.ApplyResources(this.TitleText, "TitleText");
             this.TitleText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TitleText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.TitleText, "TitleText");
             this.TitleText.Name = "TitleText";
             this.TitleText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TitleText_KeyDown);
             // 

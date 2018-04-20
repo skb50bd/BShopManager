@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;NewDueLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SaveButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
@@ -174,9 +171,6 @@
   <data name="AvailableQuantityText.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 120</value>
   </data>
-  <data name="CustomerSelectorLabel.Text" xml:space="preserve">
-    <value>Customer :</value>
-  </data>
   <data name="ProductSelectorLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -216,8 +210,8 @@
   <data name="AddCustomerButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="CustomerCombo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 29</value>
+  <data name="&gt;&gt;QuantityColumn.Name" xml:space="preserve">
+    <value>QuantityColumn</value>
   </data>
   <data name="&gt;&gt;QuantityText.ZOrder" xml:space="preserve">
     <value>13</value>
@@ -245,9 +239,6 @@
   </data>
   <data name="&gt;&gt;TotalText.Name" xml:space="preserve">
     <value>TotalText</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1072, 702</value>
   </data>
   <data name="DiscountLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -336,9 +327,6 @@
   <data name="&gt;&gt;UnitPriceLabel.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;WholeSaleRadio.Parent" xml:space="preserve">
-    <value>ProductGroup</value>
-  </data>
   <data name="AddToCartButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -363,8 +351,8 @@
   <data name="&gt;&gt;CartDataGrid.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;QuantityColumn.Name" xml:space="preserve">
-    <value>QuantityColumn</value>
+  <data name="FullDueText.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="DiscountPercentageText.ToolTip" xml:space="preserve">
     <value />
@@ -390,20 +378,11 @@
   <data name="DueText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
-  <data name="AddCustomerButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="SavedMemoGroup.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="SubmitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
   <data name="CustomerNameText.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 61</value>
-  </data>
-  <data name="CustomerNameText.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="ProductNameColumn.Width" type="System.Int32, mscorlib">
     <value>135</value>
@@ -441,9 +420,6 @@
   <data name="&gt;&gt;NotesLabel.Name" xml:space="preserve">
     <value>NotesLabel</value>
   </data>
-  <data name="&gt;&gt;ReloadButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="DiscountLabel.Text" xml:space="preserve">
     <value>Discount :</value>
   </data>
@@ -480,8 +456,8 @@
   <data name="PreviousDueText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
-  <data name="ProductGroup.ToolTip" xml:space="preserve">
-    <value />
+  <data name="CustomerSelectorLabel.Text" xml:space="preserve">
+    <value>Customer :</value>
   </data>
   <data name="&gt;&gt;SavedMemoList.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -555,8 +531,8 @@
   <data name="&gt;&gt;SubmitButton.Name" xml:space="preserve">
     <value>SubmitButton</value>
   </data>
-  <data name="SaleNetPriceText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
+  <data name="&gt;&gt;PreviousDueText.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="FullPayableText.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -564,8 +540,8 @@
   <data name="&gt;&gt;SaveButton.Parent" xml:space="preserve">
     <value>AmountGroup</value>
   </data>
-  <data name="NotesText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 196</value>
+  <data name="AddressLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 21</value>
   </data>
   <data name="UnitPriceLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -578,6 +554,9 @@
   </data>
   <data name="AddressText.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="PayableText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="&gt;&gt;ProductSelectorCombo.Name" xml:space="preserve">
     <value>ProductSelectorCombo</value>
@@ -597,6 +576,9 @@
   <data name="PayableText.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="PreviousDueText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 84</value>
+  </data>
   <data name="ReloadButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -615,9 +597,6 @@
   <data name="&gt;&gt;QuantityLabel.Parent" xml:space="preserve">
     <value>ProductGroup</value>
   </data>
-  <data name="&gt;&gt;NetPriceLabel.Name" xml:space="preserve">
-    <value>NetPriceLabel</value>
-  </data>
   <data name="RemoveSelectedButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -630,14 +609,17 @@
   <data name="SubmitButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 207</value>
   </data>
-  <data name="RemoveSavedMemoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 272</value>
+  <data name="QuantityText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 151</value>
   </data>
   <data name="SubmitButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
   </data>
   <data name="&gt;&gt;ButtonToolTip.Name" xml:space="preserve">
     <value>ButtonToolTip</value>
+  </data>
+  <data name="&gt;&gt;RemoveSelectedButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="DealDateTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>367, 19</value>
@@ -647,6 +629,9 @@
   </data>
   <data name="CustomerSelectorLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 21</value>
+  </data>
+  <data name="DiscountPercentageText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="UnitNameColumn.Width" type="System.Int32, mscorlib">
     <value>64</value>
@@ -662,6 +647,9 @@
   </data>
   <data name="&gt;&gt;SearchProductText.Name" xml:space="preserve">
     <value>SearchProductText</value>
+  </data>
+  <data name="NotesText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 196</value>
   </data>
   <data name="&gt;&gt;DealDateTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -720,8 +708,11 @@
   <data name="&gt;&gt;ProductGroup.Name" xml:space="preserve">
     <value>ProductGroup</value>
   </data>
-  <data name="&gt;&gt;BasicInfoGroup.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;CustomerNameText.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PaidAmountText.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="SaleUnitPriceText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
@@ -732,8 +723,8 @@
   <data name="ReloadButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="&gt;&gt;PaidAmountText.Parent" xml:space="preserve">
-    <value>AmountGroup</value>
+  <data name="UnitPriceText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="DiscountLabel.ToolTip" xml:space="preserve">
     <value />
@@ -756,8 +747,8 @@
   <data name="&gt;&gt;CustomerResetButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="DiscountPercentageText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;PayableLabel.Name" xml:space="preserve">
+    <value>PayableLabel</value>
   </data>
   <data name="ViewCustomerButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -783,6 +774,9 @@
   <data name="CompanyLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 21</value>
   </data>
+  <data name="FullPayableText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
   <data name="&gt;&gt;UnitPriceLabel.Parent" xml:space="preserve">
     <value>ProductGroup</value>
   </data>
@@ -800,9 +794,6 @@
   </data>
   <data name="PercentageLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="SelectShopLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 21</value>
   </data>
   <data name="ProductSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
     <value>87, 82</value>
@@ -827,9 +818,6 @@
   </data>
   <data name="RetailSaleRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
-  </data>
-  <data name="&gt;&gt;QuantityText.Parent" xml:space="preserve">
-    <value>ProductGroup</value>
   </data>
   <data name="LoadSavedMemoButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
@@ -890,9 +878,6 @@
   </data>
   <data name="WholeSaleRadio.Text" xml:space="preserve">
     <value>Whole Sale</value>
-  </data>
-  <data name="AddressLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 21</value>
   </data>
   <data name="SelectShopLabel.Text" xml:space="preserve">
     <value>Shop</value>
@@ -987,11 +972,11 @@
   <data name="&gt;&gt;TotalText.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectShopLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="AddressText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 127</value>
   </data>
-  <data name="RetailSaleRadio.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;PaidAmountText.Parent" xml:space="preserve">
+    <value>AmountGroup</value>
   </data>
   <data name="TotalText.ToolTip" xml:space="preserve">
     <value />
@@ -1008,8 +993,8 @@
   <data name="PaidAmountLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="SearchProductLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1072, 702</value>
   </data>
   <data name="PercentageLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 21</value>
@@ -1083,6 +1068,9 @@
   <data name="WholeSaleRadio.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="PayableText.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
   <data name="SearchProductText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -1131,8 +1119,8 @@
   <data name="UnitSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 29</value>
   </data>
-  <data name="&gt;&gt;PreviousDueText.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="SavedMemoGroup.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="SaleNetPriceText.ToolTip" xml:space="preserve">
     <value />
@@ -2954,6 +2942,9 @@
   <data name="AddCustomerButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 29</value>
   </data>
+  <data name="&gt;&gt;CartDataGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;DiscountPercentageText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -2969,8 +2960,8 @@
   <data name="&gt;&gt;DueText.Name" xml:space="preserve">
     <value>DueText</value>
   </data>
-  <data name="&gt;&gt;DueText.Parent" xml:space="preserve">
-    <value>AmountGroup</value>
+  <data name="NewDueLabel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="SaleUnitPriceText.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -2992,9 +2983,6 @@
   </data>
   <data name="&gt;&gt;SelectShopLabel.Name" xml:space="preserve">
     <value>SelectShopLabel</value>
-  </data>
-  <data name="NotesLabel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="NotesText.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 59</value>
@@ -3041,9 +3029,6 @@
   <data name="&gt;&gt;QuantityColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="AddressText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 127</value>
-  </data>
   <data name="DiscountLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 54</value>
   </data>
@@ -3059,8 +3044,8 @@
   <data name="&gt;&gt;CustomerNameLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;PaidAmountText.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="NotesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="&gt;&gt;SearchProductLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3098,6 +3083,9 @@
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
+  <data name="CustomerCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 29</value>
+  </data>
   <data name="SavedMemoGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 325</value>
   </data>
@@ -3124,6 +3112,9 @@
   </data>
   <data name="SubmitButton.Text" xml:space="preserve">
     <value>Sell</value>
+  </data>
+  <data name="CustomerNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="CustomerSelectorLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 26</value>
@@ -3167,6 +3158,9 @@
   <data name="AddressText.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 22</value>
   </data>
+  <data name="RetailSaleRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="CartDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
@@ -3179,11 +3173,14 @@
   <data name="&gt;&gt;AmountGroup.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="FullDueText.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="AddCustomerButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="RetailSaleRadio.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;FullDueText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="AddressLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 127</value>
@@ -3205,9 +3202,6 @@
   </data>
   <data name="NotesLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
-  </data>
-  <data name="UnitPriceText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
   </data>
   <data name="NetPriceLabel.ToolTip" xml:space="preserve">
     <value />
@@ -3239,11 +3233,8 @@
   <data name="PayableLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 114</value>
   </data>
-  <data name="PercentageLabel.Text" xml:space="preserve">
-    <value>%</value>
-  </data>
-  <data name="&gt;&gt;CartDataGrid.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="ProductGroup.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;LoadSavedMemoButton.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3341,9 +3332,6 @@
   <data name="&gt;&gt;ProductSelectorLabel.Name" xml:space="preserve">
     <value>ProductSelectorLabel</value>
   </data>
-  <data name="PercentageLabel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ViewCustomerButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>324, 160</value>
   </data>
@@ -3415,6 +3403,9 @@
   </data>
   <data name="&gt;&gt;AddressLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SaleNetPriceText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="&gt;&gt;DealDateTime.Parent" xml:space="preserve">
     <value>BasicInfoGroup</value>
@@ -3497,6 +3488,9 @@
   <data name="RemoveSavedMemoButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 42</value>
   </data>
+  <data name="RemoveSelectedButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
   <data name="CustomerCombo.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -3509,8 +3503,8 @@
   <data name="CustomerResetButton.ToolTip" xml:space="preserve">
     <value>Reset Customer</value>
   </data>
-  <data name="NewDueLabel.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;QuantityText.Parent" xml:space="preserve">
+    <value>ProductGroup</value>
   </data>
   <data name="&gt;&gt;DiscountPercentageText.Parent" xml:space="preserve">
     <value>AmountGroup</value>
@@ -3545,8 +3539,8 @@
   <data name="&gt;&gt;TotalLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PreviousDueText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 84</value>
+  <data name="CustomerNameText.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;NetPriceColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3599,6 +3593,9 @@
   <data name="NetPriceColumn.Width" type="System.Int32, mscorlib">
     <value>98</value>
   </data>
+  <data name="&gt;&gt;DueText.Parent" xml:space="preserve">
+    <value>AmountGroup</value>
+  </data>
   <data name="CustomerSelectorLabel.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -3626,14 +3623,17 @@
   <data name="UnitPriceLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 182</value>
   </data>
+  <data name="SearchProductLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
   <data name="CustomerSelectorLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;ProductSelectorLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PayableText.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;ReloadButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="ProductNameColumn.HeaderText" xml:space="preserve">
     <value>Product Name</value>
@@ -3659,9 +3659,6 @@
   <data name="NewDueLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="NotesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="SaleNetPriceText.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 22</value>
   </data>
@@ -3670,6 +3667,9 @@
   </data>
   <data name="RemoveSavedMemoButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SearchProductLabel.ToolTip" xml:space="preserve">
     <value />
@@ -3707,11 +3707,11 @@
   <data name="&gt;&gt;PayableText.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="DealDateTime.ToolTip" xml:space="preserve">
-    <value>Time and Date of the sale</value>
+  <data name="SelectShopLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 21</value>
   </data>
-  <data name="SaleNetPriceText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="&gt;&gt;NetPriceLabel.Name" xml:space="preserve">
+    <value>NetPriceLabel</value>
   </data>
   <data name="&gt;&gt;AddCustomerButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3740,6 +3740,9 @@
   <data name="&gt;&gt;CustomerGroup.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;BasicInfoGroup.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -3767,8 +3770,8 @@
   <data name="&gt;&gt;AddCustomerButton.Name" xml:space="preserve">
     <value>AddCustomerButton</value>
   </data>
-  <data name="CustomerNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;ProductNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="AmountGroup.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3776,14 +3779,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>9, 21</value>
   </data>
-  <data name="SavedMemoList.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="DiscountPercentageText.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 54</value>
-  </data>
-  <data name="&gt;&gt;PayableLabel.Name" xml:space="preserve">
-    <value>PayableLabel</value>
   </data>
   <data name="CustomerNameText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3806,6 +3803,9 @@
   <data name="RemoveSelectedButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 646</value>
   </data>
+  <data name="&gt;&gt;LoadSavedMemoButton.Parent" xml:space="preserve">
+    <value>SavedMemoGroup</value>
+  </data>
   <data name="ProductSelectorLabel.Text" xml:space="preserve">
     <value>Product :</value>
   </data>
@@ -3823,9 +3823,6 @@
   </data>
   <data name="ReloadButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 29</value>
-  </data>
-  <data name="&gt;&gt;ProductNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CompanyText.Parent" xml:space="preserve">
     <value>CustomerGroup</value>
@@ -3872,8 +3869,11 @@
   <data name="PaidAmountLabel.Text" xml:space="preserve">
     <value>Paid :</value>
   </data>
-  <data name="&gt;&gt;FullDueText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="UnitPriceLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DealDateTime.ToolTip" xml:space="preserve">
+    <value>Time and Date of the sale</value>
   </data>
   <data name="&gt;&gt;FullPayableText.Parent" xml:space="preserve">
     <value>AmountGroup</value>
@@ -3908,8 +3908,8 @@
   <data name="SearchProductLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 21</value>
   </data>
-  <data name="PayableText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+  <data name="PercentageLabel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="NetPriceLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -3929,8 +3929,8 @@
   <data name="&gt;&gt;UnitPriceText.Name" xml:space="preserve">
     <value>UnitPriceText</value>
   </data>
-  <data name="QuantityText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 151</value>
+  <data name="SavedMemoList.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="AddToCartButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 42</value>
@@ -3974,8 +3974,8 @@
   <data name="UnitSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 148</value>
   </data>
-  <data name="&gt;&gt;RemoveSelectedButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="SaleNetPriceText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3986,8 +3986,8 @@
   <data name="CustomerCombo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;LoadSavedMemoButton.Parent" xml:space="preserve">
-    <value>SavedMemoGroup</value>
+  <data name="RemoveSavedMemoButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 272</value>
   </data>
   <data name="SubmitButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -3995,8 +3995,8 @@
   <data name="NotesLabel.Text" xml:space="preserve">
     <value>Notes : </value>
   </data>
-  <data name="RemoveSelectedButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="NotesLabel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;CustomerSelectorLabel.Name" xml:space="preserve">
     <value>CustomerSelectorLabel</value>
@@ -4019,8 +4019,8 @@
   <data name="CompanyLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="UnitPriceLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="PercentageLabel.Text" xml:space="preserve">
+    <value>%</value>
   </data>
   <data name="&gt;&gt;FullPayableText.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -4034,14 +4034,14 @@
   <data name="&gt;&gt;CartDataGrid.Name" xml:space="preserve">
     <value>CartDataGrid</value>
   </data>
-  <data name="FullPayableText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
+  <data name="&gt;&gt;NewDueLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;QuantityText.Name" xml:space="preserve">
     <value>QuantityText</value>
   </data>
-  <data name="&gt;&gt;CustomerNameText.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;WholeSaleRadio.Parent" xml:space="preserve">
+    <value>ProductGroup</value>
   </data>
   <data name="PayableText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
@@ -4076,13 +4076,13 @@
   <metadata name="UnitNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>8, 9</value>
+  </metadata>
   <metadata name="UnitPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>44</value>
-  </metadata>
-  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>8, 9</value>
   </metadata>
 </root>

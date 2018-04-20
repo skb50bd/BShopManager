@@ -158,10 +158,10 @@
     <value>229, 203</value>
   </data>
   <data name="AlertAtLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 21</value>
+    <value>89, 21</value>
   </data>
   <data name="AlertAtLabel.Text" xml:space="preserve">
-    <value>সতর্ক সীমা :</value>
+    <value>সতর্ক সীমা:</value>
   </data>
   <data name="PurchasePriceLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 21</value>
@@ -217,8 +217,11 @@
   <data name="SelectShopLabel.Text" xml:space="preserve">
     <value>দোকান বাছাই</value>
   </data>
+  <data name="ShopToGodownLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
   <data name="ShopToGodownLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 21</value>
+    <value>136, 20</value>
   </data>
   <data name="ShopToGodownLabel.Text" xml:space="preserve">
     <value>দোকান-&gt;গোডাউন:</value>
@@ -226,8 +229,11 @@
   <data name="MoveButton.Text" xml:space="preserve">
     <value>স্থানান্তর করুন</value>
   </data>
+  <data name="GodownToShopLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
   <data name="GodownToShopLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 21</value>
+    <value>136, 20</value>
   </data>
   <data name="GodownToShopLabel.Text" xml:space="preserve">
     <value>গোডাউন-&gt;দোকান:</value>

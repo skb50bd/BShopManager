@@ -127,8 +127,9 @@
   <data name="ProductLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 21</value>
   </data>
-  <data name="&gt;&gt;SelectProductForRefundGroup.Parent" xml:space="preserve">
-    <value>ReturnedProductsGroupBox</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="NotesText.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 57</value>
@@ -139,17 +140,9 @@
   <data name="RemoveItemButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>375, 436</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CutAmountText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;ReturnedAmountText.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;QuantityLabel.Name" xml:space="preserve">
-    <value>QuantityLabel</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CutAmountText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
@@ -201,9 +194,16 @@
   <data name="CartDataGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>519, 248</value>
   </data>
+  <data name="&gt;&gt;NotesLabel.Parent" xml:space="preserve">
+    <value>RefundAmountGroupBox</value>
+  </data>
+  <data name="AddButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="SubmitButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="NotesText.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
@@ -231,6 +231,9 @@
   <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>552, 661</value>
+  </data>
   <data name="ReceiptNumberLabel.Text" xml:space="preserve">
     <value>Receipt #</value>
   </data>
@@ -239,6 +242,9 @@
   </data>
   <data name="ResetReceiptButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
+  </data>
+  <data name="AddButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="ProductSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>423, 29</value>
@@ -255,11 +261,20 @@
   <data name="PercentageOrLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;RefundAmountGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="ReturnedAmountText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 22</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Return</value>
+  </data>
+  <data name="NotesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;NotesText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NotesText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 42</value>
   </data>
   <data name="&gt;&gt;ReturnedProductsGroupBox.Name" xml:space="preserve">
     <value>ReturnedProductsGroupBox</value>
@@ -272,9 +287,6 @@
   </data>
   <data name="&gt;&gt;ReceiptNumberCombo.Parent" xml:space="preserve">
     <value>ReturnedProductsGroupBox</value>
-  </data>
-  <data name="&gt;&gt;CutPercentageText.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;ReceiptNumberLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -297,6 +309,9 @@
   <data name="&gt;&gt;ProductSelectorCombo.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="NotesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="&gt;&gt;ProductSelectorCombo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -308,6 +323,9 @@
   </data>
   <data name="NotesText.Text" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;AddButton.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="SubmitButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>375, 56</value>
@@ -321,9 +339,6 @@
   <data name="NotesLabel.Text" xml:space="preserve">
     <value>Notes : </value>
   </data>
-  <data name="ProductLabel.Text" xml:space="preserve">
-    <value>Product :</value>
-  </data>
   <data name="ProductSelectorCombo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -333,20 +348,17 @@
   <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="ProductLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 33</value>
+  <data name="RefundAmountLabel.Text" xml:space="preserve">
+    <value>Refund :</value>
   </data>
   <data name="SubmitButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;QuantityText.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;RefundCutLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="RefundCutLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;SubmitButton.Name" xml:space="preserve">
+    <value>SubmitButton</value>
   </data>
   <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 26.25pt</value>
@@ -363,6 +375,9 @@
   <data name="&gt;&gt;TotalAmountTextLabel.Name" xml:space="preserve">
     <value>TotalAmountTextLabel</value>
   </data>
+  <data name="QuantityText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 66</value>
+  </data>
   <data name="&gt;&gt;RefundCutLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -375,8 +390,8 @@
   <data name="ReceiptNumberLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 30</value>
   </data>
-  <data name="PercentageOrLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 27</value>
+  <data name="&gt;&gt;AvailableQuantityText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="QuantityLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -393,8 +408,8 @@
   <data name="RefundAmountGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;SelectProductForRefundGroup.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;SelectProductForRefundGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ReturnedProductsGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -414,11 +429,11 @@
   <data name="&gt;&gt;RemoveItemButton.Name" xml:space="preserve">
     <value>RemoveItemButton</value>
   </data>
-  <data name="QuantityText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
   <data name="SubmitButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="RefundAmountGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 113</value>
   </data>
   <data name="AvailableQuantityText.Location" type="System.Drawing.Point, System.Drawing">
     <value>146, 66</value>
@@ -432,8 +447,8 @@
   <data name="ProductLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="CutPercentageText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
+  <data name="AddButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -441,8 +456,8 @@
   <data name="ReceiptNumberCombo.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 27</value>
   </data>
-  <data name="&gt;&gt;QuantityLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="NotesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="&gt;&gt;CutPercentageText.Name" xml:space="preserve">
     <value>CutPercentageText</value>
@@ -453,23 +468,29 @@
   <data name="RefundAmountLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="NotesText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ReturnForm</value>
   </data>
-  <data name="SubmitButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="CutAmountText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 22</value>
+  </data>
+  <data name="&gt;&gt;NotesLabel.Name" xml:space="preserve">
+    <value>NotesLabel</value>
   </data>
   <data name="UnitNameColumn.Width" type="System.Int32, mscorlib">
     <value>64</value>
   </data>
-  <data name="ResetReceiptButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;SubmitButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NotesLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="SelectProductForRefundGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>519, 114</value>
+  </data>
+  <data name="&gt;&gt;RefundAmountGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;ViewReceiptButton.Parent" xml:space="preserve">
     <value>ReturnedProductsGroupBox</value>
@@ -485,9 +506,6 @@
   </data>
   <data name="RefundCutLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="&gt;&gt;ReceiptNumberCombo.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="AvailableQuantityText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -510,8 +528,8 @@
   <data name="QuantityLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 66</value>
   </data>
-  <data name="RemoveItemButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="NotesLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 56</value>
@@ -528,11 +546,8 @@
   <data name="RefundAmountLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>351, 26</value>
   </data>
-  <data name="ReturnedAmountText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 22</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="ProductSelectorCombo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
   </data>
   <data name="CutAmountText.Location" type="System.Drawing.Point, System.Drawing">
     <value>207, 27</value>
@@ -543,6 +558,9 @@
   <data name="ReturnedAmountText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
+  <data name="&gt;&gt;ProductLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;RefundAmountLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -552,8 +570,8 @@
   <data name="QuantityText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
-  <data name="&gt;&gt;SelectProductForRefundGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="QuantityText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="SelectProductForRefundGroup.Text" xml:space="preserve">
     <value>Select Returned Product(s)</value>
@@ -561,17 +579,17 @@
   <data name="&gt;&gt;ReceiptNumberLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="PercentageOrLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="&gt;&gt;TotalAmountTextLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RemoveItemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;TotalAmountTextLabel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="&gt;&gt;ProductLabel.Parent" xml:space="preserve">
     <value>SelectProductForRefundGroup</value>
-  </data>
-  <data name="CartDataGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="RemoveItemButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -585,32 +603,26 @@
   <data name="&gt;&gt;RefundAmountGroupBox.Name" xml:space="preserve">
     <value>RefundAmountGroupBox</value>
   </data>
-  <data name="&gt;&gt;SubmitButton.Name" xml:space="preserve">
-    <value>SubmitButton</value>
+  <data name="RefundCutLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="AddButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="SubmitButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="ReturnedAmountText.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="AvailableQuantityText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="&gt;&gt;RefundAmountLabel.Parent" xml:space="preserve">
     <value>RefundAmountGroupBox</value>
   </data>
-  <data name="&gt;&gt;SubmitButton.Parent" xml:space="preserve">
-    <value>RefundAmountGroupBox</value>
-  </data>
-  <data name="SubmitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
+  <data name="&gt;&gt;PercentageOrLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="ReturnedAmountText.Location" type="System.Drawing.Point, System.Drawing">
     <value>430, 27</value>
-  </data>
-  <data name="&gt;&gt;CutAmountText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="TitleLabel.Text" xml:space="preserve">
     <value>Refund</value>
@@ -657,20 +669,20 @@
   <data name="ViewReceiptButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="CutPercentageText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
   <data name="PercentageOrLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="&gt;&gt;TotalAmountTextLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ReturnedProductsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 43</value>
+  </data>
+  <data name="&gt;&gt;CutAmountText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CutPercentageText.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 27</value>
   </data>
-  <data name="&gt;&gt;TotalAmountTextLabel.Parent" xml:space="preserve">
-    <value>ReturnedProductsGroupBox</value>
+  <data name="&gt;&gt;CutPercentageText.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="NotesLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
@@ -678,8 +690,8 @@
   <data name="&gt;&gt;PercentageOrLabel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="SelectProductForRefundGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 61</value>
+  <data name="ResetReceiptButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 4</value>
@@ -687,8 +699,8 @@
   <data name="&gt;&gt;CartDataGrid.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 39</value>
+  <data name="&gt;&gt;SelectProductForRefundGroup.Parent" xml:space="preserve">
+    <value>ReturnedProductsGroupBox</value>
   </data>
   <data name="&gt;&gt;QuantityColumn.Name" xml:space="preserve">
     <value>QuantityColumn</value>
@@ -699,11 +711,11 @@
   <data name="RefundCutLabel.Text" xml:space="preserve">
     <value>Cut :</value>
   </data>
-  <data name="TotalAmountTextLabel.Text" xml:space="preserve">
-    <value>0 Tk</value>
+  <data name="SelectProductForRefundGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 61</value>
   </data>
-  <data name="&gt;&gt;RemoveItemButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;TotalAmountTextLabel.Parent" xml:space="preserve">
+    <value>ReturnedProductsGroupBox</value>
   </data>
   <data name="TotalAmountTextLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -714,8 +726,8 @@
   <data name="RefundAmountGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 536</value>
   </data>
-  <data name="RefundAmountGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 113</value>
+  <data name="&gt;&gt;SubmitButton.Parent" xml:space="preserve">
+    <value>RefundAmountGroupBox</value>
   </data>
   <data name="ResetReceiptButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -729,11 +741,11 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PercentageOrLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;QuantityLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;SubmitButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ProductLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
   </data>
   <data name="ProductIdColumn.Width" type="System.Int32, mscorlib">
     <value>108</value>
@@ -741,44 +753,32 @@
   <data name="&gt;&gt;ResetReceiptButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ProductSelectorCombo.Parent" xml:space="preserve">
+    <value>SelectProductForRefundGroup</value>
+  </data>
   <data name="RefundAmountLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
-  </data>
-  <data name="AvailableQuantityText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="NetPriceColumn.HeaderText" xml:space="preserve">
-    <value>Net Price</value>
   </data>
   <data name="TotalAmountTextLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;UnitNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;QuantityLabel.Name" xml:space="preserve">
+    <value>QuantityLabel</value>
   </data>
-  <data name="&gt;&gt;ProductSelectorCombo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectProductForRefundGroup.Name" xml:space="preserve">
     <value>SelectProductForRefundGroup</value>
   </data>
-  <data name="&gt;&gt;ProductLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NotesLabel.Name" xml:space="preserve">
-    <value>NotesLabel</value>
+  <data name="PercentageOrLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="QuantityLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;UnitNameColumn.Name" xml:space="preserve">
-    <value>UnitNameColumn</value>
-  </data>
   <data name="&gt;&gt;AddButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ReturnedProductsGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NotesText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="CartDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;ReceiptNumberLabel.Parent" xml:space="preserve">
     <value>ReturnedProductsGroupBox</value>
@@ -801,23 +801,17 @@
   <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="CartDataGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 182</value>
+  <data name="ReturnedAmountText.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="ProductLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="AvailableQuantityText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="ProductLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="SubmitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
   </data>
-  <data name="&gt;&gt;SelectProductForRefundGroup.Name" xml:space="preserve">
-    <value>SelectProductForRefundGroup</value>
-  </data>
-  <data name="NotesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ReturnedProductsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 487</value>
+  <data name="TotalAmountTextLabel.Text" xml:space="preserve">
+    <value>0 Tk</value>
   </data>
   <data name="RefundCutLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 21</value>
@@ -828,8 +822,8 @@
   <data name="&gt;&gt;ReturnedAmountText.Parent" xml:space="preserve">
     <value>RefundAmountGroupBox</value>
   </data>
-  <data name="CutAmountText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 22</value>
+  <data name="&gt;&gt;SelectProductForRefundGroup.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;CartDataGrid.Parent" xml:space="preserve">
     <value>ReturnedProductsGroupBox</value>
@@ -837,8 +831,8 @@
   <data name="&gt;&gt;RefundAmountGroupBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ProductSelectorCombo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
+  <data name="&gt;&gt;UnitNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ReceiptNumberLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -846,11 +840,14 @@
   <data name="RefundCutLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 27</value>
   </data>
-  <data name="ReturnedProductsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 43</value>
+  <data name="&gt;&gt;ViewReceiptButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;ProductLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PercentageOrLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 27</value>
+  </data>
+  <data name="CutAmountText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
     <value>TitleLabel</value>
@@ -858,11 +855,8 @@
   <data name="&gt;&gt;CutPercentageText.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TotalAmountTextLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="&gt;&gt;QuantityText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ProductLabel.Text" xml:space="preserve">
+    <value>Product :</value>
   </data>
   <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -870,8 +864,11 @@
   <data name="TotalAmountTextLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 439</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>552, 661</value>
+  <data name="ProductLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="RefundAmountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2723,14 +2720,14 @@
   <data name="AddButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
-  <data name="&gt;&gt;NotesLabel.Parent" xml:space="preserve">
-    <value>RefundAmountGroupBox</value>
+  <data name="&gt;&gt;ReturnedProductsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CartDataGrid.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="AvailableQuantityText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;RefundCutLabel.Name" xml:space="preserve">
     <value>RefundCutLabel</value>
@@ -2747,23 +2744,23 @@
   <data name="&gt;&gt;ReceiptNumberLabel.Name" xml:space="preserve">
     <value>ReceiptNumberLabel</value>
   </data>
-  <data name="QuantityText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 66</value>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 39</value>
   </data>
   <data name="QuantityColumn.HeaderText" xml:space="preserve">
     <value>Qty</value>
   </data>
-  <data name="AddButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;UnitNameColumn.Name" xml:space="preserve">
+    <value>UnitNameColumn</value>
   </data>
-  <data name="RefundAmountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
+  <data name="CutPercentageText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="&gt;&gt;AddButton.Name" xml:space="preserve">
     <value>AddButton</value>
   </data>
-  <data name="&gt;&gt;NotesText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="NetPriceColumn.HeaderText" xml:space="preserve">
+    <value>Net Price</value>
   </data>
   <data name="ReceiptNumberCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>357, 29</value>
@@ -2777,14 +2774,14 @@
   <data name="&gt;&gt;RemoveItemButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;RefundAmountLabel.Name" xml:space="preserve">
+    <value>RefundAmountLabel</value>
+  </data>
   <data name="&gt;&gt;PercentageOrLabel.Name" xml:space="preserve">
     <value>PercentageOrLabel</value>
   </data>
-  <data name="ProductNameColumn.Width" type="System.Int32, mscorlib">
-    <value>135</value>
-  </data>
-  <data name="RefundAmountLabel.Text" xml:space="preserve">
-    <value>Refund :</value>
+  <data name="CartDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 182</value>
   </data>
   <data name="&gt;&gt;RemoveItemButton.Parent" xml:space="preserve">
     <value>ReturnedProductsGroupBox</value>
@@ -2795,23 +2792,20 @@
   <data name="NetPriceColumn.Width" type="System.Int32, mscorlib">
     <value>98</value>
   </data>
-  <data name="&gt;&gt;AddButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;QuantityText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ReturnedAmountText.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="&gt;&gt;RefundAmountLabel.Name" xml:space="preserve">
-    <value>RefundAmountLabel</value>
+  <data name="ReturnedProductsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 487</value>
   </data>
   <data name="AvailableQuantityText.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 21</value>
   </data>
-  <data name="NotesText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 42</value>
+  <data name="&gt;&gt;RemoveItemButton.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="QuantityLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -2819,19 +2813,25 @@
   <data name="&gt;&gt;RefundAmountLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="AddButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+  <data name="ProductLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="SelectProductForRefundGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>519, 114</value>
+  <data name="ProductNameColumn.Width" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="TotalAmountTextLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;ReceiptNumberCombo.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="RemoveItemButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 42</value>
   </data>
-  <data name="&gt;&gt;AvailableQuantityText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CutPercentageText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
   </data>
-  <data name="&gt;&gt;ViewReceiptButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;QuantityText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ReceiptNumberCombo.TabIndex" type="System.Int32, mscorlib">
@@ -2843,8 +2843,8 @@
   <data name="NotesLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="NotesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+  <data name="&gt;&gt;ProductLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="QuantityColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2864,13 +2864,16 @@
   <metadata name="CartDataGrid.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="TitleLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="AvailableQuantityText.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ResetReceiptButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ReturnedProductsGroupBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RefundAmountGroupBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2921,9 +2924,6 @@
   <metadata name="NetPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="AvailableQuantityText.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="RefundCutLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2933,7 +2933,7 @@
   <metadata name="TotalAmountTextLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="CutPercentageText.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="TitleLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="RemoveItemButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2942,7 +2942,7 @@
   <metadata name="RefundAmountLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="RefundAmountGroupBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="CutPercentageText.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="AddButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

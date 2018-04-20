@@ -118,32 +118,202 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CashAmountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="CashAmountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 48</value>
+  </data>
+  <data name="CurrentDueTextBig.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="CurrentDueTextBig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 18</value>
+  </data>
   <data name="CurrentDueTextBig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 30</value>
+    <value>150, 30</value>
   </data>
   <data name="CurrentDueTextBig.Text" xml:space="preserve">
-    <value>বর্তমান টাকার পরিমান </value>
+    <value>বর্তমান ব্যালেন্স</value>
+  </data>
+  <data name="AddAmountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="AddAmountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 21</value>
+    <value>81, 21</value>
   </data>
   <data name="AddAmountLabel.Text" xml:space="preserve">
-    <value>টাকা জমা  :</value>
+    <value>যুক্ত টাকা :</value>
+  </data>
+  <data name="LessAmount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="LessAmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 21</value>
+    <value>126, 21</value>
   </data>
   <data name="LessAmount.Text" xml:space="preserve">
-    <value>টাকা বিয়োগ :</value>
+    <value>অপসারিত টাকা :</value>
+  </data>
+  <data name="NotesText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="RemoveAmountText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="NotesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="NotesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 21</value>
+    <value>50, 21</value>
   </data>
   <data name="NotesLabel.Text" xml:space="preserve">
-    <value>বি:দ্র</value>
+    <value>বিঃদ্রঃ</value>
+  </data>
+  <data name="AddAmountText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SaveButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
-    <value>রক্ষা করুন </value>
+    <value>সেভ</value>
+  </data>
+  <data name="InputGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 103</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CurrentStockAsset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CurrentStockAsset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="CurrentStockAsset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>407, 18</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CurrentStockAsset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CurrentStockAsset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 30</value>
+  </data>
+  <data name="CurrentStockAsset.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="CurrentStockAsset.Text" xml:space="preserve">
+    <value>বর্তমান মজুত সম্পদ</value>
+  </data>
+  <data name="CurrentStockAssetAmount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CurrentStockAssetAmount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="CurrentStockAssetAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 48</value>
+  </data>
+  <data name="CurrentStockAssetAmount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CurrentStockAssetAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 39</value>
+  </data>
+  <data name="CurrentStockAssetAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="CurrentStockAssetAmount.Text" xml:space="preserve">
+    <value>&lt;Amount&gt;</value>
+  </data>
+  <data name="TotalReceivablesAmount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TotalReceivablesAmount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="TotalReceivablesAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 149</value>
+  </data>
+  <data name="TotalReceivablesAmount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TotalReceivablesAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 39</value>
+  </data>
+  <data name="TotalReceivablesAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="TotalReceivablesAmount.Text" xml:space="preserve">
+    <value>&lt;Amount&gt;</value>
+  </data>
+  <data name="TotalReceivables.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TotalReceivables.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="TotalReceivables.Location" type="System.Drawing.Point, System.Drawing">
+    <value>407, 119</value>
+  </data>
+  <data name="TotalReceivables.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TotalReceivables.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 30</value>
+  </data>
+  <data name="TotalReceivables.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="TotalReceivables.Text" xml:space="preserve">
+    <value>মোট পাওনা </value>
+  </data>
+  <data name="TotalPayablesAmount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TotalPayablesAmount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="TotalPayablesAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 252</value>
+  </data>
+  <data name="TotalPayablesAmount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TotalPayablesAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 39</value>
+  </data>
+  <data name="TotalPayablesAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="TotalPayablesAmount.Text" xml:space="preserve">
+    <value>&lt;Amount&gt;</value>
+  </data>
+  <data name="TotalPayables.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TotalPayables.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="TotalPayables.Location" type="System.Drawing.Point, System.Drawing">
+    <value>407, 222</value>
+  </data>
+  <data name="TotalPayables.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TotalPayables.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 30</value>
+  </data>
+  <data name="TotalPayables.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="TotalPayables.Text" xml:space="preserve">
+    <value>মোট দেনা</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>689, 337</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1871,6 +2041,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>যমাকৃত টাকা</value>
+    <value>ক্যাশ</value>
   </data>
 </root>

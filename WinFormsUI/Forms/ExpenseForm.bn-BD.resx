@@ -142,11 +142,17 @@
   <data name="UnitPriceLabel.Text" xml:space="preserve">
     <value>মূল্য  :</value>
   </data>
+  <data name="QuantityLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="QuantityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 60</value>
+  </data>
   <data name="QuantityLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 21</value>
+    <value>52, 15</value>
   </data>
   <data name="QuantityLabel.Text" xml:space="preserve">
-    <value>পরিমান :</value>
+    <value>পরিমান:</value>
   </data>
   <data name="AddToListButton.Text" xml:space="preserve">
     <value>যোগ করুন</value>
@@ -1871,6 +1877,10 @@
         anJyaf5j+C9Va/3aFWdXrfzE5fXreq9tMdSqq2Z3q35z+/aGHaoBAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAgHlJ6V9ubIf2mx0tpQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>খরচ</value>
