@@ -42,6 +42,7 @@ namespace ShopLibrary.DataAccess {
         private IMongoCollection<Transaction> TransactionCollection => _db.GetCollection<Transaction>("Transaction");
         private IMongoCollection<User> UserCollection => _db.GetCollection<User>("User");
         private IMongoCollection<Cash> CashCollection => _db.GetCollection<Cash>("Cash");
+        private IMongoCollection<BulkPayment> BulkpaymentCollection => _db.GetCollection<BulkPayment>("BulkPayment");
 
         #endregion
         public bool InitiateDatabase() {
@@ -1154,6 +1155,30 @@ namespace ShopLibrary.DataAccess {
                 return false;
             }
             return true;
+        }
+        #endregion
+
+        #region BulkPayment
+        public bool Payall(BulkPayment model)
+        {
+            try
+            {
+                // EmployeeCollection.UpdateMany(new BsonDocument(), new BsonDocument("$set", new BsonDocument("currentBalance", "$currentBalance" + "$monthlySalary")));
+                var employees = GetEmployeeAll();
+                foreach(var employee in employees)
+                {
+                    employee.Balance = employee.Balance + employee.MonthlySalary;
+                    UpdateEmployee(employee);
+                    
+                }
+                BulkpaymentCollection.InsertOne(model);
+
+            } catch(Exception e)
+            {
+                throw e;
+            }
+            return true;
+
         }
         #endregion
 

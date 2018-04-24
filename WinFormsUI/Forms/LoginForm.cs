@@ -33,6 +33,7 @@ namespace WinFormsUI.Forms {
         //Creates the List of Users
         public LoginForm() {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(ConfigurationManager.AppSettings["Language"]);
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ConfigurationManager.AppSettings["Language"]);
             Users = Connection[0].GetUserAll();
             InitializeComponent();
             WireUpLists();

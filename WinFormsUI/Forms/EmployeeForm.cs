@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 
 namespace WinFormsUI.Forms {
     public partial class EmployeeForm : Form {
@@ -175,6 +178,14 @@ namespace WinFormsUI.Forms {
         private void ReloadEmployees_Click(object sender, EventArgs e) {
             Employees = Connection[0].GetEmployeeAll();
             WireUp();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BulkPayment pay = new BulkPayment();
+            pay.userId = CurrentUser.UserId;
+            pay.userName = CurrentUser.UserName;
+            Connection[0].Payall(pay);
         }
     }
 }

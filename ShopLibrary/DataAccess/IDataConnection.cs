@@ -168,5 +168,6 @@ namespace ShopLibrary.DataAccess {
         #endregion
 
         Cash GetCurrentCash();
+        bool Payall(BulkPayment pay);
     }
 }

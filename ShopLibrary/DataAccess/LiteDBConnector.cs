@@ -490,5 +490,10 @@ namespace ShopLibrary.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public bool Payall(BulkPayment model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
