@@ -4,9 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class ShoppingCart {
-        public ShoppingCart() {
-            ProductId = ObjectId.Empty;
-        }
+        public ShoppingCart() => ProductId = ObjectId.Empty;
 
         #region Fields
         [BsonElement("productName")]

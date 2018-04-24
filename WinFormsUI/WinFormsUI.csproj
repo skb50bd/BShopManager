@@ -381,7 +381,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\SaleMemorandumTemp.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Microsoft.CSharp;
 using ShopLibrary.Models;
 using ShopLibrary.Output;
 using static ShopLibrary.GlobalConfig;
@@ -1725,9 +1726,15 @@ namespace WinFormsUI.Forms {
                         Customer _customer = new Customer();
                         if (Customers.Exists(c => c.ObjectId == sale.CustomerId))
                             _customer = Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId);
-                        PrintSaleMemo.ToPdf(sale,
-                            Shops.SingleOrDefault(s => s.ObjectId == sale.ShopId),
-                            _customer);
+                        Memo memo = Connection[0].GetMemo(sale.ObjectId);
+
+                        if (memo == null) {
+                            memo = new Memo(sale, _customer, Shops.First(s => s.ObjectId == sale.ShopId));
+                            memo.PreviousDue = null;
+                            memo.Note += "\n The original memo didn't have any previous due field in database."
+                                       + "That record was temporary";
+                        }
+                        PrintSaleMemo.ToPdf(memo);
                     }
                     Process.Start(outfilename);
                     break;

@@ -8,11 +8,9 @@ using static ShopLibrary.Models.UserRole;
 namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class User : Person {
-        public User() {
-        }
+        public User () { }
 
-        public User(
-            string fullName,
+        public User (string fullName,
             string nickName,
             string address,
             string phone,
@@ -27,13 +25,13 @@ namespace ShopLibrary.Models {
             EmailAddress = email;
             UserName = userName;
             AccessLevel = accessLevel;
-            Salt = AES.GetSalt();
-            Password = AES.Encrypt(password, Salt);
+            Salt = AES.GetSalt ();
+            Password = AES.Encrypt (password, Salt);
             IsActive = true;
-            Meta = new Metadata(DateTime.Now, CurrentUser.UserName);
+            Meta = new Metadata (DateTime.Now, CurrentUser.UserName);
         }
 
-        public User(string code) {
+        public User (string code) {
             if (code != "brotality")
                 return;
             FullName = "Brotal Dev";
@@ -46,29 +44,41 @@ namespace ShopLibrary.Models {
             Salt = "8G+aJemZStCQeyuDEWvpe40NtB3eRqPrW76UwBqDP9Y=";
             Password = "yQB05JkQHMnDBCAISGel0Q==";
             IsActive = true;
-            Meta = new Metadata(DateTime.Now, "self");
+            Meta = new Metadata (DateTime.Now, "self");
         }
 
         #region Fields
-        [BsonId]
+        public User (ObjectId objectId, string userName, UserRole accessLevel, string salt, string password) {
+            this.ObjectId = objectId;
+            this.UserName = userName;
+            this.AccessLevel = accessLevel;
+            this.Salt = salt;
+            this.Password = password;
+
+        }
+
         public ObjectId ObjectId { get; set; }
-        [BsonElement("userName")]
+
+        [BsonElement ("userName")]
         public string UserName { get; set; }
-        [BsonElement("accessLevel")]
+
+        [BsonElement ("accessLevel")]
         public UserRole AccessLevel { get; set; }
-        [BsonElement("salt")]
+
+        [BsonElement ("salt")]
         private string Salt { get; set; }
-        [BsonElement("password")]
+
+        [BsonElement ("password")]
         private string Password { get; set; }
         #endregion
 
-        public bool IsRealUser(string userName, string password) => userName == UserName 
-                                                                    && AES.Encrypt(password, this.Salt) == this.Password;
+        public bool IsRealUser (string userName, string password) => userName == UserName &&
+            AES.Encrypt (password, this.Salt) == this.Password;
 
         #region Getter
-        public string Created => Meta.Created.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+        public string Created => Meta.Created.ToLocalTime ().ToString ("dd/MM/yyyy hh:mm tt");
         public string Creator => Meta.Creator;
-        public string Modified => Meta.Modified.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+        public string Modified => Meta.Modified.ToLocalTime ().ToString ("dd/MM/yyyy hh:mm tt");
         public string Modifier => Meta.Modifier;
         public string UserId => "U" + ObjectId.Increment;
         #endregion

@@ -72,9 +72,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\BackUpDatabase.cs" />
     <Compile Include="DataAccess\IDataConnection.cs" />
-    <Compile Include="DataAccess\LiteDBConnector.cs" />
     <Compile Include="DataAccess\MongoConnector.cs" />
-    <Compile Include="DataAccess\SqlConnector.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Interfaces\IBankAccountReport.cs" />
     <Compile Include="Interfaces\ICashFlow.cs" />
@@ -105,6 +103,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Expense.cs" />
+    <Compile Include="Models\Memo.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Person.cs" />

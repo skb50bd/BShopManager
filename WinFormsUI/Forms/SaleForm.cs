@@ -209,7 +209,8 @@ namespace WinFormsUI.Forms {
 
                 try {
                     _sale = Connection[0].InsertSale(_sale);
-                    PrintSaleMemo.ToPdf(_sale, Shops[ShopSelectorCombo.SelectedIndex], _customer);
+                    Memo memo = new Memo (_sale, _customer, Shops[ShopSelectorCombo.SelectedIndex]);
+                    PrintSaleMemo.ToPdf(memo);
                     ReloadButton_Click(sender, e);
                     SaleForm_Load(sender, e);
                 }

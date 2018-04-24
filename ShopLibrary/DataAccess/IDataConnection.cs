@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using MongoDB.Bson;
+using MongoDB.Driver.Core.Events;
 using ShopLibrary.Models;
 
 namespace ShopLibrary.DataAccess {
@@ -165,6 +167,14 @@ namespace ShopLibrary.DataAccess {
         List<CashModification> GetCashModificationAll();
         bool DeleteCashModification(CashModification model);
 
+        #endregion
+
+        #region Memo
+        List<Memo> GetAllMemo ();
+        List<Memo> GetAllMemo (DateTime start, DateTime end, Shop shop = null);
+        Memo GetMemo (ObjectId id);
+        void SaveMemo (Memo model);
+        void DeleteMemo (Memo model);
         #endregion
 
         Cash GetCurrentCash();

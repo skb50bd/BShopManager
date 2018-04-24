@@ -6,9 +6,7 @@ using static ShopLibrary.GlobalConfig;
 namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class Metadata {
-        public Metadata() {
-            Create();
-        }
+        public Metadata() => Create();
 
         public Metadata(
             DateTime created,
