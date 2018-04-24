@@ -10,56 +10,54 @@ using MongoDB.Bson;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 
-namespace ShopLibrary.Output
-{
-    public static class PrintSaleMemo
-    {
-        public static void ToPdf(Sale sale, Shop shop, Customer customer)
-        {
+namespace ShopLibrary.Output {
+    public static class PrintSaleMemo {
+        public static void ToPdf (Memo memo) {
             string infilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                                + @"\Brotal\SaleMemorandumTemp.pdf";
-            if (!File.Exists(infilename))
-            {
-                Debug.WriteLine("The template sale memo is missing from the application directory\n" +
-                                "Cannot print the sale memo");
+                              + @"\Brotal\SaleMemorandumTemp.pdf";
+
+            if (!File.Exists(infilename)) {
+                Debug.WriteLine("The template sale memo is missing from the application directory\n"
+                              + "Cannot print the sale memo");
+
                 return;
             }
-            string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                             + @"\Brotal\" + sale.SaleId + ".pdf";
 
-            using (FileStream outFile = new FileStream(outfilename, FileMode.Create))
-            {
-                PdfReader reader = new PdfReader(infilename);
+            string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                               + @"\Brotal\"
+                               + memo.SaleId
+                               + ".pdf";
+
+            using ( FileStream outFile = new FileStream(outfilename, FileMode.Create) ) {
+                PdfReader  reader  = new PdfReader(infilename);
                 PdfStamper stamper = new PdfStamper(reader, outFile);
-                AcroFields form = stamper.AcroFields;
+                AcroFields form    = stamper.AcroFields;
 
 
                 // STAMPING
-                form.SetField("ShopName", shop.ShopName);
-                form.SetField("ShopAddress", shop.Address);
-                form.SetField("ShopContacts",
-                    string.Join(", ", shop.ContactNumbers) + " - " + string.Join(", ", shop.EmailAddresses));
-                form.SetField("Date", sale.DealTime.ToLocalTime().ToString("dd MMM yyyy"));
-                form.SetField("Memo", sale.SaleId);
+                form.SetField("ShopName", memo.ShopName);
+                form.SetField("ShopAddress", memo.Address);
+                form.SetField("ShopContacts", memo.ShopContacts);
+                form.SetField("Date", memo.DealTime.ToLocalTime().ToString("dd MMM yyyy"));
+                form.SetField("Memo", memo.SaleId);
 
-                if (sale.CustomerId != ObjectId.Empty)
-                {
-                    form.SetField("Customer Id", sale.GetCustomerId);
-                    form.SetField("Customer Phone", Customers.Single(c => c.ObjectId == sale.CustomerId).Phone);
+                if (memo.CustomerId != ObjectId.Empty) {
+                    form.SetField("Customer Id", memo.GetCustomerId);
+                    form.SetField("Customer Phone", Customers.Single(c => c.ObjectId == memo.CustomerId).Phone);
                 }
-                else
-                {
+                else {
                     form.SetField("Customer Id", "N/A");
                     form.SetField("Customer Phone", "N/A");
                 }
-                form.SetField("Customer Name", sale.CustomerName);
-                form.SetField("Customer Company", sale.CustomerCompany);
-                form.SetField("Customer Address", sale.CustomerAddress);
+
+                form.SetField("Customer Name", memo.CustomerName);
+                form.SetField("Customer Company", memo.CustomerCompany);
+                form.SetField("Customer Address", memo.CustomerAddress);
 
                 // FILL UP THE TABLE
                 int i = 1;
-                foreach (ShoppingCart sc in sale.Cart)
-                {
+
+                foreach (ShoppingCart sc in memo.Cart) {
                     form.SetField("Row" + i, i.ToString("00"));
                     form.SetField("DescriptionRow" + i, sc.GetProductId + " - " + sc.ProductName);
                     form.SetField("Unit PriceRow" + i, sc.GetUnitPrice + "/" + sc.GetUnitName);
@@ -68,12 +66,12 @@ namespace ShopLibrary.Output
                     i++;
                 }
 
-                form.SetField("TotalPrice", sale.GetTotalAmount);
-                form.SetField("Discount", sale.GetLess + $"({sale.GetDiscount}%)");
-                form.SetField("PreviousDue", customer.GetDebt);
-                form.SetField("TotalPayable", (customer.Debt + sale.Payable).ToString("0.##"));
-                form.SetField("Paid", sale.GetPaid);
-                form.SetField("CurrentDue", (customer.Debt + sale.Payable - sale.Paid).ToString("0.##"));
+                form.SetField("TotalPrice", memo.GetTotalAmount);
+                form.SetField("Discount", memo.GetLess + $"({memo.GetDiscount}%)");
+                form.SetField("PreviousDue", memo.PreviousDue?.ToString("C"));
+                form.SetField("TotalPayable", (memo.TotalPayable).ToString("C"));
+                form.SetField("Paid", memo.GetPaid);
+                form.SetField("CurrentDue", (memo.CurrentDue).ToString("C"));
                 form.SetField("Quotation", "Thanks for shopping with us");
 
                 stamper.Close();

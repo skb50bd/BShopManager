@@ -6,9 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class Product {
-        public Product() {
-            ObjectId = ObjectId.Empty;
-        }
+        public Product() => ObjectId = ObjectId.Empty;
 
         #region Fields
         [BsonId]
