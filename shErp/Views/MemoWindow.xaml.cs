@@ -563,7 +563,7 @@ namespace WpfUI.Views {
 
             try {
                 _sale = Connection[0].InsertSale(_sale);
-                PrintSaleMemo.ToPdf(_sale, Shops[ShopCombo.SelectedIndex], _customer);
+                //PrintSaleMemo.ToPdf(_sale, Shops[ShopCombo.SelectedIndex], _customer);
 
                 RefreshAll();
             }
