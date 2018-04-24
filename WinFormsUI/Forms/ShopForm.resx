@@ -117,10 +117,564 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="buttonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="DetailsText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 277</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EditSaveButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SelectShopLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="EmailAddressesLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DetailsText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ShopSelectorCombo.Name" xml:space="preserve">
+    <value>ShopSelectorCombo</value>
+  </data>
+  <data name="DeleteCancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 42</value>
+  </data>
+  <data name="&gt;&gt;ShopSelectorCombo.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;ShopNameLabel.Name" xml:space="preserve">
+    <value>ShopNameLabel</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TaglineLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="EmailAddressesText.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;AddNewShopButton.Name" xml:space="preserve">
+    <value>AddNewShopButton</value>
+  </data>
+  <data name="&gt;&gt;TaglineLabel.Name" xml:space="preserve">
+    <value>TaglineLabel</value>
+  </data>
+  <data name="AddressLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 21</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="EditSaveButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;AddNewShopButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="DetailsText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 67</value>
+  </data>
+  <data name="DeleteCancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="EmailAddressesText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="PropietorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DetailsLabel.Name" xml:space="preserve">
+    <value>DetailsLabel</value>
+  </data>
+  <data name="&gt;&gt;DetailsText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectShopLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;AddressText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ShopNameText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PropietorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="EditSaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="PhoneNumbersText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 354</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="AddNewShopButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="SelectShopLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TaglineLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Name" xml:space="preserve">
+    <value>SelectShopLabel</value>
+  </data>
+  <data name="ShopNameText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 22</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ShopNameLabel.Text" xml:space="preserve">
+    <value>Shop Name :</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Shops</value>
+  </data>
+  <data name="PhoneNumbersText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 67</value>
+  </data>
+  <data name="PhoneNumbersLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 21</value>
+  </data>
+  <data name="ShopSelectorCombo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ShopSelectorCombo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AddNewShopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="PhoneNumbersText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;PhoneNumbersText.Name" xml:space="preserve">
+    <value>PhoneNumbersText</value>
+  </data>
+  <data name="DetailsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;ShopNameText.Name" xml:space="preserve">
+    <value>ShopNameText</value>
+  </data>
+  <data name="DetailsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 277</value>
+  </data>
+  <data name="&gt;&gt;PhoneNumbersLabel.Name" xml:space="preserve">
+    <value>PhoneNumbersLabel</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="DeleteCancelButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TaglineLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 21</value>
+  </data>
+  <data name="EmailAddressesText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 67</value>
+  </data>
+  <data name="PropietorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 168</value>
+  </data>
+  <data name="&gt;&gt;TaglineLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="DetailsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="AddressText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 200</value>
+  </data>
+  <data name="EditSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 509</value>
+  </data>
+  <data name="TaglineText.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="AddressLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DeleteCancelButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="DetailsLabel.Text" xml:space="preserve">
+    <value>Details :</value>
+  </data>
+  <data name="PropietorLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PropietorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 21</value>
+  </data>
+  <data name="PropietorLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;TaglineText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="EditSaveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PropietorNameText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="EmailAddressesText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="EmailAddressesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;DetailsText.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SelectShopLabel.Text" xml:space="preserve">
+    <value>Select Shop :</value>
+  </data>
+  <data name="AddNewShopButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;EditSaveButton.Name" xml:space="preserve">
+    <value>EditSaveButton</value>
+  </data>
+  <data name="AddressLabel.Text" xml:space="preserve">
+    <value>Address :</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TaglineLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 136</value>
+  </data>
+  <data name="PhoneNumbersLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;PropietorLabel.Name" xml:space="preserve">
+    <value>PropietorLabel</value>
+  </data>
+  <data name="PropietorNameText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 168</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;DeleteCancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="PhoneNumbersLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddNewShopButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EmailAddressesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="PropietorNameText.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="DeleteCancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 509</value>
+  </data>
+  <data name="&gt;&gt;EditSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddressText.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="EmailAddressesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;EditSaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="AddressLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 200</value>
+  </data>
+  <data name="&gt;&gt;TaglineText.Name" xml:space="preserve">
+    <value>TaglineText</value>
+  </data>
+  <data name="&gt;&gt;PropietorNameText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ShopForm</value>
+  </data>
+  <data name="PhoneNumbersLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 354</value>
+  </data>
+  <data name="&gt;&gt;buttonToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PhoneNumbersText.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;DetailsText.Name" xml:space="preserve">
+    <value>DetailsText</value>
+  </data>
+  <data name="&gt;&gt;AddNewShopButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="AddressLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="DetailsText.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="TaglineLabel.Text" xml:space="preserve">
+    <value>Tagline :</value>
+  </data>
+  <data name="&gt;&gt;DeleteCancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddressText.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="EmailAddressesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
+  </data>
+  <data name="TaglineText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 22</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="PhoneNumbersLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;DetailsLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ShopNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 21</value>
+  </data>
+  <data name="DeleteCancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="DetailsText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="AddressText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ShopNameLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="EmailAddressesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="TitleLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhoneNumbersText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;PhoneNumbersText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="AddressLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
+  </data>
+  <data name="TaglineLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteCancelButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ShopNameText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 107</value>
+  </data>
+  <data name="&gt;&gt;ShopNameText.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="DetailsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="DeleteCancelButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;PhoneNumbersLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="AddressLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="PhoneNumbersText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Shop Information</value>
+  </data>
+  <data name="ShopNameText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;ShopSelectorCombo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AddressText.Name" xml:space="preserve">
+    <value>AddressText</value>
+  </data>
+  <data name="PhoneNumbersLabel.Text" xml:space="preserve">
+    <value>Phone Numbers :</value>
+  </data>
+  <data name="EmailAddressesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 430</value>
+  </data>
+  <data name="EmailAddressesText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DetailsText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DetailsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 21</value>
+  </data>
+  <data name="&gt;&gt;AddressLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PhoneNumbersText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PhoneNumbersLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TaglineText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="EditSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 42</value>
+  </data>
+  <data name="&gt;&gt;TaglineLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectShopLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 71</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 8</value>
+  </data>
+  <data name="ShopSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 29</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 39</value>
+  </data>
+  <data name="PhoneNumbersLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesLabel.Name" xml:space="preserve">
+    <value>EmailAddressesLabel</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesText.Name" xml:space="preserve">
+    <value>EmailAddressesText</value>
+  </data>
+  <data name="AddressText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ShopNameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AddressText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TaglineLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;DetailsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ShopNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EmailAddressesText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="AddNewShopButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 35</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ShopNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;ShopSelectorCombo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonToolTip.Name" xml:space="preserve">
+    <value>buttonToolTip</value>
+  </data>
+  <data name="PropietorNameText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 22</value>
+  </data>
+  <data name="SelectShopLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;DeleteCancelButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PropietorNameText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShopSelectorCombo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddNewShopButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="AddNewShopButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;AddNewShopButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteCancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="TaglineText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DetailsText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShopNameText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAACAgAAABACAAqBAAAM4EAAAwMAAAAQAgAKglAAB2FQAAQEAAAAEA
@@ -1864,4 +2418,193 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4LhE/h8EjvYE9GFlxgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="TaglineText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 136</value>
+  </data>
+  <data name="PropietorLabel.Text" xml:space="preserve">
+    <value>Propietor :</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PropietorNameText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddNewShopButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 64</value>
+  </data>
+  <data name="PhoneNumbersLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;PropietorNameText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TaglineLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="DetailsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhoneNumbersText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;PropietorLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ShopNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ShopSelectorCombo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;DeleteCancelButton.Name" xml:space="preserve">
+    <value>DeleteCancelButton</value>
+  </data>
+  <data name="AddressText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 67</value>
+  </data>
+  <data name="&gt;&gt;PhoneNumbersLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PhoneNumbersText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ShopNameLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;AddressLabel.Name" xml:space="preserve">
+    <value>AddressLabel</value>
+  </data>
+  <data name="&gt;&gt;ShopNameText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectShopLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditSaveButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;TaglineText.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="DetailsLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSaveButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;DetailsText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>561, 568</value>
+  </data>
+  <data name="PropietorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="EmailAddressesText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 430</value>
+  </data>
+  <data name="EditSaveButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="EditSaveButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="EditSaveButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;PropietorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaglineText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddressText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="EmailAddressesText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteCancelButton.Text" xml:space="preserve">
+    <value>Delete This Shop</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;PropietorLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TaglineText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="AddNewShopButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;TaglineLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;AddressText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PropietorNameText.Name" xml:space="preserve">
+    <value>PropietorNameText</value>
+  </data>
+  <data name="ShopNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ShopNameText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectShopLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="PropietorNameText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="AddNewShopButton.ToolTip" xml:space="preserve">
+    <value>Add a new shop</value>
+  </data>
+  <data name="EmailAddressesLabel.Text" xml:space="preserve">
+    <value>Email Addresses : </value>
+  </data>
+  <data name="&gt;&gt;DetailsLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ShopNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 107</value>
+  </data>
+  <data name="AddressLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ShopNameText.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ShopSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 68</value>
+  </data>
+  <data name="&gt;&gt;ShopNameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>bn-BD</value>
+  </metadata>
+  <metadata name="buttonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

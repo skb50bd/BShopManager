@@ -35,9 +35,10 @@ namespace WinFormsUI
             }
             catch (Exception e)
             {
-                MessageBox.Show(ResourceManager.GetString("ErrorConnectingToDatabaseServer", Culture) +
-                                e.Message, 
-                                ResourceManager.GetString("Error", Culture));
+                //MessageBox.Show(ResourceManager.GetString("ErrorConnectingToDatabaseServer", Culture) +
+                //e.Message, 
+                //ResourceManager.GetString("Error", Culture));
+                MessageBox.Show("Couldn't Connect to Server");
             }
             finally
             {

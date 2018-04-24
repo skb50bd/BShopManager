@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MongoDB.Bson;
@@ -27,12 +29,18 @@ namespace WinFormsUI {
             }
         }
         #endregion
+        ResourceManager rm = new ResourceManager(typeof(UserInformationForm));
         private User user;
         private bool passwordChanged = false;
 
         public UserInformationForm() {
             InitializeComponent();
-            TitleLabel.Text = "Add new user";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                TitleLabel.Text = rm.GetString("NewUser");
+            }
+            else
+                TitleLabel.Text = "Add new user";
             user = new User();
             ResetFields();
             DialogResult = DialogResult.Cancel;
@@ -54,7 +62,12 @@ namespace WinFormsUI {
             PasswordText.Text = "**********";
             ConfirmPasswordText.Text = "**********";
 
-            AddSaveButton.Text = "Update";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                AddSaveButton.Text = rm.GetString("Update");
+            }
+            else
+                AddSaveButton.Text = "Update";
             DialogResult = DialogResult.Cancel;
         }
 
@@ -79,7 +92,12 @@ namespace WinFormsUI {
             EmailAddressText.Text = "";
             PasswordText.Text = "";
             ConfirmPasswordText.Text = "";
-            AddSaveButton.Text = "Add User";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                AddSaveButton.Text = rm.GetString("AddSaveButton.Text");
+            }
+            else
+                AddSaveButton.Text = "Add User";
         }
 
         private bool ValidateAddUserForm() {
@@ -124,7 +142,7 @@ namespace WinFormsUI {
                         (UserRole)(AccessLevelCombo.SelectedIndex + 2),
                         PasswordText.Text);
                     user.ObjectId = objId;
-                    if (AddSaveButton.Text == "Add User") {
+                    if (AddSaveButton.Text == "Add User" || AddSaveButton.Text == rm.GetString("AddSaveButton.Text")) {
                         Connection[0].InsertUser(user);
                         MessageBox.Show("User Added");
                         DialogResult = DialogResult.OK;

@@ -24,11 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierForm));
             this.SupplierHistoryDataGrid = new System.Windows.Forms.DataGridView();
             this.TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecordIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +64,7 @@
             // 
             // SupplierHistoryDataGrid
             // 
+            resources.ApplyResources(this.SupplierHistoryDataGrid, "SupplierHistoryDataGrid");
             this.SupplierHistoryDataGrid.AllowUserToAddRows = false;
             this.SupplierHistoryDataGrid.AllowUserToDeleteRows = false;
             this.SupplierHistoryDataGrid.AllowUserToOrderColumns = true;
@@ -75,7 +76,7 @@
             this.SupplierHistoryDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -91,72 +92,64 @@
             this.RecordCreatorColumn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.SupplierHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.SupplierHistoryDataGrid.GridColor = System.Drawing.Color.White;
-            this.SupplierHistoryDataGrid.Location = new System.Drawing.Point(688, 93);
-            this.SupplierHistoryDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.SupplierHistoryDataGrid.Name = "SupplierHistoryDataGrid";
             this.SupplierHistoryDataGrid.ReadOnly = true;
             this.SupplierHistoryDataGrid.RowHeadersVisible = false;
             this.SupplierHistoryDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SupplierHistoryDataGrid.Size = new System.Drawing.Size(449, 504);
-            this.SupplierHistoryDataGrid.TabIndex = 9;
+            this.ButtonToolTip.SetToolTip(this.SupplierHistoryDataGrid, resources.GetString("SupplierHistoryDataGrid.ToolTip"));
             // 
             // TypeColumn
             // 
             this.TypeColumn.DataPropertyName = "Type";
-            this.TypeColumn.HeaderText = "Type";
+            resources.ApplyResources(this.TypeColumn, "TypeColumn");
             this.TypeColumn.Name = "TypeColumn";
             this.TypeColumn.ReadOnly = true;
-            this.TypeColumn.Width = 67;
             // 
             // RecordIdColumn
             // 
             this.RecordIdColumn.DataPropertyName = "Id";
-            this.RecordIdColumn.HeaderText = "Id";
+            resources.ApplyResources(this.RecordIdColumn, "RecordIdColumn");
             this.RecordIdColumn.Name = "RecordIdColumn";
             this.RecordIdColumn.ReadOnly = true;
-            this.RecordIdColumn.Width = 48;
             // 
             // RecordAmountColumn
             // 
             this.RecordAmountColumn.DataPropertyName = "Amount";
-            this.RecordAmountColumn.HeaderText = "Amount";
+            resources.ApplyResources(this.RecordAmountColumn, "RecordAmountColumn");
             this.RecordAmountColumn.Name = "RecordAmountColumn";
             this.RecordAmountColumn.ReadOnly = true;
-            this.RecordAmountColumn.Width = 91;
             // 
             // DueColumn
             // 
             this.DueColumn.DataPropertyName = "Due";
-            this.DueColumn.HeaderText = "Due";
+            resources.ApplyResources(this.DueColumn, "DueColumn");
             this.DueColumn.Name = "DueColumn";
             this.DueColumn.ReadOnly = true;
-            this.DueColumn.Width = 63;
             // 
             // RecordCreatedColumn
             // 
             this.RecordCreatedColumn.DataPropertyName = "Created";
-            this.RecordCreatedColumn.HeaderText = "Added on";
+            resources.ApplyResources(this.RecordCreatedColumn, "RecordCreatedColumn");
             this.RecordCreatedColumn.Name = "RecordCreatedColumn";
             this.RecordCreatedColumn.ReadOnly = true;
-            this.RecordCreatedColumn.Width = 102;
             // 
             // RecordCreatorColumn
             // 
             this.RecordCreatorColumn.DataPropertyName = "Creator";
-            this.RecordCreatorColumn.HeaderText = "Added by";
+            resources.ApplyResources(this.RecordCreatorColumn, "RecordCreatorColumn");
             this.RecordCreatorColumn.Name = "RecordCreatorColumn";
             this.RecordCreatorColumn.ReadOnly = true;
-            this.RecordCreatorColumn.Width = 101;
             // 
             // SuppliersDataGrid
             // 
+            resources.ApplyResources(this.SuppliersDataGrid, "SuppliersDataGrid");
             this.SuppliersDataGrid.AllowUserToAddRows = false;
             this.SuppliersDataGrid.AllowUserToDeleteRows = false;
             this.SuppliersDataGrid.AllowUserToOrderColumns = true;
@@ -168,7 +161,7 @@
             this.SuppliersDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -186,278 +179,202 @@
             this.ModifierColumn});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.SuppliersDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.SuppliersDataGrid.GridColor = System.Drawing.Color.White;
-            this.SuppliersDataGrid.Location = new System.Drawing.Point(12, 93);
-            this.SuppliersDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.SuppliersDataGrid.Name = "SuppliersDataGrid";
             this.SuppliersDataGrid.ReadOnly = true;
             this.SuppliersDataGrid.RowHeadersVisible = false;
             this.SuppliersDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SuppliersDataGrid.Size = new System.Drawing.Size(668, 456);
-            this.SuppliersDataGrid.TabIndex = 2;
+            this.ButtonToolTip.SetToolTip(this.SuppliersDataGrid, resources.GetString("SuppliersDataGrid.ToolTip"));
             this.SuppliersDataGrid.SelectionChanged += new System.EventHandler(this.SuppliersDataGrid_SelectionChanged);
             // 
             // SupplierIdColumn
             // 
             this.SupplierIdColumn.DataPropertyName = "SupplierId";
-            this.SupplierIdColumn.HeaderText = "Id";
+            resources.ApplyResources(this.SupplierIdColumn, "SupplierIdColumn");
             this.SupplierIdColumn.Name = "SupplierIdColumn";
             this.SupplierIdColumn.ReadOnly = true;
-            this.SupplierIdColumn.Width = 48;
             // 
             // FullNameColumn
             // 
             this.FullNameColumn.DataPropertyName = "FullName";
-            this.FullNameColumn.HeaderText = "Name";
+            resources.ApplyResources(this.FullNameColumn, "FullNameColumn");
             this.FullNameColumn.Name = "FullNameColumn";
             this.FullNameColumn.ReadOnly = true;
-            this.FullNameColumn.Width = 77;
             // 
             // PayableColumn
             // 
             this.PayableColumn.DataPropertyName = "GetPayable";
-            this.PayableColumn.HeaderText = "Payable";
+            resources.ApplyResources(this.PayableColumn, "PayableColumn");
             this.PayableColumn.Name = "PayableColumn";
             this.PayableColumn.ReadOnly = true;
-            this.PayableColumn.Width = 88;
             // 
             // CompanyNameColumn
             // 
             this.CompanyNameColumn.DataPropertyName = "CompanyName";
-            this.CompanyNameColumn.HeaderText = "Company";
+            resources.ApplyResources(this.CompanyNameColumn, "CompanyNameColumn");
             this.CompanyNameColumn.Name = "CompanyNameColumn";
             this.CompanyNameColumn.ReadOnly = true;
-            this.CompanyNameColumn.Width = 102;
             // 
             // CreatedColumn
             // 
             this.CreatedColumn.DataPropertyName = "Created";
-            this.CreatedColumn.HeaderText = "Added on";
+            resources.ApplyResources(this.CreatedColumn, "CreatedColumn");
             this.CreatedColumn.Name = "CreatedColumn";
             this.CreatedColumn.ReadOnly = true;
-            this.CreatedColumn.Width = 102;
             // 
             // CreatorColumn
             // 
             this.CreatorColumn.DataPropertyName = "Creator";
-            this.CreatorColumn.HeaderText = "Added by";
+            resources.ApplyResources(this.CreatorColumn, "CreatorColumn");
             this.CreatorColumn.Name = "CreatorColumn";
             this.CreatorColumn.ReadOnly = true;
-            this.CreatorColumn.Width = 101;
             // 
             // ModifiedColumn
             // 
             this.ModifiedColumn.DataPropertyName = "Modified";
-            this.ModifiedColumn.HeaderText = "Last modified";
+            resources.ApplyResources(this.ModifiedColumn, "ModifiedColumn");
             this.ModifiedColumn.Name = "ModifiedColumn";
             this.ModifiedColumn.ReadOnly = true;
-            this.ModifiedColumn.Width = 129;
             // 
             // ModifierColumn
             // 
             this.ModifierColumn.DataPropertyName = "Modifier";
-            this.ModifierColumn.HeaderText = "Modified by";
+            resources.ApplyResources(this.ModifierColumn, "ModifierColumn");
             this.ModifierColumn.Name = "ModifierColumn";
             this.ModifierColumn.ReadOnly = true;
-            this.ModifierColumn.Width = 118;
             // 
             // HistoryLabel
             // 
-            this.HistoryLabel.AutoSize = true;
-            this.HistoryLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HistoryLabel.Location = new System.Drawing.Point(684, 68);
-            this.HistoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.HistoryLabel, "HistoryLabel");
             this.HistoryLabel.Name = "HistoryLabel";
-            this.HistoryLabel.Size = new System.Drawing.Size(60, 21);
-            this.HistoryLabel.TabIndex = 8;
-            this.HistoryLabel.Text = "History";
+            this.ButtonToolTip.SetToolTip(this.HistoryLabel, resources.GetString("HistoryLabel.ToolTip"));
             this.HistoryLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // DeleteRecordsButton
             // 
+            resources.ApplyResources(this.DeleteRecordsButton, "DeleteRecordsButton");
             this.DeleteRecordsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteRecordsButton.FlatAppearance.BorderSize = 0;
             this.DeleteRecordsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteRecordsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
-            this.DeleteRecordsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteRecordsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteRecordsButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteRecordsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteRecordsButton.Location = new System.Drawing.Point(688, 603);
-            this.DeleteRecordsButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.DeleteRecordsButton.Name = "DeleteRecordsButton";
-            this.DeleteRecordsButton.Size = new System.Drawing.Size(241, 42);
-            this.DeleteRecordsButton.TabIndex = 11;
-            this.DeleteRecordsButton.Text = "Delete Selected Record(s)";
-            this.DeleteRecordsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonToolTip.SetToolTip(this.DeleteRecordsButton, resources.GetString("DeleteRecordsButton.ToolTip"));
             this.DeleteRecordsButton.UseVisualStyleBackColor = false;
             this.DeleteRecordsButton.Click += new System.EventHandler(this.DeleteEntryButton_Click);
             // 
             // AddSupplierButton
             // 
+            resources.ApplyResources(this.AddSupplierButton, "AddSupplierButton");
             this.AddSupplierButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.AddSupplierButton.FlatAppearance.BorderSize = 0;
             this.AddSupplierButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(170)))));
             this.AddSupplierButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.AddSupplierButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddSupplierButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddSupplierButton.ForeColor = System.Drawing.Color.White;
-            this.AddSupplierButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddSupplierButton.Location = new System.Drawing.Point(355, 600);
-            this.AddSupplierButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.AddSupplierButton.Name = "AddSupplierButton";
-            this.AddSupplierButton.Size = new System.Drawing.Size(325, 42);
-            this.AddSupplierButton.TabIndex = 4;
-            this.AddSupplierButton.Text = "+ Add Supplier";
-            this.AddSupplierButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonToolTip.SetToolTip(this.AddSupplierButton, resources.GetString("AddSupplierButton.ToolTip"));
             this.AddSupplierButton.UseVisualStyleBackColor = false;
             this.AddSupplierButton.Click += new System.EventHandler(this.AddSupplierButton_Click);
             // 
             // DeleteSupplierButton
             // 
+            resources.ApplyResources(this.DeleteSupplierButton, "DeleteSupplierButton");
             this.DeleteSupplierButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteSupplierButton.FlatAppearance.BorderSize = 0;
             this.DeleteSupplierButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteSupplierButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
-            this.DeleteSupplierButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteSupplierButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteSupplierButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteSupplierButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteSupplierButton.Location = new System.Drawing.Point(12, 554);
-            this.DeleteSupplierButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.DeleteSupplierButton.Name = "DeleteSupplierButton";
-            this.DeleteSupplierButton.Size = new System.Drawing.Size(336, 42);
-            this.DeleteSupplierButton.TabIndex = 5;
-            this.DeleteSupplierButton.Text = "Delete Supplier(s)";
-            this.DeleteSupplierButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonToolTip.SetToolTip(this.DeleteSupplierButton, resources.GetString("DeleteSupplierButton.ToolTip"));
             this.DeleteSupplierButton.UseVisualStyleBackColor = false;
             this.DeleteSupplierButton.Click += new System.EventHandler(this.DeleteSupplierButton_Click);
             // 
             // ViewEditSupplierButton
             // 
+            resources.ApplyResources(this.ViewEditSupplierButton, "ViewEditSupplierButton");
             this.ViewEditSupplierButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.ViewEditSupplierButton.FlatAppearance.BorderSize = 0;
             this.ViewEditSupplierButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.ViewEditSupplierButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
-            this.ViewEditSupplierButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewEditSupplierButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewEditSupplierButton.ForeColor = System.Drawing.Color.White;
-            this.ViewEditSupplierButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ViewEditSupplierButton.Location = new System.Drawing.Point(356, 555);
-            this.ViewEditSupplierButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ViewEditSupplierButton.Name = "ViewEditSupplierButton";
-            this.ViewEditSupplierButton.Size = new System.Drawing.Size(324, 42);
-            this.ViewEditSupplierButton.TabIndex = 3;
-            this.ViewEditSupplierButton.Text = "View / Edit Supplier";
-            this.ViewEditSupplierButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonToolTip.SetToolTip(this.ViewEditSupplierButton, resources.GetString("ViewEditSupplierButton.ToolTip"));
             this.ViewEditSupplierButton.UseVisualStyleBackColor = false;
             this.ViewEditSupplierButton.Click += new System.EventHandler(this.ViewEditSupplierButton_Click);
             // 
             // SearchSupplierText
             // 
+            resources.ApplyResources(this.SearchSupplierText, "SearchSupplierText");
             this.SearchSupplierText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.SearchSupplierText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.SearchSupplierText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.SearchSupplierText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchSupplierText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchSupplierText.Location = new System.Drawing.Point(12, 63);
-            this.SearchSupplierText.Margin = new System.Windows.Forms.Padding(4);
             this.SearchSupplierText.Name = "SearchSupplierText";
-            this.SearchSupplierText.Size = new System.Drawing.Size(375, 22);
-            this.SearchSupplierText.TabIndex = 1;
+            this.ButtonToolTip.SetToolTip(this.SearchSupplierText, resources.GetString("SearchSupplierText.ToolTip"));
             this.SearchSupplierText.TextChanged += new System.EventHandler(this.SearchSupplierText_TextChanged);
             // 
             // TitleLabel
             // 
-            this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(4, 3);
-            this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(157, 47);
-            this.TitleLabel.TabIndex = 0;
-            this.TitleLabel.Text = "Suppliers";
+            this.ButtonToolTip.SetToolTip(this.TitleLabel, resources.GetString("TitleLabel.ToolTip"));
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // PrintButton
             // 
+            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(149)))), ((int)(((byte)(199)))));
             this.PrintButton.FlatAppearance.BorderSize = 0;
             this.PrintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(99)))), ((int)(((byte)(132)))));
             this.PrintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(184)))), ((int)(((byte)(217)))));
-            this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintButton.ForeColor = System.Drawing.Color.White;
-            this.PrintButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PrintButton.Location = new System.Drawing.Point(12, 601);
             this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(336, 42);
-            this.PrintButton.TabIndex = 6;
-            this.PrintButton.Text = "Print List";
-            this.PrintButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonToolTip.SetToolTip(this.PrintButton, resources.GetString("PrintButton.ToolTip"));
             this.PrintButton.UseVisualStyleBackColor = false;
             // 
             // ViewRecordButton
             // 
+            resources.ApplyResources(this.ViewRecordButton, "ViewRecordButton");
             this.ViewRecordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.ViewRecordButton.FlatAppearance.BorderSize = 0;
             this.ViewRecordButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.ViewRecordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
-            this.ViewRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewRecordButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewRecordButton.ForeColor = System.Drawing.Color.White;
-            this.ViewRecordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ViewRecordButton.Location = new System.Drawing.Point(937, 603);
-            this.ViewRecordButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ViewRecordButton.Name = "ViewRecordButton";
-            this.ViewRecordButton.Size = new System.Drawing.Size(200, 42);
-            this.ViewRecordButton.TabIndex = 10;
-            this.ViewRecordButton.Text = "View Record";
-            this.ViewRecordButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonToolTip.SetToolTip(this.ViewRecordButton, resources.GetString("ViewRecordButton.ToolTip"));
             this.ViewRecordButton.UseVisualStyleBackColor = false;
             this.ViewRecordButton.Click += new System.EventHandler(this.ViewRecordButton_Click);
             // 
             // RefreshSuppliersButton
             // 
+            resources.ApplyResources(this.RefreshSuppliersButton, "RefreshSuppliersButton");
             this.RefreshSuppliersButton.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Sync_500px;
-            this.RefreshSuppliersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.RefreshSuppliersButton.FlatAppearance.BorderSize = 0;
-            this.RefreshSuppliersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefreshSuppliersButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefreshSuppliersButton.Location = new System.Drawing.Point(1118, 2);
             this.RefreshSuppliersButton.Name = "RefreshSuppliersButton";
-            this.RefreshSuppliersButton.Size = new System.Drawing.Size(29, 29);
-            this.RefreshSuppliersButton.TabIndex = 7;
-            this.ButtonToolTip.SetToolTip(this.RefreshSuppliersButton, "Force refresh suppliers from database");
+            this.ButtonToolTip.SetToolTip(this.RefreshSuppliersButton, resources.GetString("RefreshSuppliersButton.ToolTip"));
             this.RefreshSuppliersButton.UseVisualStyleBackColor = true;
             this.RefreshSuppliersButton.Click += new System.EventHandler(this.RefreshSuppliersButton_Click);
             // 
             // SearchIcon
             // 
+            resources.ApplyResources(this.SearchIcon, "SearchIcon");
             this.SearchIcon.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Search_96px;
-            this.SearchIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SearchIcon.ErrorImage = null;
-            this.SearchIcon.InitialImage = null;
-            this.SearchIcon.Location = new System.Drawing.Point(387, 61);
-            this.SearchIcon.Margin = new System.Windows.Forms.Padding(4);
             this.SearchIcon.Name = "SearchIcon";
-            this.SearchIcon.Size = new System.Drawing.Size(25, 25);
-            this.SearchIcon.TabIndex = 100;
             this.SearchIcon.TabStop = false;
+            this.ButtonToolTip.SetToolTip(this.SearchIcon, resources.GetString("SearchIcon.ToolTip"));
             this.SearchIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // SupplierForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1150, 654);
             this.Controls.Add(this.RefreshSuppliersButton);
             this.Controls.Add(this.ViewRecordButton);
             this.Controls.Add(this.PrintButton);
@@ -471,13 +388,9 @@
             this.Controls.Add(this.ViewEditSupplierButton);
             this.Controls.Add(this.SearchSupplierText);
             this.Controls.Add(this.TitleLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SupplierForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Suppliers";
+            this.ButtonToolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.SupplierForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             ((System.ComponentModel.ISupportInitialize)(this.SupplierHistoryDataGrid)).EndInit();

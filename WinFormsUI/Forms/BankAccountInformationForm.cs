@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShopLibrary.Models;
@@ -8,6 +10,7 @@ using static ShopLibrary.Models.UserRole;
 
 namespace WinFormsUI.Forms {
     public partial class BankAccountInformationForm : Form {
+        ResourceManager rm = new ResourceManager(typeof(BankAccountInformationForm));
         #region MakeDraggable
         /// <summary>
         ///     This Part Makes the Form Draggable, as the Form Has No Border
@@ -59,12 +62,17 @@ namespace WinFormsUI.Forms {
             DialogResult = DialogResult.Cancel;
             _account = account;
             TitleLabel.Text = _account.AccountName;
-            AddButton.Text = "Update account";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                AddButton.Text = rm.GetString("Update");
+            }
+            else
+                AddButton.Text = "Update account";
         }
 
         private bool ValidateForm() {
             string message = string.Empty;
-            if (AddButton.Text == "Add account")
+            if (AddButton.Text == "Add account" || AddButton.Text == rm.GetString("AddButton.Text"))
                 if (BankAccounts.Any(a => a.AccountName == AccountNameText.Text))
                     message += "Invalid or duplicate account name";
             else
@@ -108,7 +116,7 @@ namespace WinFormsUI.Forms {
                 _account.CurrentBalance = decimal.Parse(CurrentBalanceText.Text);
                 _account.Note = NoteText.Text;
 
-                if (AddButton.Text == "Add Account")
+                if (AddButton.Text == "Add Account" || AddButton.Text == rm.GetString("AddButton.Text"))
                     Connection[0].InsertBankAccount(_account);
                 else
                     Connection[0].UpdateBankAccount(_account);

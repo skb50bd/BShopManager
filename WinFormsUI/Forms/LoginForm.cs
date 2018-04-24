@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Configuration;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using static ShopLibrary.GlobalConfig;
 
@@ -29,6 +32,7 @@ namespace WinFormsUI.Forms {
 
         //Creates the List of Users
         public LoginForm() {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(ConfigurationManager.AppSettings["Language"]);
             Users = Connection[0].GetUserAll();
             InitializeComponent();
             WireUpLists();

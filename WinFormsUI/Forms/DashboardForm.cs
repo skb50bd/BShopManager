@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Configuration;
 using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
@@ -29,9 +32,30 @@ namespace WinFormsUI.Forms {
         }
         #endregion
         public DashboardForm()
-        {
+        {         
             InitializeComponent();
+            if(ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                MetroLabelLoad();
             DialogResult = DialogResult.Cancel;
+        }
+
+        public void MetroLabelLoad()
+        {
+            SaleButton.LabelText = "বিক্রয় ";
+            ItemsButton.LabelText = "গুদামঘর ";
+            CustomersButton.LabelText = "ক্রেতাগন ";
+            RecordsButton.LabelText = "হিসাবসমূহ ";
+            EmployeeButton.LabelText = "কর্মচারীগণ ";
+            SuppliersButton.LabelText = "সাপ্লায়ার ";
+            ExpenseButton.LabelText = "খরচ ";
+            RefundButton.LabelText = "ফেরত ";
+            PurchaseButton.LabelText = "ক্রয় ";
+            PurchaseReturnButton.LabelText = "ক্রয় ফেরত";
+            BankTransactionButton.LabelText = "লেনদেন ";
+            CashButton.LabelText = "ক্যাশ ";
+            ShopSettingsButton.LabelText = "সেটিংস ";
+            UserSettingsButton.LabelText = "ইউজার সেটিংস";
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

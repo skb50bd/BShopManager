@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MongoDB.Bson;
@@ -8,6 +10,7 @@ using static ShopLibrary.Models.UserRole;
 
 namespace WinFormsUI.Forms {
     public partial class SupplierInformationForm : Form {
+        ResourceManager rm = new ResourceManager(typeof(SupplierInformationForm));
         #region MakeDraggable
         /// <summary>
         ///     This Part Makes the Form Draggable, as the Form Has No Border
@@ -54,7 +57,12 @@ namespace WinFormsUI.Forms {
         private Supplier _supplier = new Supplier();
         public SupplierInformationForm() {
             InitializeComponent();
-            SaveButton.Text = "Submit";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                SaveButton.Text = rm.GetString("Submit");
+            }
+            else
+                SaveButton.Text = "Submit";
             DialogResult    = DialogResult.Cancel;
             _supplier       = new Supplier();
 
@@ -64,7 +72,12 @@ namespace WinFormsUI.Forms {
 
         public SupplierInformationForm(Supplier model) {
             InitializeComponent();
-            SaveButton.Text = "Save";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                SaveButton.Text = rm.GetString("SaveButton.Text");
+            }
+            else
+                SaveButton.Text = "Save";
             DialogResult = DialogResult.Cancel;
             _supplier = model;
             TitleLabel.Text = _supplier.SupplierId;
@@ -186,7 +199,7 @@ namespace WinFormsUI.Forms {
             _supplier.Note         = NotesText.Text;
             _supplier.Payable      = decimal.Parse(CurrentPayableText.Text.Split()[0]);
 
-            if (SaveButton.Text == "Submit") {
+            if (SaveButton.Text == "Submit" || SaveButton.Text == rm.GetString("Submit")) {
                 _supplier = Connection[0].InsertSupplier(_supplier);
                 if (_supplier.ObjectId != ObjectId.Empty) {
                     MessageBox.Show("Supplier added successfully", "Success");
@@ -195,7 +208,7 @@ namespace WinFormsUI.Forms {
                 } else {
                     MessageBox.Show("Something went wrong", "Error");
                 }
-            } else if (SaveButton.Text == "Save") {
+            } else if (SaveButton.Text == "Save" || SaveButton.Text == rm.GetString("SaveButton.Text")) {
                 if (Connection[0].UpdateSupplier(_supplier))
                 {
                     MessageBox.Show("Supplier updated successfully", "Success");

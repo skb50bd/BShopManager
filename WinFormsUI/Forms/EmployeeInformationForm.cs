@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShopLibrary.Models;
@@ -8,6 +10,7 @@ using static ShopLibrary.Models.UserRole;
 
 namespace WinFormsUI.Forms {
     public partial class EmployeeInformationForm : Form {
+        ResourceManager rm = new ResourceManager(typeof(EmployeeInformationForm));
         #region MakeDraggable
         /// <summary>
         ///     This Part Makes the Form Draggable, as the Form Has No Border
@@ -60,7 +63,12 @@ namespace WinFormsUI.Forms {
                 return;
             }
 
-            SaveButton.Text          = "Submit";
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                SaveButton.Text = rm.GetString("Submit");
+            }
+            else
+                SaveButton.Text = "Submit";
             _employee                = new Employee();
             InfoGroupBox.Enabled     = CurrentUser.AccessLevel <= AppUser;
             PaymentGroupBox.Enabled  = false;
@@ -69,7 +77,14 @@ namespace WinFormsUI.Forms {
         public EmployeeInformationForm(Employee model) {
             InitializeComponent();
             DialogResult = DialogResult.Cancel;
-            SaveButton.Text = "Save";
+
+            if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+            {
+                SaveButton.Text = rm.GetString("SaveButton.Text");
+            }
+            else
+                SaveButton.Text = "Save";
+
             _employee = model;
             TitleLabel.Text = _employee.EmployeeId;
 
@@ -165,7 +180,7 @@ namespace WinFormsUI.Forms {
             _employee.Note          = NotesText.Text;
             _employee.Balance       = decimal.Parse(CurrentBalanceText.Text.Split()[0]);
 
-            if (SaveButton.Text == "Submit") {
+            if (SaveButton.Text == "Submit" || SaveButton.Text == rm.GetString("Submit")) {
                 _employee = Connection[0].InsertEmployee(_employee);
                 if (_employee.EmployeeId != "") {
                     MessageBox.Show("Employee added successfully", "Success");
@@ -173,7 +188,7 @@ namespace WinFormsUI.Forms {
                 } else {
                     MessageBox.Show("Something went wrong", "Error");
                 }
-            } else if (SaveButton.Text == "Save") {
+            } else if (SaveButton.Text == "Save" || SaveButton.Text == rm.GetString("SaveButton.Text")) {
                 if (Connection[0].UpdateEmployee(_employee))
                     MessageBox.Show("Employee updated successfully", "Success");
                 else

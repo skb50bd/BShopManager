@@ -55,265 +55,169 @@
             // 
             // ShopSelectorCombo
             // 
+            resources.ApplyResources(this.ShopSelectorCombo, "ShopSelectorCombo");
             this.ShopSelectorCombo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ShopSelectorCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ShopSelectorCombo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShopSelectorCombo.FormattingEnabled = true;
-            this.ShopSelectorCombo.Location = new System.Drawing.Point(158, 68);
-            this.ShopSelectorCombo.Margin = new System.Windows.Forms.Padding(4);
             this.ShopSelectorCombo.Name = "ShopSelectorCombo";
-            this.ShopSelectorCombo.Size = new System.Drawing.Size(342, 29);
-            this.ShopSelectorCombo.TabIndex = 2;
+            this.buttonToolTip.SetToolTip(this.ShopSelectorCombo, resources.GetString("ShopSelectorCombo.ToolTip"));
             this.ShopSelectorCombo.SelectedIndexChanged += new System.EventHandler(this.ShopSelectorCombo_SelectedIndexChanged);
             // 
             // SelectShopLabel
             // 
-            this.SelectShopLabel.AutoSize = true;
-            this.SelectShopLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectShopLabel.Location = new System.Drawing.Point(11, 71);
-            this.SelectShopLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.SelectShopLabel, "SelectShopLabel");
             this.SelectShopLabel.Name = "SelectShopLabel";
-            this.SelectShopLabel.Size = new System.Drawing.Size(98, 21);
-            this.SelectShopLabel.TabIndex = 1;
-            this.SelectShopLabel.Text = "Select Shop :";
+            this.buttonToolTip.SetToolTip(this.SelectShopLabel, resources.GetString("SelectShopLabel.ToolTip"));
             this.SelectShopLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // TitleLabel
             // 
-            this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Font = new System.Drawing.Font("Segoe UI Semi Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(7, 8);
-            this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(282, 47);
-            this.TitleLabel.TabIndex = 0;
-            this.TitleLabel.Text = "Shop Information";
+            this.buttonToolTip.SetToolTip(this.TitleLabel, resources.GetString("TitleLabel.ToolTip"));
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // PhoneNumbersText
             // 
+            resources.ApplyResources(this.PhoneNumbersText, "PhoneNumbersText");
             this.PhoneNumbersText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PhoneNumbersText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PhoneNumbersText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneNumbersText.Location = new System.Drawing.Point(158, 354);
-            this.PhoneNumbersText.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneNumbersText.Name = "PhoneNumbersText";
-            this.PhoneNumbersText.Size = new System.Drawing.Size(388, 67);
-            this.PhoneNumbersText.TabIndex = 15;
-            this.PhoneNumbersText.Text = "";
+            this.buttonToolTip.SetToolTip(this.PhoneNumbersText, resources.GetString("PhoneNumbersText.ToolTip"));
             // 
             // DeleteCancelButton
             // 
+            resources.ApplyResources(this.DeleteCancelButton, "DeleteCancelButton");
             this.DeleteCancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteCancelButton.FlatAppearance.BorderSize = 0;
             this.DeleteCancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteCancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
-            this.DeleteCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteCancelButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteCancelButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteCancelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteCancelButton.Location = new System.Drawing.Point(15, 509);
-            this.DeleteCancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteCancelButton.Name = "DeleteCancelButton";
-            this.DeleteCancelButton.Size = new System.Drawing.Size(260, 42);
-            this.DeleteCancelButton.TabIndex = 19;
-            this.DeleteCancelButton.Text = "Delete This Shop";
-            this.DeleteCancelButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonToolTip.SetToolTip(this.DeleteCancelButton, resources.GetString("DeleteCancelButton.ToolTip"));
             this.DeleteCancelButton.UseVisualStyleBackColor = false;
             this.DeleteCancelButton.Click += new System.EventHandler(this.DeleteCancelButton_Click);
             // 
             // PhoneNumbersLabel
             // 
-            this.PhoneNumbersLabel.AutoSize = true;
-            this.PhoneNumbersLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneNumbersLabel.Location = new System.Drawing.Point(10, 354);
-            this.PhoneNumbersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.PhoneNumbersLabel, "PhoneNumbersLabel");
             this.PhoneNumbersLabel.Name = "PhoneNumbersLabel";
-            this.PhoneNumbersLabel.Size = new System.Drawing.Size(130, 21);
-            this.PhoneNumbersLabel.TabIndex = 14;
-            this.PhoneNumbersLabel.Text = "Phone Numbers :";
+            this.buttonToolTip.SetToolTip(this.PhoneNumbersLabel, resources.GetString("PhoneNumbersLabel.ToolTip"));
             // 
             // EmailAddressesText
             // 
+            resources.ApplyResources(this.EmailAddressesText, "EmailAddressesText");
             this.EmailAddressesText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EmailAddressesText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EmailAddressesText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailAddressesText.Location = new System.Drawing.Point(158, 430);
-            this.EmailAddressesText.Margin = new System.Windows.Forms.Padding(4);
             this.EmailAddressesText.Name = "EmailAddressesText";
-            this.EmailAddressesText.Size = new System.Drawing.Size(388, 67);
-            this.EmailAddressesText.TabIndex = 17;
-            this.EmailAddressesText.Text = "";
+            this.buttonToolTip.SetToolTip(this.EmailAddressesText, resources.GetString("EmailAddressesText.ToolTip"));
             // 
             // EmailAddressesLabel
             // 
-            this.EmailAddressesLabel.AutoSize = true;
-            this.EmailAddressesLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailAddressesLabel.Location = new System.Drawing.Point(10, 430);
-            this.EmailAddressesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.EmailAddressesLabel, "EmailAddressesLabel");
             this.EmailAddressesLabel.Name = "EmailAddressesLabel";
-            this.EmailAddressesLabel.Size = new System.Drawing.Size(134, 21);
-            this.EmailAddressesLabel.TabIndex = 16;
-            this.EmailAddressesLabel.Text = "Email Addresses : ";
+            this.buttonToolTip.SetToolTip(this.EmailAddressesLabel, resources.GetString("EmailAddressesLabel.ToolTip"));
             // 
             // PropietorLabel
             // 
-            this.PropietorLabel.AutoSize = true;
-            this.PropietorLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PropietorLabel.Location = new System.Drawing.Point(10, 168);
-            this.PropietorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.PropietorLabel, "PropietorLabel");
             this.PropietorLabel.Name = "PropietorLabel";
-            this.PropietorLabel.Size = new System.Drawing.Size(82, 21);
-            this.PropietorLabel.TabIndex = 8;
-            this.PropietorLabel.Text = "Propietor :";
+            this.buttonToolTip.SetToolTip(this.PropietorLabel, resources.GetString("PropietorLabel.ToolTip"));
             // 
             // DetailsText
             // 
+            resources.ApplyResources(this.DetailsText, "DetailsText");
             this.DetailsText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DetailsText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DetailsText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsText.Location = new System.Drawing.Point(158, 277);
-            this.DetailsText.Margin = new System.Windows.Forms.Padding(4);
             this.DetailsText.Name = "DetailsText";
-            this.DetailsText.Size = new System.Drawing.Size(388, 67);
-            this.DetailsText.TabIndex = 13;
-            this.DetailsText.Text = "";
+            this.buttonToolTip.SetToolTip(this.DetailsText, resources.GetString("DetailsText.ToolTip"));
             // 
             // DetailsLabel
             // 
-            this.DetailsLabel.AutoSize = true;
-            this.DetailsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsLabel.Location = new System.Drawing.Point(10, 277);
-            this.DetailsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.DetailsLabel, "DetailsLabel");
             this.DetailsLabel.Name = "DetailsLabel";
-            this.DetailsLabel.Size = new System.Drawing.Size(64, 21);
-            this.DetailsLabel.TabIndex = 12;
-            this.DetailsLabel.Text = "Details :";
+            this.buttonToolTip.SetToolTip(this.DetailsLabel, resources.GetString("DetailsLabel.ToolTip"));
             // 
             // AddressText
             // 
+            resources.ApplyResources(this.AddressText, "AddressText");
             this.AddressText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.AddressText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AddressText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressText.Location = new System.Drawing.Point(158, 200);
-            this.AddressText.Margin = new System.Windows.Forms.Padding(4);
             this.AddressText.Name = "AddressText";
-            this.AddressText.Size = new System.Drawing.Size(388, 67);
-            this.AddressText.TabIndex = 11;
-            this.AddressText.Text = "";
+            this.buttonToolTip.SetToolTip(this.AddressText, resources.GetString("AddressText.ToolTip"));
             // 
             // AddressLabel
             // 
-            this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressLabel.Location = new System.Drawing.Point(10, 200);
-            this.AddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.AddressLabel, "AddressLabel");
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(73, 21);
-            this.AddressLabel.TabIndex = 10;
-            this.AddressLabel.Text = "Address :";
+            this.buttonToolTip.SetToolTip(this.AddressLabel, resources.GetString("AddressLabel.ToolTip"));
             // 
             // EditSaveButton
             // 
+            resources.ApplyResources(this.EditSaveButton, "EditSaveButton");
             this.EditSaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.EditSaveButton.FlatAppearance.BorderSize = 0;
             this.EditSaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.EditSaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
-            this.EditSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditSaveButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditSaveButton.ForeColor = System.Drawing.Color.White;
-            this.EditSaveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditSaveButton.Location = new System.Drawing.Point(287, 509);
-            this.EditSaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditSaveButton.Name = "EditSaveButton";
-            this.EditSaveButton.Size = new System.Drawing.Size(260, 42);
-            this.EditSaveButton.TabIndex = 18;
-            this.EditSaveButton.Text = "Save";
-            this.EditSaveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonToolTip.SetToolTip(this.EditSaveButton, resources.GetString("EditSaveButton.ToolTip"));
             this.EditSaveButton.UseVisualStyleBackColor = false;
             this.EditSaveButton.Click += new System.EventHandler(this.EditSaveButton_Click);
             // 
             // TaglineText
             // 
+            resources.ApplyResources(this.TaglineText, "TaglineText");
             this.TaglineText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TaglineText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TaglineText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaglineText.Location = new System.Drawing.Point(158, 136);
-            this.TaglineText.Margin = new System.Windows.Forms.Padding(4);
             this.TaglineText.Name = "TaglineText";
-            this.TaglineText.Size = new System.Drawing.Size(388, 22);
-            this.TaglineText.TabIndex = 7;
+            this.buttonToolTip.SetToolTip(this.TaglineText, resources.GetString("TaglineText.ToolTip"));
             // 
             // TaglineLabel
             // 
-            this.TaglineLabel.AutoSize = true;
-            this.TaglineLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaglineLabel.Location = new System.Drawing.Point(10, 136);
-            this.TaglineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.TaglineLabel, "TaglineLabel");
             this.TaglineLabel.Name = "TaglineLabel";
-            this.TaglineLabel.Size = new System.Drawing.Size(65, 21);
-            this.TaglineLabel.TabIndex = 6;
-            this.TaglineLabel.Text = "Tagline :";
+            this.buttonToolTip.SetToolTip(this.TaglineLabel, resources.GetString("TaglineLabel.ToolTip"));
             // 
             // ShopNameText
             // 
+            resources.ApplyResources(this.ShopNameText, "ShopNameText");
             this.ShopNameText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ShopNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ShopNameText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShopNameText.Location = new System.Drawing.Point(159, 107);
-            this.ShopNameText.Margin = new System.Windows.Forms.Padding(4);
             this.ShopNameText.Name = "ShopNameText";
-            this.ShopNameText.Size = new System.Drawing.Size(388, 22);
-            this.ShopNameText.TabIndex = 5;
+            this.buttonToolTip.SetToolTip(this.ShopNameText, resources.GetString("ShopNameText.ToolTip"));
             // 
             // ShopNameLabel
             // 
-            this.ShopNameLabel.AutoSize = true;
-            this.ShopNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShopNameLabel.Location = new System.Drawing.Point(11, 107);
-            this.ShopNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.ShopNameLabel, "ShopNameLabel");
             this.ShopNameLabel.Name = "ShopNameLabel";
-            this.ShopNameLabel.Size = new System.Drawing.Size(99, 21);
-            this.ShopNameLabel.TabIndex = 4;
-            this.ShopNameLabel.Text = "Shop Name :";
+            this.buttonToolTip.SetToolTip(this.ShopNameLabel, resources.GetString("ShopNameLabel.ToolTip"));
             // 
             // AddNewShopButton
             // 
+            resources.ApplyResources(this.AddNewShopButton, "AddNewShopButton");
             this.AddNewShopButton.BackColor = System.Drawing.Color.White;
             this.AddNewShopButton.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Plus_Math_96px_11;
-            this.AddNewShopButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.AddNewShopButton.FlatAppearance.BorderSize = 0;
-            this.AddNewShopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddNewShopButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddNewShopButton.ForeColor = System.Drawing.Color.Transparent;
-            this.AddNewShopButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddNewShopButton.Location = new System.Drawing.Point(511, 64);
-            this.AddNewShopButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddNewShopButton.Name = "AddNewShopButton";
-            this.AddNewShopButton.Size = new System.Drawing.Size(35, 35);
-            this.AddNewShopButton.TabIndex = 3;
-            this.AddNewShopButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonToolTip.SetToolTip(this.AddNewShopButton, "Add a new shop");
+            this.buttonToolTip.SetToolTip(this.AddNewShopButton, resources.GetString("AddNewShopButton.ToolTip"));
             this.AddNewShopButton.UseVisualStyleBackColor = false;
             this.AddNewShopButton.Click += new System.EventHandler(this.AddNewShopButton_Click);
             // 
             // PropietorNameText
             // 
+            resources.ApplyResources(this.PropietorNameText, "PropietorNameText");
             this.PropietorNameText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PropietorNameText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PropietorNameText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PropietorNameText.Location = new System.Drawing.Point(158, 168);
-            this.PropietorNameText.Margin = new System.Windows.Forms.Padding(4);
             this.PropietorNameText.Name = "PropietorNameText";
-            this.PropietorNameText.Size = new System.Drawing.Size(388, 22);
-            this.PropietorNameText.TabIndex = 9;
+            this.buttonToolTip.SetToolTip(this.PropietorNameText, resources.GetString("PropietorNameText.ToolTip"));
             // 
             // ShopForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(561, 568);
             this.Controls.Add(this.PropietorNameText);
             this.Controls.Add(this.PhoneNumbersText);
             this.Controls.Add(this.DeleteCancelButton);
@@ -334,13 +238,9 @@
             this.Controls.Add(this.ShopSelectorCombo);
             this.Controls.Add(this.SelectShopLabel);
             this.Controls.Add(this.TitleLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ShopForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Shops";
+            this.buttonToolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.ShopForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             this.ResumeLayout(false);
