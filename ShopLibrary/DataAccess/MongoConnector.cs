@@ -1410,6 +1410,9 @@ namespace ShopLibrary.DataAccess {
             return true;
 
         }
+
+        public BulkPayment LatestPay()
+                => BulkpaymentCollection.AsQueryable().OrderByDescending(p => p.Date).FirstOrDefault();
      #endregion
 
 
