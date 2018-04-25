@@ -77,7 +77,7 @@ namespace WinFormsUI.Forms {
                     b = Connection[0].LatestPay();
                     if (CurrentUser.AccessLevel <= ShopLibrary.Models.UserRole.Admin)
                     {
-                       if(b == null || b.Date.Month != DateTime.Today.Month)
+                       if((b == null || b.Date.Month != DateTime.Today.Month))
                         {
                             DialogResult result = MessageBox.Show("This month's Payment has not been given\n Do you want to Distribute Payment now?", "Confirmation", MessageBoxButtons.YesNo);
                             if(result == DialogResult.Yes)

@@ -182,12 +182,22 @@ namespace WinFormsUI.Forms {
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BulkPayment pay,pay2 = new BulkPayment();
-            pay = Connection[0].LatestPay();
-            if (pay != null && pay.Date.Month == DateTime.Today.Month)
+            if (CurrentUser.AccessLevel <= Admin)
             {
-                DialogResult result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                BulkPayment pay, pay2 = new BulkPayment();
+                pay = Connection[0].LatestPay();
+                if (pay != null && pay.Date.Month == DateTime.Today.Month)
+                {
+                    DialogResult result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        pay2.userId = CurrentUser.UserId;
+                        pay2.userName = CurrentUser.UserName;
+                        Connection[0].Payall(pay2);
+                        MessageBox.Show("Operation Successful!");
+                    }
+                }
+                else
                 {
                     pay2.userId = CurrentUser.UserId;
                     pay2.userName = CurrentUser.UserName;
@@ -196,12 +206,7 @@ namespace WinFormsUI.Forms {
                 }
             }
             else
-            {
-                pay2.userId = CurrentUser.UserId;
-                pay2.userName = CurrentUser.UserName;
-                Connection[0].Payall(pay2);
-                MessageBox.Show("Operation Successful!");
-            }
+                MessageBox.Show("You are not Authorized!");
         }
     }
 }
