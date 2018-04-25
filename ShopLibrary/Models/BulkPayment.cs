@@ -11,11 +11,8 @@ namespace ShopLibrary.Models
     public class BulkPayment
     {
         [BsonId]
-        public ObjectId bulkPaymentId { get; set; }
-        public string userId { get; set; }
-        public string userName { get; set; }
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime Date = DateTime.Now ;
+        public ObjectId ObjectId { get; set; }
+        public Metadata Meta { get; set; }
 
     }
 }

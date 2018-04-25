@@ -398,6 +398,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="connectionString" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WinFormsUI.Forms.SaleForm.datasource" />
     <None Include="Properties\Settings.settings">
