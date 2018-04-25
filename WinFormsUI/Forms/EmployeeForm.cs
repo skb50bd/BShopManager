@@ -10,7 +10,6 @@ using static ShopLibrary.Models.UserRole;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-
 namespace WinFormsUI.Forms {
     public partial class EmployeeForm : Form {
         #region MakeDraggable

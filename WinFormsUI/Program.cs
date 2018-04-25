@@ -63,9 +63,6 @@ namespace WinFormsUI {
                 DialogResult result = login.ShowDialog();
 
                 if (result == DialogResult.OK) {
-                    Form form = new DashboardForm();
-                    result = form.ShowDialog();
-
                 #region Payroll Checking
                     BulkPayment b = new BulkPayment();
                     b = Connection[0].LatestPay();
@@ -73,9 +70,9 @@ namespace WinFormsUI {
                     if (CurrentUser.AccessLevel <= ShopLibrary.Models.UserRole.Admin) {
                         if (b == null || b.Meta.Created.Month != DateTime.Today.Month) {
                             DialogResult res = MessageBox
-                                    .Show("This month's Payment has not been given\n Do you want to Distribute Payment now?",
-                                          "Confirmation",
-                                          MessageBoxButtons.YesNo);
+                                .Show("This month's Payment has not been given\n Do you want to Distribute Payment now?",
+                                      "Confirmation",
+                                      MessageBoxButtons.YesNo);
 
                             if (res == DialogResult.Yes) {
                                 BulkPayment model = new BulkPayment();
@@ -87,7 +84,12 @@ namespace WinFormsUI {
                             }
                         }
                     }
-                #endregion
+                    #endregion
+
+                    Form form = new DashboardForm();
+                    result = form.ShowDialog();
+
+                
 
                     //Application.Run(new ImportForm());
                     if (result != DialogResult.OK) {
