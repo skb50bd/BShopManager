@@ -1412,7 +1412,7 @@ namespace ShopLibrary.DataAccess {
         }
 
         public BulkPayment LatestPay()
-                => BulkpaymentCollection.AsQueryable().OrderByDescending(p => p.Date).FirstOrDefault();
+                => BulkpaymentCollection.AsQueryable().OrderByDescending(p => p.Meta.Created).FirstOrDefault();
      #endregion
 
 

@@ -184,21 +184,18 @@ namespace WinFormsUI.Forms {
         {
             BulkPayment pay,pay2 = new BulkPayment();
             pay = Connection[0].LatestPay();
-            if (pay != null && pay.Date.Month == DateTime.Today.Month)
+            if (pay != null && pay.Meta.Created.Month == DateTime.Today.Month)
             {
                 DialogResult result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    pay2.userId = CurrentUser.UserId;
-                    pay2.userName = CurrentUser.UserName;
+                if (result == DialogResult.Yes) {
+                    pay2.Meta.Creator = CurrentUser.UserName;
                     Connection[0].Payall(pay2);
                     MessageBox.Show("Operation Successful!");
                 }
             }
             else
             {
-                pay2.userId = CurrentUser.UserId;
-                pay2.userName = CurrentUser.UserName;
+                pay2.Meta.Creator = CurrentUser.UserName;
                 Connection[0].Payall(pay2);
                 MessageBox.Show("Operation Successful!");
             }
