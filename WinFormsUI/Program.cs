@@ -86,6 +86,7 @@ namespace WinFormsUI {
 
                             if (res == DialogResult.Yes) {
                                 BulkPayment model = new BulkPayment();
+                                model.Meta = new Metadata();
                                 model.Meta.Creator = CurrentUser.UserName;
 
                                 if (Connection[0].Payall(model)) {

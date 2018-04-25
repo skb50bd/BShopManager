@@ -197,6 +197,7 @@ namespace WinFormsUI.Forms {
                          result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
+                        pay2.Meta = new Metadata();
                         pay2.Meta.Creator = CurrentUser.UserName;
                         Connection[0].Payall(pay2);
                         if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
