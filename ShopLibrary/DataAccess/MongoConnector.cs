@@ -1394,8 +1394,8 @@ namespace ShopLibrary.DataAccess {
             try
             {
                 // EmployeeCollection.UpdateMany(new BsonDocument(), new BsonDocument("$set", new BsonDocument("currentBalance", "$currentBalance" + "$monthlySalary")));
-                var employees = GetEmployeeAll();
-                foreach (var employee in employees)
+                List<Employee> employees = GetEmployeeAll();
+                foreach (Employee employee in employees)
                 {
                     employee.Balance = employee.Balance + employee.MonthlySalary;
                     UpdateEmployee(employee);
@@ -1423,7 +1423,7 @@ namespace ShopLibrary.DataAccess {
             decimal      m      = cashFlow.InFlow - cashFlow.OutFlow;
             BsonDocument filter = new BsonDocument("_id", CurrentCash.ObjectId);
             BsonDocument update = new BsonDocument("$inc", new BsonDocument("current", m));
-            var          c      = CashCollection.FindOneAndUpdate<Cash>(filter, update);
+            Cash c      = CashCollection.FindOneAndUpdate<Cash>(filter, update);
 
             return c;
         }
