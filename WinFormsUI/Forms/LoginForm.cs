@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopLibrary.Models;
+using System;
 using System.Configuration;
 using System.Globalization;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace WinFormsUI.Forms {
         //Creates the List of Users
         public LoginForm() {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(ConfigurationManager.AppSettings["Language"]);
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ConfigurationManager.AppSettings["Language"]);
             Users = Connection[0].GetUserAll();
             InitializeComponent();
             WireUpLists();
@@ -71,6 +73,26 @@ namespace WinFormsUI.Forms {
             if (ValidateForm())
                 if (Connection[0].Login(_userNameCombo.Text, _passwordText.Text)) // Log-in Successful
                 {
+                    BulkPayment b = new BulkPayment();
+                    b = Connection[0].LatestPay();
+                    if (CurrentUser.AccessLevel <= ShopLibrary.Models.UserRole.Admin)
+                    {
+                       if(b == null || b.Date.Month != DateTime.Today.Month)
+                        {
+                            DialogResult result = MessageBox.Show("This month's Payment has not been given\n Do you want to Distribute Payment now?", "Confirmation", MessageBoxButtons.YesNo);
+                            if(result == DialogResult.Yes)
+                            {
+                                BulkPayment model = new BulkPayment();
+                                model.userId = CurrentUser.UserId;
+                                model.userName = CurrentUser.UserName;
+                                if (Connection[0].Payall(model))
+                                {
+                                    MessageBox.Show("Operation Successful!");
+                                }
+                            }
+                        }
+                     
+                    }
                     DialogResult = DialogResult.OK;
                     Close();
                 } else // Log-in Fail

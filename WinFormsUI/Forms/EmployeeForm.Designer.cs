@@ -25,10 +25,10 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmployeeHistoryDataGrid = new System.Windows.Forms.DataGridView();
             this.IdColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AmountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +54,7 @@
             this.SearchIcon = new System.Windows.Forms.PictureBox();
             this.ReloadEmployees = new System.Windows.Forms.Button();
             this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.BulkPayment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeHistoryDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchIcon)).BeginInit();
@@ -70,28 +71,28 @@
             this.EmployeeHistoryDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmployeeHistoryDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.EmployeeHistoryDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeHistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeHistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.EmployeeHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeHistoryDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdColumn2,
             this.AmountColumn,
             this.HistoryCreatedColumn,
             this.HistoryCreatorColumn});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.EmployeeHistoryDataGrid.GridColor = System.Drawing.Color.WhiteSmoke;
             this.EmployeeHistoryDataGrid.Name = "EmployeeHistoryDataGrid";
             this.EmployeeHistoryDataGrid.RowHeadersVisible = false;
@@ -134,14 +135,14 @@
             this.EmployeesDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmployeesDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.EmployeesDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeesDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeesDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.EmployeesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeIdColumn,
@@ -153,14 +154,14 @@
             this.CreatorColumn,
             this.CreatedColumn,
             this.ModifiedColumn});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeesDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeesDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.EmployeesDataGrid.GridColor = System.Drawing.Color.WhiteSmoke;
             this.EmployeesDataGrid.Name = "EmployeesDataGrid";
             this.EmployeesDataGrid.ReadOnly = true;
@@ -328,11 +329,25 @@
             this.ReloadEmployees.UseVisualStyleBackColor = true;
             this.ReloadEmployees.Click += new System.EventHandler(this.ReloadEmployees_Click);
             // 
+            // BulkPayment
+            // 
+            resources.ApplyResources(this.BulkPayment, "BulkPayment");
+            this.BulkPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
+            this.BulkPayment.FlatAppearance.BorderSize = 0;
+            this.BulkPayment.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            this.BulkPayment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            this.BulkPayment.ForeColor = System.Drawing.Color.White;
+            this.BulkPayment.Name = "BulkPayment";
+            this.ButtonToolTip.SetToolTip(this.BulkPayment, resources.GetString("BulkPayment.ToolTip"));
+            this.BulkPayment.UseVisualStyleBackColor = false;
+            this.BulkPayment.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EmployeeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.BulkPayment);
             this.Controls.Add(this.ReloadEmployees);
             this.Controls.Add(this.EmployeeHistoryDataGrid);
             this.Controls.Add(this.EmployeesDataGrid);
@@ -384,5 +399,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatorColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModifiedColumn;
+        private System.Windows.Forms.Button BulkPayment;
     }
 }

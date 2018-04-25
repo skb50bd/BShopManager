@@ -70,6 +70,8 @@ namespace ShopLibrary.DataAccess {
         List<Repayment> GetRepaymentBySupplier(Supplier supplier, DateTime _from, DateTime _to);
         List<Repayment> GetRepaymentByDate(DateTime _from, DateTime _to);
         bool DeleteRepayment(Repayment model);
+        BulkPayment LatestPay();
+
         //List<Record> GetCustomerRecordById(int cid);
         //bool DeleteRecord(string type, int id);
         #endregion
@@ -178,5 +180,6 @@ namespace ShopLibrary.DataAccess {
         #endregion
 
         Cash GetCurrentCash();
+        bool Payall(BulkPayment pay);
     }
 }

@@ -94,6 +94,7 @@
     <Compile Include="LogHelper.cs" />
     <Compile Include="Models\AES.cs" />
     <Compile Include="Models\BankAccount.cs" />
+    <Compile Include="Models\BulkPayment.cs" />
     <Compile Include="Models\Cash.cs" />
     <Compile Include="Models\CashModification.cs" />
     <Compile Include="Models\Category.cs" />

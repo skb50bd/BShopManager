@@ -55,7 +55,9 @@ namespace ShopLibrary.DataAccess {
         private IMongoCollection<User>        UserCollection        => _db.GetCollection<User>("User");
         private IMongoCollection<Cash>        CashCollection        => _db.GetCollection<Cash>("Cash");
         private IMongoCollection<Memo>        MemoCollection        => _db.GetCollection<Memo>("Memo");
-    #endregion
+
+        private IMongoCollection<BulkPayment> BulkpaymentCollection => _db.GetCollection<BulkPayment>("BulkPayment");
+        #endregion
 
         public bool InitiateDatabase () {
             Debug.WriteLine("Trying to initiate DB");
@@ -1383,7 +1385,35 @@ namespace ShopLibrary.DataAccess {
         public void DeleteMemo (Memo model) {
             MemoCollection.DeleteOne(m => m.ObjectId == model.ObjectId);
         }
-    #endregion
+        #endregion
+
+    #region Bulkpayment
+        public bool Payall(BulkPayment model)
+        {
+            try
+            {
+                // EmployeeCollection.UpdateMany(new BsonDocument(), new BsonDocument("$set", new BsonDocument("currentBalance", "$currentBalance" + "$monthlySalary")));
+                var employees = GetEmployeeAll();
+                foreach (var employee in employees)
+                {
+                    employee.Balance = employee.Balance + employee.MonthlySalary;
+                    UpdateEmployee(employee);
+
+                }
+                BulkpaymentCollection.InsertOne(model);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return true;
+
+        }
+
+        public BulkPayment LatestPay()
+                => BulkpaymentCollection.AsQueryable().OrderByDescending(p => p.Date).FirstOrDefault();
+     #endregion
 
 
         public Cash GetCurrentCash () => CashCollection.AsQueryable().SingleOrDefault();
