@@ -53,6 +53,7 @@ namespace ShopLibrary.Models {
 
         [BsonElement("created")]
         [BsonRepresentation(BsonType.DateTime)]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime Created { get; set; }
 
         [BsonElement("creator")]
@@ -60,6 +61,7 @@ namespace ShopLibrary.Models {
 
         [BsonElement("modified")]
         [BsonRepresentation(BsonType.DateTime)]
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime Modified { get; set; }
 
         [BsonElement("modifier")]
