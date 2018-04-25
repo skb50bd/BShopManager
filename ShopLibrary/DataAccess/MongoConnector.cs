@@ -1390,6 +1390,7 @@ namespace ShopLibrary.DataAccess {
     #region Bulkpayment
         public bool Payall(BulkPayment model)
         {
+            model.Meta = new Metadata(DateTime.Now, CurrentUser.UserName);
             try
             {
                 // EmployeeCollection.UpdateMany(new BsonDocument(), new BsonDocument("$set", new BsonDocument("currentBalance", "$currentBalance" + "$monthlySalary")));
