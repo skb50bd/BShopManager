@@ -8,6 +8,7 @@ using WinFormsUI.Resources.Languages;
 using System.Globalization;
 using ExcelImporter;
 using static ShopLibrary.GlobalConfig;
+using System.Configuration;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
@@ -69,17 +70,30 @@ namespace WinFormsUI {
 
                     if (CurrentUser.AccessLevel <= ShopLibrary.Models.UserRole.Admin) {
                         if (b == null || b.Meta.Created.Month != DateTime.Today.Month) {
-                            DialogResult res = MessageBox
-                                .Show("This month's Payment has not been given\n Do you want to Distribute Payment now?",
-                                      "Confirmation",
+                            DialogResult res;
+                            if(ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                            {
+                                res = MessageBox
+                                .Show("এই মাস এর বেতনসমূহ পরিশোধ হয় নাই \nআপনি কি এখন পরিশোধ করতে চান ?",
+                                      "অনুমোদন",
                                       MessageBoxButtons.YesNo);
+                            }
+                            else
+                                 res= MessageBox
+                                    .Show("This month's Payment has not been given\n Do you want to Distribute Payment now?",
+                                          "Confirmation",
+                                          MessageBoxButtons.YesNo);
 
                             if (res == DialogResult.Yes) {
                                 BulkPayment model = new BulkPayment();
+                                model.Meta = new Metadata();
                                 model.Meta.Creator = CurrentUser.UserName;
 
                                 if (Connection[0].Payall(model)) {
-                                    MessageBox.Show("Operation Successful!");
+                                    if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                                        MessageBox.Show("কাজ সুষ্ঠভাবে সম্পন্ন হয়েছে!");
+                                    else
+                                        MessageBox.Show("Operation Successful!");
                                 }
                             }
                         }

@@ -9,6 +9,7 @@ using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Configuration;
 
 namespace WinFormsUI.Forms {
     public partial class EmployeeForm : Form {
@@ -181,23 +182,42 @@ namespace WinFormsUI.Forms {
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BulkPayment pay,pay2 = new BulkPayment();
-            pay = Connection[0].LatestPay();
-            if (pay != null && pay.Meta.Created.Month == DateTime.Today.Month)
+            if (CurrentUser.AccessLevel <= Admin)
             {
-                DialogResult result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes) {
+                BulkPayment pay, pay2 = new BulkPayment();
+                pay = Connection[0].LatestPay();
+                if (pay != null && pay.Meta.Created.Month == DateTime.Today.Month)
+                {
+                    DialogResult result;
+                    if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                    {
+                        result = MessageBox.Show("এই মাসের বেতন বিতরণ করা হয়ে গেছে!\nআপনি কি আবার বেতন বিতরণ করতে চান?", "অনুমোদন", MessageBoxButtons.YesNo);
+                    }
+                    else
+                         result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        pay2.Meta = new Metadata();
+                        pay2.Meta.Creator = CurrentUser.UserName;
+                        Connection[0].Payall(pay2);
+                        if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                            MessageBox.Show("কাজ সুষ্ঠভাবে সম্পন্ন হয়েছে!");
+                        else
+                            MessageBox.Show("Operation Successful!");
+                    }
+                }
+                else
+                {
                     pay2.Meta.Creator = CurrentUser.UserName;
                     Connection[0].Payall(pay2);
-                    MessageBox.Show("Operation Successful!");
+                    if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
+                        MessageBox.Show("কাজ সুষ্ঠভাবে সম্পন্ন হয়েছে!");
+                    else
+                        MessageBox.Show("Operation Successful!");
                 }
             }
             else
-            {
-                pay2.Meta.Creator = CurrentUser.UserName;
-                Connection[0].Payall(pay2);
-                MessageBox.Show("Operation Successful!");
-            }
+                MessageBox.Show("You are not Authorized!");
         }
     }
 }
