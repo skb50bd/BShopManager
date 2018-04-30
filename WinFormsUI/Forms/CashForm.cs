@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShopLibrary;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
 
-namespace WinFormsUI.Forms
-{
+namespace WinFormsUI.Forms {
     public partial class CashForm : Form
     {
         #region MakeDraggable

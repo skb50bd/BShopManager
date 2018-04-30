@@ -55,9 +55,9 @@ namespace ShopLibrary.DataAccess {
         private IMongoCollection<User>        UserCollection        => _db.GetCollection<User>("User");
         private IMongoCollection<Cash>        CashCollection        => _db.GetCollection<Cash>("Cash");
         private IMongoCollection<Memo>        MemoCollection        => _db.GetCollection<Memo>("Memo");
-
+        private IMongoCollection<Vouchar>     VoucharCollection     => _db.GetCollection<Vouchar>("Vouchar");
         private IMongoCollection<BulkPayment> BulkpaymentCollection => _db.GetCollection<BulkPayment>("BulkPayment");
-        #endregion
+    #endregion
 
         public bool InitiateDatabase () {
             Debug.WriteLine("Trying to initiate DB");
@@ -129,7 +129,9 @@ namespace ShopLibrary.DataAccess {
             try {
                 Session result = SessionCollection.FindOneAndUpdate(filter, update);
             }
-            catch (Exception e) { }
+            catch (Exception) {
+                // ignored
+            }
         }
 
         public List<User> GetUserAll () => UserCollection.AsQueryable().Where(u => u.IsActive).ToList();
@@ -143,8 +145,7 @@ namespace ShopLibrary.DataAccess {
             }
             catch (Exception e) {
                 Debug.WriteLine(e.Message);
-
-                throw e;
+                throw;
             }
 
             Users.Add(model);
@@ -164,7 +165,7 @@ namespace ShopLibrary.DataAccess {
                 if (result == null)
                     return false;
             }
-            catch (Exception e) {
+            catch (Exception) {
                 return false;
             }
 
@@ -228,7 +229,7 @@ namespace ShopLibrary.DataAccess {
             return BankAccounts.SingleOrDefault(ba => ba.AccountName == model.AccountName);
         }
 
-        public bool DeleteBankAccount (BankAccount model) {
+        public async Task<bool> DeleteBankAccount (BankAccount model) {
             BsonDocument filter  = new BsonDocument("_id", model.ObjectId);
             BsonDocument tFilter = new BsonDocument("bankAccountId", model.BankAccountId);
 
@@ -240,7 +241,7 @@ namespace ShopLibrary.DataAccess {
                         BankAccounts.Remove(model);
                 }
 
-                DeleteTransactionsAsync();
+                await DeleteTransactionsAsync();
             }
             catch (Exception e) {
                 return false;
@@ -1385,36 +1386,45 @@ namespace ShopLibrary.DataAccess {
         public void DeleteMemo (Memo model) {
             MemoCollection.DeleteOne(m => m.ObjectId == model.ObjectId);
         }
-        #endregion
+    #endregion
+
+    #region Vouchar
+        public List<Vouchar> GetAllVouchars () => VoucharCollection.AsQueryable().ToList();
+        public List<Vouchar> GetAllVouchars(DateTime start, DateTime end) => 
+            VoucharCollection.AsQueryable()
+                                .Where(m => m.Meta.Created >= start
+                                         && m.Meta.Created <= end)
+                                .ToList();
+        public Vouchar       GetVouchar (ObjectId id)   => VoucharCollection.AsQueryable().FirstOrDefault(v => v.ObjectId == id);
+        public void SaveVouchar (Vouchar model) => VoucharCollection.InsertOne(model);
+        public void DeleteVouchar (Vouchar model) => VoucharCollection.DeleteOne(v => v.ObjectId == model.ObjectId);
+    #endregion
 
     #region Bulkpayment
-        public bool Payall(BulkPayment model)
-        {
+        public bool Payall (BulkPayment model) {
             model.Meta = new Metadata(DateTime.Now, CurrentUser.UserName);
-            try
-            {
+
+            try {
                 // EmployeeCollection.UpdateMany(new BsonDocument(), new BsonDocument("$set", new BsonDocument("currentBalance", "$currentBalance" + "$monthlySalary")));
                 List<Employee> employees = GetEmployeeAll();
-                foreach (Employee employee in employees)
-                {
+
+                foreach (Employee employee in employees) {
                     employee.Balance = employee.Balance + employee.MonthlySalary;
                     UpdateEmployee(employee);
-
                 }
-                BulkpaymentCollection.InsertOne(model);
 
+                BulkpaymentCollection.InsertOne(model);
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 throw e;
             }
-            return true;
 
+            return true;
         }
 
-        public BulkPayment LatestPay()
-                => BulkpaymentCollection.AsQueryable().OrderByDescending(p => p.Meta.Created).FirstOrDefault();
-     #endregion
+        public BulkPayment LatestPay ()
+            => BulkpaymentCollection.AsQueryable().OrderByDescending(p => p.Meta.Created).FirstOrDefault();
+    #endregion
 
 
         public Cash GetCurrentCash () => CashCollection.AsQueryable().SingleOrDefault();
@@ -1423,7 +1433,7 @@ namespace ShopLibrary.DataAccess {
             decimal      m      = cashFlow.InFlow - cashFlow.OutFlow;
             BsonDocument filter = new BsonDocument("_id", CurrentCash.ObjectId);
             BsonDocument update = new BsonDocument("$inc", new BsonDocument("current", m));
-            Cash c      = CashCollection.FindOneAndUpdate<Cash>(filter, update);
+            Cash         c      = CashCollection.FindOneAndUpdate<Cash>(filter, update);
 
             return c;
         }

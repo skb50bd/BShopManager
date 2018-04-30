@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using ShopLibrary;
 using ShopLibrary.Models;
 using WinFormsUI.Forms;
 using WinFormsUI.Resources.Languages;
 using System.Globalization;
-using ExcelImporter;
 using static ShopLibrary.GlobalConfig;
 using System.Configuration;
-
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace WinFormsUI {
     internal static class Program {

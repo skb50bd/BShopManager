@@ -7,8 +7,6 @@ using System.Windows.Forms;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using System.Configuration;
 
 namespace WinFormsUI.Forms {

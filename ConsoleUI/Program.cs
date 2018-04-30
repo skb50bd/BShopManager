@@ -1,10 +1,5 @@
-﻿using ShopLibrary.DataAccess;
-using ShopLibrary.Models;
-using ShopLibrary;
-using System.Collections.Generic;
+﻿using ShopLibrary.Models;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LiteDB;
 using System;
 using System.IO;
