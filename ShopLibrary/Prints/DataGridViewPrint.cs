@@ -49,6 +49,10 @@ namespace ShopLibrary.Prints
 
             //Write the table
             PdfPTable table = new PdfPTable(5);
+            table.WidthPercentage = 100f;
+            float[] widths = new float[] { 10f, 27f, 28f, 20f, 15f };
+            table.SetWidths(widths);
+
             //Table header
             BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             Font fntColumnHeader = new Font(btnColumnHeader, 12, 1, Color);
