@@ -4,8 +4,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShopLibrary.Models;
+using System.Data;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
+using ShopLibrary.Prints;
 
 namespace WinFormsUI.Forms {
     public partial class CustomerForm : Form {
@@ -232,6 +234,20 @@ namespace WinFormsUI.Forms {
         {
             Customers = Connection[0].GetCustomersAll();
             WireUp();
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewPrint dp = new DataGridViewPrint();
+
+            System.IO.Directory.CreateDirectory(@"E:\BshopManager\");
+
+            string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            dp.ExportDataTableToPdf(_groupedCustomers , @"E:\BshopManager\" + fileName + ".pdf", "Customer Due Report");
+
+            System.Diagnostics.Process.Start(@"E:\BshopManager\" + fileName + ".pdf");
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            
         }
     }
 }

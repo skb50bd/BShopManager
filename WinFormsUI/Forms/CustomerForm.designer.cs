@@ -359,6 +359,7 @@
             this.PrintButton.Name = "PrintButton";
             this.ButtonToolTip.SetToolTip(this.PrintButton, resources.GetString("PrintButton.ToolTip"));
             this.PrintButton.UseVisualStyleBackColor = false;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // ViewRecordButton
             // 
