@@ -1908,8 +1908,9 @@ namespace WinFormsUI.Forms {
 
                             if (memo == null) {
                                 memo =
-                                    new Memo(sale, _customer, Shops.First(s => s.ObjectId == sale.ShopId));
-                                memo.PreviousDue = null;
+                                    new Memo(sale, _customer, Shops.First(s => s.ObjectId == sale.ShopId)) {
+                                        PreviousDue = null
+                                    };
                                 memo.Note += "\n The original memo didn't have any previous due field in database."
                                            + "That record was temporary";
                             }

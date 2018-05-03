@@ -140,8 +140,9 @@ namespace WinFormsUI {
                         EmailAddressText.Text,
                         UserNameText.Text,
                         (UserRole)(AccessLevelCombo.SelectedIndex + 2),
-                        PasswordText.Text);
-                    user.ObjectId = objId;
+                        PasswordText.Text) {
+                        ObjectId = objId
+                    };
                     if (AddSaveButton.Text == "Add User" || AddSaveButton.Text == rm.GetString("AddSaveButton.Text")) {
                         Connection[0].InsertUser(user);
                         MessageBox.Show("User Added");

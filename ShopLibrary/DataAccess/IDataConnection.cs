@@ -185,13 +185,13 @@ namespace ShopLibrary.DataAccess {
         void       DeleteMemo (Memo     model);
     #endregion
 
-    #region Vouchar
-        List<Vouchar> GetAllVouchars ();
-        List<Vouchar> GetAllVouchars (DateTime start, DateTime end);
-        Vouchar       GetVouchar (ObjectId     id);
-        void          SaveVouchar (Vouchar     model);
-        void          DeleteVouchar (Vouchar   model);
-    #endregion
+    //#region Vouchar
+    //    List<Vouchar> GetAllVouchars ();
+    //    List<Vouchar> GetAllVouchars (DateTime start, DateTime end);
+    //    Vouchar       GetVouchar (ObjectId     id);
+    //    void          SaveVouchar (Vouchar     model);
+    //    void          DeleteVouchar (Vouchar   model);
+    //#endregion
 
         Cash GetCurrentCash ();
         bool Payall (BulkPayment pay);

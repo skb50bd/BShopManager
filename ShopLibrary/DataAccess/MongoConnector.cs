@@ -1388,17 +1388,17 @@ namespace ShopLibrary.DataAccess {
         }
     #endregion
 
-    #region Vouchar
-        public List<Vouchar> GetAllVouchars () => VoucharCollection.AsQueryable().ToList();
-        public List<Vouchar> GetAllVouchars(DateTime start, DateTime end) => 
-            VoucharCollection.AsQueryable()
-                                .Where(m => m.Meta.Created >= start
-                                         && m.Meta.Created <= end)
-                                .ToList();
-        public Vouchar       GetVouchar (ObjectId id)   => VoucharCollection.AsQueryable().FirstOrDefault(v => v.ObjectId == id);
-        public void SaveVouchar (Vouchar model) => VoucharCollection.InsertOne(model);
-        public void DeleteVouchar (Vouchar model) => VoucharCollection.DeleteOne(v => v.ObjectId == model.ObjectId);
-    #endregion
+    //#region Vouchar
+    //    public List<Vouchar> GetAllVouchars () => VoucharCollection.AsQueryable().ToList();
+    //    public List<Vouchar> GetAllVouchars(DateTime start, DateTime end) => 
+    //        VoucharCollection.AsQueryable()
+    //                            .Where(m => m.Meta.Created >= start
+    //                                     && m.Meta.Created <= end)
+    //                            .ToList();
+    //    public Vouchar       GetVouchar (ObjectId id)   => VoucharCollection.AsQueryable().FirstOrDefault(v => v.ObjectId == id);
+    //    public void SaveVouchar (Vouchar model) => VoucharCollection.InsertOne(model);
+    //    public void DeleteVouchar (Vouchar model) => VoucharCollection.DeleteOne(v => v.ObjectId == model.ObjectId);
+    ////#endregion
 
     #region Bulkpayment
         public bool Payall (BulkPayment model) {

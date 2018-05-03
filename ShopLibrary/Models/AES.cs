@@ -15,13 +15,14 @@ namespace ShopLibrary.Models {
         public static string Encrypt(string raw, string salt)
         {
             byte[] textBytes             = Encoding.ASCII.GetBytes(raw);
-            AesCryptoServiceProvider aes = new AesCryptoServiceProvider();
-            aes.BlockSize                = 128;
-            aes.KeySize                  = 256;
-            aes.Key                      = Encoding.ASCII.GetBytes("EnCt2a4baea437f621aad2d5728f599b");
-            aes.IV                       = Encoding.ASCII.GetBytes("BngZmDHZTpqtuapv");
-            aes.Padding                  = PaddingMode.PKCS7;
-            aes.Mode                     = CipherMode.CBC;
+            AesCryptoServiceProvider aes = new AesCryptoServiceProvider {
+                BlockSize = 128,
+                KeySize = 256,
+                Key = Encoding.ASCII.GetBytes("EnCt2a4baea437f621aad2d5728f599b"),
+                IV = Encoding.ASCII.GetBytes("BngZmDHZTpqtuapv"),
+                Padding = PaddingMode.PKCS7,
+                Mode = CipherMode.CBC
+            };
 
             ICryptoTransform icrypt = aes.CreateEncryptor(aes.Key, aes.IV);
 

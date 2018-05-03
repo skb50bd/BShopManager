@@ -147,14 +147,14 @@ namespace WinFormsUI.Forms {
                 WireUp();
         }
 
-        private async Task EditAccountButton_Click (object sender, EventArgs e) {
+        private void EditAccountButton_Click (object sender, EventArgs e) {
             Form         form   = new BankAccountInformationForm(BankAccounts[AccountSelectorCombo.SelectedIndex]);
             DialogResult result = form.ShowDialog();
             if (result == DialogResult.OK)
                 WireUp();
         }
 
-        private async Task DeleteAccountButton_ClickAsync (object sender, EventArgs e) {
+        private async void DeleteAccountButton_ClickAsync (object sender, EventArgs e) {
             DialogResult confirm = MessageBox.Show("Do You Really Want to Delete"
                                                  + $"{AccountSelectorCombo.Text}?"
                                                  + "\nAll related Transactions will be deleted",
