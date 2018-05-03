@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Diagnostics;
 using ShopLibrary.DataAccess;
@@ -8,8 +7,6 @@ using ShopLibrary.Models;
 using System.Globalization;
 using System.Resources;
 using System.Threading.Tasks;
-using System.Timers;
-using System.util;
 
 namespace ShopLibrary {
     public static class GlobalConfig {

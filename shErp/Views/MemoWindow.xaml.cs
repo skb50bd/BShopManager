@@ -6,10 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 using MongoDB.Bson;
-using ShopLibrary.Output;
 using static ShopLibrary.Searcher.Search;
 using static ShopLibrary.GlobalConfig;
 

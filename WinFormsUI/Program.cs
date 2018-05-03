@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using ShopLibrary;
 using ShopLibrary.Models;
 using WinFormsUI.Forms;
-using WinFormsUI.Resources.Languages;
+//using WinFormsUI.Resources.Languages;
 using System.Globalization;
-using ExcelImporter;
 using static ShopLibrary.GlobalConfig;
 using System.Configuration;
-
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+using Resources.Languages;
 
 namespace WinFormsUI {
     internal static class Program {
@@ -85,9 +82,11 @@ namespace WinFormsUI {
                                           MessageBoxButtons.YesNo);
 
                             if (res == DialogResult.Yes) {
-                                BulkPayment model = new BulkPayment();
-                                model.Meta = new Metadata();
-                                model.Meta.Creator = CurrentUser.UserName;
+                                BulkPayment model = new BulkPayment {
+                                    Meta = new Metadata {
+                                        Creator = CurrentUser.UserName
+                                    }
+                                };
 
                                 if (Connection[0].Payall(model)) {
                                     if (ConfigurationManager.AppSettings["Language"] == "bn-BD")

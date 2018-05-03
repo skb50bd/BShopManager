@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Diagnostics;
-using System.Globalization;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;

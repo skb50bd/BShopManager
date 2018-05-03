@@ -1,10 +1,8 @@
 ﻿using System;
-using iTextSharp.text;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ShopLibrary.Models
-{
+namespace ShopLibrary.Models {
     [BsonIgnoreExtraElements]
     public class CashModification : ICashFlow
     {

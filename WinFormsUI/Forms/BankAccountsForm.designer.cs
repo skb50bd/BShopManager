@@ -248,7 +248,7 @@
             this.DeleteAccountButton.Name = "DeleteAccountButton";
             this.ButtonToolTip.SetToolTip(this.DeleteAccountButton, resources.GetString("DeleteAccountButton.ToolTip"));
             this.DeleteAccountButton.UseVisualStyleBackColor = true;
-            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_Click);
+            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_ClickAsync);
             // 
             // PrintButton
             // 

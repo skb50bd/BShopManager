@@ -7,8 +7,6 @@ using System.Windows.Forms;
 using ShopLibrary.Models;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using System.Configuration;
 
 namespace WinFormsUI.Forms {
@@ -197,8 +195,9 @@ namespace WinFormsUI.Forms {
                          result = MessageBox.Show("This month's payment has already been Given!\nDo you still with to Continue?", "Confirmation", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        pay2.Meta = new Metadata();
-                        pay2.Meta.Creator = CurrentUser.UserName;
+                        pay2.Meta = new Metadata {
+                            Creator = CurrentUser.UserName
+                        };
                         Connection[0].Payall(pay2);
                         if (ConfigurationManager.AppSettings["Language"] == "bn-BD")
                             MessageBox.Show("কাজ সুষ্ঠভাবে সম্পন্ন হয়েছে!");
