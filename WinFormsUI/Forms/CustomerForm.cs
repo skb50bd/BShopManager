@@ -267,6 +267,9 @@ namespace WinFormsUI.Forms {
         }
 
         private void PrintButton_Click (object sender, EventArgs e) {
+            System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                            + @"\Brotal\");
+
             string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                             + @"\Brotal\" + $"CustomerDueReport-{DateTime.Now:yyyyMMddHHmmss}" + ".pdf";
             DataGridViewPrint.ExportDataTableToPdf(_groupedCustomers,

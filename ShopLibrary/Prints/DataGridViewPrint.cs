@@ -45,7 +45,7 @@ namespace ShopLibrary.Prints {
             //Write the table
             PdfPTable table = new PdfPTable(5);
             table.WidthPercentage = 100f;
-            float[] widths = new float[] { 10f, 27f, 28f, 20f, 15f };
+            float[] widths = new float[] { 10f, 26f, 14f, 20f, 28f };
             table.SetWidths(widths);
 
             //Table header
@@ -75,12 +75,18 @@ namespace ShopLibrary.Prints {
 
             //table Data
             foreach (Customer customer in C) {
-                cell = new PdfPCell(new Phrase(customer.GetDebt)) {
-                                                                      HorizontalAlignment = Element.ALIGN_RIGHT
-                                                                  }; table.AddCell(customer.CustomerId);
+                cell = new PdfPCell(new Phrase(customer.GetDebt))
+                {
+                    HorizontalAlignment = Element.ALIGN_RIGHT
+                };
+                table.AddCell(customer.CustomerId);
                 table.AddCell(customer.FullName);
                 table.AddCell(cell);
-                table.AddCell(customer.Phone);
+                cell = new PdfPCell(new Phrase(customer.Phone))
+                {
+                    HorizontalAlignment = Element.ALIGN_RIGHT
+                };
+                table.AddCell(cell);
                 table.AddCell(customer.Address);
             }
 
