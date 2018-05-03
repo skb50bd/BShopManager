@@ -57,7 +57,7 @@ namespace ShopLibrary.Prints {
             table.AddCell(cell);
 
             cell = new PdfPCell();
-            cell.AddElement(new Chunk("Adress", fntColumnHeader));
+            cell.AddElement(new Chunk("Due", fntColumnHeader));
             table.AddCell(cell);
 
             cell = new PdfPCell();
@@ -65,20 +65,19 @@ namespace ShopLibrary.Prints {
             table.AddCell(cell);
 
             cell = new PdfPCell();
-            cell.AddElement(new Chunk("Due", fntColumnHeader));
+            cell.AddElement(new Chunk("Adress", fntColumnHeader));
             table.AddCell(cell);
 
 
             //table Data
             foreach (Customer customer in C) {
-                table.AddCell(customer.CustomerId);
-                table.AddCell(customer.FullName);
-                table.AddCell(customer.Address);
-                table.AddCell(customer.Phone);
                 cell = new PdfPCell(new Phrase(customer.GetDebt)) {
-                    HorizontalAlignment = Element.ALIGN_RIGHT
-                };
+                                                                      HorizontalAlignment = Element.ALIGN_RIGHT
+                                                                  }; table.AddCell(customer.CustomerId);
+                table.AddCell(customer.FullName);
                 table.AddCell(cell);
+                table.AddCell(customer.Phone);
+                table.AddCell(customer.Address);
             }
 
             document.Add(table);
