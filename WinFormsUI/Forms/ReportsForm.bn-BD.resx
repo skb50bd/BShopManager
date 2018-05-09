@@ -124,11 +124,26 @@
   <data name="Filter1Label.Text" xml:space="preserve">
     <value>ফিল্টার-১</value>
   </data>
+  <data name="Filter2Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 74</value>
+  </data>
   <data name="Filter2Label.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 21</value>
   </data>
   <data name="Filter2Label.Text" xml:space="preserve">
     <value>ফিল্টার-২</value>
+  </data>
+  <data name="Filter1Combo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 29</value>
+  </data>
+  <data name="Filter2Combo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 97</value>
+  </data>
+  <data name="Filter2Combo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 29</value>
+  </data>
+  <data name="ReportTypeSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>541, 45</value>
   </data>
   <data name="PrintButton.Text" xml:space="preserve">
     <value>প্রিন্ট</value>
@@ -139,17 +154,66 @@
   <data name="ViewButton.Text" xml:space="preserve">
     <value>দেখুন</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LoadButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="LoadButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="LoadButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="LoadButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LoadButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 39</value>
+  </data>
+  <data name="LoadButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="LoadButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 42</value>
+  </data>
+  <data name="LoadButton.Text" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="LoadButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="ToDateTime.CustomFormat" xml:space="preserve">
+    <value>dd/MM/yyyy hh:mm tt</value>
+  </data>
+  <data name="ToDateTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 72</value>
+  </data>
+  <data name="ToDateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 29</value>
+  </data>
+  <data name="FromLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 29</value>
+  </data>
   <data name="FromLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 21</value>
   </data>
   <data name="FromLabel.Text" xml:space="preserve">
     <value>শুরুর দিন</value>
   </data>
+  <data name="FromDateTime.CustomFormat" xml:space="preserve">
+    <value>dd/MM/yyyy hh:mm tt</value>
+  </data>
+  <data name="FromDateTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="FromDateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 29</value>
+  </data>
   <data name="ToLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="ToLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 84</value>
+    <value>7, 79</value>
   </data>
   <data name="ToLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 20</value>
@@ -157,8 +221,17 @@
   <data name="ToLabel.Text" xml:space="preserve">
     <value>সমাপ্তির দিন</value>
   </data>
+  <data name="DateGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>559, 4</value>
+  </data>
+  <data name="DateGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 122</value>
+  </data>
   <data name="StatsGroupBox.Text" xml:space="preserve">
     <value>পরিসংখ্যান </value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1290, 725</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

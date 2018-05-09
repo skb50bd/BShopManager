@@ -1790,12 +1790,12 @@ namespace WinFormsUI.Forms {
 
         private void FromDateTime_ValueChanged (object sender, EventArgs e) {
             report.FromDate = FromDateTime.Value;
-            ReportTypeSelectorCombo_SelectedIndexChanged(sender, e);
+            //ReportTypeSelectorCombo_SelectedIndexChanged(sender, e);
         }
 
         private void ToDateTime_ValueChanged (object sender, EventArgs e) {
             report.ToDate = ToDateTime.Value;
-            ReportTypeSelectorCombo_SelectedIndexChanged(sender, e);
+            //ReportTypeSelectorCombo_SelectedIndexChanged(sender, e);
         }
 
         private void ViewButton_Click (object sender, EventArgs e) {
@@ -1891,34 +1891,33 @@ namespace WinFormsUI.Forms {
                     sale = report.Sales[index];
                     Memo memo = Connection[0].GetMemo(sale.ObjectId);
 
-                    if (memo != null) {
-                        SaleForm form = new SaleForm(memo);
-                        form.ShowDialog();
-                    }
-                    else {
-                        string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-                                           + @"\Brotal\"
-                                           + sale.SaleId
-                                           + ".pdf";
+                    //if (memo != null) {
+                    //    SaleForm form = new SaleForm(memo);
+                    //    form.ShowDialog();
+                    //} else {
+                    string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                                       + @"\Brotal\"
+                                       + sale.SaleId
+                                       + ".pdf";
 
-                        if (!File.Exists(outfilename)) {
-                            Customer _customer = new Customer();
-                            if (Customers.Exists(c => c.ObjectId == sale.CustomerId))
-                                _customer = Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId);
+                    if (!File.Exists(outfilename)) {
+                        Customer _customer = new Customer();
+                        if (Customers.Exists(c => c.ObjectId == sale.CustomerId))
+                            _customer = Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId);
 
-                            if (memo == null) {
-                                memo =
-                                    new Memo(sale, _customer, Shops.First(s => s.ObjectId == sale.ShopId)) {
-                                        PreviousDue = null
-                                    };
-                                memo.Note += "\n The original memo didn't have any previous due field in database."
-                                           + "That record was temporary";
-                            }
-
-                            PrintSaleMemo.ToPdf(memo);
-                            Process.Start(outfilename);
+                        if (memo == null) {
+                            memo =
+                                new Memo(sale, _customer, Shops.First(s => s.ObjectId == sale.ShopId)) {
+                                                                                                           PreviousDue =
+                                                                                                               null
+                                                                                                       };
+                            memo.Note += "\n The original memo didn't have any previous due field in database."
+                                       + "That record was temporary";
                         }
+                        PrintSaleMemo.ToPdf(memo);
+                        
                     }
+                    Process.Start(outfilename);
 
                     break;
 
@@ -2075,6 +2074,10 @@ namespace WinFormsUI.Forms {
         private void ReportsGrid_SelectionChanged (object sender, EventArgs e) {
             if (ReportsGrid.CurrentRow != null)
                 ViewButton.Enabled = ReportsGrid.CurrentRow.Index > -1;
+        }
+
+        private void LoadButton_Click(object sender, EventArgs e) {
+            ReportTypeSelectorCombo_SelectedIndexChanged(sender, e);
         }
     }
 }

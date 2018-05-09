@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace ShopLibrary.Prints {
     public static class DataGridViewPrint {
@@ -32,7 +33,8 @@ namespace ShopLibrary.Prints {
             BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             Font fntAuthor = new Font(btnAuthor, 11, 2, color);
             prgAuthor.Alignment = Element.ALIGN_RIGHT;
-            prgAuthor.Add(new Chunk("Date : " + DateTime.Now.ToLocalTime().ToShortDateString(), fntAuthor));
+            prgAuthor.Add(new Chunk("Date: " + DateTime.Now.ToLocalTime().ToShortDateString(), fntAuthor));
+            prgAuthor.Add(new Chunk($"\nTotal Due: {C.Sum(c => c.Debt).ToString("0.##")} BDT", fntAuthor));
             document.Add(prgAuthor);
 
             //Add a line seperation

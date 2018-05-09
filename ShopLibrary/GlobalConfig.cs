@@ -26,7 +26,6 @@ namespace ShopLibrary {
 
         public static CultureInfo Culture = CultureInfo.CreateSpecificCulture("en");
         public static ResourceManager ResourceManager;
-        public static readonly log4net.ILog log = LogHelper.GetLogger();
         #endregion
 
         public static void InitializeConnections(bool sqlDb, bool mongoDb, bool jsonDb) {

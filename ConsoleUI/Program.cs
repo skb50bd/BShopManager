@@ -1,6 +1,5 @@
 ﻿using ShopLibrary.Models;
 using System.Linq;
-using LiteDB;
 using System;
 using System.IO;
 using System.Threading;
@@ -78,7 +77,6 @@ namespace ConsoleUI {
         static void ChooseMenu(int choice)
         {
             string dbPath = "shErp.db";
-            LiteDatabase db = new LiteDatabase(dbPath);
 
 
             MongoClient _client = new MongoClient();

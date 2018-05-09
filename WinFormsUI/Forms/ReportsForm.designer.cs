@@ -35,6 +35,7 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ViewButton = new System.Windows.Forms.Button();
             this.DateGroupBox = new System.Windows.Forms.GroupBox();
+            this.LoadButton = new System.Windows.Forms.Button();
             this.ToDateTime = new System.Windows.Forms.DateTimePicker();
             this.FromLabel = new System.Windows.Forms.Label();
             this.FromDateTime = new System.Windows.Forms.DateTimePicker();
@@ -80,29 +81,29 @@
             // 
             // Filter1Combo
             // 
-            resources.ApplyResources(this.Filter1Combo, "Filter1Combo");
             this.Filter1Combo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.Filter1Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.Filter1Combo, "Filter1Combo");
             this.Filter1Combo.FormattingEnabled = true;
             this.Filter1Combo.Name = "Filter1Combo";
             this.Filter1Combo.SelectedIndexChanged += new System.EventHandler(this.Filter1Combo_SelectedIndexChanged);
             // 
             // Filter2Combo
             // 
-            resources.ApplyResources(this.Filter2Combo, "Filter2Combo");
             this.Filter2Combo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.Filter2Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.Filter2Combo, "Filter2Combo");
             this.Filter2Combo.FormattingEnabled = true;
             this.Filter2Combo.Name = "Filter2Combo";
             this.Filter2Combo.SelectedIndexChanged += new System.EventHandler(this.Filter2Combo_SelectedIndexChanged);
             // 
             // ReportTypeSelectorCombo
             // 
-            resources.ApplyResources(this.ReportTypeSelectorCombo, "ReportTypeSelectorCombo");
             this.ReportTypeSelectorCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ReportTypeSelectorCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ReportTypeSelectorCombo.BackColor = System.Drawing.Color.White;
             this.ReportTypeSelectorCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.ReportTypeSelectorCombo, "ReportTypeSelectorCombo");
             this.ReportTypeSelectorCombo.FormattingEnabled = true;
             this.ReportTypeSelectorCombo.Items.AddRange(new object[] {
             resources.GetString("ReportTypeSelectorCombo.Items"),
@@ -124,22 +125,22 @@
             // 
             // PrintButton
             // 
-            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(149)))), ((int)(((byte)(199)))));
             this.PrintButton.FlatAppearance.BorderSize = 0;
             this.PrintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(99)))), ((int)(((byte)(132)))));
             this.PrintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(184)))), ((int)(((byte)(217)))));
+            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.ForeColor = System.Drawing.Color.White;
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.UseVisualStyleBackColor = false;
             // 
             // DeleteButton
             // 
-            resources.ApplyResources(this.DeleteButton, "DeleteButton");
             this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteButton.FlatAppearance.BorderSize = 0;
             this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
+            resources.ApplyResources(this.DeleteButton, "DeleteButton");
             this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.UseVisualStyleBackColor = false;
@@ -147,11 +148,11 @@
             // 
             // ViewButton
             // 
-            resources.ApplyResources(this.ViewButton, "ViewButton");
             this.ViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.ViewButton.FlatAppearance.BorderSize = 0;
             this.ViewButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.ViewButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            resources.ApplyResources(this.ViewButton, "ViewButton");
             this.ViewButton.ForeColor = System.Drawing.Color.White;
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.UseVisualStyleBackColor = false;
@@ -159,13 +160,26 @@
             // 
             // DateGroupBox
             // 
-            resources.ApplyResources(this.DateGroupBox, "DateGroupBox");
+            this.DateGroupBox.Controls.Add(this.LoadButton);
             this.DateGroupBox.Controls.Add(this.ToDateTime);
             this.DateGroupBox.Controls.Add(this.FromLabel);
             this.DateGroupBox.Controls.Add(this.FromDateTime);
             this.DateGroupBox.Controls.Add(this.ToLabel);
+            resources.ApplyResources(this.DateGroupBox, "DateGroupBox");
             this.DateGroupBox.Name = "DateGroupBox";
             this.DateGroupBox.TabStop = false;
+            // 
+            // LoadButton
+            // 
+            this.LoadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
+            this.LoadButton.FlatAppearance.BorderSize = 0;
+            this.LoadButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            this.LoadButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            this.LoadButton.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.LoadButton, "LoadButton");
+            this.LoadButton.Name = "LoadButton";
+            this.LoadButton.UseVisualStyleBackColor = false;
+            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
             // 
             // ToDateTime
             // 
@@ -200,7 +214,6 @@
             // 
             // ReportsGrid
             // 
-            resources.ApplyResources(this.ReportsGrid, "ReportsGrid");
             this.ReportsGrid.AllowUserToAddRows = false;
             this.ReportsGrid.AllowUserToDeleteRows = false;
             this.ReportsGrid.AllowUserToResizeRows = false;
@@ -226,6 +239,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ReportsGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.ReportsGrid.GridColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.ReportsGrid, "ReportsGrid");
             this.ReportsGrid.Name = "ReportsGrid";
             this.ReportsGrid.RowHeadersVisible = false;
             this.ReportsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -233,7 +247,6 @@
             // 
             // StatsGroupBox
             // 
-            resources.ApplyResources(this.StatsGroupBox, "StatsGroupBox");
             this.StatsGroupBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.StatsGroupBox.Controls.Add(this.StatPropText10);
             this.StatsGroupBox.Controls.Add(this.StatPropLabel10);
@@ -255,14 +268,15 @@
             this.StatsGroupBox.Controls.Add(this.StatPropLabel2);
             this.StatsGroupBox.Controls.Add(this.StatPropText1);
             this.StatsGroupBox.Controls.Add(this.StatPropLabel1);
+            resources.ApplyResources(this.StatsGroupBox, "StatsGroupBox");
             this.StatsGroupBox.Name = "StatsGroupBox";
             this.StatsGroupBox.TabStop = false;
             // 
             // StatPropText10
             // 
-            resources.ApplyResources(this.StatPropText10, "StatPropText10");
             this.StatPropText10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText10, "StatPropText10");
             this.StatPropText10.Name = "StatPropText10";
             this.StatPropText10.ReadOnly = true;
             // 
@@ -274,9 +288,9 @@
             // 
             // StatPropText9
             // 
-            resources.ApplyResources(this.StatPropText9, "StatPropText9");
             this.StatPropText9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText9, "StatPropText9");
             this.StatPropText9.Name = "StatPropText9";
             this.StatPropText9.ReadOnly = true;
             // 
@@ -288,9 +302,9 @@
             // 
             // StatPropText8
             // 
-            resources.ApplyResources(this.StatPropText8, "StatPropText8");
             this.StatPropText8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText8, "StatPropText8");
             this.StatPropText8.Name = "StatPropText8";
             this.StatPropText8.ReadOnly = true;
             // 
@@ -302,9 +316,9 @@
             // 
             // StatPropText7
             // 
-            resources.ApplyResources(this.StatPropText7, "StatPropText7");
             this.StatPropText7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText7, "StatPropText7");
             this.StatPropText7.Name = "StatPropText7";
             this.StatPropText7.ReadOnly = true;
             // 
@@ -316,9 +330,9 @@
             // 
             // StatPropText6
             // 
-            resources.ApplyResources(this.StatPropText6, "StatPropText6");
             this.StatPropText6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText6, "StatPropText6");
             this.StatPropText6.Name = "StatPropText6";
             this.StatPropText6.ReadOnly = true;
             // 
@@ -330,9 +344,9 @@
             // 
             // StatPropText5
             // 
-            resources.ApplyResources(this.StatPropText5, "StatPropText5");
             this.StatPropText5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText5, "StatPropText5");
             this.StatPropText5.Name = "StatPropText5";
             this.StatPropText5.ReadOnly = true;
             // 
@@ -344,9 +358,9 @@
             // 
             // StatPropText4
             // 
-            resources.ApplyResources(this.StatPropText4, "StatPropText4");
             this.StatPropText4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText4, "StatPropText4");
             this.StatPropText4.Name = "StatPropText4";
             this.StatPropText4.ReadOnly = true;
             // 
@@ -358,9 +372,9 @@
             // 
             // StatPropText3
             // 
-            resources.ApplyResources(this.StatPropText3, "StatPropText3");
             this.StatPropText3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText3, "StatPropText3");
             this.StatPropText3.Name = "StatPropText3";
             this.StatPropText3.ReadOnly = true;
             // 
@@ -372,9 +386,9 @@
             // 
             // StatPropText2
             // 
-            resources.ApplyResources(this.StatPropText2, "StatPropText2");
             this.StatPropText2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText2, "StatPropText2");
             this.StatPropText2.Name = "StatPropText2";
             this.StatPropText2.ReadOnly = true;
             // 
@@ -386,9 +400,9 @@
             // 
             // StatPropText1
             // 
-            resources.ApplyResources(this.StatPropText1, "StatPropText1");
             this.StatPropText1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.StatPropText1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.StatPropText1, "StatPropText1");
             this.StatPropText1.Name = "StatPropText1";
             this.StatPropText1.ReadOnly = true;
             // 
@@ -465,5 +479,6 @@
         private System.Windows.Forms.Label StatPropLabel9;
         private System.Windows.Forms.TextBox StatPropText8;
         private System.Windows.Forms.Label StatPropLabel8;
+        private System.Windows.Forms.Button LoadButton;
     }
 }

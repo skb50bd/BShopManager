@@ -40,9 +40,6 @@
     <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -92,7 +89,6 @@
     <Compile Include="Interfaces\ISupplierReport.cs" />
     <Compile Include="Interfaces\ISupplierReportable.cs" />
     <Compile Include="Interfaces\ITransactionReport.cs" />
-    <Compile Include="LogHelper.cs" />
     <Compile Include="Models\AES.cs" />
     <Compile Include="Models\BankAccount.cs" />
     <Compile Include="Models\BulkPayment.cs" />
