@@ -106,6 +106,7 @@ namespace ShopLibrary.Models {
         decimal ICustomerReport.CurrentDue          => Customer.Debt;
         decimal ICustomerReport.TotalRefund         => Refunds.Sum(s => s.RefundAmount);
         decimal ICustomerReport.TotalProfit         => Sales.Sum(s => s.Profit);
+        
         List<Sale> ICustomerReport.GetCustomerSales(Customer customer) 
             => Connection[0].GetSaleByCustomer(customer, FromDate, ToDate);
         List<DebtCollection> ICustomerReport.GetCustomerDebtCollections(Customer customer)
@@ -113,6 +114,12 @@ namespace ShopLibrary.Models {
         List<Refund> ICustomerReport.GetCustomerRefunds(Customer customer)
             => Connection[0].GetRefundByCustomer(customer, FromDate, ToDate);
 
+        void ICustomerReport.LoadCustomerReport ()
+        {
+            Sales = (this as ICustomerReport).GetCustomerSales(Customer);
+            DebtCollections = (this as ICustomerReport).GetCustomerDebtCollections(Customer);
+            Refunds = (this as ICustomerReport).GetCustomerRefunds(Customer);
+        }
         #endregion
 
         #region Debt Collection Report

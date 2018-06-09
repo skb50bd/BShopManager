@@ -109,9 +109,9 @@ namespace ShopLibrary.Models {
     #region ICustomerReportable Members
         string ICustomerReportable.Id        => SaleId;
         string ICustomerReportable.Type      => "Sale" + $" ({SaleTypeInitial})";
-        string ICustomerReportable.Amount    => GetPayable;
-        string ICustomerReportable.Due       => GetDue;
-        string ICustomerReportable.Profit    => Profit.ToString("0.##");
+        string ICustomerReportable.Amount    => $"{Payable:C2}";
+        string ICustomerReportable.Due       => $"{Due:C2}";
+        string ICustomerReportable.Profit    => $"{Profit:C2}";
         string ICustomerReportable.TimeStamp => DealTime.ToLocalTime().ToString("u");
     #endregion
 

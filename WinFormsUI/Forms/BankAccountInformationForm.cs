@@ -71,7 +71,7 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm() {
-            string message = string.Empty;
+            var message = string.Empty;
             if (AddButton.Text == "Add account" || AddButton.Text == rm.GetString("AddButton.Text"))
                 if (BankAccounts.Any(a => a.AccountName == AccountNameText.Text))
                     message += "Invalid or duplicate account name";
@@ -82,7 +82,7 @@ namespace WinFormsUI.Forms {
                 message += "Empty bank name";
             if (AccountNumberText.Text.Length == 0)
                 message += "Empty account number";
-            if (decimal.TryParse(CurrentBalanceText.Text, out decimal m) == false || m < 0)
+            if (decimal.TryParse(CurrentBalanceText.Text, out var m) == false || m < 0)
                 message += "Invalid current balance";
 
             if (message.Length == 0)

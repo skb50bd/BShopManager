@@ -896,8 +896,8 @@ namespace WinFormsUI.Forms {
         }
 
         private void Filter1Combo_SelectedIndexChanged (object sender, EventArgs e) {
-            int  index   = Filter1Combo.SelectedIndex;
-            bool isBlank = index < 0;
+            var  index   = Filter1Combo.SelectedIndex;
+            var isBlank = index < 0;
 
             if (index > -1) {
                 switch (report.ReportType) {
@@ -1048,8 +1048,8 @@ namespace WinFormsUI.Forms {
         private void Filter2Combo_SelectedIndexChanged (object sender, EventArgs e) => LoadReport();
 
         private void LoadReport () {
-            int index1 = Filter1Combo.SelectedIndex;
-            int index2 = Filter2Combo.SelectedIndex;
+            var index1 = Filter1Combo.SelectedIndex;
+            var index2 = Filter2Combo.SelectedIndex;
 
             switch (report.ReportType) {
                 case Summary:
@@ -1110,7 +1110,7 @@ namespace WinFormsUI.Forms {
                     if (index1 == -1)
                         break;
 
-                    string text = Filter2Combo.Text;
+                    var text = Filter2Combo.Text;
                     report.Sales =
                         text == "" || text == "All" || text == "Sale"
                             ? (report as ICustomerReport).GetCustomerSales(report.Customer)
@@ -1405,12 +1405,12 @@ namespace WinFormsUI.Forms {
                                          - (report as ITransactionReport).WithdrawTotal))
                                          .ToString("0.##")
                                        + " Tk";
-                    StatPropLabel8.Visible  = false;
-                    StatPropText8.Visible   = false;
-                    StatPropLabel9.Visible  = false;
-                    StatPropText9.Visible   = false;
-                    StatPropLabel10.Visible = false;
-                    StatPropText10.Visible  = false;
+                    StatPropLabel8.Text = "New Due";
+                    StatPropText8.Text = $"{report.Sales.Sum(s => s.Due):C2} Tk";
+                    StatPropLabel9.Text = "Due Received";
+                    StatPropText9.Text = $"{(report.DebtCollections.Sum(dc => dc.Amount) + report.Sales.Sum(s => s.Due < 0 ? -s.Due: 0)):C2} Tk";
+                    StatPropLabel10.Text = "Remaining Due";
+                    StatPropText10.Text = $"{Customers.Sum(c=> c.Debt):C2} Tk";
                 #endregion
 
                     break;
@@ -1799,7 +1799,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void ViewButton_Click (object sender, EventArgs e) {
-            int index = ReportsGrid.CurrentCell.RowIndex;
+            var index = ReportsGrid.CurrentCell.RowIndex;
 
             if (index < 0) {
                 MessageBox.Show("Report nothing selected", "");
@@ -1816,15 +1816,15 @@ namespace WinFormsUI.Forms {
                 case TransactionReport:
 
                     // Todo - Show Transaction
-                    Transaction transaction = report.Transactions[index];
+                    var transaction = report.Transactions[index];
 
                     break;
 
                 case CustomerReport:
 
                     // Todo - Show Sale / Debt Collection / Refund
-                    ICustomerReportable customerReport = report.CustomerReportables[index];
-                    string              type           = customerReport.Type;
+                    var customerReport = report.CustomerReportables[index];
+                    var              type           = customerReport.Type;
                     Sale                sale;
                     DebtCollection      debtCollection;
                     Refund              refund;
@@ -1848,28 +1848,28 @@ namespace WinFormsUI.Forms {
                 case PaymentReport:
 
                     // Todo - Show Payment
-                    Payment payment = report.Payments[index];
+                    var payment = report.Payments[index];
 
                     break;
 
                 case ExpenseReport:
 
                     // Todo - Show Expense
-                    Expense expense = report.Expenses[index];
+                    var expense = report.Expenses[index];
 
                     break;
 
                 case PurchaseReport:
 
                     // Todo - Show Purchse
-                    Purchase purchase = report.Purchases[index];
+                    var purchase = report.Purchases[index];
 
                     break;
 
                 case PurchaseReturnReport:
 
                     // Todo - Show Purchse Return
-                    PurchaseReturn purchaseReturn = report.PurchaseReturns[index];
+                    var purchaseReturn = report.PurchaseReturns[index];
 
                     break;
 
@@ -1883,25 +1883,25 @@ namespace WinFormsUI.Forms {
                 case RepaymentReport:
 
                     // Todo - Show Repayment
-                    Repayment repayment = report.Repayments[index];
+                    var repayment = report.Repayments[index];
 
                     break;
 
                 case SaleReport:
                     sale = report.Sales[index];
-                    Memo memo = Connection[0].GetMemo(sale.ObjectId);
+                    var memo = Connection[0].GetMemo(sale.ObjectId);
 
                     //if (memo != null) {
                     //    SaleForm form = new SaleForm(memo);
                     //    form.ShowDialog();
                     //} else {
-                    string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    var outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                                        + @"\Brotal\"
                                        + sale.SaleId
                                        + ".pdf";
 
                     if (!File.Exists(outfilename)) {
-                        Customer _customer = new Customer();
+                        var _customer = new Customer();
                         if (Customers.Exists(c => c.ObjectId == sale.CustomerId))
                             _customer = Customers.SingleOrDefault(c => c.ObjectId == sale.CustomerId);
 
@@ -1924,7 +1924,7 @@ namespace WinFormsUI.Forms {
                 case SupplierReport:
 
                     // Todo - Show Purchase / Repayment / Purchase Return
-                    ISupplierReportable supplierReport = report.SupplierReportables[index];
+                    var supplierReport = report.SupplierReportables[index];
                     type = supplierReport.Type;
                     if (type == "Purchase")
                         purchase = report.Purchases.Single(p => p.PurchaseId == supplierReport.Id);
@@ -1938,7 +1938,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteButton_Click (object sender, EventArgs e) {
-            int count = ReportsGrid.SelectedRows.Count;
+            var count = ReportsGrid.SelectedRows.Count;
 
             if (count == 0) {
                 MessageBox.Show("No items selected", "Information");
@@ -1967,7 +1967,7 @@ namespace WinFormsUI.Forms {
                 case CustomerReport:
 
                     foreach (DataGridViewRow row in ReportsGrid.SelectedRows) {
-                        ICustomerReportable customerReport = report.CustomerReportables[row.Index];
+                        var customerReport = report.CustomerReportables[row.Index];
 
                         switch (customerReport) {
                             case Sale _:
@@ -2042,7 +2042,7 @@ namespace WinFormsUI.Forms {
                 case SupplierReport:
 
                     foreach (DataGridViewRow row in ReportsGrid.SelectedRows) {
-                        ISupplierReportable suppplierReport = report.SupplierReportables[row.Index];
+                        var suppplierReport = report.SupplierReportables[row.Index];
 
                         switch (suppplierReport) {
                             case Purchase _:

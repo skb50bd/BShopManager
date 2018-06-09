@@ -63,10 +63,10 @@ namespace ShopLibrary.DataAccess {
             Debug.WriteLine("Trying to initiate DB");
 
             try {
-                string fileName = "connectionString";
+                var fileName = "connectionString";
                 if (!File.Exists(fileName))
                     File.WriteAllText(fileName, "mongodb://localhost:27017");
-                string connectionString = File.ReadLines(fileName).First();
+                var connectionString = File.ReadLines(fileName).First();
 
                 _client = new MongoClient(connectionString);
                 _db     = _client.GetDatabase("BShopManDb");
@@ -83,11 +83,11 @@ namespace ShopLibrary.DataAccess {
 
     #region Sequence
         public ObjectId GetNextObjectId (string collectionName) {
-            IMongoCollection<BsonDocument> col = _db.GetCollection<BsonDocument>("Counter");
-            FilterDefinition<BsonDocument> filter =
+            var col = _db.GetCollection<BsonDocument>("Counter");
+            var filter =
                 new FilterDefinitionBuilder<BsonDocument>().Eq(c => c["_id"], collectionName);
-            UpdateDefinition<BsonDocument> update = new UpdateDefinitionBuilder<BsonDocument>().Inc("seq", 1);
-            BsonDocument ret = col.FindOneAndUpdate(filter,
+            var update = new UpdateDefinitionBuilder<BsonDocument>().Inc("seq", 1);
+            var ret = col.FindOneAndUpdate(filter,
                                                     update,
                                                     new FindOneAndUpdateOptions<BsonDocument> {
                                                                                                   IsUpsert = true,
@@ -99,7 +99,7 @@ namespace ShopLibrary.DataAccess {
 
     #region User and Login
         public bool Login (string userName, string password) {
-            foreach (User existingUser in Users)
+            foreach (var existingUser in Users)
                 if (existingUser.IsRealUser(userName, password)) {
                     CurrentUser = existingUser;
                     CurrentSession = new Session {
@@ -123,11 +123,11 @@ namespace ShopLibrary.DataAccess {
 
         public void Logout () {
             CurrentSession.LogoutTime = DateTime.Now;
-            BsonDocument filter = new BsonDocument("_id", CurrentSession.ObjectId);
-            BsonDocument update = new BsonDocument("$set", CurrentSession.ToBsonDocument());
+            var filter = new BsonDocument("_id", CurrentSession.ObjectId);
+            var update = new BsonDocument("$set", CurrentSession.ToBsonDocument());
 
             try {
-                Session result = SessionCollection.FindOneAndUpdate(filter, update);
+                var result = SessionCollection.FindOneAndUpdate(filter, update);
             }
             catch (Exception) {
                 // ignored
@@ -156,11 +156,11 @@ namespace ShopLibrary.DataAccess {
         public bool UpdateUser (User u) {
             u.Meta.Modifier = CurrentUser.UserName;
             u.Meta.Modified = DateTime.Now;
-            BsonDocument filter = new BsonDocument("_id", u.ObjectId);
-            BsonDocument update = new BsonDocument("$set", u.ToBsonDocument());
+            var filter = new BsonDocument("_id", u.ObjectId);
+            var update = new BsonDocument("$set", u.ToBsonDocument());
 
             try {
-                User result = UserCollection.FindOneAndUpdate(filter, update);
+                var result = UserCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -173,10 +173,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteUserByUserName (string userName) {
-            BsonDocument filter = new BsonDocument("userName", userName);
+            var filter = new BsonDocument("userName", userName);
 
             try {
-                DeleteResult result = UserCollection.DeleteOne(filter);
+                var result = UserCollection.DeleteOne(filter);
                 Users.Remove(Users.FirstOrDefault(u => u.UserName == userName));
             }
             catch (Exception e) {
@@ -187,11 +187,11 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DisableUserByUserName (string userName) {
-            BsonDocument filter = new BsonDocument("userName", userName);
-            BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
+            var filter = new BsonDocument("userName", userName);
+            var update = new BsonDocument("$set", new BsonDocument("isActive", false));
 
             try {
-                User result = UserCollection.FindOneAndUpdate(filter, update);
+                var result = UserCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -230,13 +230,13 @@ namespace ShopLibrary.DataAccess {
         }
 
         public async Task<bool> DeleteBankAccount (BankAccount model) {
-            BsonDocument filter  = new BsonDocument("_id", model.ObjectId);
-            BsonDocument tFilter = new BsonDocument("bankAccountId", model.BankAccountId);
+            var filter  = new BsonDocument("_id", model.ObjectId);
+            var tFilter = new BsonDocument("bankAccountId", model.BankAccountId);
 
             try {
                 async Task DeleteTransactionsAsync () {
-                    DeleteResult tResult = await TransactionCollection.DeleteManyAsync(tFilter);
-                    DeleteResult result  = BankAccountCollection.DeleteOne(filter);
+                    var tResult = await TransactionCollection.DeleteManyAsync(tFilter);
+                    var result  = BankAccountCollection.DeleteOne(filter);
                     if (tResult.DeletedCount > 0)
                         BankAccounts.Remove(model);
                 }
@@ -253,11 +253,11 @@ namespace ShopLibrary.DataAccess {
         public bool UpdateBankAccount (BankAccount model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                BankAccount result = BankAccountCollection.FindOneAndUpdate(filter, update);
+                var result = BankAccountCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -296,8 +296,8 @@ namespace ShopLibrary.DataAccess {
             model.Meta.Modified = DateTime.Now;
 
             try {
-                BsonDocument filter = new BsonDocument("_id", model.BankAccountId);
-                BsonDocument update = new BsonDocument("$inc",
+                var filter = new BsonDocument("_id", model.BankAccountId);
+                var update = new BsonDocument("$inc",
                                                        new BsonDocument("currentBalance",
                                                                         model.TransactionType == TransactionType.Deposit
                                                                             ? model.Amount
@@ -314,10 +314,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteTransaction (Transaction model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult tResult = TransactionCollection.DeleteOne(filter);
+                var tResult = TransactionCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -354,11 +354,11 @@ namespace ShopLibrary.DataAccess {
         public bool UpdateShop (Shop model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                Shop result = ShopCollection.FindOneAndUpdate(filter, update);
+                var result = ShopCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -371,10 +371,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteShop (Shop model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = ShopCollection.DeleteOne(filter);
+                var result = ShopCollection.DeleteOne(filter);
                 Shops.Remove(model);
             }
             catch (Exception e) {
@@ -428,11 +428,11 @@ namespace ShopLibrary.DataAccess {
         public bool UpdateCustomer (Customer model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                Customer result = CustomerCollection.FindOneAndUpdate(filter, update);
+                var result = CustomerCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -448,10 +448,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteCustomer (Customer model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = CustomerCollection.DeleteOne(filter);
+                var result = CustomerCollection.DeleteOne(filter);
                 Customers.Remove(model);
             }
             catch (Exception e) {
@@ -464,11 +464,11 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DisableCustomer (Customer model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", new BsonDocument("isActive", false));
 
             try {
-                Customer result = CustomerCollection.FindOneAndUpdate(filter, update);
+                var result = CustomerCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -485,8 +485,8 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                BsonDocument filter = new BsonDocument("_id", model.CustomerId);
-                BsonDocument update = new BsonDocument("$inc", new BsonDocument("debt", (-1) * model.Amount));
+                var filter = new BsonDocument("_id", model.CustomerId);
+                var update = new BsonDocument("$inc", new BsonDocument("debt", (-1) * model.Amount));
                 CustomerCollection.UpdateOne(filter, update);
                 DebtCollection.InsertOne(model);
                 CurrentCash = UpdateCash(model);
@@ -505,10 +505,10 @@ namespace ShopLibrary.DataAccess {
                .ToList();
 
         public bool DeleteDebtCollection (DebtCollection model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = DebtCollection.DeleteOne(filter);
+                var result = DebtCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -536,10 +536,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteCategory (Category model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = CategoryCollection.DeleteOne(filter);
+                var result = CategoryCollection.DeleteOne(filter);
                 Categories.Remove(model);
             }
             catch (Exception e) {
@@ -550,11 +550,11 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool UpdateCategory (Category model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                Category result = CategoryCollection.FindOneAndUpdate(filter, update);
+                var result = CategoryCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -601,11 +601,11 @@ namespace ShopLibrary.DataAccess {
         public bool UpdateProduct (Product model) {
             model.Meta.Modifier = CurrentUser.UserName;
             model.Meta.Modified = DateTime.Now;
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                Product result = ProductCollection.FindOneAndUpdate(filter, update);
+                var result = ProductCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -621,10 +621,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteProduct (Product model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = ProductCollection.DeleteOne(filter);
+                var result = ProductCollection.DeleteOne(filter);
                 Products.Remove(model);
             }
             catch (Exception e) {
@@ -666,11 +666,11 @@ namespace ShopLibrary.DataAccess {
 
         public bool UpdateSupplier (Supplier model) {
             model.Meta.Modify();
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                Supplier result = SupplierCollection.FindOneAndUpdate(filter, update);
+                var result = SupplierCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -686,10 +686,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteSupplier (Supplier model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = SupplierCollection.DeleteOne(filter);
+                var result = SupplierCollection.DeleteOne(filter);
                 Suppliers.Remove(model);
             }
             catch (Exception e) {
@@ -702,11 +702,11 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DisableSupplier (Supplier model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", new BsonDocument("isActive", false));
 
             try {
-                Supplier result = SupplierCollection.FindOneAndUpdate(filter, update);
+                var result = SupplierCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -723,8 +723,8 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                BsonDocument filter = new BsonDocument("_id", model.SupplierId);
-                BsonDocument update = new BsonDocument("$inc", new BsonDocument("payable", (-1) * model.Amount));
+                var filter = new BsonDocument("_id", model.SupplierId);
+                var update = new BsonDocument("$inc", new BsonDocument("payable", (-1) * model.Amount));
                 SupplierCollection.UpdateOne(filter, update);
                 _db.GetCollection<Repayment>("Repayment").InsertOne(model);
                 CurrentCash = UpdateCash(model);
@@ -760,10 +760,10 @@ namespace ShopLibrary.DataAccess {
                   .ToList();
 
         public bool DeleteRepayment (Repayment model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = _db.GetCollection<Repayment>("Repayment").DeleteOne(filter);
+                var result = _db.GetCollection<Repayment>("Repayment").DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -816,11 +816,11 @@ namespace ShopLibrary.DataAccess {
 
         public bool UpdateEmployee (Employee model) {
             model.Meta.Modify();
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", model.ToBsonDocument());
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", model.ToBsonDocument());
 
             try {
-                Employee result = EmployeeCollection.FindOneAndUpdate(filter, update);
+                var result = EmployeeCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -836,10 +836,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteEmployee (Employee model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = EmployeeCollection.DeleteOne(filter);
+                var result = EmployeeCollection.DeleteOne(filter);
                 Employees.Remove(model);
             }
             catch (Exception e) {
@@ -852,11 +852,11 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DisableEmployee (Employee model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
-            BsonDocument update = new BsonDocument("$set", new BsonDocument("isActive", false));
+            var filter = new BsonDocument("_id", model.ObjectId);
+            var update = new BsonDocument("$set", new BsonDocument("isActive", false));
 
             try {
-                Employee result = EmployeeCollection.FindOneAndUpdate(filter, update);
+                var result = EmployeeCollection.FindOneAndUpdate(filter, update);
 
                 if (result == null)
                     return false;
@@ -873,8 +873,8 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                BsonDocument filter = new BsonDocument("_id", model.EmployeeId);
-                BsonDocument update = new BsonDocument("$inc", new BsonDocument("currentBalance", (-1) * model.Amount));
+                var filter = new BsonDocument("_id", model.EmployeeId);
+                var update = new BsonDocument("$inc", new BsonDocument("currentBalance", (-1) * model.Amount));
                 EmployeeCollection.UpdateOne(filter, update);
                 PaymentCollection.InsertOne(model);
                 CurrentCash = UpdateCash(model);
@@ -893,10 +893,10 @@ namespace ShopLibrary.DataAccess {
                .ToList();
 
         public bool DeletePayment (Payment model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = PaymentCollection.DeleteOne(filter);
+                var result = PaymentCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -912,9 +912,9 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                foreach (ShoppingCart cart in model.Cart) {
-                    BsonDocument filter  = new BsonDocument("_id", cart.ProductId);
-                    Product      product = ProductCollection.AsQueryable().Single(p => p.ObjectId == cart.ProductId);
+                foreach (var cart in model.Cart) {
+                    var filter  = new BsonDocument("_id", cart.ProductId);
+                    var      product = ProductCollection.AsQueryable().Single(p => p.ObjectId == cart.ProductId);
                     product.ShopStock -= cart.BaseQuantity;
 
                     if (product.ShopStock < 0) {
@@ -922,13 +922,13 @@ namespace ShopLibrary.DataAccess {
                         product.ShopStock   =  0;
                     }
 
-                    BsonDocument update = new BsonDocument("$set", product.ToBsonDocument());
-                    Product      result = ProductCollection.FindOneAndUpdate(filter, update);
+                    var update = new BsonDocument("$set", product.ToBsonDocument());
+                    var      result = ProductCollection.FindOneAndUpdate(filter, update);
                 }
 
                 SaleCollection.InsertOne(model);
 
-                Memo memo = new Memo(model,
+                var memo = new Memo(model,
                                      CustomerCollection
                                          .AsQueryable()
                                          .FirstOrDefault(c => c.ObjectId == model.CustomerId),
@@ -938,8 +938,8 @@ namespace ShopLibrary.DataAccess {
                 CurrentCash = UpdateCash(model);
 
                 if (model.CustomerId != ObjectId.Empty) {
-                    BsonDocument filter = new BsonDocument("_id", model.CustomerId);
-                    BsonDocument update =
+                    var filter = new BsonDocument("_id", model.CustomerId);
+                    var update =
                         new BsonDocument("$inc", new BsonDocument("debt", model.Payable - model.Paid));
                     CustomerCollection.UpdateOne(filter, update);
                 }
@@ -961,10 +961,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteSale (Sale model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = SaleCollection.DeleteOne(filter);
+                var result = SaleCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1021,10 +1021,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteSavedSale (Sale model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = SavedSaleCollection.DeleteOne(filter);
+                var result = SavedSaleCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1072,10 +1072,10 @@ namespace ShopLibrary.DataAccess {
                .ToList();
 
         public bool DeleteExpense (Expense model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = ExpenseCollection.DeleteOne(filter);
+                var result = ExpenseCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1091,9 +1091,9 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                foreach (ShoppingCart cart in model.Cart) {
-                    BsonDocument filter  = new BsonDocument("_id", cart.ProductId);
-                    Product      product = Products.First(p => p.ObjectId == cart.ProductId);
+                foreach (var cart in model.Cart) {
+                    var filter  = new BsonDocument("_id", cart.ProductId);
+                    var      product = Products.First(p => p.ObjectId == cart.ProductId);
                     Products.Remove(product);
                     product.PurchasePrice =
                         product.ShopStock + product.GodownStock + cart.BaseQuantity == 0.00
@@ -1103,16 +1103,16 @@ namespace ShopLibrary.DataAccess {
                             / (decimal) (product.ShopStock + product.GodownStock + cart.BaseQuantity);
                     product.GodownStock += cart.BaseQuantity;
 
-                    BsonDocument update = new BsonDocument("$set", product.ToBsonDocument());
-                    Product      result = ProductCollection.FindOneAndUpdate(filter, update);
+                    var update = new BsonDocument("$set", product.ToBsonDocument());
+                    var      result = ProductCollection.FindOneAndUpdate(filter, update);
                 }
 
                 PurchaseCollection.InsertOne(model);
                 CurrentCash = UpdateCash(model);
 
                 if (model.Due != 0 && model.SupplierId != ObjectId.Empty) {
-                    BsonDocument filter = new BsonDocument("_id", model.SupplierId);
-                    BsonDocument update = new BsonDocument("$inc", new BsonDocument("payable", model.Due));
+                    var filter = new BsonDocument("_id", model.SupplierId);
+                    var update = new BsonDocument("$inc", new BsonDocument("payable", model.Due));
                     SupplierCollection.UpdateOne(filter, update);
                 }
             }
@@ -1147,10 +1147,10 @@ namespace ShopLibrary.DataAccess {
                .ToList();
 
         public bool DeletePurchase (Purchase model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = PurchaseCollection.DeleteOne(filter);
+                var result = PurchaseCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1177,10 +1177,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteSavedPurchase (Purchase model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = SavedPurchaseCollection.DeleteOne(filter);
+                var result = SavedPurchaseCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1202,9 +1202,9 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                foreach (ShoppingCart cart in model.Cart) {
-                    BsonDocument filter = new BsonDocument("_id", cart.ProductId);
-                    BsonDocument update = new BsonDocument("$inc", new BsonDocument("shopStock", cart.BaseQuantity));
+                foreach (var cart in model.Cart) {
+                    var filter = new BsonDocument("_id", cart.ProductId);
+                    var update = new BsonDocument("$inc", new BsonDocument("shopStock", cart.BaseQuantity));
                     ProductCollection.UpdateOne(filter, update);
                 }
 
@@ -1219,10 +1219,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeleteRefund (Refund model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = RefundCollection.DeleteOne(filter);
+                var result = RefundCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1268,9 +1268,9 @@ namespace ShopLibrary.DataAccess {
             model.Meta     = new Metadata();
 
             try {
-                foreach (ShoppingCart cart in model.Cart) {
-                    BsonDocument filter = new BsonDocument("_id", cart.ProductId);
-                    BsonDocument update =
+                foreach (var cart in model.Cart) {
+                    var filter = new BsonDocument("_id", cart.ProductId);
+                    var update =
                         new BsonDocument("$inc", new BsonDocument("shopStock", (-1) * cart.BaseQuantity));
                     ProductCollection.UpdateOne(filter, update);
                 }
@@ -1286,10 +1286,10 @@ namespace ShopLibrary.DataAccess {
         }
 
         public bool DeletePurchaseReturn (PurchaseReturn model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = PurchaseReturnCollection.DeleteOne(filter);
+                var result = PurchaseReturnCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1348,10 +1348,10 @@ namespace ShopLibrary.DataAccess {
         public List<CashModification> GetCashModificationAll () => CashModificationCollection.AsQueryable().ToList();
 
         public bool DeleteCashModification (CashModification model) {
-            BsonDocument filter = new BsonDocument("_id", model.ObjectId);
+            var filter = new BsonDocument("_id", model.ObjectId);
 
             try {
-                DeleteResult result = CashModificationCollection.DeleteOne(filter);
+                var result = CashModificationCollection.DeleteOne(filter);
             }
             catch (Exception e) {
                 return false;
@@ -1406,9 +1406,9 @@ namespace ShopLibrary.DataAccess {
 
             try {
                 // EmployeeCollection.UpdateMany(new BsonDocument(), new BsonDocument("$set", new BsonDocument("currentBalance", "$currentBalance" + "$monthlySalary")));
-                List<Employee> employees = GetEmployeeAll();
+                var employees = GetEmployeeAll();
 
-                foreach (Employee employee in employees) {
+                foreach (var employee in employees) {
                     employee.Balance = employee.Balance + employee.MonthlySalary;
                     UpdateEmployee(employee);
                 }
@@ -1430,10 +1430,10 @@ namespace ShopLibrary.DataAccess {
         public Cash GetCurrentCash () => CashCollection.AsQueryable().SingleOrDefault();
 
         private Cash UpdateCash (ICashFlow cashFlow) {
-            decimal      m      = cashFlow.InFlow - cashFlow.OutFlow;
-            BsonDocument filter = new BsonDocument("_id", CurrentCash.ObjectId);
-            BsonDocument update = new BsonDocument("$inc", new BsonDocument("current", m));
-            Cash         c      = CashCollection.FindOneAndUpdate<Cash>(filter, update);
+            var      m      = cashFlow.InFlow - cashFlow.OutFlow;
+            var filter = new BsonDocument("_id", CurrentCash.ObjectId);
+            var update = new BsonDocument("$inc", new BsonDocument("current", m));
+            var         c      = CashCollection.FindOneAndUpdate<Cash>(filter, update);
 
             return c;
         }

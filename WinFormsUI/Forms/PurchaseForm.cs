@@ -121,7 +121,7 @@ namespace WinFormsUI.Forms {
 
         private void AddSupplierButton_Click(object sender, EventArgs e) {
             Form ac = new SupplierInformationForm();
-            DialogResult result = ac.ShowDialog();
+            var result = ac.ShowDialog();
             if (result != DialogResult.OK)
                 RefreshSuppliers();
         }
@@ -132,7 +132,7 @@ namespace WinFormsUI.Forms {
 
             try {
                 Form ci = new SupplierInformationForm(Suppliers[SupplierCombo.SelectedIndex]);
-                DialogResult result = ci.ShowDialog();
+                var result = ci.ShowDialog();
                 if (result == DialogResult.OK)
                     RefreshSuppliers();
             } catch (Exception exception) {
@@ -174,14 +174,14 @@ namespace WinFormsUI.Forms {
             if (ProductSelectorCombo.SelectedIndex < 0)
                 return;
             Form form = new ProductInformationForm(_product);
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 RefreshProducts();
         }
 
         private void AddProductButton_Click(object sender, EventArgs e) {
             Form form = new ProductInformationForm();
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 RefreshProducts();
         }
@@ -196,10 +196,10 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateProduct() {
-            string error = string.Empty;
-            if (!float.TryParse(QuantityText.Text, out float q) || q < 0)
+            var error = string.Empty;
+            if (!float.TryParse(QuantityText.Text, out var q) || q < 0)
                 error += "Invalid quantity\n";
-            if (!decimal.TryParse(UnitPriceText.Text, out decimal u) || u < 0)
+            if (!decimal.TryParse(UnitPriceText.Text, out var u) || u < 0)
                 error += "Invalid unit price\n";
 
             if (error.Length > 0) {
@@ -217,7 +217,7 @@ namespace WinFormsUI.Forms {
                 if (_purchase.Cart.Exists(c => c.ProductId == _product.ObjectId))
                     _purchase.Cart.Remove(_purchase.Cart.Single(c => c.ProductId == _product.ObjectId));
 
-                ShoppingCart sc = new ShoppingCart {
+                var sc = new ShoppingCart {
                     ProductId = _product.ObjectId,
                     ProductName = _product.ProductName,
                     UnitPurchasePrice = decimal.Parse(UnitPriceText.Text),
@@ -309,30 +309,30 @@ namespace WinFormsUI.Forms {
 
         #region Amount Calculation
         private void QuantityText_TextChanged(object sender, EventArgs e) {
-            if (float.TryParse(QuantityText.Text, out float q) && q > 0) {
+            if (float.TryParse(QuantityText.Text, out var q) && q > 0) {
                 _sCart.Quantity = q;
                 _sCart.Unit = _product.Units[UnitSelectorCombo.SelectedIndex];
-                if (decimal.TryParse(UnitPriceText.Text, out decimal up))
+                if (decimal.TryParse(UnitPriceText.Text, out var up))
                     NetPriceText.Text = ((decimal)q * up).ToString("0.##");
-                else if (decimal.TryParse(NetPriceText.Text, out decimal np))
+                else if (decimal.TryParse(NetPriceText.Text, out var np))
                     UnitPriceText.Text = (np / (decimal)q).ToString("0.##");
             }
         }
 
         private void UnitPriceText_TextChanged(object sender, EventArgs e) {
-            if (decimal.TryParse(UnitPriceText.Text, out decimal up)) {
-                if (float.TryParse(QuantityText.Text, out float q))
+            if (decimal.TryParse(UnitPriceText.Text, out var up)) {
+                if (float.TryParse(QuantityText.Text, out var q))
                     NetPriceText.Text = (up * (decimal)q).ToString("0.##");
-                else if (decimal.TryParse(NetPriceText.Text, out decimal np) && up > 0)
+                else if (decimal.TryParse(NetPriceText.Text, out var np) && up > 0)
                     QuantityText.Text = (np / up).ToString("0.##");
             }
         }
 
         private void NetPriceText_TextChanged(object sender, EventArgs e) {
-            if (decimal.TryParse(NetPriceText.Text, out decimal np)) {
-                if (float.TryParse(QuantityText.Text, out float q) && q > 0)
+            if (decimal.TryParse(NetPriceText.Text, out var np)) {
+                if (float.TryParse(QuantityText.Text, out var q) && q > 0)
                     UnitPriceText.Text = (np / (decimal)q).ToString("0.##");
-                else if (decimal.TryParse(UnitPriceText.Text, out decimal up) && up > 0)
+                else if (decimal.TryParse(UnitPriceText.Text, out var up) && up > 0)
                     QuantityText.Text = (np / up).ToString("0.##");
             }
         }
@@ -343,7 +343,7 @@ namespace WinFormsUI.Forms {
                 QuantityText.Text = _sCart.GetQuantity;
 
                 UnitPriceText.Text = (_product.PurchasePrice / (decimal)_sCart.Unit.Weight).ToString("0.##");
-                if (float.TryParse(QuantityText.Text, out float q) && q > 0) {
+                if (float.TryParse(QuantityText.Text, out var q) && q > 0) {
                     _sCart.Quantity = _sCart.BaseQuantity / _product.Units[UnitSelectorCombo.SelectedIndex].Weight;
                     NetPriceText.Text =
                         (_product.PurchasePrice / (decimal)_sCart.Unit.Weight * (decimal)q).ToString("0.##");
@@ -358,19 +358,19 @@ namespace WinFormsUI.Forms {
         }
 
         private void DiscountPercentageText_TextChanged(object sender, EventArgs e) {
-            if (float.TryParse(DiscountPercentageText.Text, out float dp) && dp > 0 && dp <= 100)
+            if (float.TryParse(DiscountPercentageText.Text, out var dp) && dp > 0 && dp <= 100)
                 _purchase.Less = _purchase.TotalAmount * (decimal)dp / 100;
             RefreshAmounts();
         }
 
         private void LessAmountText_TextChanged(object sender, EventArgs e) {
-            if (decimal.TryParse(LessAmountText.Text, out decimal l) && l >= 0 && l <= _purchase.TotalAmount)
+            if (decimal.TryParse(LessAmountText.Text, out var l) && l >= 0 && l <= _purchase.TotalAmount)
                 _purchase.Less = l;
             RefreshAmounts();
         }
 
         private void PaidAmountText_TextChanged(object sender, EventArgs e) {
-            if (decimal.TryParse(PaidAmountText.Text, out decimal p))
+            if (decimal.TryParse(PaidAmountText.Text, out var p))
                 _purchase.Paid = p;
             RefreshAmounts();
         }
@@ -384,7 +384,7 @@ namespace WinFormsUI.Forms {
             }
             else {
                 if (_purchase.Due > 0) {
-                    DialogResult result = MessageBox.Show("Non-documented suppliers should not get late payments\n" +
+                    var result = MessageBox.Show("Non-documented suppliers should not get late payments\n" +
                                                           "Do you want to continue anyway?",
                                                           "Confirm",
                                                           MessageBoxButtons.YesNo);
@@ -403,7 +403,7 @@ namespace WinFormsUI.Forms {
             _purchase.Paid = decimal.Parse(PaidAmountText.Text);
 
             if (sender as Button == SubmitButton) {
-                DialogResult confirm = MessageBox.Show("Are you sure want to register this purchase?\n" +
+                var confirm = MessageBox.Show("Are you sure want to register this purchase?\n" +
                         $"Supplier Name\t\t: {_purchase.SupplierName}\n" +
                         $"Supplier Company\t\t: {_purchase.SupplierCompany}\n" +
                         $"Products\t\t\t: {_purchase.Cart.Count}\n" +
@@ -424,7 +424,7 @@ namespace WinFormsUI.Forms {
                 }
             }
             else if (sender as Button == SaveButton) {
-                DialogResult confirm = MessageBox.Show("Are you sure want to save this vouchar?\n" +
+                var confirm = MessageBox.Show("Are you sure want to save this vouchar?\n" +
                         $"Supplier Name\t\t: {_purchase.SupplierName}\n" +
                         $"Supplier Company\t\t: {_purchase.SupplierCompany}\n" +
                         $"Products\t\t\t: {_purchase.Cart.Count}\n" +
@@ -457,7 +457,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void PaidAmountText_TextChanged_1(object sender, EventArgs e) {
-            if (decimal.TryParse(PaidAmountText.Text, out decimal p)) {
+            if (decimal.TryParse(PaidAmountText.Text, out var p)) {
                 _purchase.Paid = p;
                 RefreshAmounts();
             }
@@ -465,8 +465,8 @@ namespace WinFormsUI.Forms {
         #endregion
 
         private bool ValidatePurchase() {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
 
             if (SupplierCombo.SelectedIndex == -1)
                 warning += "Supplier is not documented in the database\n";
@@ -482,13 +482,13 @@ namespace WinFormsUI.Forms {
             if (_purchase.Cart.Count == 0)
                 error += "The purchase cart is empty\n";
 
-            if (!decimal.TryParse(LessAmountText.Text, out decimal l) || l < 0 || l > _purchase.TotalAmount)
+            if (!decimal.TryParse(LessAmountText.Text, out var l) || l < 0 || l > _purchase.TotalAmount)
                 error += "Less amount is invalid\n";
-            if (!decimal.TryParse(PaidAmountText.Text, out decimal p) || p < 0 || l > _purchase.TotalAmount)
+            if (!decimal.TryParse(PaidAmountText.Text, out var p) || p < 0 || l > _purchase.TotalAmount)
                 error += "Paid amount is invalid\n";
 
             if (error.Length > 0 || warning.Length > 0) {
-                DialogResult result = MessageBox.Show("The following error(s) occurred during validation:\n"
+                var result = MessageBox.Show("The following error(s) occurred during validation:\n"
                                                       + error
                                                       + "The following warning(s) occurred during validation:\n"
                                                       + warning

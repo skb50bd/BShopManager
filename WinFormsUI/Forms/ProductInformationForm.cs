@@ -70,7 +70,7 @@ namespace WinFormsUI.Forms {
             ProductIdText.Enabled = false;
             TotalStockText.Enabled = false;
 
-            UserRole role = CurrentUser.AccessLevel;
+            var role = CurrentUser.AccessLevel;
             if (role <= Admin) {
                 ProductInformationGroupBox.Enabled = true;
                 MoveProductsGroupBox.Enabled = _mode == "update";
@@ -106,7 +106,7 @@ namespace WinFormsUI.Forms {
                 CategorySelectorCombo.SelectedIndex        =
                     Categories.FindIndex(c    => c.CategoryName == _product.Category);
                 CategorySelectorCombo_SelectedIndexChanged(sender, e);
-                int index = CategorySelectorCombo.SelectedIndex;
+                var index = CategorySelectorCombo.SelectedIndex;
                 SpecificationSelectorCombo.SelectedIndex   = Categories[index].Specifications
                         .FindIndex(s => s == _product.Specification);
 
@@ -127,13 +127,13 @@ namespace WinFormsUI.Forms {
         }
 
         private void TotalStockUpdate(object sender, EventArgs e) {
-            if (float.TryParse(StockInShopText.Text, out float s) && float.TryParse(StockInGodownText.Text, out float g))
+            if (float.TryParse(StockInShopText.Text, out var s) && float.TryParse(StockInGodownText.Text, out var g))
                 TotalStockText.Text = (s + g).ToString("0.##");
         }
 
         private bool ValidateForm() {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
 
             if (ShopSelectorCombo.SelectedIndex < 0)
                 error += "Shop not selected\n";
@@ -145,19 +145,19 @@ namespace WinFormsUI.Forms {
                 error += "Duplicate product name\n";
             if (ManufacturerText.Text.Length == 0)
                 warning += "Manufactuer name is empty\n";
-            if (double.TryParse(StockInShopText.Text, out double sShop) && sShop < 0)
+            if (double.TryParse(StockInShopText.Text, out var sShop) && sShop < 0)
                 error += "Invalid stock in shop\n";
-            if (double.TryParse(StockInGodownText.Text, out double sGodown) && sGodown < 0)
+            if (double.TryParse(StockInGodownText.Text, out var sGodown) && sGodown < 0)
                 error += "Invalid stock in godown\n";
-            if (double.TryParse(AlertAtText.Text, out double alertAt) && alertAt < 0)
+            if (double.TryParse(AlertAtText.Text, out var alertAt) && alertAt < 0)
                 error += "Invalid alert stock\n";
-            if (decimal.TryParse(PurchasePriceText.Text, out decimal pPrice) && pPrice < 0)
+            if (decimal.TryParse(PurchasePriceText.Text, out var pPrice) && pPrice < 0)
                 error += "Invalid purchase price\n";
-            if (decimal.TryParse(RetailPriceText.Text, out decimal rPrice) && rPrice < 0)
+            if (decimal.TryParse(RetailPriceText.Text, out var rPrice) && rPrice < 0)
                 error += "Invalid retail price\n";
-            if (decimal.TryParse(WholeSalePriceText.Text, out decimal wsPrice) && wsPrice < 0)
+            if (decimal.TryParse(WholeSalePriceText.Text, out var wsPrice) && wsPrice < 0)
                 error += "Invalid whole sale price\n";
-            if (decimal.TryParse(MrpText.Text, out decimal mrp) && mrp < 0)
+            if (decimal.TryParse(MrpText.Text, out var mrp) && mrp < 0)
                 warning += "Invalid maximum retail price\n";
             if (CategorySelectorCombo.Text.Length == 0)
                 warning += "No category selected\n";
@@ -186,7 +186,7 @@ namespace WinFormsUI.Forms {
             }
 
             if (error.Length > 0 || warning.Length > 0) {
-                DialogResult result = MessageBox.Show("The following error(s) occurred during validation:\n"
+                var result = MessageBox.Show("The following error(s) occurred during validation:\n"
                     + error
                     + "The following warning(s) occurred during validation:\n"
                     + warning
@@ -202,7 +202,7 @@ namespace WinFormsUI.Forms {
 
         private void AddUnitButton_Click(object sender, EventArgs e) {
             if (UnitNameText.Text.Length == 0
-                || (float.TryParse(WeightText.Text, out float w) && w <= 0)) {
+                || (float.TryParse(WeightText.Text, out var w) && w <= 0)) {
                 MessageBox.Show("Invalid unit name or weightage\n" +
                                 "Weightage must be greater than 0.\n", "Information");
                 return;
@@ -233,7 +233,7 @@ namespace WinFormsUI.Forms {
 
         private void MoveButton_Click(object sender, EventArgs e) {
             if (MoveFromGodownText.Text.Length != 0
-                && float.TryParse(MoveFromGodownText.Text, out float s)) {
+                && float.TryParse(MoveFromGodownText.Text, out var s)) {
                 if (_product.GodownStock >= s) {
                     _product.GodownStock -= s;
                     _product.ShopStock += s;
@@ -244,7 +244,7 @@ namespace WinFormsUI.Forms {
                     return;
                 }
             } else if (MoveFromShopText.Text.Length != 0
-                       && float.TryParse(MoveFromShopText.Text, out float g)) {
+                       && float.TryParse(MoveFromShopText.Text, out var g)) {
                 if (_product.ShopStock >= g) {
                     _product.ShopStock -= g;
                     _product.GodownStock += g;

@@ -90,7 +90,7 @@ namespace ShopLibrary.Models {
 
         public override int GetHashCode() {
             unchecked {
-                int hashCode = (ProductName != null ? ProductName.GetHashCode() : 0);
+                var hashCode = (ProductName != null ? ProductName.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ ProductId.GetHashCode();
                 hashCode = (hashCode * 397) ^ Quantity.GetHashCode();
                 hashCode = (hashCode * 397) ^ (Unit != null ? Unit.GetHashCode() : 0);

@@ -127,8 +127,8 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm() {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
 
             if (FullNameText.Text.Length == 0)
                 error += "Empty Name\n";
@@ -146,9 +146,9 @@ namespace WinFormsUI.Forms {
                 warning += "Empty Address\n";
             if (JoinDateTime.Value > DateTime.Now)
                 error += "Join date is in future\n";
-            if (!decimal.TryParse(MonthlySalaryText.Text, out decimal s) || s < 0)
+            if (!decimal.TryParse(MonthlySalaryText.Text, out var s) || s < 0)
                 error += "Invalid monthly salary\n";
-            if (!decimal.TryParse(CurrentBalanceText.Text, out decimal b))
+            if (!decimal.TryParse(CurrentBalanceText.Text, out var b))
                 error += "Invalid balance\n";
             if (NotesText.Text.Length == 0)
                 warning += "Empty notes\n";
@@ -197,19 +197,19 @@ namespace WinFormsUI.Forms {
         }
 
         private void PayButton_Click(object sender, EventArgs e) {
-            if (!decimal.TryParse(SalaryAmountText.Text, out decimal m) || m < 0) {
+            if (!decimal.TryParse(SalaryAmountText.Text, out var m) || m < 0) {
                 MessageBox.Show("Invalid Amount");
                 return;
             }
 
             if (m > _employee.Balance) {
-                DialogResult result = MessageBox.Show("Payment amount is greater than balance\n" +
+                var result = MessageBox.Show("Payment amount is greater than balance\n" +
                                                       "Do you want to proceed anyway?",
                                                       "Warning", MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes)
                     return;
             }
-            Payment model    = new Payment {
+            var model    = new Payment {
                 EmployeeId   = _employee.ObjectId,
                 EmployeeName = _employee.FullName,
                 Amount       = m

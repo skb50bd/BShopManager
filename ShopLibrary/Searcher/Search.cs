@@ -9,12 +9,12 @@ namespace ShopLibrary.Searcher {
         #region Product Searching
         public static Product SearchSingleProductByText(string text, List<Product> context = null) {
             text = text.ToLowerInvariant();
-            string[] texts = text.Split();
+            var texts = text.Split();
 
             if (text.Length == 0)
                 return new Product { ObjectId = ObjectId.Empty };
             if (texts.Length == 1) {
-                if (int.TryParse(text, out int id))
+                if (int.TryParse(text, out var id))
                     return context?.Find(p => p.ProductId.ToLowerInvariant().Contains(text)) ??
                            Products.Find(p => p.ProductId.ToLowerInvariant().Contains(text));
                 if (text[0] == 'p')
@@ -29,7 +29,7 @@ namespace ShopLibrary.Searcher {
 
         public static List<Product> SearchProductsByText(string text, List<Product> context = null) {
             text = text.ToLowerInvariant();
-            string[] texts = text.Split();
+            var texts = text.Split();
 
             if (text.Length == 0)
                 return context ?? Products;
@@ -38,7 +38,7 @@ namespace ShopLibrary.Searcher {
                 return context?.Where(p => p.ProductName.ToLowerInvariant().Contains(text)).ToList() ??
                        Products.Where(p => p.ProductName.ToLowerInvariant().Contains(text)).ToList();
 
-            if (int.TryParse(text, out int id))
+            if (int.TryParse(text, out var id))
                 return context?.Where(p => p.ProductId.ToLowerInvariant().StartsWith(text)).ToList() ??
                        Products.Where(p => p.ProductId.ToLowerInvariant().StartsWith(text)).ToList();
             if (text[0] == 'p')
@@ -62,13 +62,13 @@ namespace ShopLibrary.Searcher {
         #region Customer Searching
         public static Customer SearchSingleCustomerByText(string text, List<Customer> context = null) {
             text = text.ToLowerInvariant();
-            string[] texts = text.Split();
+            var texts = text.Split();
             if (text.Length == 0)
                 return new Customer();
 
             if (texts.Length == 1)
             {
-                if (int.TryParse(text, out int id))
+                if (int.TryParse(text, out var id))
                     return context?.Find(c => c.ObjectId.Increment == id) ??
                            Customers.Find(c => c.ObjectId.Increment == id);
 
@@ -79,7 +79,7 @@ namespace ShopLibrary.Searcher {
                            c.FullName.ToLowerInvariant().Contains(text) ||
                            c.CustomerId.ToLowerInvariant().Contains(text));
             }
-            if (text[0] == 'c' && int.TryParse(texts[0].Substring(1), out int id2))
+            if (text[0] == 'c' && int.TryParse(texts[0].Substring(1), out var id2))
                 return context?.Find(c => c.ObjectId.Increment == id2) ??
                        Customers.Find(c => c.ObjectId.Increment == id2);
             return context?.Find(c => c.FullName.ToLowerInvariant().Contains(text)) ??
@@ -88,12 +88,12 @@ namespace ShopLibrary.Searcher {
 
         public static List<Customer> SearchCustomersByText(string text, List<Customer> context = null) {
             text = text.ToLowerInvariant();
-            string[] texts = text.Split();
+            var texts = text.Split();
             if (text.Length == 0)
                 return context ?? Customers;
 
             if (texts.Length == 1) {
-                if (int.TryParse(text, out int id))
+                if (int.TryParse(text, out var id))
                     return context?.Where(c => c.ObjectId.Increment == id).ToList() ??
                            Customers.Where(c => c.ObjectId.Increment == id).ToList();
                 return context?.Where(c =>

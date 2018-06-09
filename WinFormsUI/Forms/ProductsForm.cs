@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShopLibrary.Models;
+using ShopLibrary.Prints;
 using static ShopLibrary.Searcher.Search;
 using static ShopLibrary.GlobalConfig;
 using static ShopLibrary.Models.UserRole;
@@ -37,7 +39,7 @@ namespace WinFormsUI.Forms {
 
         private void ProductsForm_Load(object sender, EventArgs e) {
             ProductsDataGrid.AutoGenerateColumns = false;
-            UserRole role = CurrentUser.AccessLevel;
+            var role = CurrentUser.AccessLevel;
             if (role <= Admin) {
                 DeleteProductButton.Enabled = true;
                 AddProductButton.Enabled = true;
@@ -83,7 +85,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteProductButton_Click(object sender, EventArgs e) {
-            DialogResult confirm = MessageBox.Show("Are you sure want to delete " +
+            var confirm = MessageBox.Show("Are you sure want to delete " +
                                                    $"{ ProductsDataGrid.SelectedRows.Count } " +
                                                    "products?\n" +
                                                    "The deletion is permanent",
@@ -101,7 +103,7 @@ namespace WinFormsUI.Forms {
 
         private void AddProductButton_Click(object sender, EventArgs e) {
             Form form = new ProductInformationForm();
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 ShopSelectorCombo_SelectedIndexChanged(sender, e);
         }
@@ -109,14 +111,35 @@ namespace WinFormsUI.Forms {
         private void EditUpdateButton_Click(object sender, EventArgs e) {
             if (_products.Count > 0) {
                 Form form = new ProductInformationForm(_products[ProductsDataGrid.SelectedRows[0].Index]);
-                DialogResult result = form.ShowDialog();
+                var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                     ShopSelectorCombo_SelectedIndexChanged(sender, e);
             }
         }
 
-        private void PrintButton_Click(object sender, EventArgs e) {
-            // Todo - Handle the printing
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            bool includePurchaseInfo = MessageBox.Show(
+                                           "Include Purchase Information?",
+                                           "Confirm",
+                                           MessageBoxButtons.YesNo)
+                                    == DialogResult.Yes;
+
+            System.IO.Directory.CreateDirectory(
+                Environment.GetFolderPath(Environment
+                                          .SpecialFolder.MyDocuments)
+              + @"\Brotal\");
+
+            var filepath =
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+              + @"\Brotal\"
+              + $"Inventory-{DateTime.Now:yyyyMMddHHmmss}"
+              + ".pdf";
+            DataGridViewPrint.PrintInventoryToPdf(Shops[ShopSelectorCombo.SelectedIndex],
+                _products,
+                filepath, includePurchaseInfo);
+
+            Process.Start(filepath);
         }
 
         private void ShopSelectorCombo_SelectedIndexChanged(object sender, EventArgs e) => SearchProduct();

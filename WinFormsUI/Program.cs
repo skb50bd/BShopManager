@@ -7,6 +7,7 @@ using WinFormsUI.Forms;
 using System.Globalization;
 using static ShopLibrary.GlobalConfig;
 using System.Configuration;
+using System.Threading;
 using Resources.Languages;
 
 namespace WinFormsUI {
@@ -25,6 +26,7 @@ namespace WinFormsUI {
                 LoadBasicDatabase();
 
                 Culture = CultureInfo.CreateSpecificCulture(Properties.Settings.Default.Language);
+                Culture.NumberFormat.CurrencySymbol = "৳";
             }
             catch (Exception) {
                 //MessageBox.Show(ResourceManager.GetString("ErrorConnectingToDatabaseServer", Culture) +
@@ -47,9 +49,10 @@ namespace WinFormsUI {
 
             // START THE FORM
             //Application.Run(new HomeForm());
+
             while (true) {
                 try {
-                    FormCollection forms = Application.OpenForms;
+                    var forms = Application.OpenForms;
                     foreach (Form form in forms)
                         form.Close();
                 }
@@ -58,11 +61,11 @@ namespace WinFormsUI {
                 }
 
                 Form         login  = new LoginForm();
-                DialogResult result = login.ShowDialog();
+                var result = login.ShowDialog();
 
                 if (result == DialogResult.OK) {
                 #region Payroll Checking
-                    BulkPayment b = new BulkPayment();
+                    var b = new BulkPayment();
                     b = Connection[0].LatestPay();
 
                     if (CurrentUser.AccessLevel <= ShopLibrary.Models.UserRole.Admin) {
@@ -82,7 +85,7 @@ namespace WinFormsUI {
                                           MessageBoxButtons.YesNo);
 
                             if (res == DialogResult.Yes) {
-                                BulkPayment model = new BulkPayment {
+                                var model = new BulkPayment {
                                     Meta = new Metadata {
                                         Creator = CurrentUser.UserName
                                     }
@@ -115,7 +118,7 @@ namespace WinFormsUI {
                     break;
             }
 
-            FormCollection forms2 = Application.OpenForms;
+            var forms2 = Application.OpenForms;
             foreach (Form form in forms2)
                 form.Close();
         }

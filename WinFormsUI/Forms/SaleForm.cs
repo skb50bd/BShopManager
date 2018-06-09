@@ -166,7 +166,7 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm () {
-            string error = string.Empty;
+            var error = string.Empty;
 
             if (ShopSelectorCombo.SelectedIndex < 0)
                 error += "Shop not selected\n";
@@ -204,7 +204,7 @@ namespace WinFormsUI.Forms {
             }
             else {
                 if (_sale.Due > 0) {
-                    DialogResult result =
+                    var result =
                         MessageBox.Show("Non-documented customers should not enjoy late payments\n"
                                       + "Do you want to continue anyway?",
                                         "Confirm",
@@ -218,7 +218,7 @@ namespace WinFormsUI.Forms {
             }
 
             if (sender as Button == SubmitButton) {
-                DialogResult confirm = MessageBox.Show("Are you sure want to register this sale?\n"
+                var confirm = MessageBox.Show("Are you sure want to register this sale?\n"
                                                      + $"Customer Name\t\t: {_sale.CustomerName}\n"
                                                      + $"Customer Company\t: {_sale.CustomerCompany}\n"
                                                      + $"Products\t\t\t: {_sale.Cart.Count}\n"
@@ -233,7 +233,7 @@ namespace WinFormsUI.Forms {
 
                 try {
                     _sale = Connection[0].InsertSale(_sale);
-                    Memo memo = Connection[0].GetMemo(_sale.ObjectId);
+                    var memo = Connection[0].GetMemo(_sale.ObjectId);
                     PrintSaleMemo.ToPdf(memo);
                     ReloadButton_Click(sender, e);
                     SaleForm_Load(sender, e);
@@ -245,7 +245,7 @@ namespace WinFormsUI.Forms {
                 }
             }
             else if (sender as Button == SaveButton) {
-                DialogResult confirm = MessageBox.Show("Are you sure want to save this sale?\n"
+                var confirm = MessageBox.Show("Are you sure want to save this sale?\n"
                                                      + $"Customer Name\t\t: {_sale.CustomerName}\n"
                                                      + $"Customer Company\t: {_sale.CustomerCompany}\n"
                                                      + $"Products\t\t\t: {_sale.Cart.Count}\n"
@@ -315,7 +315,7 @@ namespace WinFormsUI.Forms {
 
         private void AddCustomerButton_Click (object sender, EventArgs e) {
             Form         form   = new CustomerInformationForm();
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 RefreshCustomers();
         }
@@ -363,7 +363,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void UnitSelectorCombo_SelectedIndexChanged (object sender, EventArgs e) {
-            int index = UnitSelectorCombo.SelectedIndex;
+            var index = UnitSelectorCombo.SelectedIndex;
 
             if (index > -1) {
                 SaleUnitPriceText.Text = WholeSaleRadio.Checked
@@ -371,7 +371,7 @@ namespace WinFormsUI.Forms {
                                              .ToString("0.##")
                                              : (_product.RetailPrice / (decimal) _product.Units[index].Weight)
                                              .ToString("0.##");
-                if (float.TryParse(QuantityText.Text, out float q) && q > 0)
+                if (float.TryParse(QuantityText.Text, out var q) && q > 0)
                     SaleNetPriceText.Text = (decimal.Parse(SaleUnitPriceText.Text) * (decimal) q).ToString("0.##");
                 else
                     SaleNetPriceText.Text = "";
@@ -385,19 +385,19 @@ namespace WinFormsUI.Forms {
 
     #region Cart
         private bool ProductValidation () {
-            string error = String.Empty;
+            var error = String.Empty;
 
             if (ProductSelectorCombo.SelectedIndex < 0)
                 error += "No product is selected. Please select a product properly.\n";
             if (UnitSelectorCombo.SelectedIndex < 0)
                 error += "Unit is invalid. Please select a corresponding unit for the product\n";
-            if (!float.TryParse(QuantityText.Text, out float q)
+            if (!float.TryParse(QuantityText.Text, out var q)
              || q < 0
              || _product.TotalStock < q * _product.Units[UnitSelectorCombo.SelectedIndex].Weight)
                 error += "Quantity is more than available or invalid\n";
-            if (!decimal.TryParse(SaleUnitPriceText.Text, out decimal up) || up < 0)
+            if (!decimal.TryParse(SaleUnitPriceText.Text, out var up) || up < 0)
                 error += "Selling unit price is invalid\n";
-            if (!decimal.TryParse(SaleNetPriceText.Text, out decimal np) || np < 0)
+            if (!decimal.TryParse(SaleNetPriceText.Text, out var np) || np < 0)
                 error += "Selling net price is invalid\n";
             if (_sale.Cart.Exists(sc => sc.ProductId == _product.ObjectId))
                 error += "\nThis product already exists in the cart.\n" + "Remove the previous to add again\n";
@@ -421,7 +421,7 @@ namespace WinFormsUI.Forms {
             if (!ProductValidation())
                 return;
 
-            ShoppingCart sc = new ShoppingCart {
+            var sc = new ShoppingCart {
                                                    ProductId   = _product.ObjectId,
                                                    ProductName = _product.ProductName,
                                                    UnitPrice   = decimal.Parse(SaleUnitPriceText.Text),
@@ -472,55 +472,55 @@ namespace WinFormsUI.Forms {
         }
 
         private void QuantityText_TextChanged (object sender, EventArgs e) {
-            if (float.TryParse(QuantityText.Text, out float q) && q > 0) {
-                if (decimal.TryParse(SaleUnitPriceText.Text, out decimal up) && up > 0)
+            if (float.TryParse(QuantityText.Text, out var q) && q > 0) {
+                if (decimal.TryParse(SaleUnitPriceText.Text, out var up) && up > 0)
                     SaleNetPriceText.Text = ((decimal) q * up).ToString("0.##");
-                else if (decimal.TryParse(SaleNetPriceText.Text, out decimal np) && np > 0)
+                else if (decimal.TryParse(SaleNetPriceText.Text, out var np) && np > 0)
                     SaleUnitPriceText.Text = (np / (decimal) q).ToString("0.##");
             }
         }
 
         private void SaleUnitPriceText_TextChanged (object sender, EventArgs e) {
-            if (decimal.TryParse(SaleUnitPriceText.Text, out decimal up)
+            if (decimal.TryParse(SaleUnitPriceText.Text, out var up)
              && up > 0
-             && float.TryParse(QuantityText.Text, out float q)
+             && float.TryParse(QuantityText.Text, out var q)
              && q > 0)
                 SaleNetPriceText.Text = (up * (decimal) q).ToString("0.##");
         }
 
         private void SaleNetPriceText_TextChanged (object sender, EventArgs e) {
-            if (decimal.TryParse(SaleNetPriceText.Text, out decimal np)
+            if (decimal.TryParse(SaleNetPriceText.Text, out var np)
              && np >= 0
-             && float.TryParse(QuantityText.Text, out float q)
+             && float.TryParse(QuantityText.Text, out var q)
              && q > 0
              && np % (decimal) q == 0)
                 SaleUnitPriceText.Text = (np / (decimal) q).ToString("0.##");
         }
 
         private void SaleNetPriceText_Leave (object sender, EventArgs e) {
-            if (decimal.TryParse(SaleNetPriceText.Text, out decimal np)
+            if (decimal.TryParse(SaleNetPriceText.Text, out var np)
              && np >= 0
-             && float.TryParse(QuantityText.Text, out float q)
+             && float.TryParse(QuantityText.Text, out var q)
              && q > 0)
                 SaleUnitPriceText.Text = (np / (decimal) q).ToString("0.##");
         }
 
         private void DiscountPercentageText_TextChanged (object sender, EventArgs e) {
-            if (!float.TryParse(DiscountPercentageText.Text, out float dp) || !(dp >= 0) || !(dp <= 100)) return;
+            if (!float.TryParse(DiscountPercentageText.Text, out var dp) || !(dp >= 0) || !(dp <= 100)) return;
 
             _sale.Discount = dp;
             RefreshAmounts();
         }
 
         private void LessAmountText_TextChanged (object sender, EventArgs e) {
-            if (!decimal.TryParse(LessAmountText.Text, out decimal l) || l < 0 || l > _sale.TotalAmount) return;
+            if (!decimal.TryParse(LessAmountText.Text, out var l) || l < 0 || l > _sale.TotalAmount) return;
 
             _sale.Less = l;
             RefreshAmounts();
         }
 
         private void PaidAmountText_TextChanged (object sender, EventArgs e) {
-            if (decimal.TryParse(PaidAmountText.Text, out decimal p) && p >= 0) {
+            if (decimal.TryParse(PaidAmountText.Text, out var p) && p >= 0) {
                 _sale.Paid = p;
                 DueText.Text = _sale.Due < 0
                                    ? "0"
@@ -564,7 +564,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void SearchProductText_TextChanged (object sender, EventArgs e) {
-            string text = SearchProductText.Text;
+            var text = SearchProductText.Text;
 
             ProductSelectorCombo.DataSource = null;
 
@@ -574,7 +574,7 @@ namespace WinFormsUI.Forms {
                 text = text.ToLowerInvariant();
 
                 if (text.Length > 0) {
-                    string[] tokens = text.Split();
+                    var tokens = text.Split();
                     if (tokens.Length == 1 && text.Substring(0, 1).ToLowerInvariant() == "p")
                         _products = _shopProducts
                                     .Where(p => p.ProductId.ToLowerInvariant().Contains(text))

@@ -13,7 +13,7 @@ namespace WinFormsUI.Forms {
 
         private void SelectFileButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = openFileDialog1.ShowDialog();
+            var result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
                 FilePathText.Text = openFileDialog1.FileName;
@@ -22,18 +22,18 @@ namespace WinFormsUI.Forms {
 
         private void CustomerButton_Click(object sender, EventArgs e)
         {
-            foreach (Customer customer in ExcelImporter.Import.ReadCustomer(FilePathText.Text))
+            foreach (var customer in ExcelImporter.Import.ReadCustomer(FilePathText.Text))
                 Connection[0].InsertCustomer(customer);
         }
 
         private void SupplierButton_Click(object sender, EventArgs e)
         {
-            foreach (Supplier supplier in ExcelImporter.Import.ReadSupplier(FilePathText.Text))
+            foreach (var supplier in ExcelImporter.Import.ReadSupplier(FilePathText.Text))
                 Connection[0].InsertSupplier(supplier);
         }
 
         private void ProductButton_Click(object sender, EventArgs e) {
-            foreach (Product product in ExcelImporter.Import.ReadProduct(FilePathText.Text,
+            foreach (var product in ExcelImporter.Import.ReadProduct(FilePathText.Text,
                 Shops[0]))
             {
                 //Insert Categories and Specifications if needed

@@ -124,17 +124,8 @@
   <data name="LoadButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 43</value>
   </data>
-  <data name="LoadButton.Text" xml:space="preserve">
-    <value>Load</value>
-  </data>
-  <data name="ToDateTime.CustomFormat" xml:space="preserve">
-    <value>dd/MM/yyyy hh:mm tt</value>
-  </data>
   <data name="ToDateTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 29</value>
-  </data>
-  <data name="FromDateTime.CustomFormat" xml:space="preserve">
-    <value>dd/MM/yyyy hh:mm tt</value>
   </data>
   <data name="FromDateTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 29</value>

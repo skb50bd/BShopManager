@@ -104,16 +104,16 @@ namespace WinFormsUI.Forms {
 
         private bool ValidateEntry()
         {
-            string error = string.Empty;
+            var error = string.Empty;
             if (ProductText.Text.Length == 0)
                 error += "Empty entry name\n";
             else if (_expense.Cart.Exists(sc => sc.ProductName == ProductText.Text))
                 error += "Entry already exists in cart\n";
-            if (!decimal.TryParse(UnitPriceText.Text, out decimal p) || p < 0)
+            if (!decimal.TryParse(UnitPriceText.Text, out var p) || p < 0)
                 error += "Invalid unit price\n";
-            if (!float.TryParse(QuantityText.Text, out float q) || p < 0)
+            if (!float.TryParse(QuantityText.Text, out var q) || p < 0)
                 error += "Invalid quantity\n";
-            if (!decimal.TryParse(NetPriceText.Text, out decimal n) || n < 0)
+            if (!decimal.TryParse(NetPriceText.Text, out var n) || n < 0)
                 error += "Invalid net price\n";
 
             if (error.Length > 0)
@@ -127,7 +127,7 @@ namespace WinFormsUI.Forms {
         {
             if (!ValidateEntry())
                 return;
-            ShoppingCart sc = new ShoppingCart
+            var sc = new ShoppingCart
             {
                 ProductId = ObjectId.Empty,
                 ProductName = ProductText.Text,
@@ -148,7 +148,7 @@ namespace WinFormsUI.Forms {
         {
             if (CartDataGrid.SelectedRows.Count > 0)
             {
-                int index = CartDataGrid.SelectedRows[0].Index;
+                var index = CartDataGrid.SelectedRows[0].Index;
                 _expense.Cart.RemoveAt(index);
                 CartDataGrid.DataSource = null;
                 CartDataGrid.DataSource = _expense.Cart;
@@ -158,8 +158,8 @@ namespace WinFormsUI.Forms {
 
         private bool ValidateForm()
         {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
 
             if (TitleText.Text.Length == 0)
                 error += "Expense title is empty\n";
@@ -172,7 +172,7 @@ namespace WinFormsUI.Forms {
 
             if (warning.Length > 0 || error.Length > 0)
             {
-                DialogResult result = MessageBox.Show("The following errors occurred during validation:\n" + error +
+                var result = MessageBox.Show("The following errors occurred during validation:\n" + error +
                     "\nThe following warnings should be considered:\n" + warning +
                     "\nDo you want to ignore any warnings?", 
                     "Validation Error", 
@@ -193,7 +193,7 @@ namespace WinFormsUI.Forms {
             _expense.Note         = NotesText.Text;
             _expense.Meta.Created = ExpenseDateTime.Value;
 
-            DialogResult result = MessageBox.Show("Are you sure want to save this expense record?",
+            var result = MessageBox.Show("Are you sure want to save this expense record?",
                 "Confirm",
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -211,16 +211,16 @@ namespace WinFormsUI.Forms {
 
         private void UnitPriceText_Leave(object sender, EventArgs e)
         {
-            if (!decimal.TryParse(UnitPriceText.Text, out decimal p))
+            if (!decimal.TryParse(UnitPriceText.Text, out var p))
                 UnitPriceText.Text = "";
         }
 
         private void QuantityText_Leave(object sender, EventArgs e) {
-            if (float.TryParse(QuantityText.Text, out float q) && q > 0)
+            if (float.TryParse(QuantityText.Text, out var q) && q > 0)
             {
-                if (decimal.TryParse(UnitPriceText.Text, out decimal u) && u > 0)
+                if (decimal.TryParse(UnitPriceText.Text, out var u) && u > 0)
                     NetPriceText.Text = (u * (decimal) q).ToString("0.##");
-                else if (decimal.TryParse(NetPriceText.Text, out decimal n) && n > 0)
+                else if (decimal.TryParse(NetPriceText.Text, out var n) && n > 0)
                     UnitPriceText.Text = (n / (decimal) q).ToString("0.##");
             }
             else
@@ -228,11 +228,11 @@ namespace WinFormsUI.Forms {
         }
 
         private void NetPriceText_Leave(object sender, EventArgs e) {
-            if (decimal.TryParse(NetPriceText.Text, out decimal n) && n > 0)
+            if (decimal.TryParse(NetPriceText.Text, out var n) && n > 0)
             {
-                if (QuantityText.Text.Length == 0 && decimal.TryParse(UnitPriceText.Text, out decimal u) && u > 0)
+                if (QuantityText.Text.Length == 0 && decimal.TryParse(UnitPriceText.Text, out var u) && u > 0)
                     QuantityText.Text = (n / u).ToString("0.##");
-                else if (UnitPriceText.Text.Length == 0 && float.TryParse(QuantityText.Text, out float q) && q > 0)
+                else if (UnitPriceText.Text.Length == 0 && float.TryParse(QuantityText.Text, out var q) && q > 0)
                     UnitPriceText.Text = (n / (decimal) q).ToString("0.##");
                 else if (QuantityText.Text.Length == 0 && UnitPriceText.Text.Length == 0)
                 {

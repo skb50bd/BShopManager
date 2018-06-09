@@ -46,6 +46,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>WinFormsUI.Program</StartupObject>
@@ -330,6 +331,9 @@
     <EmbeddedResource Include="Forms\ReportsForm.bn-BD.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportsForm.en-IO.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReportsForm.en-US.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,7 +424,9 @@
     <None Include="WinFormsUI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcelReader\ExcelReader.csproj">

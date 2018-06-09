@@ -33,7 +33,7 @@ namespace ShopLibrary {
             if (mongoDb)
             {
                 Debug.WriteLine("Mongo Trying to Initialize Mongo Connector");
-                MongoConnector mongo = new MongoConnector();
+                var mongo = new MongoConnector();
                 Debug.WriteLine("Adding MongoConnector to Connections");
                 Connection.Add(mongo);
             }
@@ -47,7 +47,7 @@ namespace ShopLibrary {
                 Connection[0].InsertUser(new User("brotality"));
                 Users = Connection[0].GetUserAll();
             }
-            Stopwatch sw = Stopwatch.StartNew();
+            var sw = Stopwatch.StartNew();
             BankAccounts = Connection[0].GetBankAccountsAll();
             CurrentCash = Connection[0].GetCurrentCash();
             Shops = Connection[0].GetShopsAll();

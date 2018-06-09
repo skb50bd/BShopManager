@@ -47,8 +47,8 @@ namespace ShopLibrary.Models {
         #region ICustomer Reportable Fields
         string ICustomerReportable.Id => RefundId;
         string ICustomerReportable.Type => "Refund";
-        string ICustomerReportable.Amount => GetRefundAmount;
-        string ICustomerReportable.Due => "";
+        string ICustomerReportable.Amount => $"{RefundAmount:C2}";
+        string ICustomerReportable.Due => "X";
         string ICustomerReportable.Profit => "";
         string ICustomerReportable.TimeStamp => Meta.Created.ToString("u");
         #endregion

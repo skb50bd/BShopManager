@@ -57,7 +57,7 @@ namespace WinFormsUI.Forms {
         /// </summary>
         /// <returns> True - if valid </returns>
         private bool ValidateForm() {
-            string errorMessage = string.Empty;
+            var errorMessage = string.Empty;
 
             if (_passwordText.Text.Length == 0)
                 errorMessage += "Empty Password\n";

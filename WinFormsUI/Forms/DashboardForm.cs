@@ -294,7 +294,7 @@ namespace WinFormsUI.Forms {
                 return;
 
             dumpLocation += DateTime.Now.ToLocalTime().ToString("/yyyyMMddHHmmss");
-            Process process = new Process
+            var process = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
@@ -323,7 +323,7 @@ namespace WinFormsUI.Forms {
             else
                 return;
 
-            Process process = new Process {
+            var process = new Process {
                 StartInfo = new ProcessStartInfo {
                     FileName = "mongorestore",
                     Arguments = "-d BShopManDb " + dumpLocation,

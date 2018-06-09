@@ -61,56 +61,62 @@ namespace WinFormsUI.Forms
             // 
             // ShopSelectorCombo
             // 
+            resources.ApplyResources(this.ShopSelectorCombo, "ShopSelectorCombo");
             this.ShopSelectorCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ShopSelectorCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.ShopSelectorCombo, "ShopSelectorCombo");
             this.ShopSelectorCombo.FormattingEnabled = true;
             this.ShopSelectorCombo.Name = "ShopSelectorCombo";
+            this.ButtonToolTip.SetToolTip(this.ShopSelectorCombo, resources.GetString("ShopSelectorCombo.ToolTip"));
             this.ShopSelectorCombo.SelectedIndexChanged += new System.EventHandler(this.ShopSelectorCombo_SelectedIndexChanged);
             // 
             // SelectShopLabel
             // 
             resources.ApplyResources(this.SelectShopLabel, "SelectShopLabel");
             this.SelectShopLabel.Name = "SelectShopLabel";
+            this.ButtonToolTip.SetToolTip(this.SelectShopLabel, resources.GetString("SelectShopLabel.ToolTip"));
             this.SelectShopLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // TitleLabel
             // 
             resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.Name = "TitleLabel";
+            this.ButtonToolTip.SetToolTip(this.TitleLabel, resources.GetString("TitleLabel.ToolTip"));
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // DeleteProductButton
             // 
+            resources.ApplyResources(this.DeleteProductButton, "DeleteProductButton");
             this.DeleteProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteProductButton.FlatAppearance.BorderSize = 0;
             this.DeleteProductButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteProductButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
-            resources.ApplyResources(this.DeleteProductButton, "DeleteProductButton");
             this.DeleteProductButton.ForeColor = System.Drawing.Color.White;
             this.DeleteProductButton.Name = "DeleteProductButton";
+            this.ButtonToolTip.SetToolTip(this.DeleteProductButton, resources.GetString("DeleteProductButton.ToolTip"));
             this.DeleteProductButton.UseVisualStyleBackColor = false;
             this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
             // 
             // SearchProductText
             // 
+            resources.ApplyResources(this.SearchProductText, "SearchProductText");
             this.SearchProductText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.SearchProductText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.SearchProductText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.SearchProductText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.SearchProductText, "SearchProductText");
             this.SearchProductText.Name = "SearchProductText";
+            this.ButtonToolTip.SetToolTip(this.SearchProductText, resources.GetString("SearchProductText.ToolTip"));
             this.SearchProductText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProductText_KeyDown);
             // 
             // PrintButton
             // 
+            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(149)))), ((int)(((byte)(199)))));
             this.PrintButton.FlatAppearance.BorderSize = 0;
             this.PrintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(99)))), ((int)(((byte)(132)))));
             this.PrintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(184)))), ((int)(((byte)(217)))));
-            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.ForeColor = System.Drawing.Color.White;
             this.PrintButton.Name = "PrintButton";
+            this.ButtonToolTip.SetToolTip(this.PrintButton, resources.GetString("PrintButton.ToolTip"));
             this.PrintButton.UseVisualStyleBackColor = false;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
@@ -118,11 +124,13 @@ namespace WinFormsUI.Forms
             // 
             resources.ApplyResources(this.LowStockCheck, "LowStockCheck");
             this.LowStockCheck.Name = "LowStockCheck";
+            this.ButtonToolTip.SetToolTip(this.LowStockCheck, resources.GetString("LowStockCheck.ToolTip"));
             this.LowStockCheck.UseVisualStyleBackColor = true;
             this.LowStockCheck.CheckedChanged += new System.EventHandler(this.LowStockCheck_CheckedChanged);
             // 
             // ProductsDataGrid
             // 
+            resources.ApplyResources(this.ProductsDataGrid, "ProductsDataGrid");
             this.ProductsDataGrid.AllowUserToAddRows = false;
             this.ProductsDataGrid.AllowUserToDeleteRows = false;
             this.ProductsDataGrid.AllowUserToOrderColumns = true;
@@ -160,11 +168,11 @@ namespace WinFormsUI.Forms
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.ProductsDataGrid.GridColor = System.Drawing.Color.WhiteSmoke;
-            resources.ApplyResources(this.ProductsDataGrid, "ProductsDataGrid");
             this.ProductsDataGrid.Name = "ProductsDataGrid";
             this.ProductsDataGrid.ReadOnly = true;
             this.ProductsDataGrid.RowHeadersVisible = false;
             this.ProductsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ButtonToolTip.SetToolTip(this.ProductsDataGrid, resources.GetString("ProductsDataGrid.ToolTip"));
             // 
             // IdColumn
             // 
@@ -231,39 +239,42 @@ namespace WinFormsUI.Forms
             // 
             // AddProductButton
             // 
+            resources.ApplyResources(this.AddProductButton, "AddProductButton");
             this.AddProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.AddProductButton.FlatAppearance.BorderSize = 0;
             this.AddProductButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(170)))));
             this.AddProductButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this.AddProductButton, "AddProductButton");
             this.AddProductButton.ForeColor = System.Drawing.Color.White;
             this.AddProductButton.Name = "AddProductButton";
+            this.ButtonToolTip.SetToolTip(this.AddProductButton, resources.GetString("AddProductButton.ToolTip"));
             this.AddProductButton.UseVisualStyleBackColor = false;
             this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // EditUpdateButton
             // 
+            resources.ApplyResources(this.EditUpdateButton, "EditUpdateButton");
             this.EditUpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.EditUpdateButton.FlatAppearance.BorderSize = 0;
             this.EditUpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.EditUpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
-            resources.ApplyResources(this.EditUpdateButton, "EditUpdateButton");
             this.EditUpdateButton.ForeColor = System.Drawing.Color.White;
             this.EditUpdateButton.Name = "EditUpdateButton";
+            this.ButtonToolTip.SetToolTip(this.EditUpdateButton, resources.GetString("EditUpdateButton.ToolTip"));
             this.EditUpdateButton.UseVisualStyleBackColor = false;
             this.EditUpdateButton.Click += new System.EventHandler(this.EditUpdateButton_Click);
             // 
             // SearchIcon
             // 
-            this.SearchIcon.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Search_96px;
             resources.ApplyResources(this.SearchIcon, "SearchIcon");
+            this.SearchIcon.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Search_96px;
             this.SearchIcon.Name = "SearchIcon";
             this.SearchIcon.TabStop = false;
+            this.ButtonToolTip.SetToolTip(this.SearchIcon, resources.GetString("SearchIcon.ToolTip"));
             // 
             // ReloadProducts
             // 
-            this.ReloadProducts.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Sync_500px;
             resources.ApplyResources(this.ReloadProducts, "ReloadProducts");
+            this.ReloadProducts.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Sync_500px;
             this.ReloadProducts.FlatAppearance.BorderSize = 0;
             this.ReloadProducts.Name = "ReloadProducts";
             this.ButtonToolTip.SetToolTip(this.ReloadProducts, resources.GetString("ReloadProducts.ToolTip"));
@@ -289,6 +300,7 @@ namespace WinFormsUI.Forms
             this.Controls.Add(this.TitleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ProductsForm";
+            this.ButtonToolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.ProductsForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGrid)).EndInit();

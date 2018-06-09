@@ -61,7 +61,7 @@ namespace WinFormsUI.Forms {
 
         private void BankAccountsForm_Load (object sender, EventArgs e) {
             TransactionsDataGrid.AutoGenerateColumns = false;
-            UserRole role = CurrentUser.AccessLevel;
+            var role = CurrentUser.AccessLevel;
             AddAccountButton.Enabled        = role <= Admin;
             EditAccountButton.Enabled       = role <= Admin;
             DeleteAccountButton.Enabled     = role <= Admin;
@@ -90,7 +90,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void TransactionTypeSelectorCombo_SelectedIndexChanged () {
-            int index = AccountSelectorCombo.SelectedIndex;
+            var index = AccountSelectorCombo.SelectedIndex;
             if (index >= 0)
                 _groupedTransactions = Connection[0]
                     .GetTransactionsByBankAccount(
@@ -118,7 +118,7 @@ namespace WinFormsUI.Forms {
             TransactionTypeSelectorCombo_SelectedIndexChanged();
 
         private void DeleteTransactionButton_Click (object sender, EventArgs e) {
-            DialogResult confirm = MessageBox.Show("Are you sure want to delete "
+            var confirm = MessageBox.Show("Are you sure want to delete "
                                                  + $"{TransactionsDataGrid.SelectedRows.Count} "
                                                  + "items?\n"
                                                  + "The deletion is permanent",
@@ -142,27 +142,27 @@ namespace WinFormsUI.Forms {
 
         private void AddAccountButton_Click (object sender, EventArgs e) {
             Form         form   = new BankAccountInformationForm();
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 WireUp();
         }
 
         private void EditAccountButton_Click (object sender, EventArgs e) {
             Form         form   = new BankAccountInformationForm(BankAccounts[AccountSelectorCombo.SelectedIndex]);
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 WireUp();
         }
 
         private async void DeleteAccountButton_ClickAsync (object sender, EventArgs e) {
-            DialogResult confirm = MessageBox.Show("Do You Really Want to Delete"
+            var confirm = MessageBox.Show("Do You Really Want to Delete"
                                                  + $"{AccountSelectorCombo.Text}?"
                                                  + "\nAll related Transactions will be deleted",
                                                    "Confirm",
                                                    MessageBoxButtons.YesNo);
 
             if (confirm == DialogResult.Yes) {
-                bool res = await Connection[0].DeleteBankAccount(BankAccounts[AccountSelectorCombo.SelectedIndex]);
+                var res = await Connection[0].DeleteBankAccount(BankAccounts[AccountSelectorCombo.SelectedIndex]);
                 if (res) {
                     MessageBox.Show("Deleted successfully", "Success");
                     WireUp();
@@ -174,13 +174,13 @@ namespace WinFormsUI.Forms {
 
         private void AddTransactionButton_Click (object sender, EventArgs e) {
             Form         form   = new TransactionForm();
-            DialogResult result = form.ShowDialog();
+            var result = form.ShowDialog();
             if (result == DialogResult.OK)
                 WireUp();
         }
 
         private void ViewEditEmployeeButton_Click (object sender, EventArgs e) {
-            int index = TransactionsDataGrid.CurrentRow.Index;
+            var index = TransactionsDataGrid.CurrentRow.Index;
 
             if (index > -1) {
                 Form form = new TransactionForm(_groupedTransactions[index]);

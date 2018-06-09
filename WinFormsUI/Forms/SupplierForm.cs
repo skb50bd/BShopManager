@@ -49,7 +49,7 @@ namespace WinFormsUI.Forms {
             SupplierHistoryDataGrid.AutoGenerateColumns = false;
             SuppliersDataGrid.AutoGenerateColumns = false;
 
-            UserRole role = CurrentUser.AccessLevel;
+            var role = CurrentUser.AccessLevel;
             if (role <= Admin) {
                 DeleteSupplierButton.Enabled = true;
                 DeleteRecordsButton.Enabled = true;
@@ -81,21 +81,21 @@ namespace WinFormsUI.Forms {
 
         private void AddSupplierButton_Click(object sender, EventArgs e) {
             Form ac = new SupplierInformationForm();
-            DialogResult result = ac.ShowDialog();
+            var result = ac.ShowDialog();
             if (result != DialogResult.OK)
                 WireUp();
         }
 
         private void SearchSupplierText_TextChanged(object sender, EventArgs e) {
-            string text = SearchSupplierText.Text.ToLowerInvariant();
+            var text = SearchSupplierText.Text.ToLowerInvariant();
             if (text.Length == 0) {
                 _groupedSuppliers = Suppliers;
 
             } else {
-                string[] tokens = text.Split();
+                var tokens = text.Split();
                 switch (tokens.Length) {
                     case 1:
-                        if (decimal.TryParse(text, out decimal min))
+                        if (decimal.TryParse(text, out var min))
                             _groupedSuppliers = Suppliers
                                 .Where(sp => sp.Payable >= min).ToList();
 
@@ -111,7 +111,7 @@ namespace WinFormsUI.Forms {
                                 sp.CompanyName.ToLowerInvariant().Contains(text)).ToList();
                         break;
                     case 2:
-                        if (decimal.TryParse(tokens[0], out min) && decimal.TryParse(tokens[1], out decimal max))
+                        if (decimal.TryParse(tokens[0], out min) && decimal.TryParse(tokens[1], out var max))
                             _groupedSuppliers = Suppliers
                                 .Where(c => c.Payable >= min && c.Payable <= max)
                                 .ToList();
@@ -137,7 +137,7 @@ namespace WinFormsUI.Forms {
         private void ViewEditSupplierButton_Click(object sender, EventArgs e) {
             try {
                 Form ci = new SupplierInformationForm(_groupedSuppliers[SuppliersDataGrid.SelectedCells[0].RowIndex]);
-                DialogResult result = ci.ShowDialog();
+                var result = ci.ShowDialog();
                 if (result == DialogResult.OK)
                     WireUp();
             } catch (Exception exception) {
@@ -147,7 +147,7 @@ namespace WinFormsUI.Forms {
 
         private void SuppliersDataGrid_SelectionChanged(object sender, EventArgs e) {
             Supplier supplier;
-            int index = SuppliersDataGrid.CurrentRow.Index;
+            var index = SuppliersDataGrid.CurrentRow.Index;
             if (_groupedSuppliers.Count > 0 && index < _groupedSuppliers.Count) {
                 supplier = _groupedSuppliers[index];
                 _purhcases = Connection[0]
@@ -174,7 +174,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteSupplierButton_Click(object sender, EventArgs e) {
-            DialogResult result =
+            var result =
                 MessageBox.Show($"Do you really want to delete {SuppliersDataGrid.SelectedRows.Count} supplier?\n" +
                     "This process is irreversible\n",
                     "Confirm",
@@ -188,9 +188,9 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteEntryButton_Click(object sender, EventArgs e) {
-            int selectedIndex = SuppliersDataGrid.CurrentRow.Index;
+            var selectedIndex = SuppliersDataGrid.CurrentRow.Index;
             if (selectedIndex > 0) {
-                DialogResult result =
+                var result =
                     MessageBox.Show($"Do you really want to delete { SupplierHistoryDataGrid.SelectedRows.Count } records?\n" +
                                     "This action is irreversible\n",
                         "Confirm",

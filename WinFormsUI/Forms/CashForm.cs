@@ -67,9 +67,9 @@ namespace WinFormsUI.Forms {
             NotesText.Text = "";
             InputGroupBox.Enabled = CurrentUser.AccessLevel <= Admin;
 
-            decimal TotalAsset = Products.Sum(p => p.PurchasePrice * (decimal)(p.ShopStock + p.GodownStock));
-            decimal TotalReceivables = Customers.Sum(c => c.Debt);
-            decimal TotalPayables = Suppliers.Sum(s => s.Payable);
+            var TotalAsset = Products.Sum(p => p.PurchasePrice * (decimal)(p.ShopStock + p.GodownStock));
+            var TotalReceivables = Customers.Sum(c => c.Debt);
+            var TotalPayables = Suppliers.Sum(s => s.Payable);
 
             CurrentStockAssetAmount.Text = TotalAsset.ToString("0.##") + " Tk";
             TotalPayablesAmount.Text = TotalPayables.ToString("0.##") + " Tk";
@@ -88,15 +88,15 @@ namespace WinFormsUI.Forms {
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            CashModification model = new CashModification
+            var model = new CashModification
             {
                 PreviousBalance = CurrentCash.Current,
                 Note = NotesText.Text
             };
 
-            if (decimal.TryParse(AddAmountText.Text, out decimal aAmount) && aAmount > 0)
+            if (decimal.TryParse(AddAmountText.Text, out var aAmount) && aAmount > 0)
                 model.NewBalance = CurrentCash.Current + aAmount;
-            else if (decimal.TryParse(RemoveAmountText.Text, out decimal rAmount) && rAmount > 0)
+            else if (decimal.TryParse(RemoveAmountText.Text, out var rAmount) && rAmount > 0)
                 model.NewBalance = CurrentCash.Current - rAmount;
             else
             {

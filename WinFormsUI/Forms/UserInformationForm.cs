@@ -101,7 +101,7 @@ namespace WinFormsUI {
         }
 
         private bool ValidateAddUserForm() {
-            string error = string.Empty;
+            var error = string.Empty;
 
             if (FullNameText.Text.Length == 0)
                 error += "Empty Person Name\n";
@@ -131,7 +131,7 @@ namespace WinFormsUI {
         private void AddSaveButton_Click(object sender, EventArgs e) {
             if (ValidateAddUserForm()) {
                 if (passwordChanged) {
-                    ObjectId objId = user.ObjectId;
+                    var objId = user.ObjectId;
                     user = new User(
                         FullNameText.Text,
                         NickNameText.Text,

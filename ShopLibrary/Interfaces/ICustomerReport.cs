@@ -21,5 +21,7 @@ namespace ShopLibrary.Models {
         List<Sale> GetCustomerSales(Customer customer);
         List<DebtCollection> GetCustomerDebtCollections(Customer customer);
         List<Refund> GetCustomerRefunds(Customer customer);
+
+        void LoadCustomerReport ();
     }
 }

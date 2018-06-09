@@ -94,15 +94,15 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm() {
-            string message = string.Empty;
-            string warning = string.Empty;
+            var message = string.Empty;
+            var warning = string.Empty;
             if (TransactionDateTime.Value.Date < DateTime.Now.Date - TimeSpan.Parse("07:00:00:00"))
                 message += "Invalid Date\n";
             if (AccountSelectorCombo.Text.Length == 0)
                 message += "Invalid or Empty Bank Account\n";
             if (TypeSelectorCombo.Text != "Deposit" && TypeSelectorCombo.Text != "Withdrawal")
                 message += "Invalid Transaction Type\n";
-            if (!decimal.TryParse(AmountText.Text, out decimal m) || m < 0)
+            if (!decimal.TryParse(AmountText.Text, out var m) || m < 0)
                 message += "Invalid Amount\n";
             if (TypeSelectorCombo.Text == "Withdrawal" &&
                 m > BankAccounts[AccountSelectorCombo.SelectedIndex].CurrentBalance)
@@ -112,7 +112,7 @@ namespace WinFormsUI.Forms {
                 warning += "Both Check Number and Transaction Code fields are empty\n";
 
             if (message.Length > 0 || warning.Length > 0) {
-                DialogResult result
+                var result
                     = MessageBox.Show("The following error occurred while validating the form\n" + message +
                                       "\nThe following warnings should be addressed\n" + warning +
                                       "\n\nDo you want to ignore the warnings?",
@@ -138,7 +138,7 @@ namespace WinFormsUI.Forms {
         private void SaveButton_Click(object sender, EventArgs e) {
             if (!ValidateForm())
                 return;
-            Transaction model   = new Transaction {
+            var model   = new Transaction {
                 BankAccountId       = BankAccounts[AccountSelectorCombo.SelectedIndex].ObjectId,
                 BankAccountName     = BankAccounts[AccountSelectorCombo.SelectedIndex].AccountName,
                 TransactionType = (TransactionType)(TypeSelectorCombo.SelectedIndex + 1),
@@ -153,7 +153,7 @@ namespace WinFormsUI.Forms {
                 Meta            = new Metadata(TransactionDateTime.Value, CurrentUser.UserName)
             };
 
-            DialogResult result = MessageBox.Show("Are you sure want to add this transaction?", "Confirm",
+            var result = MessageBox.Show("Are you sure want to add this transaction?", "Confirm",
                 MessageBoxButtons.YesNo);
             if (result != DialogResult.Yes)
                 return;

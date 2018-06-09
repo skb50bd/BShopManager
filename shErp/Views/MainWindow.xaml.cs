@@ -21,7 +21,7 @@ namespace WpfUI.Forms {
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure want to exit?", "Confirm", MessageBoxButton.YesNo);
+            var result = MessageBox.Show("Are you sure want to exit?", "Confirm", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
                 Close();
@@ -56,7 +56,7 @@ namespace WpfUI.Forms {
         }
 
         private bool ValidateForm() {
-            string errorMessage = string.Empty;
+            var errorMessage = string.Empty;
 
             if (UserNameText.Text.Length == 0)
                 errorMessage += "Username is empty\n";

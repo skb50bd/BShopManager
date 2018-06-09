@@ -80,7 +80,7 @@ namespace WinFormsUI.Forms {
             _customer = model;
             TitleLabel.Text = _customer.CustomerId;
 
-            UserRole role                 = CurrentUser.AccessLevel;
+            var role                 = CurrentUser.AccessLevel;
             DueCollectionGroupBox.Enabled = role <= AppUser;
             InfoGroupBox.Enabled          = role <= AppUser;
             CurrentDueText.Enabled        = role <= Admin;
@@ -110,8 +110,8 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm() {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
 
             if (FullNameText.Text.Length == 0)
                 error += "Empty Name\n";
@@ -128,7 +128,7 @@ namespace WinFormsUI.Forms {
             if (NotesText.Text == "")
                 warning += "Empty notes\n";
 
-            if (!decimal.TryParse(CurrentDueTextBig.Text.Split()[0], out decimal d) || d < 0)
+            if (!decimal.TryParse(CurrentDueTextBig.Text.Split()[0], out var d) || d < 0)
                 error += "Invalid Due Amount";
 
             if (error.Length > 0) {
@@ -172,7 +172,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DepositButton_Click(object sender, EventArgs e) {
-            if (!decimal.TryParse(CashReceivedText.Text, out decimal m) || m < 0) {
+            if (!decimal.TryParse(CashReceivedText.Text, out var m) || m < 0) {
                 MessageBox.Show("Invalid Amount");
                 return;
             }
@@ -180,7 +180,7 @@ namespace WinFormsUI.Forms {
             if (m > _customer.Debt)
                 MessageBox.Show("Deposit amount is greater than due");
             else {
-                DebtCollection model = new DebtCollection {
+                var model = new DebtCollection {
                     CustomerId = _customer.ObjectId,
                     CustomerName = _customer.FullName,
                     Amount = m

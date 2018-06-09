@@ -63,8 +63,8 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm() {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
             if (ShopNameText.Text.Length == 0)
                 error += "Empty Shopname\n";
             if (EditSaveButton.Text == "Add Shop"
@@ -84,7 +84,7 @@ namespace WinFormsUI.Forms {
                 warning += "Empty Email Address(es)";
 
             if (error.Length > 0 || warning.Length > 0) {
-                DialogResult result
+                var result
                     = MessageBox.Show("Following Errors occurred during Validation:\n" + error +
                         "Following Warnings should be considered:\n" + warning +
                         "\n\nDo you want to ignore the warnings?",
@@ -130,7 +130,7 @@ namespace WinFormsUI.Forms {
             if (DeleteCancelButton.Text == "Cancel" || DeleteCancelButton.Text == rm.GetString("cancel")) {
                 ResetForm();
             } else if (DeleteCancelButton.Text == "Delete This Shop" || DeleteCancelButton.Text == rm.GetString("DeleteCancelButton.Text")) {
-                DialogResult confirm           = MessageBox.Show("Do You Really Want to Delete" +
+                var confirm           = MessageBox.Show("Do You Really Want to Delete" +
                     $"\n {ShopSelectorCombo.Text}?" +
                     "\n All related Records will be DELETED",
                     "Confirm", MessageBoxButtons.YesNo);
@@ -151,12 +151,12 @@ namespace WinFormsUI.Forms {
                 return;
 
             if (EditSaveButton.Text == "Add Shop" || EditSaveButton.Text == rm.GetString("add")) {
-                DialogResult result = MessageBox.Show("Are you sure want to add this Shop?", "Confirm",
+                var result = MessageBox.Show("Are you sure want to add this Shop?", "Confirm",
                     MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes)
                     return;
 
-                Shop model         = new Shop {
+                var model         = new Shop {
                     ShopName       = ShopNameText.Text,
                     Tagline        = TaglineText.Text,
                     PropietorName  = PropietorNameText.Text,
@@ -173,11 +173,11 @@ namespace WinFormsUI.Forms {
                     MessageBox.Show("Another Shop with same name exists", "Error");
                     return;
                 }
-                DialogResult result = MessageBox.Show("Are you sure want to update this Shop?", "Confirm",
+                var result = MessageBox.Show("Are you sure want to update this Shop?", "Confirm",
                     MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes)
                     return;
-                Shop model           = Shops[ShopSelectorCombo.SelectedIndex];
+                var model           = Shops[ShopSelectorCombo.SelectedIndex];
                 model.ShopName       = ShopNameText.Text;
                 model.Tagline        = TaglineText.Text;
                 model.PropietorName  = PropietorNameText.Text;

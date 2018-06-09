@@ -118,502 +118,160 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ShopSelectorCombo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="ShopSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 69</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ShopSelectorCombo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
-  </data>
-  <data name="ShopSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 29</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ShopSelectorCombo.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ShopSelectorCombo.Name" xml:space="preserve">
-    <value>ShopSelectorCombo</value>
-  </data>
-  <data name="&gt;&gt;ShopSelectorCombo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ShopSelectorCombo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ShopSelectorCombo.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="SelectShopLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectShopLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="SelectShopLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="SelectShopLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="SelectShopLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 21</value>
-  </data>
-  <data name="SelectShopLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SelectShopLabel.Text" xml:space="preserve">
-    <value>Select Shop</value>
-  </data>
-  <data name="&gt;&gt;SelectShopLabel.Name" xml:space="preserve">
-    <value>SelectShopLabel</value>
-  </data>
-  <data name="&gt;&gt;SelectShopLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectShopLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SelectShopLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 26.25pt</value>
-  </data>
-  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 39</value>
-  </data>
-  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TitleLabel.Text" xml:space="preserve">
-    <value>Inventory</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
-    <value>TitleLabel</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="DeleteProductButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="DeleteProductButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="DeleteProductButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="DeleteProductButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 629</value>
-  </data>
-  <data name="DeleteProductButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
-  </data>
-  <data name="DeleteProductButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 42</value>
-  </data>
-  <data name="DeleteProductButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="DeleteProductButton.Text" xml:space="preserve">
-    <value>Delete Selected Product(s)</value>
-  </data>
-  <data name="DeleteProductButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;DeleteProductButton.Name" xml:space="preserve">
-    <value>DeleteProductButton</value>
-  </data>
-  <data name="&gt;&gt;DeleteProductButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeleteProductButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DeleteProductButton.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="SearchProductText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="SearchProductText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>777, 72</value>
-  </data>
-  <data name="SearchProductText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="SearchProductText.Size" type="System.Drawing.Size, System.Drawing">
     <value>338, 22</value>
   </data>
-  <data name="SearchProductText.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;SearchProductText.Name" xml:space="preserve">
-    <value>SearchProductText</value>
-  </data>
-  <data name="&gt;&gt;SearchProductText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchProductText.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SearchProductText.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PrintButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="PrintButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="PrintButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="PrintButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 679</value>
-  </data>
-  <data name="PrintButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
-  </data>
-  <data name="PrintButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 42</value>
-  </data>
-  <data name="PrintButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="PrintButton.Text" xml:space="preserve">
-    <value>Print</value>
-  </data>
-  <data name="PrintButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageAboveText</value>
-  </data>
-  <data name="&gt;&gt;PrintButton.Name" xml:space="preserve">
-    <value>PrintButton</value>
-  </data>
-  <data name="&gt;&gt;PrintButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PrintButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PrintButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LowStockCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LowStockCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>647, 71</value>
-  </data>
-  <data name="LowStockCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="LowStockCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 25</value>
-  </data>
-  <data name="LowStockCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="LowStockCheck.Text" xml:space="preserve">
-    <value>Low Stock</value>
-  </data>
-  <data name="&gt;&gt;LowStockCheck.Name" xml:space="preserve">
-    <value>LowStockCheck</value>
-  </data>
-  <data name="&gt;&gt;LowStockCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LowStockCheck.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LowStockCheck.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="IdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="IdColumn.HeaderText" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="IdColumn.Width" type="System.Int32, mscorlib">
-    <value>48</value>
-  </data>
-  <metadata name="NameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="NameColumn.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="NameColumn.Width" type="System.Int32, mscorlib">
-    <value>77</value>
-  </data>
-  <metadata name="StockColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="StockColumn.HeaderText" xml:space="preserve">
-    <value>Stock</value>
-  </data>
-  <data name="StockColumn.Width" type="System.Int32, mscorlib">
-    <value>72</value>
-  </data>
-  <metadata name="UnitColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="UnitColumn.HeaderText" xml:space="preserve">
-    <value>Unit</value>
-  </data>
-  <data name="UnitColumn.Width" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <metadata name="RetailPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="RetailPriceColumn.HeaderText" xml:space="preserve">
-    <value>Retail P.</value>
-  </data>
-  <data name="RetailPriceColumn.Width" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <metadata name="WholeSalePriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="WholeSalePriceColumn.HeaderText" xml:space="preserve">
-    <value>Whole S. P</value>
-  </data>
-  <data name="WholeSalePriceColumn.Width" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <metadata name="PurchasePriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PurchasePriceColumn.HeaderText" xml:space="preserve">
-    <value>Purchase P.</value>
-  </data>
-  <data name="PurchasePriceColumn.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="CreatedColumn.HeaderText" xml:space="preserve">
-    <value>Added on</value>
-  </data>
-  <data name="CreatedColumn.Width" type="System.Int32, mscorlib">
-    <value>102</value>
-  </data>
-  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="CreatorColumn.HeaderText" xml:space="preserve">
-    <value>Added by</value>
-  </data>
-  <data name="CreatorColumn.Width" type="System.Int32, mscorlib">
-    <value>101</value>
-  </data>
-  <data name="ProductsDataGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 104</value>
-  </data>
-  <data name="ProductsDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ProductsDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1098, 515</value>
-  </data>
-  <data name="ProductsDataGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;ProductsDataGrid.Name" xml:space="preserve">
-    <value>ProductsDataGrid</value>
-  </data>
-  <data name="&gt;&gt;ProductsDataGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProductsDataGrid.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ProductsDataGrid.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="AddProductButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="AddProductButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="AddProductButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="AddProductButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>561, 679</value>
-  </data>
-  <data name="AddProductButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
-  </data>
-  <data name="AddProductButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 42</value>
-  </data>
-  <data name="AddProductButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="AddProductButton.Text" xml:space="preserve">
-    <value>+ Add New Product</value>
-  </data>
-  <data name="AddProductButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DeleteProductButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;AddProductButton.Name" xml:space="preserve">
-    <value>AddProductButton</value>
-  </data>
-  <data name="&gt;&gt;AddProductButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddProductButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AddProductButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EditUpdateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="EditUpdateButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="EditUpdateButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="EditUpdateButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>561, 629</value>
   </data>
-  <data name="EditUpdateButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 4, 2</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IdColumn.Width" type="System.Int32, mscorlib">
+    <value>48</value>
   </data>
-  <data name="EditUpdateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 42</value>
-  </data>
-  <data name="EditUpdateButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="EditUpdateButton.Text" xml:space="preserve">
-    <value>Edit / Update Selected Product</value>
-  </data>
-  <data name="EditUpdateButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageAboveText</value>
-  </data>
-  <data name="&gt;&gt;EditUpdateButton.Name" xml:space="preserve">
-    <value>EditUpdateButton</value>
-  </data>
-  <data name="&gt;&gt;EditUpdateButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PrintButton.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;EditUpdateButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;EditUpdateButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SearchIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="SearchIcon.ErrorImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="SearchIcon.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="SearchIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>750, 71</value>
-  </data>
-  <data name="SearchIcon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="SearchIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="SearchIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="&gt;&gt;SearchIcon.Name" xml:space="preserve">
-    <value>SearchIcon</value>
+  <data name="&gt;&gt;ShopSelectorCombo.Name" xml:space="preserve">
+    <value>ShopSelectorCombo</value>
   </data>
   <data name="&gt;&gt;SearchIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SearchIcon.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ShopSelectorCombo.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;PurchasePriceColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonToolTip.Name" xml:space="preserve">
+    <value>ButtonToolTip</value>
+  </data>
+  <data name="&gt;&gt;DeleteProductButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SearchIcon.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="AddProductButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="ReloadProducts.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="SearchProductText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>777, 72</value>
   </data>
-  <data name="ReloadProducts.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
-  <data name="ReloadProducts.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="ProductsDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="AddProductButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="LowStockCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="CreatedColumn.HeaderText" xml:space="preserve">
+    <value>Added on</value>
+  </data>
+  <data name="&gt;&gt;EditUpdateButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="ReloadProducts.Location" type="System.Drawing.Point, System.Drawing">
     <value>1099, 3</value>
   </data>
-  <data name="ReloadProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 29</value>
+  <data name="&gt;&gt;ProductsDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ReloadProducts.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="SelectShopLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="ReloadProducts.ToolTip" xml:space="preserve">
-    <value>Force refresh products from database</value>
+  <data name="PurchasePriceColumn.HeaderText" xml:space="preserve">
+    <value>Purchase P.</value>
   </data>
-  <data name="&gt;&gt;ReloadProducts.Name" xml:space="preserve">
-    <value>ReloadProducts</value>
+  <data name="LowStockCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;ReloadProducts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;SearchIcon.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;ReloadProducts.Parent" xml:space="preserve">
+  <data name="&gt;&gt;UnitColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddProductButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ReloadProducts.ZOrder" xml:space="preserve">
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>bn-BD</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 21</value>
+  <data name="AddProductButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1131, 734</value>
+  <data name="SelectShopLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Name" xml:space="preserve">
+    <value>SelectShopLabel</value>
+  </data>
+  <data name="PrintButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="StockColumn.Width" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="PrintButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;IdColumn.Name" xml:space="preserve">
+    <value>IdColumn</value>
+  </data>
+  <data name="ShopSelectorCombo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="AddProductButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>561, 679</value>
+  </data>
+  <data name="SearchIcon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="DeleteProductButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AddProductButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditUpdateButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SearchIcon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="&gt;&gt;PurchasePriceColumn.Name" xml:space="preserve">
+    <value>PurchasePriceColumn</value>
+  </data>
+  <data name="&gt;&gt;SearchProductText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="CreatorColumn.HeaderText" xml:space="preserve">
+    <value>Added by</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EditUpdateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2301,79 +1959,454 @@
         AAAAAAAAAAAAAAAAAAAAAAAA/tY0/QmfNqUfT+Oz0wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+  <data name="LowStockCheck.Text" xml:space="preserve">
+    <value>Low Stock</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="DeleteProductButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 42</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Products</value>
+  <data name="&gt;&gt;EditUpdateButton.Name" xml:space="preserve">
+    <value>EditUpdateButton</value>
   </data>
-  <data name="&gt;&gt;IdColumn.Name" xml:space="preserve">
-    <value>IdColumn</value>
+  <data name="ShopSelectorCombo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;IdColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;PrintButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WholeSalePriceColumn.HeaderText" xml:space="preserve">
+    <value>Whole S. P</value>
+  </data>
+  <data name="PurchasePriceColumn.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="RetailPriceColumn.HeaderText" xml:space="preserve">
+    <value>Retail P.</value>
+  </data>
+  <data name="&gt;&gt;SearchProductText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PrintButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="DeleteProductButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 679</value>
+  </data>
+  <data name="ReloadProducts.ToolTip" xml:space="preserve">
+    <value>Force refresh products from database</value>
+  </data>
+  <data name="SearchIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="LowStockCheck.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectShopLabel.Text" xml:space="preserve">
+    <value>Select Shop</value>
+  </data>
+  <data name="SearchProductText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="SearchProductText.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;AddProductButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LowStockCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 25</value>
+  </data>
+  <data name="SearchProductText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintButton.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="&gt;&gt;DeleteProductButton.Name" xml:space="preserve">
+    <value>DeleteProductButton</value>
+  </data>
+  <data name="SelectShopLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="PrintButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 42</value>
+  </data>
+  <data name="&gt;&gt;ProductsDataGrid.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;NameColumn.Name" xml:space="preserve">
     <value>NameColumn</value>
   </data>
-  <data name="&gt;&gt;NameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ReloadProducts.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;StockColumn.Name" xml:space="preserve">
-    <value>StockColumn</value>
-  </data>
-  <data name="&gt;&gt;StockColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UnitColumn.Name" xml:space="preserve">
-    <value>UnitColumn</value>
-  </data>
-  <data name="&gt;&gt;UnitColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RetailPriceColumn.Name" xml:space="preserve">
-    <value>RetailPriceColumn</value>
+  <data name="EditUpdateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;RetailPriceColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;WholeSalePriceColumn.Name" xml:space="preserve">
-    <value>WholeSalePriceColumn</value>
+  <data name="AddProductButton.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;WholeSalePriceColumn.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeleteProductButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ShopSelectorCombo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="LowStockCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>647, 71</value>
+  </data>
+  <data name="SearchIcon.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StockColumn.HeaderText" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="&gt;&gt;SearchProductText.Name" xml:space="preserve">
+    <value>SearchProductText</value>
+  </data>
+  <data name="EditUpdateButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="EditUpdateButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.Name" xml:space="preserve">
+    <value>PrintButton</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Name" xml:space="preserve">
+    <value>SearchIcon</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="LowStockCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NameColumn.Width" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="&gt;&gt;RetailPriceColumn.Name" xml:space="preserve">
+    <value>RetailPriceColumn</value>
+  </data>
+  <data name="SearchProductText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SearchIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>750, 71</value>
+  </data>
+  <data name="TitleLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddProductButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;IdColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PurchasePriceColumn.Name" xml:space="preserve">
-    <value>PurchasePriceColumn</value>
+  <data name="TitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 26.25pt</value>
   </data>
-  <data name="&gt;&gt;PurchasePriceColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="EditUpdateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;CreatedColumn.Name" xml:space="preserve">
-    <value>CreatedColumn</value>
+  <data name="&gt;&gt;StockColumn.Name" xml:space="preserve">
+    <value>StockColumn</value>
   </data>
-  <data name="&gt;&gt;CreatedColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CreatorColumn.Name" xml:space="preserve">
-    <value>CreatorColumn</value>
-  </data>
-  <data name="&gt;&gt;CreatorColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonToolTip.Name" xml:space="preserve">
-    <value>ButtonToolTip</value>
+  <data name="UnitColumn.Width" type="System.Int32, mscorlib">
+    <value>64</value>
   </data>
   <data name="&gt;&gt;ButtonToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="SearchIcon.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="EditUpdateButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteProductButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SelectShopLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 21</value>
+  </data>
+  <data name="&gt;&gt;LowStockCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="CreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="ProductsDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ShopSelectorCombo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="WholeSalePriceColumn.Width" type="System.Int32, mscorlib">
+    <value>109</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeleteProductButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="&gt;&gt;SearchProductText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ProductsDataGrid.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditUpdateButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="ReloadProducts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;UnitColumn.Name" xml:space="preserve">
+    <value>UnitColumn</value>
+  </data>
+  <data name="&gt;&gt;WholeSalePriceColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UnitColumn.HeaderText" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="ProductsDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 104</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 39</value>
+  </data>
+  <data name="&gt;&gt;SearchIcon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CreatorColumn.Name" xml:space="preserve">
+    <value>CreatorColumn</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ProductsForm</value>
+  </data>
+  <data name="EditUpdateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 42</value>
+  </data>
+  <data name="&gt;&gt;StockColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PrintButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddProductButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 42</value>
+  </data>
+  <data name="IdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="&gt;&gt;NameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectShopLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="DeleteProductButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ShopSelectorCombo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="DeleteProductButton.Text" xml:space="preserve">
+    <value>Delete Selected Product(s)</value>
+  </data>
+  <data name="&gt;&gt;AddProductButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SelectShopLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ProductsDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1098, 515</value>
+  </data>
+  <data name="&gt;&gt;ReloadProducts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PrintButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="AddProductButton.Text" xml:space="preserve">
+    <value>+ Add New Product</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 21</value>
+  </data>
+  <data name="&gt;&gt;ReloadProducts.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;DeleteProductButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreatedColumn.Name" xml:space="preserve">
+    <value>CreatedColumn</value>
+  </data>
+  <data name="&gt;&gt;ReloadProducts.Name" xml:space="preserve">
+    <value>ReloadProducts</value>
+  </data>
+  <data name="CreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="ShopSelectorCombo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="SelectShopLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;WholeSalePriceColumn.Name" xml:space="preserve">
+    <value>WholeSalePriceColumn</value>
+  </data>
+  <data name="&gt;&gt;ProductsDataGrid.Name" xml:space="preserve">
+    <value>ProductsDataGrid</value>
+  </data>
+  <data name="EditUpdateButton.Text" xml:space="preserve">
+    <value>Edit / Update Selected Product</value>
+  </data>
+  <data name="ShopSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 29</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LowStockCheck.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1131, 734</value>
+  </data>
+  <data name="&gt;&gt;ReloadProducts.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ProductsDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ReloadProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="&gt;&gt;SelectShopLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="RetailPriceColumn.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="DeleteProductButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 629</value>
+  </data>
+  <data name="DeleteProductButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ReloadProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="ReloadProducts.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;LowStockCheck.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;AddProductButton.Name" xml:space="preserve">
+    <value>AddProductButton</value>
+  </data>
+  <data name="&gt;&gt;LowStockCheck.Name" xml:space="preserve">
+    <value>LowStockCheck</value>
+  </data>
+  <data name="&gt;&gt;PrintButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="PrintButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="AddProductButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SearchIcon.ErrorImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ShopSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 69</value>
+  </data>
+  <metadata name="CreatedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="IdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="WholeSalePriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CreatorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PurchasePriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="StockColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="UnitColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RetailPriceColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ButtonToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

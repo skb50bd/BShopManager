@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.SearchCustomerText = new System.Windows.Forms.TextBox();
             this.DeleteCustomerButton = new System.Windows.Forms.Button();
@@ -63,6 +63,7 @@
             this.ViewRecordButton = new System.Windows.Forms.Button();
             this.ReloadCustomers = new System.Windows.Forms.Button();
             this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.PrintCustomerNameButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerHistoryDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchIcon)).BeginInit();
@@ -72,69 +73,63 @@
             // 
             resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.Name = "TitleLabel";
-            this.ButtonToolTip.SetToolTip(this.TitleLabel, resources.GetString("TitleLabel.ToolTip"));
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // SearchCustomerText
             // 
-            resources.ApplyResources(this.SearchCustomerText, "SearchCustomerText");
             this.SearchCustomerText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.SearchCustomerText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.SearchCustomerText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.SearchCustomerText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.SearchCustomerText, "SearchCustomerText");
             this.SearchCustomerText.Name = "SearchCustomerText";
-            this.ButtonToolTip.SetToolTip(this.SearchCustomerText, resources.GetString("SearchCustomerText.ToolTip"));
             this.SearchCustomerText.TextChanged += new System.EventHandler(this.SearchCustomerText_TextChanged);
             // 
             // DeleteCustomerButton
             // 
-            resources.ApplyResources(this.DeleteCustomerButton, "DeleteCustomerButton");
             this.DeleteCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteCustomerButton.FlatAppearance.BorderSize = 0;
             this.DeleteCustomerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteCustomerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
+            resources.ApplyResources(this.DeleteCustomerButton, "DeleteCustomerButton");
             this.DeleteCustomerButton.ForeColor = System.Drawing.Color.White;
             this.DeleteCustomerButton.Name = "DeleteCustomerButton";
-            this.ButtonToolTip.SetToolTip(this.DeleteCustomerButton, resources.GetString("DeleteCustomerButton.ToolTip"));
             this.DeleteCustomerButton.UseVisualStyleBackColor = false;
             this.DeleteCustomerButton.Click += new System.EventHandler(this.DeleteCustomerButton_Click);
             // 
             // ViewEditCustomerButton
             // 
-            resources.ApplyResources(this.ViewEditCustomerButton, "ViewEditCustomerButton");
             this.ViewEditCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.ViewEditCustomerButton.FlatAppearance.BorderSize = 0;
             this.ViewEditCustomerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.ViewEditCustomerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            resources.ApplyResources(this.ViewEditCustomerButton, "ViewEditCustomerButton");
             this.ViewEditCustomerButton.ForeColor = System.Drawing.Color.White;
             this.ViewEditCustomerButton.Name = "ViewEditCustomerButton";
-            this.ButtonToolTip.SetToolTip(this.ViewEditCustomerButton, resources.GetString("ViewEditCustomerButton.ToolTip"));
             this.ViewEditCustomerButton.UseVisualStyleBackColor = false;
             this.ViewEditCustomerButton.Click += new System.EventHandler(this.ViewEditCustomerButton_Click);
             // 
             // AddCustomerButton
             // 
-            resources.ApplyResources(this.AddCustomerButton, "AddCustomerButton");
             this.AddCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.AddCustomerButton.FlatAppearance.BorderSize = 0;
             this.AddCustomerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(170)))));
             this.AddCustomerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.AddCustomerButton, "AddCustomerButton");
             this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
             this.AddCustomerButton.Name = "AddCustomerButton";
-            this.ButtonToolTip.SetToolTip(this.AddCustomerButton, resources.GetString("AddCustomerButton.ToolTip"));
             this.AddCustomerButton.UseVisualStyleBackColor = false;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
             // DeleteEntryButton
             // 
-            resources.ApplyResources(this.DeleteEntryButton, "DeleteEntryButton");
             this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(60)))), ((int)(((byte)(76)))));
             this.DeleteEntryButton.FlatAppearance.BorderSize = 0;
             this.DeleteEntryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.DeleteEntryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(135)))));
+            resources.ApplyResources(this.DeleteEntryButton, "DeleteEntryButton");
             this.DeleteEntryButton.ForeColor = System.Drawing.Color.White;
             this.DeleteEntryButton.Name = "DeleteEntryButton";
-            this.ButtonToolTip.SetToolTip(this.DeleteEntryButton, resources.GetString("DeleteEntryButton.ToolTip"));
             this.DeleteEntryButton.UseVisualStyleBackColor = false;
             this.DeleteEntryButton.Click += new System.EventHandler(this.DeleteEntryButton_Click);
             // 
@@ -142,12 +137,10 @@
             // 
             resources.ApplyResources(this.HistoryLabel, "HistoryLabel");
             this.HistoryLabel.Name = "HistoryLabel";
-            this.ButtonToolTip.SetToolTip(this.HistoryLabel, resources.GetString("HistoryLabel.ToolTip"));
             this.HistoryLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             // 
             // CustomersDataGrid
             // 
-            resources.ApplyResources(this.CustomersDataGrid, "CustomersDataGrid");
             this.CustomersDataGrid.AllowUserToAddRows = false;
             this.CustomersDataGrid.AllowUserToDeleteRows = false;
             this.CustomersDataGrid.AllowUserToOrderColumns = true;
@@ -157,14 +150,14 @@
             this.CustomersDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CustomersDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.CustomersDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CustomersDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CustomersDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.CustomersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomersDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CustomerIdColumn,
@@ -175,20 +168,20 @@
             this.CreatorColumn,
             this.ModifiedColumn,
             this.ModifierColumn});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CustomersDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CustomersDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.CustomersDataGrid.GridColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.CustomersDataGrid, "CustomersDataGrid");
             this.CustomersDataGrid.Name = "CustomersDataGrid";
             this.CustomersDataGrid.ReadOnly = true;
             this.CustomersDataGrid.RowHeadersVisible = false;
             this.CustomersDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ButtonToolTip.SetToolTip(this.CustomersDataGrid, resources.GetString("CustomersDataGrid.ToolTip"));
             this.CustomersDataGrid.SelectionChanged += new System.EventHandler(this.CustomersDataGrid_SelectionChanged);
             // 
             // CustomerIdColumn
@@ -249,7 +242,6 @@
             // 
             // CustomerHistoryDataGrid
             // 
-            resources.ApplyResources(this.CustomerHistoryDataGrid, "CustomerHistoryDataGrid");
             this.CustomerHistoryDataGrid.AllowUserToAddRows = false;
             this.CustomerHistoryDataGrid.AllowUserToDeleteRows = false;
             this.CustomerHistoryDataGrid.AllowUserToOrderColumns = true;
@@ -259,14 +251,14 @@
             this.CustomerHistoryDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CustomerHistoryDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.CustomerHistoryDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CustomerHistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CustomerHistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.CustomerHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerHistoryDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TypeColumn,
@@ -276,20 +268,20 @@
             this.ProfitColumn,
             this.RecordCreatedColumn,
             this.RecordCreatorColumn});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CustomerHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CustomerHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.CustomerHistoryDataGrid.GridColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.CustomerHistoryDataGrid, "CustomerHistoryDataGrid");
             this.CustomerHistoryDataGrid.Name = "CustomerHistoryDataGrid";
             this.CustomerHistoryDataGrid.ReadOnly = true;
             this.CustomerHistoryDataGrid.RowHeadersVisible = false;
             this.CustomerHistoryDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ButtonToolTip.SetToolTip(this.CustomerHistoryDataGrid, resources.GetString("CustomerHistoryDataGrid.ToolTip"));
             // 
             // TypeColumn
             // 
@@ -342,53 +334,63 @@
             // 
             // SearchIcon
             // 
-            resources.ApplyResources(this.SearchIcon, "SearchIcon");
             this.SearchIcon.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Search_96px;
+            resources.ApplyResources(this.SearchIcon, "SearchIcon");
             this.SearchIcon.Name = "SearchIcon";
             this.SearchIcon.TabStop = false;
-            this.ButtonToolTip.SetToolTip(this.SearchIcon, resources.GetString("SearchIcon.ToolTip"));
             // 
             // PrintButton
             // 
-            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(149)))), ((int)(((byte)(199)))));
             this.PrintButton.FlatAppearance.BorderSize = 0;
             this.PrintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(99)))), ((int)(((byte)(132)))));
             this.PrintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(184)))), ((int)(((byte)(217)))));
+            resources.ApplyResources(this.PrintButton, "PrintButton");
             this.PrintButton.ForeColor = System.Drawing.Color.White;
             this.PrintButton.Name = "PrintButton";
-            this.ButtonToolTip.SetToolTip(this.PrintButton, resources.GetString("PrintButton.ToolTip"));
             this.PrintButton.UseVisualStyleBackColor = false;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // ViewRecordButton
             // 
-            resources.ApplyResources(this.ViewRecordButton, "ViewRecordButton");
             this.ViewRecordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
             this.ViewRecordButton.FlatAppearance.BorderSize = 0;
             this.ViewRecordButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
             this.ViewRecordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            resources.ApplyResources(this.ViewRecordButton, "ViewRecordButton");
             this.ViewRecordButton.ForeColor = System.Drawing.Color.White;
             this.ViewRecordButton.Name = "ViewRecordButton";
-            this.ButtonToolTip.SetToolTip(this.ViewRecordButton, resources.GetString("ViewRecordButton.ToolTip"));
             this.ViewRecordButton.UseVisualStyleBackColor = false;
             this.ViewRecordButton.Click += new System.EventHandler(this.ViewRecordButton_Click);
             // 
             // ReloadCustomers
             // 
-            resources.ApplyResources(this.ReloadCustomers, "ReloadCustomers");
             this.ReloadCustomers.BackgroundImage = global::WinFormsUI.Properties.Resources.icons8_Sync_500px;
+            resources.ApplyResources(this.ReloadCustomers, "ReloadCustomers");
             this.ReloadCustomers.FlatAppearance.BorderSize = 0;
             this.ReloadCustomers.Name = "ReloadCustomers";
             this.ButtonToolTip.SetToolTip(this.ReloadCustomers, resources.GetString("ReloadCustomers.ToolTip"));
             this.ReloadCustomers.UseVisualStyleBackColor = true;
             this.ReloadCustomers.Click += new System.EventHandler(this.RefreshCustomersButton_Click);
             // 
+            // PrintCustomerNameButton
+            // 
+            this.PrintCustomerNameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(184)))), ((int)(((byte)(104)))));
+            this.PrintCustomerNameButton.FlatAppearance.BorderSize = 0;
+            this.PrintCustomerNameButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            this.PrintCustomerNameButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(207)))), ((int)(((byte)(154)))));
+            resources.ApplyResources(this.PrintCustomerNameButton, "PrintCustomerNameButton");
+            this.PrintCustomerNameButton.ForeColor = System.Drawing.Color.White;
+            this.PrintCustomerNameButton.Name = "PrintCustomerNameButton";
+            this.PrintCustomerNameButton.UseVisualStyleBackColor = false;
+            this.PrintCustomerNameButton.Click += new System.EventHandler(this.PrintCustomerNameButton_Click);
+            // 
             // CustomerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.PrintCustomerNameButton);
             this.Controls.Add(this.ReloadCustomers);
             this.Controls.Add(this.ViewRecordButton);
             this.Controls.Add(this.PrintButton);
@@ -404,7 +406,6 @@
             this.Controls.Add(this.TitleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomerForm";
-            this.ButtonToolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.CustomersForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MakeDraggable);
             ((System.ComponentModel.ISupportInitialize)(this.CustomersDataGrid)).EndInit();
@@ -446,5 +447,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProfitColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordCreatedColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordCreatorColumn;
+        private System.Windows.Forms.Button PrintCustomerNameButton;
     }
 }

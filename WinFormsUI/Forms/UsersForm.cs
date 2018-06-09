@@ -58,7 +58,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteUserButton_Click(object sender, EventArgs e) {
-            DialogResult result = MessageBox.Show($"Are you sure want to delete {UsersDataGrid.SelectedRows.Count} users?\nThis cannot be undone.",
+            var result = MessageBox.Show($"Are you sure want to delete {UsersDataGrid.SelectedRows.Count} users?\nThis cannot be undone.",
                 "Confirmation",
                 MessageBoxButtons.OKCancel);
 
@@ -69,7 +69,7 @@ namespace WinFormsUI.Forms {
                         continue;
                     }
                     if (Users[row.Index] == CurrentUser) {
-                        DialogResult res = MessageBox.Show(
+                        var res = MessageBox.Show(
                             "Hey, you are trying to remove your OWN account!\nAre you sure?\nThis cannot be undone.",
                             "Confirm", MessageBoxButtons.OKCancel);
                         if (res == DialogResult.Cancel)
@@ -82,10 +82,10 @@ namespace WinFormsUI.Forms {
         }
 
         private void EditUserButton_Click(object sender, EventArgs e) {
-            int index = UsersDataGrid.CurrentRow.Index;
+            var index = UsersDataGrid.CurrentRow.Index;
             if (Users[index].AccessLevel > Root && index > -1) {
                 Form editUser       = new UserInformationForm(Users[index]);
-                DialogResult result = editUser.ShowDialog();
+                var result = editUser.ShowDialog();
                 if (result          == DialogResult.OK)
                     LoadGrid();
             } else
@@ -94,7 +94,7 @@ namespace WinFormsUI.Forms {
 
         private void AddUserButton_Click(object sender, EventArgs e) {
             Form newUser = new UserInformationForm();
-            DialogResult result = newUser.ShowDialog();
+            var result = newUser.ShowDialog();
             if (result == DialogResult.OK)
                 LoadGrid();
         }

@@ -49,7 +49,7 @@ namespace WpfUI.Views {
         }
 
         private void LoadSale() {
-            List<ShoppingCart> cart = _sale.Cart.ToList();
+            var cart = _sale.Cart.ToList();
             try {
                 RetailSaleRadio.IsChecked = _sale.SaleType == SaleType.RetailSale;
                 WholeSaleRadio.IsChecked  = _sale.SaleType == SaleType.WholeSale;
@@ -121,7 +121,7 @@ namespace WpfUI.Views {
         }
 
         private void SetProductFields() {
-            int index = _shopProducts.FindIndex(p => p.ObjectId == _product?.ObjectId);
+            var index = _shopProducts.FindIndex(p => p.ObjectId == _product?.ObjectId);
             if (index > -1) {
                 ProductCombo.SelectedIndex = index;
 
@@ -133,15 +133,15 @@ namespace WpfUI.Views {
                 UnitPriceText.Text = WholeSaleRadio.IsChecked == true
                     ? _product.GetWholeSalePriceByUnit(_product.Units[UnitCombo.SelectedIndex])
                     : _product.GetRetailPriceByUnit(_product.Units[UnitCombo.SelectedIndex]);
-                NetPriceText.Text = float.TryParse(QuantityText.Text, out float q)
-                                    && decimal.TryParse(UnitPriceText.Text, out decimal up)
+                NetPriceText.Text = float.TryParse(QuantityText.Text, out var q)
+                                    && decimal.TryParse(UnitPriceText.Text, out var up)
                     ? (up * (decimal)q).ToString("0.##")
                     : "";
                 _shoppingCart = new ShoppingCart {
                     ProductId = _product.ObjectId,
                     ProductName = _product.ProductName,
                     Unit = _product.Units[0],
-                    UnitPrice = decimal.TryParse(UnitPriceText.Text, out decimal upp) ? upp : 0
+                    UnitPrice = decimal.TryParse(UnitPriceText.Text, out var upp) ? upp : 0
                 };
             }
             else {
@@ -175,7 +175,7 @@ namespace WpfUI.Views {
         }
 
         private bool ValidateProduct() {
-            string error = string.Empty;
+            var error = string.Empty;
 
             if (RetailSaleRadio.IsChecked != true && WholeSaleRadio.IsChecked != true)
                 error += "Must select sale-type first\n";
@@ -183,17 +183,17 @@ namespace WpfUI.Views {
             if (_product == null || _product == new Product())
                 error += "No product selected.\n";
 
-            if (!float.TryParse(QuantityText.Text, out float q) || q < 0)
+            if (!float.TryParse(QuantityText.Text, out var q) || q < 0)
                 error += "Invalid product quantity\n";
 
-            if (!decimal.TryParse(UnitPriceText.Text, out decimal up) || up < 0)
+            if (!decimal.TryParse(UnitPriceText.Text, out var up) || up < 0)
                 error += "Unit price is invalid\n";
 
             if (UnitCombo.SelectedIndex < 0)
                 error += "Invalid unit selected";
 
             if (_sale.Cart.Exists(sc => sc.ProductId == _product.ObjectId)) {
-                MessageBoxResult result = MessageBox.Show("Same product exists in the cart.\n" +
+                var result = MessageBox.Show("Same product exists in the cart.\n" +
                                                           "Replace the existing product in the cart?", "Conflict",
                     MessageBoxButton.YesNo);
                 if (result != MessageBoxResult.Yes)
@@ -272,7 +272,7 @@ namespace WpfUI.Views {
             ProductCombo.ItemsSource = null;
             ProductCombo.Text = "";
 
-            int index = ShopCombo.SelectedIndex;
+            var index = ShopCombo.SelectedIndex;
             if (index == -1) {
                 _sale.ShopId = ObjectId.Empty;
                 _shopProducts = new List<Product>();
@@ -303,7 +303,7 @@ namespace WpfUI.Views {
         }
 
         private void UnitCombo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
-            int index = UnitCombo.SelectedIndex;
+            var index = UnitCombo.SelectedIndex;
             if (_product != null && _product.ObjectId != ObjectId.Empty && index > -1)
                 _shoppingCart.Unit = _product.Units[index];
             SetProductPriceFields();
@@ -319,7 +319,7 @@ namespace WpfUI.Views {
         }
 
         private void ProductCombo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
-            int index = ProductCombo.SelectedIndex;
+            var index = ProductCombo.SelectedIndex;
             if (index == -1) {
                 _product = new Product();
             }
@@ -341,7 +341,7 @@ namespace WpfUI.Views {
         }
 
         private void CustomerCombo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
-            int index = CustomerCombo.SelectedIndex;
+            var index = CustomerCombo.SelectedIndex;
             if (index == -1)
                 _customer = new Customer();
             else
@@ -353,7 +353,7 @@ namespace WpfUI.Views {
         private void QuantityText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
             if (QuantityText.Text.Length == 0)
                 return;
-            if (float.TryParse(QuantityText.Text, out float q) && q > 0)
+            if (float.TryParse(QuantityText.Text, out var q) && q > 0)
                 _shoppingCart.Quantity = q;
             SetProductPriceFields();
         }
@@ -361,7 +361,7 @@ namespace WpfUI.Views {
         private void QuantityText_KeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter) {
                 if (QuantityText.Text.Length > 0
-                    && float.TryParse(QuantityText.Text, out float q) && q > 0) {
+                    && float.TryParse(QuantityText.Text, out var q) && q > 0) {
                     if (q <= _product.TotalStock)
                         UnitPriceText.Focus();
                     else
@@ -376,7 +376,7 @@ namespace WpfUI.Views {
         private void UnitPriceText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
             if (UnitPriceText.Text.Length == 0)
                 return;
-            if (decimal.TryParse(UnitPriceText.Text, out decimal up) && up > 0)
+            if (decimal.TryParse(UnitPriceText.Text, out var up) && up > 0)
                 _shoppingCart.UnitPrice = up;
             SetProductPriceFields();
         }
@@ -384,7 +384,7 @@ namespace WpfUI.Views {
         private void UnitPriceText_KeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter) {
                 if (UnitPriceText.Text.Length > 0
-                    && decimal.TryParse(UnitPriceText.Text, out decimal up) && up > 0) {
+                    && decimal.TryParse(UnitPriceText.Text, out var up) && up > 0) {
                     NetPriceText.Focus();
                 }
                 else {
@@ -396,7 +396,7 @@ namespace WpfUI.Views {
         private void NetPriceText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
             if (NetPriceText.Text.Length == 0)
                 return;
-            if (decimal.TryParse(NetPriceText.Text, out decimal np) && np > 0)
+            if (decimal.TryParse(NetPriceText.Text, out var np) && np > 0)
                 _shoppingCart.NetPrice = np;
             if (_shoppingCart.NetPrice == np)
                 SetProductPriceFields();
@@ -405,7 +405,7 @@ namespace WpfUI.Views {
         private void NetPriceText_KeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Enter) {
                 if (NetPriceText.Text.Length > 0
-                    && decimal.TryParse(NetPriceText.Text, out decimal np) && np > 0) {
+                    && decimal.TryParse(NetPriceText.Text, out var np) && np > 0) {
                     AddToCartButton.Focus();
                 }
                 else {
@@ -415,7 +415,7 @@ namespace WpfUI.Views {
         }
 
         private void NetPriceText_LostFocus(object sender, RoutedEventArgs e) {
-            if (decimal.TryParse(NetPriceText.Text, out decimal np) && np > 0)
+            if (decimal.TryParse(NetPriceText.Text, out var np) && np > 0)
                 _shoppingCart.NetPrice = np;
             SetProductPriceFields();
         }
@@ -475,19 +475,19 @@ namespace WpfUI.Views {
         }
 
         private void DiscountPercentageText_TextChanged(object sender, TextChangedEventArgs e) {
-            if (!float.TryParse(DiscountPercentageText.Text, out float dp) || !(dp >= 0) || !(dp <= 100)) return;
+            if (!float.TryParse(DiscountPercentageText.Text, out var dp) || !(dp >= 0) || !(dp <= 100)) return;
             _sale.Discount = dp;
             SetAmountFields();
         }
 
         private void LessAmountText_TextChanged(object sender, TextChangedEventArgs e) {
-            if (!decimal.TryParse(LessAmountText.Text, out decimal l) || l < 0) return;
+            if (!decimal.TryParse(LessAmountText.Text, out var l) || l < 0) return;
             _sale.Less = l;
             SetAmountFields();
         }
 
         private void PaidText_TextChanged(object sender, TextChangedEventArgs e) {
-            if (decimal.TryParse(PaidText.Text, out decimal p) && p >= 0) {
+            if (decimal.TryParse(PaidText.Text, out var p) && p >= 0) {
                 _sale.Paid = p;
                 DueText.Text = _sale.Due < 0
                     ? "0"
@@ -497,7 +497,7 @@ namespace WpfUI.Views {
         }
 
         private bool ValidateForm() {
-            string error = string.Empty;
+            var error = string.Empty;
 
             if (ShopCombo.SelectedIndex < 0)
                 error += "Shop not selected\n";
@@ -536,7 +536,7 @@ namespace WpfUI.Views {
             }
             else {
                 if (_sale.Due > 0) {
-                    MessageBoxResult result = MessageBox.Show(
+                    var result = MessageBox.Show(
                         "Non-documented customers should not enjoy late payments\n" +
                         "Do you want to continue anyway?",
                         "Confirm",
@@ -547,7 +547,7 @@ namespace WpfUI.Views {
                 _sale.CustomerId = ObjectId.Empty;
             }
 
-            MessageBoxResult confirm = MessageBox.Show("Are you sure want to register this sale?\n" +
+            var confirm = MessageBox.Show("Are you sure want to register this sale?\n" +
                                                        $"Customer Name\t\t: {_sale.CustomerName}\n" +
                                                        $"Customer Company\t: {_sale.CustomerCompany}\n" +
                                                        $"Products\t\t\t: {_sale.Cart.Count}\n" +
@@ -602,7 +602,7 @@ namespace WpfUI.Views {
             else
                 _sale.CustomerId = ObjectId.Empty;
             if (_sale.Due > 0 && _sale.CustomerId == ObjectId.Empty) {
-                MessageBoxResult result = MessageBox.Show(
+                var result = MessageBox.Show(
                     "Non-documented customers should not enjoy late payments\n" +
                     "Do you want to continue anyway?",
                     "Confirm",
@@ -610,7 +610,7 @@ namespace WpfUI.Views {
                 if (result != MessageBoxResult.Yes)
                     return;
             }
-            MessageBoxResult confirm = MessageBox.Show("Are you sure want to save this sale?\n" +
+            var confirm = MessageBox.Show("Are you sure want to save this sale?\n" +
                                                    $"Customer Name\t\t: {_sale.CustomerName}\n" +
                                                    $"Customer Company\t: {_sale.CustomerCompany}\n" +
                                                    $"Products\t\t\t: {_sale.Cart.Count}\n" +

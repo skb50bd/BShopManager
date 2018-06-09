@@ -118,35 +118,202 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ShopSelectorCombo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 92</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ShopSelectorCombo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="ShopSelectorCombo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>615, 36</value>
+  </data>
+  <data name="ShopSelectorCombo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectShopLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="SelectShopLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
   <data name="SelectShopLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 21</value>
+    <value>128, 28</value>
   </data>
   <data name="SelectShopLabel.Text" xml:space="preserve">
     <value>দোকান বাছাই</value>
   </data>
+  <data name="SelectShopLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 11</value>
+  </data>
+  <data name="TitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
   <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 39</value>
+    <value>165, 52</value>
   </data>
   <data name="TitleLabel.Text" xml:space="preserve">
     <value>গুদামঘর</value>
   </data>
+  <data name="TitleLabel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteProductButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 839</value>
+  </data>
+  <data name="DeleteProductButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="DeleteProductButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 56</value>
+  </data>
   <data name="DeleteProductButton.Text" xml:space="preserve">
     <value>বাছাইকৃত পণ্য ডিলেট করুন</value>
+  </data>
+  <data name="DeleteProductButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchProductText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>950, 96</value>
+  </data>
+  <data name="SearchProductText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="SearchProductText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>413, 27</value>
+  </data>
+  <data name="SearchProductText.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PrintButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 905</value>
+  </data>
+  <data name="PrintButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="PrintButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 56</value>
   </data>
   <data name="PrintButton.Text" xml:space="preserve">
     <value>প্রিন্ট</value>
   </data>
+  <data name="PrintButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LowStockCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>791, 95</value>
+  </data>
+  <data name="LowStockCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
   <data name="LowStockCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
+    <value>123, 32</value>
   </data>
   <data name="LowStockCheck.Text" xml:space="preserve">
     <value>অল্প মজুত</value>
   </data>
+  <data name="LowStockCheck.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IdColumn.Width" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="NameColumn.Width" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="StockColumn.Width" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="UnitColumn.Width" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="RetailPriceColumn.Width" type="System.Int32, mscorlib">
+    <value>109</value>
+  </data>
+  <data name="WholeSalePriceColumn.Width" type="System.Int32, mscorlib">
+    <value>134</value>
+  </data>
+  <data name="PurchasePriceColumn.Width" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="CreatedColumn.Width" type="System.Int32, mscorlib">
+    <value>128</value>
+  </data>
+  <data name="CreatorColumn.Width" type="System.Int32, mscorlib">
+    <value>127</value>
+  </data>
+  <data name="ProductsDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 139</value>
+  </data>
+  <data name="ProductsDataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="ProductsDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1342, 687</value>
+  </data>
+  <data name="ProductsDataGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddProductButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 905</value>
+  </data>
+  <data name="AddProductButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="AddProductButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>677, 56</value>
+  </data>
   <data name="AddProductButton.Text" xml:space="preserve">
     <value>+নতুন পণ্য</value>
   </data>
+  <data name="AddProductButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditUpdateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 839</value>
+  </data>
+  <data name="EditUpdateButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
+  <data name="EditUpdateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>677, 56</value>
+  </data>
   <data name="EditUpdateButton.Text" xml:space="preserve">
     <value>এডিট/হালনাগাদ পণ্য</value>
+  </data>
+  <data name="EditUpdateButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>917, 95</value>
+  </data>
+  <data name="SearchIcon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="SearchIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="SearchIcon.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReloadProducts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1343, 4</value>
+  </data>
+  <data name="ReloadProducts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ReloadProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 39</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>11, 28</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1382, 979</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1834,7 +2001,13 @@
         AAAAAAAAAAAAAAAAAAAAAAAA/tY0/QmfNqUfT+Oz0wAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 7, 5, 7</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>পণ্য</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

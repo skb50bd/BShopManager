@@ -35,8 +35,8 @@ namespace ShopLibrary.Models {
         #region ICustomerReportable Fields
         string ICustomerReportable.Id => DebtCollectionId;
         string ICustomerReportable.Type => "Due Col.";
-        string ICustomerReportable.Amount => GetAmount;
-        string ICustomerReportable.Due => "";
+        string ICustomerReportable.Amount => $"{Amount:C2}";
+        string ICustomerReportable.Due => "X";
         string ICustomerReportable.Profit => "";
         string ICustomerReportable.TimeStamp => Meta.Created.ToLocalTime().ToString("u");
         #endregion

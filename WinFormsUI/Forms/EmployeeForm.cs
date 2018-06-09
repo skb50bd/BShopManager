@@ -41,7 +41,7 @@ namespace WinFormsUI.Forms {
 
 
         private void EmployeeForm_Load(object sender, EventArgs e) {
-            UserRole role = CurrentUser.AccessLevel;
+            var role = CurrentUser.AccessLevel;
             DeleteEmployeeButton.Enabled = role <= Admin;
             DeleteEntryButton.Enabled = role <= Admin;
             AddEmployeeButton.Enabled = role <= AppUser;
@@ -59,21 +59,21 @@ namespace WinFormsUI.Forms {
 
         private void AddEmployeeButton_Click(object sender, EventArgs e) {
             Form ac = new EmployeeInformationForm();
-            DialogResult result = ac.ShowDialog();
+            var result = ac.ShowDialog();
             if (result != DialogResult.OK)
                 WireUp();
         }
 
         private void SearchEmployeeText_TextChanged(object sender, EventArgs e) {
-            string text = SearchEmployeeText.Text.ToLowerInvariant();
+            var text = SearchEmployeeText.Text.ToLowerInvariant();
             if (text.Length == 0) {
                 _groupedEmployees = Employees;
 
             } else {
-                string[] tokens = text.Split();
+                var tokens = text.Split();
                 switch (tokens.Length) {
                     case 1:
-                        if (decimal.TryParse(text, out decimal min))
+                        if (decimal.TryParse(text, out var min))
                             _groupedEmployees = Employees
                                 .Where(sp => sp.Balance >= min).ToList();
 
@@ -89,7 +89,7 @@ namespace WinFormsUI.Forms {
                                     sp.Designation.ToLowerInvariant().Contains(text)).ToList();
                         break;
                     case 2:
-                        if (decimal.TryParse(tokens[0], out min) && decimal.TryParse(tokens[1], out decimal max))
+                        if (decimal.TryParse(tokens[0], out min) && decimal.TryParse(tokens[1], out var max))
                             _groupedEmployees = Employees
                                 .Where(c => c.Balance >= min && c.Balance <= max)
                                 .ToList();
@@ -114,10 +114,10 @@ namespace WinFormsUI.Forms {
 
         private void ViewEditEmployeeButton_Click(object sender, EventArgs e)
         {
-            int index = EmployeesDataGrid.CurrentRow.Index;
+            var index = EmployeesDataGrid.CurrentRow.Index;
             try {
                 Form ci = new EmployeeInformationForm(_groupedEmployees[index]);
-                DialogResult result = ci.ShowDialog();
+                var result = ci.ShowDialog();
                 if (result == DialogResult.OK)
                     WireUp();
             } catch (Exception exception) {
@@ -129,7 +129,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteEmployeeButton_Click(object sender, EventArgs e) {
-            DialogResult result =
+            var result =
                 MessageBox.Show($"Do you really want to delete {EmployeesDataGrid.SelectedRows.Count} employees?\n" +
                     "This process is irreversible\n",
                     "Confirm",
@@ -143,7 +143,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void DeleteEntryButton_Click(object sender, EventArgs e) {
-            DialogResult result =
+            var result =
                 MessageBox.Show($"Do you really want to delete {EmployeeHistoryDataGrid.SelectedRows.Count} payment records?\n" +
                                 "This action is irreversible\n",
                     "Confirm",

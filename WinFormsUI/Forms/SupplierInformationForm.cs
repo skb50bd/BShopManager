@@ -84,7 +84,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void SupplierInformationForm_Load(object sender, EventArgs e) {
-            UserRole role = CurrentUser.AccessLevel;
+            var role = CurrentUser.AccessLevel;
 
             if (role > Admin) {
                 CurrentPayableText.Enabled = false;
@@ -154,8 +154,8 @@ namespace WinFormsUI.Forms {
         }
 
         private bool ValidateForm() {
-            string error = string.Empty;
-            string warning = string.Empty;
+            var error = string.Empty;
+            var warning = string.Empty;
 
             if (FullNameText.Text.Length == 0)
                 error += "Empty Name\n";
@@ -172,7 +172,7 @@ namespace WinFormsUI.Forms {
             if (NotesText.Text.Length == 0)
                 warning += "Empty notes\n";
 
-            if (!decimal.TryParse(CurrentPayableTextBig.Text.Split()[0], out decimal d) || d < 0)
+            if (!decimal.TryParse(CurrentPayableTextBig.Text.Split()[0], out var d) || d < 0)
                 error += "Invalid Payable";
 
             if (error.Length > 0) {
@@ -220,7 +220,7 @@ namespace WinFormsUI.Forms {
         }
 
         private void RepayButton_Click(object sender, EventArgs e) {
-            if (!decimal.TryParse(RepayAmountText.Text, out decimal m) || m < 0) {
+            if (!decimal.TryParse(RepayAmountText.Text, out var m) || m < 0) {
                 MessageBox.Show("Invalid Amount");
                 return;
             }
@@ -228,7 +228,7 @@ namespace WinFormsUI.Forms {
             if (m > _supplier.Payable)
                 MessageBox.Show("Repayment amount is greater than payable");
             else {
-                Repayment model  = new Repayment {
+                var model  = new Repayment {
                     SupplierId   = _supplier.ObjectId,
                     SupplierName = _supplier.FullName,
                     Amount       = m

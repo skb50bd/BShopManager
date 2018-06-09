@@ -137,7 +137,7 @@ namespace WinFormsUI.Forms {
         {
             ProductSelectorCombo.DataSource = null;
 
-            int index = ReceiptNumberCombo.SelectedIndex;
+            var index = ReceiptNumberCombo.SelectedIndex;
             if (index > -1)
             {
                 switch (_returnType)
@@ -146,12 +146,12 @@ namespace WinFormsUI.Forms {
                         _refund = new Refund();
                         _sale = _sales[index];
 
-                        List<Refund> refunds = Connection[0].GetRefundBySale(_sale);
+                        var refunds = Connection[0].GetRefundBySale(_sale);
                         if (refunds.Count > 0)
                         {
                             MessageBox.Show("This sale already has a refund", "Information");
 
-                            foreach (ShoppingCart cart in _sale.Cart)
+                            foreach (var cart in _sale.Cart)
                             {
                                 cart.Quantity -= refunds.Sum(r =>
                                     r.Cart.Where(c => c.ProductId == cart.ProductId).Sum(c => c.Quantity));
@@ -165,12 +165,12 @@ namespace WinFormsUI.Forms {
                         _purchaseReturn = new PurchaseReturn();
                         _purchase = _purchases[index];
 
-                        List<PurchaseReturn> purchaseReturns = Connection[0].GetPurchaseReturnByPurchase(_purchase);
+                        var purchaseReturns = Connection[0].GetPurchaseReturnByPurchase(_purchase);
                         if (purchaseReturns.Count > 0)
                         {
                             MessageBox.Show("This purchase already has a purchase return", "Information");
                         }
-                        foreach (ShoppingCart cart in _purchase.Cart)
+                        foreach (var cart in _purchase.Cart)
                         {
                             cart.Quantity -= purchaseReturns.Sum(r =>
                                 r.Cart.Where(c => c.ProductId == cart.ProductId).Sum(c => c.Quantity));
@@ -242,7 +242,7 @@ namespace WinFormsUI.Forms {
                 MessageBox.Show("No product selected", "Error");
                 return;
             }
-            if (float.TryParse(QuantityText.Text, out float q) && q > 0 && q <= _cartItem.Quantity)
+            if (float.TryParse(QuantityText.Text, out var q) && q > 0 && q <= _cartItem.Quantity)
             {
                 if (_returnType == ReturnType.Refund)
                 {
@@ -278,14 +278,14 @@ namespace WinFormsUI.Forms {
             {
                 if (_returnType == ReturnType.Refund)
                 {
-                    ShoppingCart c = _refund.Cart[row.Index];
+                    var c = _refund.Cart[row.Index];
                     _refund.Cart.Remove(c);
                     _sale.Cart.Add(_removedCarts.Single(sc => sc.ProductId == c.ProductId));
                     _removedCarts.Remove(_removedCarts.Single(sc => sc.ProductId == c.ProductId));
                 }
                 else
                 {
-                    ShoppingCart c = _purchaseReturn.Cart[row.Index];
+                    var c = _purchaseReturn.Cart[row.Index];
                     _purchaseReturn.Cart.Remove(c);
                     _purchase.Cart.Add(_removedCarts.Single(sc => sc.ProductId == c.ProductId));
                     _removedCarts.Remove(_removedCarts.Single(sc => sc.ProductId == c.ProductId));
@@ -296,14 +296,14 @@ namespace WinFormsUI.Forms {
 
         private bool ValidateReturn()
         {
-            string error = string.Empty;
+            var error = string.Empty;
             if (ReceiptNumberCombo.SelectedIndex < 0)
                 error += "Invalid Memo/Vouchar selection\n";
             if (_refund.Cart.Count == 0 && _purchase.Cart.Count == 0)
                 error += "Cart is empty\n";
-            if (!(float.TryParse(CutPercentageText.Text, out float cp) || cp < 0 || cp > 100))
+            if (!(float.TryParse(CutPercentageText.Text, out var cp) || cp < 0 || cp > 100))
                 error += "Invalid cut percentage\n";
-            if (!(decimal.TryParse(CutAmountText.Text, out decimal ca) || ca < 0))
+            if (!(decimal.TryParse(CutAmountText.Text, out var ca) || ca < 0))
                 error += "Invalid cut amount\n";
             if (error.Length == 0)
                 return true;
@@ -365,7 +365,7 @@ namespace WinFormsUI.Forms {
 
         private void CutPercentageText_Leave(object sender, EventArgs e)
         {
-            if (!float.TryParse(CutPercentageText.Text, out float cp) || cp < 0 || cp > 100) return;
+            if (!float.TryParse(CutPercentageText.Text, out var cp) || cp < 0 || cp > 100) return;
             switch (_returnType)
             {
                 case ReturnType.Refund:
@@ -386,7 +386,7 @@ namespace WinFormsUI.Forms {
 
         private void CutAmountText_TextChanged(object sender, EventArgs e)
         {
-            if (!decimal.TryParse(CutAmountText.Text, out decimal ca) || ca < 0) return;
+            if (!decimal.TryParse(CutAmountText.Text, out var ca) || ca < 0) return;
             switch (_returnType)
             {
                 case ReturnType.Refund:

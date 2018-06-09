@@ -11,7 +11,7 @@ using static ShopLibrary.GlobalConfig;
 namespace ShopLibrary.Output {
     public static class PrintSaleMemo {
         public static void ToPdf (Memo memo) {
-            string infilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            var infilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                               + @"\Brotal\SaleMemorandumTemp.pdf";
 
             if (!File.Exists(infilename)) {
@@ -21,15 +21,15 @@ namespace ShopLibrary.Output {
                 return;
             }
 
-            string outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            var outfilename = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                                + @"\Brotal\"
                                + memo.SaleId
                                + ".pdf";
 
-            using ( FileStream outFile = new FileStream(outfilename, FileMode.Create) ) {
-                PdfReader  reader  = new PdfReader(infilename);
-                PdfStamper stamper = new PdfStamper(reader, outFile);
-                AcroFields form    = stamper.AcroFields;
+            using ( var outFile = new FileStream(outfilename, FileMode.Create) ) {
+                var  reader  = new PdfReader(infilename);
+                var stamper = new PdfStamper(reader, outFile);
+                var form    = stamper.AcroFields;
 
 
                 // STAMPING
@@ -53,9 +53,9 @@ namespace ShopLibrary.Output {
                 form.SetField("Customer Address", memo.CustomerAddress);
 
                 // FILL UP THE TABLE
-                int i = 1;
+                var i = 1;
 
-                foreach (ShoppingCart sc in memo.Cart) {
+                foreach (var sc in memo.Cart) {
                     form.SetField("Row" + i, i.ToString("00"));
                     form.SetField("DescriptionRow" + i, sc.GetProductId + " - " + sc.ProductName);
                     form.SetField("Unit PriceRow" + i, sc.GetUnitPrice + "/" + sc.GetUnitName);
@@ -75,7 +75,7 @@ namespace ShopLibrary.Output {
                 stamper.Close();
                 reader.Close();
 
-                foreach (KeyValuePair<string, AcroFields.Item> field in form.Fields)
+                foreach (var field in form.Fields)
                     form.SetFieldProperty(field.Key, "readonly", true, null);
 
                 Process.Start(outfilename);

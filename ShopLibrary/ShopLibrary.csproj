@@ -120,7 +120,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vouchar.cs" />
     <Compile Include="Output\PrintSaleMemo.cs" />
-    <Compile Include="Prints\DataGridViewPrint.cs" />
+    <Compile Include="Output\DataGridViewPrint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Searcher\Search.cs" />
   </ItemGroup>
