@@ -26,13 +26,13 @@ namespace WinFormsUI {
                 LoadBasicDatabase();
 
                 Culture = CultureInfo.CreateSpecificCulture(Properties.Settings.Default.Language);
-                Culture.NumberFormat.CurrencySymbol = "৳";
+                //Culture.NumberFormat.CurrencySymbol = "৳";
             }
-            catch (Exception) {
+            catch (Exception e) {
                 //MessageBox.Show(ResourceManager.GetString("ErrorConnectingToDatabaseServer", Culture) +
                 //e.Message, 
                 //ResourceManager.GetString("Error", Culture));
-                MessageBox.Show("Couldn't Connect to Server");
+                MessageBox.Show("Couldn't Connect to Server\n" + e.Message);
             }
             finally {
                 Debug.WriteLine(
